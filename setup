@@ -1,0 +1,30 @@
+#!/bin/bash
+SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
+CONFIGPATH="$HOME/.config"
+
+mkdir -p "$CONFIGPATH/nvim"
+
+if [ -f "$CONFIGPATH/nvim/init.vim" ]; then
+    cp "$CONFIGPATH/nvim/init.vim" "./back"
+    rm "$CONFIGPAYJ/nvim/init.vim"
+fi
+
+if [ -f "$HOME/.bashrc" ]; then
+    cp "$HOME/.profile" "./back"
+    rm "$HOME/.profile"
+fi
+
+if [ -f "$HOME/.profile" ]; then
+    cp "$HOME/.profile" "./back"
+    rm "$HOME/.profile"
+fi
+
+if [ -f "$HOME/.bash_aliases" ]; then
+    cp "$HOME/.bash_aliases" "./back"
+    rm "$HOME/.bash_aliases"
+fi
+
+ln -s "$SCRIPTPATH/init.vim" "$CONFIGPATH/nvim/init.vim"
+ln -s "$SCRIPTPATH/.bashrc" "$HOME/.bashrc"
+ln -s "$SCRIPTPATH/.profile" "$HOME/.profile"
+ln -s "$SCRIPTPATH/.bash_aliases" "$HOME/.bash_aliases"

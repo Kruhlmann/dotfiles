@@ -1,0 +1,42 @@
+{
+    "40e7fee4-2959-4ef0-88ce-93157fa2695c": {
+        "id": "40e7fee4-2959-4ef0-88ce-93157fa2695c",
+        "name": "Google Search",
+        "keyword": "g",
+        "cmd": "https://google.com/search?q=%s",
+        "icon": "/usr/share/ulauncher/media/google-search-icon.png",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1570523263.444997
+    },
+    "47d71a95-5941-4cf5-bb7d-8715d9978a3d": {
+        "id": "47d71a95-5941-4cf5-bb7d-8715d9978a3d",
+        "name": "Stack Overflow",
+        "keyword": "so",
+        "cmd": "http://stackoverflow.com/search?q=%s",
+        "icon": "/usr/share/ulauncher/media/stackoverflow-icon.svg",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1570523263.445018
+    },
+    "38a9dc54-9695-4324-98ad-bcbac7100e53": {
+        "id": "38a9dc54-9695-4324-98ad-bcbac7100e53",
+        "name": "Wikipedia",
+        "keyword": "wiki",
+        "cmd": "https://en.wikipedia.org/wiki/%s",
+        "icon": "/usr/share/ulauncher/media/wikipedia-icon.png",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1570523263.4450312
+    },
+    "d95a1a89-855d-4a25-a8a3-2901085d8d57": {
+        "id": "d95a1a89-855d-4a25-a8a3-2901085d8d57",
+        "name": "GitHub",
+        "keyword": "gh",
+        "cmd": "https://github.com/%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1570523721.529589
+    }
+}

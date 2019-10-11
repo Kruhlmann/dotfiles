@@ -1,0 +1,23 @@
+{
+    "com.github.iboyperson.ulauncher-system": {
+        "id": "com.github.iboyperson.ulauncher-system",
+        "url": "https://github.com/iboyperson/ulauncher-system",
+        "updated_at": "2019-10-08T10:35:57.999544",
+        "last_commit": "34a4776fcdf8be9b22d524b98631298efe668fb9",
+        "last_commit_time": "2019-09-17T20:03:39"
+    },
+    "com.github.isacikgoz.ukill": {
+        "id": "com.github.isacikgoz.ukill",
+        "url": "https://github.com/isacikgoz/ukill",
+        "updated_at": "2019-10-08T10:37:14.365824",
+        "last_commit": "bc50d9f41d46b6813a5aeebddd15734dcdb9d8db",
+        "last_commit_time": "2019-05-28T18:30:00"
+    },
+    "com.github.kruhlmann.ulauncher-repos": {
+        "id": "com.github.kruhlmann.ulauncher-repos",
+        "url": "https://github.com/Kruhlmann/ulauncher-repos",
+        "updated_at": "2019-10-11T02:41:54.479953",
+        "last_commit": "d6cbac93980c28b4e7243715ae00f6c8dad7fe62",
+        "last_commit_time": "2019-10-08T11:03:50"
+    }
+}

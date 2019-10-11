@@ -1,0 +1,1 @@
+/home/ges/.config/nvim/init.vim

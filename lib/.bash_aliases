@@ -1,0 +1,1 @@
+/home/ges/.bash_aliases

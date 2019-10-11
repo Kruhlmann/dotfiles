@@ -1,30 +1,20 @@
 #!/bin/bash
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
-CONFIGPATH="$HOME/.config"
+FILES=$(find lib ! -path lib -type f)
 
-mkdir -p "$CONFIGPATH/nvim"
+for LIBFILE in $FILES; do
+    FILE=${LIBFILE:4}
+    DIR=$(dirname "$HOME/$FILE")
+    BACKUPFILE="$SCRIPTPATH/back/$FILE"
+    BACKUPDIR=$(dirname "$SCRIPTPATH/back/$FILE")
 
-if [ -f "$CONFIGPATH/nvim/init.vim" ]; then
-    cp "$CONFIGPATH/nvim/init.vim" "./back"
-    rm "$CONFIGPAYJ/nvim/init.vim"
-fi
+    mkdir -p "$DIR"
+    mkdir -p "$BACKUPDIR"
 
-if [ -f "$HOME/.bashrc" ]; then
-    cp "$HOME/.profile" "./back"
-    rm "$HOME/.profile"
-fi
+    if [ -f "$HOME/$FILE" ]; then
+        cp "$HOME/$FILE" "$BACKUPFILE"
+        rm "$HOME/$FILE"
+    fi
 
-if [ -f "$HOME/.profile" ]; then
-    cp "$HOME/.profile" "./back"
-    rm "$HOME/.profile"
-fi
-
-if [ -f "$HOME/.bash_aliases" ]; then
-    cp "$HOME/.bash_aliases" "./back"
-    rm "$HOME/.bash_aliases"
-fi
-
-ln -s "$SCRIPTPATH/init.vim" "$CONFIGPATH/nvim/init.vim"
-ln -s "$SCRIPTPATH/.bashrc" "$HOME/.bashrc"
-ln -s "$SCRIPTPATH/.profile" "$HOME/.profile"
-ln -s "$SCRIPTPATH/.bash_aliases" "$HOME/.bash_aliases"
+    ln -fs "$HOME/$FILE" "$SCRIPTPATH/lib/$FILE"
+done

@@ -20,6 +20,14 @@ call plug#begin('~/.vim/plugged')
     Plug 'raimondi/delimitmate'
     Plug 'leafgarland/typescript-vim'
     Plug 'ntpeters/vim-better-whitespace'
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'ap/vim-css-color'
+    Plug 'cakebaker/scss-syntax.vim'
+    Plug 'glench/vim-jinja2-syntax'
+    Plug 'google/vim-searchindex'
+    Plug 'jmcantrell/vim-virtualenv'
+    Plug 'heavenshell/vim-jsdoc'
+    Plug 'mboughaba/i3config.vim'
 call plug#end()
 
 function! SourceDirectory(file)
@@ -68,6 +76,11 @@ let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 let g:strip_whitespace_confirm=0
 
+aug i3config_ft_detection
+  au!
+  au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
+aug end
+
 au FileType svelte UltiSnipsAddFiletypes html
 au FileType svelte UltiSnipsAddFiletypes javascript
 au FileType svelte UltiSnipsAddFiletypes css
@@ -88,14 +101,17 @@ set mouse=a
 set clipboard=unnamedplus
 set history=1000
 set ruler
-set splitbelow
+set splitbelow splitright
 set smarttab
 set backspace=indent,eol,start
 set incsearch
 set autoread
 set complete-=i
 set colorcolumn=80,120
+set wildmode=longest,list,full
+
 highlight ColorColumn ctermbg=0 guibg=#003755
+
 
 " Launch setup
 au VimEnter * NERDTree

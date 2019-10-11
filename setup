@@ -1,6 +1,7 @@
 #!/bin/bash
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 FILES=$(find lib ! -path lib -type f)
+COUNT=0
 
 for LIBFILE in $FILES; do
     FILE=${LIBFILE:4}
@@ -16,5 +17,7 @@ for LIBFILE in $FILES; do
         rm "$HOME/$FILE"
     fi
 
-    ln -fs "$HOME/$FILE" "$SCRIPTPATH/lib/$FILE"
+    ln -s -f "$SCRIPTPATH/lib/$FILE" "$HOME/$FILE" 2>&1 >/dev/null
+    ((COUNT++))
 done
+echo -e "\e[36mUpdated $COUNT files.\e[0m"

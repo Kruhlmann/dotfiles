@@ -81,17 +81,13 @@ aug i3config_ft_detection
   au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
 aug end
 
-au FileType svelte UltiSnipsAddFiletypes html
-au FileType svelte UltiSnipsAddFiletypes javascript
-au FileType svelte UltiSnipsAddFiletypes css
-au FileType svelte UltiSnipsAddFiletypes scss
-
 " Basic configuration
-colo cobalt2
+set nocompatible
 syntax on
 set encoding=utf-8
 set number
 set relativenumber
+set cursorline
 set wrap
 set tabstop=4
 set shiftwidth=4
@@ -108,10 +104,30 @@ set incsearch
 set autoread
 set complete-=i
 set colorcolumn=80,120
+
+" Wildmenu
+set wildmenu
 set wildmode=longest,list,full
+set wildignore+=.hg,.git,.svn                    " Version control
+set wildignore+=*.aux,*.out,*.toc                " LaTeX artifacts
+set wildignore+=*.jpg,*.bmp,*.png,*.jpeg,*.gif   " Binary images
+set wildignore+=*.0,*.onj,*.exe,*.dll,*.manifest " Object files
+set wildignore+=*.sw?,*.swap                     " Vim swap files
+set wildignore+=*.DS_Store                       " OSX
+set wildignore+=*.package-lock.json              " NPM packages cache
+set wildignore+=*.pyc                            " Python byte code
 
+" Backup configuration
+set undodir=~/.vim/tmp/undo/
+set backupdir=~/.vim/tmp/backup/
+set directory=~/.vim/tmp/swap/
+set undofile
+set backup
+set noswapfile
+
+" Colors
 highlight ColorColumn ctermbg=0 guibg=#003755
-
+colo cobalt2
 
 " Launch setup
 au VimEnter * NERDTree
@@ -120,11 +136,16 @@ au VimEnter * split
 au VimEnter * terminal
 au VimEnter * wincmd k
 
-" Remaps
+" UltiSnips
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackward = '<s-tab>'
 let g:UltiSnipsSnippetsDir = '~/.vim/snippets'
 let g:user_emmet_leader_key='<c-y>'
 
+" Auto save all buffers on blur
+au FocusLost * :wa
+
+
+" Include files
 call SourceDirectory('~/.vim/include')

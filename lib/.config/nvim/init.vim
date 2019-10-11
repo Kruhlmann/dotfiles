@@ -14,6 +14,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline-themes'
     Plug 'airblade/vim-gitgutter'
     Plug 'ycm-core/YouCompleteMe'
+    Plug 'Yggdroot/indentLine'
 call plug#end()
 
 function! SourceDirectory(file)
@@ -53,6 +54,11 @@ let g:syntastic_javascript_checkers = ['eslint']
 let NERDTreeShowHidden=1
 
 let g:airline_theme='cobalt2'
+
+let g:indentLine_setColors=0
+let g:indentLine_bgcolor_term=202
+let g:indentLine_bgcolor_gui='#193549'
+let g:indentLine_char = '▏'
 
 au FileType svelte UltiSnipsAddFiletypes html
 au FileType svelte UltiSnipsAddFiletypes javascript

@@ -10,6 +10,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'terryma/vim-multiple-cursors'
     Plug 'kruhlmann/vim-snippets'
     Plug 'tpope/vim-fugitive'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 function! SourceDirectory(file)
@@ -46,6 +48,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
+let NERDTreeShowHidden=1
+
+let g:airline_theme='cobalt2'
 
 au FileType svelte UltiSnipsAddFiletypes html
 au FileType svelte UltiSnipsAddFiletypes javascript

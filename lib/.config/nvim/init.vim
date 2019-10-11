@@ -3,6 +3,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'herrbischoff/cobalt2.vim'
     Plug 'jelera/vim-javascript-syntax'
     Plug 'scrooloose/nerdtree'
+    Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'mattn/emmet-vim'
     Plug 'evanleck/vim-svelte'
     Plug 'scrooloose/syntastic'
@@ -15,6 +16,10 @@ call plug#begin('~/.vim/plugged')
     Plug 'airblade/vim-gitgutter'
     Plug 'ycm-core/YouCompleteMe'
     Plug 'Yggdroot/indentLine'
+    Plug 'tomtom/tcomment_vim'
+    Plug 'raimondi/delimitmate'
+    Plug 'leafgarland/typescript-vim'
+    Plug 'ntpeters/vim-better-whitespace'
 call plug#end()
 
 function! SourceDirectory(file)
@@ -55,10 +60,13 @@ let NERDTreeShowHidden=1
 
 let g:airline_theme='cobalt2'
 
-let g:indentLine_setColors=0
-let g:indentLine_bgcolor_term=202
-let g:indentLine_bgcolor_gui='#193549'
 let g:indentLine_char = '▏'
+
+let g:better_whitespace_guicolor='red'
+let g:better_whitespace_ctermcolor='red'
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_on_save=1
+let g:strip_whitespace_confirm=0
 
 au FileType svelte UltiSnipsAddFiletypes html
 au FileType svelte UltiSnipsAddFiletypes javascript
@@ -78,9 +86,14 @@ set expandtab
 set autoindent
 set mouse=a
 set clipboard=unnamedplus
-set history=1000 
+set history=1000
 set ruler
 set splitbelow
+set smarttab
+set backspace=indent,eol,start
+set incsearch
+set autoread
+set complete-=i
 set colorcolumn=80,120
 highlight ColorColumn ctermbg=0 guibg=#003755
 

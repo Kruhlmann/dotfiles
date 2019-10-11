@@ -120,3 +120,5 @@ fi
 if [ -d "$HOME/.scripts" ]; then
     PATH="$HOME/.scripts:$PATH"
 fi
+
+DOTFILES="$HOME/Documents/src/dotfiles/lib"

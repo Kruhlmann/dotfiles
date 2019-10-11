@@ -12,6 +12,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-fugitive'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'ycm-core/YouCompleteMe'
 call plug#end()
 
 function! SourceDirectory(file)

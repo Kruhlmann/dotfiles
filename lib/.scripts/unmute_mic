@@ -1,0 +1,2 @@
+#!/bin/sh
+pactl set-source-volume @DEFAULT_SOURCE@ 100%

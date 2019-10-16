@@ -28,6 +28,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'jmcantrell/vim-virtualenv'
     Plug 'heavenshell/vim-jsdoc'
     Plug 'mboughaba/i3config.vim'
+    Plug 'vimoutliner/vimoutliner'
 call plug#end()
 
 function! SourceDirectory(file)

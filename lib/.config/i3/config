@@ -147,6 +147,8 @@ exec --no-startup-id feh --bg-scale ~/Pictures/arch_wallpaper.png
 exec --no-startup-id discord
 # Pwd manager
 exec --no-startup-id bitwarden
+# Wi-fi connection
+exec --no-startup-id nm-applet
 
 assign [class="Firefox"] $workspace1
 assign [class="discord"] $workspace3

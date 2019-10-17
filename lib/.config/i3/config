@@ -143,11 +143,13 @@ exec --no-startup-id compton -f
 exec --no-startup-id openvpn ~/.vpn/proton-vpn-nl-free-02.ovpn
 # Background
 exec --no-startup-id feh --bg-scale ~/Pictures/arch_wallpaper.png
+# VOIP
 exec --no-startup-id discord
-exec --no-startup-id keepassxc
+# Pwd manager
+exec --no-startup-id bitwarden
 
 assign [class="Firefox"] $workspace1
 assign [class="discord"] $workspace3
-assign [class="keepassxc"] $workspace10
+assign [class="bitwarden"] $workspace10
 assign [class="ckb-next"] $workspace10
 assign [class="Mainwindow.py"] $workspace4

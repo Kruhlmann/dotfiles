@@ -1,6 +1,5 @@
 call plug#begin('~/.vim/plugged')
     Plug 'sirver/UltiSnips'
-    Plug 'herrbischoff/cobalt2.vim'
     Plug 'jelera/vim-javascript-syntax'
     Plug 'scrooloose/nerdtree'
     Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -63,9 +62,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
-let NERDTreeShowHidden=1
-
-let g:airline_theme='cobalt2'
+let g:NERDTreeShowHidden=1
+let g:NERDTreeChDirMode=2
 
 let g:indentLine_char = '▏'
 
@@ -126,10 +124,10 @@ set noswapfile
 
 " Colors
 highlight ColorColumn ctermbg=0 guibg=#003755
-colo cobalt2
+colo default
 
 " Launch setup
-au VimEnter * NERDTree
+au VimEnter * NERDTree %
 au VimEnter * wincmd p
 
 " UltiSnips

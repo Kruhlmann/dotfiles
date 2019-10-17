@@ -113,6 +113,7 @@ set wildignore+=*.sw?,*.swap                     " Vim swap files
 set wildignore+=*.DS_Store                       " OSX
 set wildignore+=*.package-lock.json              " NPM packages cache
 set wildignore+=*.pyc                            " Python byte code
+set wildignore+=*.mov,*.mp4,*.mkv,*.webm         " Video files
 
 " Backup configuration
 set undodir=~/.vim/tmp/undo/

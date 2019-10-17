@@ -1,5 +1,5 @@
 # Reload i3 on ThinkVantage button
-"i3-msg reload"
+"i3-msg reload && xrdb ~/.Xresources && killall -USR1 termite"
     XF86Launch1
 "i3lock -i ~/Pictures/lock.png"
     XF86ScreenSaver

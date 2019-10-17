@@ -3,6 +3,10 @@ SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 FILES=$(find lib ! -path lib -type f)
 COUNT=0
 
+mkdir -p ~/.vim/tmp/undo
+mkdir -p ~/.vim/tmp/backup
+mkdir -p ~/.vim/tmp/swap
+
 for LIBFILE in $FILES; do
     FILE=${LIBFILE:4}
     DIR=$(dirname "$HOME/$FILE")

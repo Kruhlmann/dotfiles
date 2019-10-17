@@ -101,6 +101,7 @@ set incsearch
 set autoread
 set complete-=i
 set colorcolumn=80,120
+cd %:p:h
 
 " Wildmenu
 set wildmenu

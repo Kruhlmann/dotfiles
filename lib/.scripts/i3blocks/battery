@@ -2,12 +2,12 @@
 # Give a battery name (e.g. BAT0) as an argument.
 
 case $BLOCK_BUTTON in
-    3) pgrep -x dunst >/dev/null && notify-send "🔋 Battery module" "🔋: discharging
-🛑: not charging
-♻: stagnant charge
-🔌: charging
-⚡: charged
-❗: battery very low!
+    3) pgrep -x dunst >/dev/null && notify-send "Battery module" "Battery discharging
+Not charging
+Stagnant charge
+Battery charging
+Battery charged
+Critical battery level
 - Text color reflects charge left" ;;
 esac
 

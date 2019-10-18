@@ -139,6 +139,9 @@ gaps outer 15
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 
+# Conect menu as second mod key
+exec --no-startup-id xmodmap -e 'keycode 135 = Super_R' && xset -r 135
+
 # Start programs
 # Walmart f.lux
 exec --no-startup-id redshift
@@ -156,6 +159,8 @@ exec --no-startup-id discord
 exec --no-startup-id bitwarden
 # Wi-fi connection
 exec --no-startup-id nm-applet
+# Xorg keyboard shortcuts
+exec --no-startup-id xbindkeys
 
 assign [class="Firefox"] $workspace1
 assign [class="discord"] $workspace3

@@ -60,7 +60,6 @@ signal=12
 
 [memory]
 interval=30
-label=🧠
 
 [cpu]
 interval=15
@@ -73,10 +72,6 @@ signal=10
 
 [disk]
 interval=60
-command=disk /
-
-[disk]
-interval=60
 command=disk /home
 
 [battery]
@@ -84,7 +79,6 @@ command=battery BAT0
 interval=5
 
 [clock]
-label=📅
 interval=30
 
 [internet]

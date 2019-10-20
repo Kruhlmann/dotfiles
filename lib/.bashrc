@@ -128,7 +128,8 @@ if [ -d "$HOME/.scripts" ]; then
     PATH="$HOME/.scripts:$PATH"
 fi
 
-DOTFILES="$HOME/Documents/src/dotfiles/lib"
+export DOTFILES="$HOME/Documents/src/dotfiles/lib"
+export WEECHAT_HOME="$HOME/.config/weechat"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

@@ -67,3 +67,5 @@ get_session(){
 }
 
 exec $(get_session)
+
+eval $(ssh-agent)

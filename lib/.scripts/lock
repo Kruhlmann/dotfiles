@@ -1,6 +1,6 @@
 #!/bin/sh
 
-B='#00000000'  # blank
+B='#00000077'  # blank
 C='#ffffff99'  # clear ish
 D='#77777799'  # default
 S='#44444499'  # darker default

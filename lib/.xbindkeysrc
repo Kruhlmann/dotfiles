@@ -2,7 +2,7 @@
 "i3-msg reload && xrdb ~/.Xresources && killall -USR1 termite && xbindkeys --poll-rc"
     XF86Launch1
 # Lock button
-"i3lock"
+"lock"
     XF86ScreenSaver
 # Mute button
 "amixer -q -D pulse sset Master toggle"

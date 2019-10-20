@@ -58,8 +58,8 @@ fi
 
 if [ "$color_prompt" = yes ]; then
 
-    export PS1="\[\033[94m\]\u\[\033[00m\]@\[\033[36m\]\h \[\033[36m\]\w\[\033[104m\]\$(git_info)\[\033[00m\] $ "
-    export PS1=$(powerline-shell $?)
+    export PS1="\[\033[94m\]\u\[\033[00m\]@\[\033[36m\]\h\[\033[36m\]\w \[\033[2m\]\$(git_info)\[\033[00m\] $ "
+    #export PS1=$(powerline-shell $?)
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ xx'
 fi

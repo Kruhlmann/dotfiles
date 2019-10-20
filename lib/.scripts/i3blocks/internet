@@ -2,11 +2,11 @@
 
 case $BLOCK_BUTTON in
 	1) $TERMINAL -e nmtui ;;
-	3) pgrep -x dunst >/dev/null && notify-send "🌐 Internet module" "\- Click to connect
-📡: no wifi connection
-📶: wifi connection with quality
-❎: no ethernet
-🌐: ethernet working
+	3) pgrep -x dunst >/dev/null && notify-send "Internet module" "\- Click to connect
+ No wifi connection
+ Wifi connection with quality
+ No ethernet
+ Ethernet working
 " ;;
 esac
 

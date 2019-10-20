@@ -28,30 +28,33 @@ command=~/.scripts/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=pango
 
+[battery]
+command=~/.scripts/i3blocks/battery BAT0
+interval=5
 
 [ip]
 command=hostname -i | awk '{ print $1 }'
 interval=300
 color=#91E78B
 
-[music]
-label=🎼
-interval=once
-signal=11
+#[music]
+#label=🎼
+#interval=once
+#signal=11
 
-[news]
-label=📰
-interval=once
-signal=6
+#[news]
+#label=📰
+#interval=once
+#signal=6
 
 [pacpackages]
 label=📦
 interval=once
 signal=8
 
-[torrent]
-interval=20
-signal=7
+#[torrent]
+#interval=20
+#signal=7
 
 [mailbox]
 label=📬
@@ -66,20 +69,16 @@ interval=15
 label=💻
 min_width=CPU 100.00%
 
-[volume]
-interval=once
-signal=10
+#[volume]
+#interval=once
+#signal=10
 
 [disk]
 interval=60
-command=disk /home
-
-[battery]
-command=battery BAT0
-interval=5
+command=~./scripts/i3blocks/disk /home
 
 [clock]
-interval=30
+interval=15
 
 [internet]
 interval=10

@@ -1,4 +1,4 @@
-#!/usr/bin/env  sh
+#!/usr/bin/env sh
 # Give a battery name (e.g. BAT0) as an argument.
 
 case $BLOCK_BUTTON in
@@ -10,6 +10,8 @@ Battery charged
 Critical battery level
 - Text color reflects charge left" ;;
 esac
+
+
 
 capacity=$(cat /sys/class/power_supply/"$1"/capacity) || exit
 status=$(cat /sys/class/power_supply/"$1"/status)
@@ -29,4 +31,4 @@ fi
 
 [ "$status" = "Charging" ] && color="#ffffff"
 
-printf "<span color='%s'>%s%s%s</span>\n" "$color" "$(echo "$status" | sed -e "s/,//;s/Discharging/ /;s/Not Charging/ /;s/Charging/ /;s/Unknown/ /;s/Full/⚡/;s/ 0*/ /g;s/ :/ /g")" "$warn" "$(echo "$capacity" | sed -e 's/$/%/')"
+printf "<span color='%s'>%s%s%s</span>\n" "$color" "$status"  "$warn" "$(echo "$capacity" | sed -e 's/$/%/')"

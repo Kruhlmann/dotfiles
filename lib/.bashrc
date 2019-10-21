@@ -102,9 +102,14 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
+# Include entr file watchers
+if [ -f ~/.config/entr ]; then
+    ~/.config/entr
+fi
+
+# Enable programmable completion features (you don't need to enable
+# This, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# Sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion

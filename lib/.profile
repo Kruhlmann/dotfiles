@@ -31,5 +31,5 @@ if [ -d "$HOME/.scripts" ]; then
     PATH="$HOME/.scripts:$PATH"
 fi
 
-default_browser=firefox
-$I3CONFIG=~/.config/i3/config
+export default_browser=firefox
+export I3CONFIG=~/.config/i3/config

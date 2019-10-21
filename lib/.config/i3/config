@@ -87,15 +87,21 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # Quicklaunch bindings
-# Screenshot
-bindsym $mod+Shift+s exec gnome-screenshot -a
 # USB mounting/unmounting
 bindsym $mod+m exec mount_drive
 bindsym $mod+Shift+m exec umount_drive
 # Dmenu
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# Easy shutdown
 bindsym $mod+Shift+x exec prompt "Shutdown?" "$shutdown"
+
+# Screenshots
+bindsym $mod+Shift+s exec gnome-screenshot -a -c
+bindsym Print exec gnome-screenshot
+bindsym Shift+Print exec gnome-screenshot -c
+
 bindsym $mod+w exec firefox
+bindsym $mod+e exec ranger
 #bindsym $mod+m exec ncmpcpp
 
 # Resize window (you can also use the mouse for that)
@@ -161,6 +167,10 @@ exec --no-startup-id bitwarden
 exec --no-startup-id nm-applet
 # Xorg keyboard shortcuts
 exec --no-startup-id xbindkeys
+# MPD server
+exec --no-startup-id mpd
+exec --no-startup-id mpc ls | mpc add
+exec --no-startup-id termite -e ncmpcpp
 # SSH keys
 exec --no-startup-id find ~/.ssh/ -type f -exec grep -l "PRIVATE" {} \; | xargs ssh-add &> /dev/null
 

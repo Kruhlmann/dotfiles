@@ -12,3 +12,6 @@ alias ports='netstat -tulanp'
 alias untar='tar -zxvf'
 alias v='vim'
 alias wget='wget -c'
+alias yt="youtube-dl --add-metadata -i -c -w -o '$HOME/Videos/youtube/%(title)s.%(ext)s' -f best"
+alias yta="youtube-dl --add-metadata -i -c -w -o '$HOME/Music/%(title)s.%(ext)s' -f best -x --audio-format mp3"
+alias play="mpg123"

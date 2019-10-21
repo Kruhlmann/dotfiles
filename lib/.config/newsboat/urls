@@ -1,8 +1,11 @@
 # News
 https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml "News" "Politics" "~The New York Times | Top Stories"
+https://www.dr.dk/nyheder/service/feeds/politik
 
 # Tech
 https://lukesmith.xyz/rss.xml "Tech" "~Luke Smith"
 
 # Podcasts
-https://feeds.podtrac.com/zKq6WZZLTlbM
+https://feeds.podtrac.com/zKq6WZZLTlbM "Podcast"
+https://wakingup.libsyn.com/rss "Podcast"
+https://rss.art19.com/the-argument "Podcast"

@@ -129,8 +129,8 @@ highlight ColorColumn ctermbg=0 guibg=#003755
 colo default
 
 " Launch setup
-au VimEnter * NERDTree %
-au VimEnter * wincmd p
+" au VimEnter * NERDTree %
+" au VimEnter * wincmd p
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger = '<tab>'

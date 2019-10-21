@@ -1,11 +1,18 @@
 # News
 https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml "News" "Politics" "~The New York Times | Top Stories"
-https://www.dr.dk/nyheder/service/feeds/politik
+https://www.dr.dk/nyheder/service/feeds/politik "News" "Politics" "~Danish Radio | Politics"
+https://www.dr.dk/nyheder/service/feeds/indland "News" "~Danish Radio | Domestic"
 
 # Tech
 https://lukesmith.xyz/rss.xml "Tech" "~Luke Smith"
 
+# Reddit
+http://www.reddit.com/r/news/.rss "News" "~Reddit | r/news+worldnews"
+http://www.reddit.com/r/programming/.rss "Tech" "~Reddit | r/programming"
+http://www.reddit.com/r/denmark/.rss "News" "~Reddit | r/denmark"
+http://www.reddit.com/r/classicwow/.rss "Games" "~Reddit | r/classicwow"
+
 # Podcasts
-https://feeds.podtrac.com/zKq6WZZLTlbM "Podcast"
-https://wakingup.libsyn.com/rss "Podcast"
-https://rss.art19.com/the-argument "Podcast"
+https://wakingup.libsyn.com/rss "Podcast" "~Sam Harris | Waking Up"
+https://feeds.podtrac.com/zKq6WZZLTlbM "Podcast" "~The New York Times | The Daily"
+https://rss.art19.com/the-argument "Podcast" "~The New York Times | The Argument"

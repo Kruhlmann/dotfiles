@@ -28,14 +28,12 @@ command=~/.scripts/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=pango
 
+[vpn]
+interval=5
+
 [battery]
 command=~/.scripts/i3blocks/battery BAT0
 interval=5
-
-[ip]
-command=hostname -i | awk '{ print $1 }'
-interval=300
-color=#91E78B
 
 #[music]
 #label=🎼
@@ -43,7 +41,6 @@ color=#91E78B
 #signal=11
 
 #[news]
-#label=📰
 #interval=once
 #signal=6
 

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if protonvpn-cli --status | grep "[OpenVPN Status]: Not Running"; then
+if protonvpn-cli --status | grep --silent "\[OpenVPN Status\]: Not Running\|\[Internet Status\]: Offline"; then
     echo "VPN <span color='#ff0000'>OFF</span>"
 else
     echo "VPN <span color='#00ff00'>$(protonvpn-cli --ip)</span>"

@@ -95,6 +95,9 @@ bindsym $mod+Shift+s exec gnome-screenshot -a -c
 bindsym Print exec gnome-screenshot
 bindsym Shift+Print exec gnome-screenshot -c
 
+# Clipboard
+bindsym $mod+Shift+v exec cbp
+
 bindsym $mod+w exec firefox
 bindsym $mod+e exec $term -e ranger
 bindsym $mod+n exec $term -e ncmpcpp
@@ -162,7 +165,7 @@ exec --no-startup-id bitwarden
 # Wi-fi connection
 exec --no-startup-id nm-applet
 # Xorg keyboard shortcuts
-exec --no-startup-id xbindkeys
+exec --no-startup-id xbindkeys<F7><F7>
 # MPD server
 exec --no-startup-id mpd
 exec --no-startup-id mpc ls | mpc add

@@ -81,11 +81,6 @@ bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
-# Reload the configuration file
-bindsym $mod+Shift+c reload
-# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-
 # Quicklaunch bindings
 # USB mounting/unmounting
 bindsym $mod+m exec mount_drive
@@ -101,8 +96,9 @@ bindsym Print exec gnome-screenshot
 bindsym Shift+Print exec gnome-screenshot -c
 
 bindsym $mod+w exec firefox
-bindsym $mod+e exec ranger
-#bindsym $mod+m exec ncmpcpp
+bindsym $mod+e exec $term -e ranger
+bindsym $mod+n exec $term -e ncmpcpp
+bindsym $mod+a exec $term -e neomutt
 
 # Resize window (you can also use the mouse for that)
 mode "resize" {

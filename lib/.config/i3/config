@@ -154,7 +154,7 @@ exec --no-startup-id compton -f
 # VPN
 exec --no-startup-id openvpn ~/.vpn/proton-vpn-nl-free-02.ovpn
 # Background
-exec --no-startup-id feh --bg-scale ~/Pictures/arch_wallpaper.png
+exec --no-startup-id feh --bg-scale ~/Pictures/wallpapers/green_mountains.jpg
 # VOIP
 exec --no-startup-id discord
 # Pwd manager

@@ -81,6 +81,10 @@ bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
+# Move workspace
+bindsym $mod+Right exec i3-msg move workspace to output right
+bindsym $mod+Left exec i3-msg move workspace to output left
+
 # Quicklaunch bindings
 # USB mounting/unmounting
 bindsym $mod+m exec mount_drive

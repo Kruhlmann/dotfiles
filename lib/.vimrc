@@ -28,12 +28,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'vimoutliner/vimoutliner'
 call plug#end()
 
-function! SourceDirectory(file)
-    for s:fpath in split(globpath(a:file, '*.vim'), '\n')
-        exe 'source' s:fpath
-    endfor
-endfunction
-
 " Close all open buffers on entering a window if the only
 " buffer that's left is the NERDTree buffer
 function! s:CloseIfOnlyNerdTreeLeft()
@@ -144,4 +138,5 @@ au FocusLost * :wa
 
 
 " Include files
-call SourceDirectory('~/.vim/include')
+so ~/.vim/includes/filetypes.vim
+so ~/.vim/includes/map.vim

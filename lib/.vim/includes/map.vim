@@ -9,7 +9,7 @@ nnoremap <C-left> 5<C-w><
 nnoremap <C-right> 5<C-w>>
 
 " File system navigation
-map <leader>b :NERDTreeFocus<CR>
+map <leader>b :NERDTreeToggle<CR>
 map <leader>p :vsplit %:p:h/package.json<CR>
 map <leader>ev :vsplit $MYVIMRC<CR>
 map <leader>ei :vsplit ~/.vim/includes<CR>

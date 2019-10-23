@@ -95,9 +95,8 @@ bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+Shift+x exec prompt "Shutdown?" "$shutdown"
 
 # Screenshots
-bindsym $mod+Shift+s exec gnome-screenshot -a -c
-bindsym Print exec gnome-screenshot
-bindsym Shift+Print exec gnome-screenshot -c
+bindsym $mod+Shift+s exec maim -s | xclip -selection clipboard -t image/png
+bindsym Print exec maimpick
 
 # Clipboard
 bindsym $mod+Shift+v exec cbp

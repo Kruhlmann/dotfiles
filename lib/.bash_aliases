@@ -15,3 +15,4 @@ alias wget='wget -c'
 alias yt="youtube-dl --add-metadata -i -c -w -o '$HOME/Videos/youtube/%(title)s.%(ext)s' -f best"
 alias yta="youtube-dl --add-metadata -i -c -w -o '$HOME/Music/%(title)s.%(ext)s' -f best -x --audio-format mp3"
 alias play="mpg123"
+alias wow="~/.local/share/lutris/runners/wine/lutris-4.16-x86_64/bin/wine64 ~/Games/world-of-warcraft/drive_c/Program\ Files\ \(x86\)/World\ of\ Warcraft/_classic_/Wow.exe"

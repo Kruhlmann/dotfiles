@@ -33,5 +33,5 @@ fi
 
 mpd
 
-export default_browser=firefox
+export BROWSER=/usr/bin/firefox
 export I3CONFIG=~/.config/i3/config

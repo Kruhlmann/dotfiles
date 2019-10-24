@@ -20,6 +20,9 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap * *<C-O>
 
+" Zen mode
+map <leader>z :Goyo<CR>
+
 " Line navigation
 nnoremap H ^
 nnoremap L g_

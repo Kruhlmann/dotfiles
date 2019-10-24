@@ -26,6 +26,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'heavenshell/vim-jsdoc'
     Plug 'mboughaba/i3config.vim'
     Plug 'vimoutliner/vimoutliner'
+    Plug 'junegunn/goyo.vim'
 call plug#end()
 
 " Close all open buffers on entering a window if the only

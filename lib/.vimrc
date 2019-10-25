@@ -1,5 +1,5 @@
 call plug#begin('~/.vim/plugged')
-    Plug 'sirver/UltiSnips'
+    " Plug 'sirver/UltiSnips'
     Plug 'jelera/vim-javascript-syntax'
     Plug 'scrooloose/nerdtree'
     Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -96,6 +96,7 @@ set incsearch
 set autoread
 set complete-=i
 set colorcolumn=80,120
+set ffs=unix,dos
 cd %:p:h
 
 " Wildmenu

@@ -1,5 +1,5 @@
 call plug#begin('~/.vim/plugged')
-    " Plug 'sirver/UltiSnips'
+    Plug 'sirver/UltiSnips'
     Plug 'jelera/vim-javascript-syntax'
     Plug 'scrooloose/nerdtree'
     Plug 'Xuyuanp/nerdtree-git-plugin'

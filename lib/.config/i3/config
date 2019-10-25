@@ -86,8 +86,8 @@ bindsym $mod+Left exec i3-msg move workspace to output left
 
 # Quicklaunch bindings
 # USB mounting/unmounting
-bindsym $mod+m exec mount_drive
-bindsym $mod+Shift+m exec umount_drive
+bindsym F9 exec mount_drive
+bindsym F10 exec umount_drive
 # Dmenu
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 # Easy shutdown
@@ -103,7 +103,7 @@ bindsym $mod+Shift+v exec cbp
 bindsym $mod+w exec firefox
 bindsym $mod+e exec $term -e ranger
 bindsym $mod+n exec $term -e ncmpcpp
-bindsym $mod+a exec $term -e neomutt
+bindsym $mod+m exec $term -e neomutt
 
 # Resize window (you can also use the mouse for that)
 mode "resize" {
@@ -162,8 +162,6 @@ exec --no-startup-id openvpn ~/.vpn/proton-vpn-nl-free-02.ovpn
 exec --no-startup-id feh --bg-scale ~/Pictures/wallpapers/green_mountains.jpg
 # VOIP
 exec --no-startup-id discord
-# Pwd manager
-exec --no-startup-id bitwarden
 # Wi-fi connection
 exec --no-startup-id nm-applet
 # Xorg keyboard shortcuts
@@ -174,10 +172,12 @@ exec --no-startup-id mpc ls | mpc add
 exec --no-startup-id termite -e ncmpcpp
 # SSH keys
 exec --no-startup-id find ~/.ssh/ -type f -exec grep -l "PRIVATE" {} \; | xargs ssh-add &> /dev/null
+# Remote desktop
+exec --no-startup-id teamviewer
 
 assign [class="Firefox"] $workspace1
 assign [class="discord"] $workspace3
 assign [class="caprine"] $workspace3
-assign [class="bitwarden"] $workspace10
-assign [class="ckb-next"] $workspace10
 assign [class="Mainwindow.py"] $workspace4
+assign [class="TeamViewer"] $workspace10
+assign [class="ckb-next"] $workspace10

@@ -121,7 +121,7 @@ set backup
 set noswapfile
 
 " Colors
-highlight ColorColumn ctermbg=0 guibg=#003755
+highlight ColorColumn ctermbg=0 guibg=#000000
 colo default
 
 " Launch setup

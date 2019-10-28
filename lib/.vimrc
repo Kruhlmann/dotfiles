@@ -97,7 +97,7 @@ set autoread
 set complete-=i
 set colorcolumn=80,120
 set ffs=unix,dos
-cd %:p:h
+set t_Co=256
 
 " Wildmenu
 set wildmenu
@@ -121,8 +121,9 @@ set backup
 set noswapfile
 
 " Colors
-highlight ColorColumn ctermbg=0 guibg=#000000
-colo default
+colo cobalt
+highlight Normal ctermbg=8
+hi ColorColumn ctermbg=237 guibg=#000000
 
 " Launch setup
 " au VimEnter * NERDTree %
@@ -136,8 +137,16 @@ let g:UltiSnipsSnippetsDir = '~/.vim/snippets'
 let g:user_emmet_leader_key='<c-y>'
 
 " Auto save all buffers on blur
-au FocusLost * :wa
+" au FocusLost * :wa
 
+" Auto update on .vimrc changes
+augroup myvimrc
+    au!
+    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+augroup END
+
+" Go to file location
+cd %:p:h
 
 " Include files
 so ~/.vim/includes/filetypes.vim

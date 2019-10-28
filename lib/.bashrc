@@ -1,9 +1,33 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+# Ansi colors
+RESET="\[\033[0m\]"
+BOLD="\[\033[1m\]"
 
-git_info() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+# Foreground
+FG_RED="\[\033[31m\]"
+FG_GREEN="\[\033[32m\]"
+FG_YELLOW="\[\033[33m\]"
+FG_BLUE="\[\033[34m\]"
+FG_WHITE="\[\033[97m\]"
+FG_CYAN="\[\033[36m\]"
+# Light foreground
+FG_L_BLUE="\[\033[94m\]"
+FG_L_GRAY="\[\033[37m\]"
+# Dark foreground
+FG_D_GRAY="\[\033[90m\]"
+
+# Settings vars
+HISTSIZE=1000
+HISTFILESIZE=2000
+HISTCONTROL=ignoreboth
+SSH_ENV="$HOME/.ssh/environment"
+
+# Functions
+gb() {
+    echo -n '(' && git branch 2>/dev/null | grep '^*' | colrm 1 2 | tr -d '\n' && echo  -n ') '
+}
+
+git_branch() {
+    gb | sed 's/() //'
 }
 
 # If not running interactively, don't do anything
@@ -12,16 +36,8 @@ case $- in
       *) return;;
 esac
 
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
-
-# append to the history file, don't overwrite it
+# Append to the history file, don't overwrite it
 shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -57,9 +73,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-
-    export PS1="\[\033[31m[\[\033[94m\]\u\[\033[00m\]@\[\033[36m\]\h\[\033[36m\]\w \[\033[2m\]]\$(git_info)\[\033[00m\] $ "
-    #export PS1=$(powerline-shell $?)
+    export PS1="$BOLD$FG_RED[$FG_YELLOW\u$FG_GREEN@$FG_CYAN\h$FG_RED] $FG_L_BLUE\w $RESET$FG_L_GRAY\$(git_branch)$RESET\$ "
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ xx'
 fi
@@ -127,8 +141,6 @@ fi
 #  eval `ssh-agent -s >/dev/null`
 #  ssh-add ~/.ssh/t420
 #fi
-
-SSH_ENV="$HOME/.ssh/environment"
 
 function start_agent {
     /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"

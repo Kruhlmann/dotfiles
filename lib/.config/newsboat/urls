@@ -5,6 +5,7 @@ https://www.dr.dk/nyheder/service/feeds/indland "News" "~Danish Radio | Domestic
 
 # Tech
 https://lukesmith.xyz/rss.xml "Tech" "~Luke Smith"
+http://rss.slashdot.org/Slashdot/slashdotMain?format=usm
 
 # Reddit
 http://www.reddit.com/r/news/.rss "News" "~Reddit | r/news+worldnews"

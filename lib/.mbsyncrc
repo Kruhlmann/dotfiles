@@ -100,3 +100,51 @@ SyncState *
 MaxMessages 0
 # End profile
 
+IMAPStore gasolinebased-remote
+Host imap.gmail.com
+Port  993
+User gasolinebased@gmail.com
+PassCmd "pass mutt-wizard-gasolinebased"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore gasolinebased-local
+Subfolders Verbatim
+Path ~/.local/share/mail/gasolinebased/
+Inbox ~/.local/share/mail/gasolinebased/INBOX
+Flatten .
+
+Channel gasolinebased
+Expunge Both
+Master :gasolinebased-remote:
+Slave :gasolinebased-local:
+Patterns * !"[Gmail]/All Mail"
+Create Both
+SyncState *
+MaxMessages 0
+# End profile
+
+IMAPStore andreaskruhlmann-remote
+Host imap.gmail.com
+Port  993
+User andreaskruhlmann@gmail.com
+PassCmd "pass mutt-wizard-andreaskruhlmann"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore andreaskruhlmann-local
+Subfolders Verbatim
+Path ~/.local/share/mail/andreaskruhlmann/
+Inbox ~/.local/share/mail/andreaskruhlmann/INBOX
+Flatten .
+
+Channel andreaskruhlmann
+Expunge Both
+Master :andreaskruhlmann-remote:
+Slave :andreaskruhlmann-local:
+Patterns * !"[Gmail]/All Mail"
+Create Both
+SyncState *
+MaxMessages 0
+# End profile
+

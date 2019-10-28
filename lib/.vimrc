@@ -151,3 +151,6 @@ cd %:p:h
 " Include files
 so ~/.vim/includes/filetypes.vim
 so ~/.vim/includes/map.vim
+
+" Syntax files
+so ~/.vim/syntax/pgn.vim

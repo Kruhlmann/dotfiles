@@ -4,3 +4,6 @@ au FileType svelte UltiSnipsAddFiletypes html
 au FileType svelte UltiSnipsAddFiletypes javascript
 au FileType svelte UltiSnipsAddFiletypes css
 au FileType svelte UltiSnipsAddFiletypes scss
+
+" PGN
+autocmd BufNewFile,BufRead *.pgn set syntax=pgn

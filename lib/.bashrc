@@ -1,6 +1,7 @@
 # Ansi colors
 RESET="\[\033[0m\]"
 BOLD="\[\033[1m\]"
+DIM="\[\033[2m\]"
 
 # Foreground
 FG_RED="\[\033[31m\]"
@@ -73,7 +74,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    export PS1="$BOLD$FG_RED[$FG_YELLOW\u$FG_GREEN@$FG_CYAN\h$FG_RED] $FG_L_BLUE\w $RESET$FG_L_GRAY\$(git_branch)$RESET\$ "
+    export PS1="$BOLD$FG_RED[$FG_YELLOW\u$FG_GREEN@$FG_CYAN\h$FG_RED] $FG_L_BLUE\w $RESET$DIM\$(git_branch)$RESET\$ "
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ xx'
 fi

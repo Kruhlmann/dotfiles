@@ -140,10 +140,10 @@ let g:user_emmet_leader_key='<c-y>'
 " au FocusLost * :wa
 
 " Auto update on .vimrc changes
-augroup myvimrc
-    au!
-    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
-augroup END
+"augroup myvimrc
+"    au!
+"    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+"augroup END
 
 " Go to file location
 cd %:p:h

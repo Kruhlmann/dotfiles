@@ -2,6 +2,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'sirver/UltiSnips'
     Plug 'jelera/vim-javascript-syntax'
     Plug 'scrooloose/nerdtree'
+    Plug 'scrooloose/nerdcommenter'
     Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'mattn/emmet-vim'
     Plug 'evanleck/vim-svelte'
@@ -27,6 +28,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'mboughaba/i3config.vim'
     Plug 'vimoutliner/vimoutliner'
     Plug 'junegunn/goyo.vim'
+    Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'tpope/vim-eunuch'
+    Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 call plug#end()
 
 " Close all open buffers on entering a window if the only
@@ -45,6 +49,8 @@ endfunction
 autocmd FileType html,css,svelte EmmetInstall
 autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['python', 'javascript'], 'passive_filetypes': [] }
+let g:NERDSpaceDelims = 1
+let g:NERDCommentEmptyLines = 1
 
 " Status line
 set statusline+=%#warningmsg#
@@ -72,6 +78,11 @@ aug i3config_ft_detection
   au!
   au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
 aug end
+
+" Colors
+colo cobalt
+hi Normal ctermbg=8
+hi ColorColumn ctermbg=237 guibg=#000000
 
 " Basic configuration
 set nocompatible
@@ -111,6 +122,7 @@ set wildignore+=*.DS_Store                       " OSX
 set wildignore+=*.package-lock.json              " NPM packages cache
 set wildignore+=*.pyc                            " Python byte code
 set wildignore+=*.mov,*.mp4,*.mkv,*.webm         " Video files
+set wildignore+=*/node_modules/*                 " NPM packages
 
 " Backup configuration
 set undodir=~/.vim/tmp/undo/
@@ -119,11 +131,6 @@ set directory=~/.vim/tmp/swap/
 set undofile
 set backup
 set noswapfile
-
-" Colors
-colo cobalt
-highlight Normal ctermbg=8
-hi ColorColumn ctermbg=237 guibg=#000000
 
 " Launch setup
 " au VimEnter * NERDTree %

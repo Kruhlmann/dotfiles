@@ -179,6 +179,7 @@ fi
 export DOTFILES="$HOME/Documents/src/dotfiles/lib"
 export WEECHAT_HOME="$HOME/.config/weechat"
 export EDITOR="vim"
+export TERMINAL="termite"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

@@ -17,18 +17,19 @@ capacity=$(cat /sys/class/power_supply/"$1"/capacity) || exit
 status=$(cat /sys/class/power_supply/"$1"/status)
 
 if [ "$capacity" -ge 75 ]; then
-	color="#00ff00"
+	warn="❗"
+	capcolor="#00ff33"
 elif [ "$capacity" -ge 50 ]; then
-	color="#ffffff"
+	capcolor="#ffffff"
 elif [ "$capacity" -ge 25 ]; then
-	color="#ffff00"
+	capcolor="#ffff00"
 else
-	color="#ff0000"
+	capcolor="#ff0000"
 	warn="❗"
 fi
 
 [ -z $warn ] && warn=" "
 
-[ "$status" = "Charging" ] && color="#ffffff"
+[ "$status" = "Charging" ] && color="#00ff33"
 
-printf "<span color='%s'>%s%s%s</span>\n" "$color" "$status"  "$warn" "$(echo "$capacity" | sed -e 's/$/%/')"
+printf "<span color='%s'>%s </span><span color='%s'>%s</span>\n" "$color" "$status"  "$capcolor" "$(echo "$capacity" | sed -e 's/$/%/')"

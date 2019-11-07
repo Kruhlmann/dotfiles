@@ -26,3 +26,9 @@ map <leader>z :Goyo<CR>
 " Line navigation
 nnoremap H ^
 nnoremap L g_
+
+" CTRLP
+map <leader>p :CtrlP<CR>
+
+" Commenting
+map <leader>/ <plug>NERDCommenterToggle<CR>

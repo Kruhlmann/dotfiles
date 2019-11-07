@@ -105,6 +105,7 @@ bindsym Print exec maimpick
 bindsym $mod+Shift+v exec cbp
 
 bindsym $mod+w exec firefox
+bindsym $mod+c exec $term -e castero
 bindsym $mod+e exec $term -e ranger
 bindsym $mod+n exec $term -e ncmpcpp
 bindsym $mod+m exec $term -e neomutt

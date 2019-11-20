@@ -179,6 +179,8 @@ exec --no-startup-id termite -e ncmpcpp
 exec --no-startup-id find ~/.ssh/ -type f -exec grep -l "PRIVATE" {} \; | xargs ssh-add &> /dev/null
 # Remote desktop
 exec --no-startup-id teamviewer
+# Primary monitor
+exec --no-startup-id xrandr --output DP-0 --primary
 
 assign [class="Firefox"] $workspace1
 assign [class="discord"] $workspace3

@@ -176,6 +176,9 @@ if [ -d "$HOME/.scripts" ]; then
     PATH="$HOME/.scripts:$PATH"
 fi
 
+# Keyboard layout
+setxkbmap -variant altgr-intl
+
 export DOTFILES="$HOME/Documents/src/dotfiles/lib"
 export WEECHAT_HOME="$HOME/.config/weechat"
 export EDITOR="vim"

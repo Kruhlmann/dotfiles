@@ -17,3 +17,4 @@ alias yta="youtube-dl --add-metadata -i -c -w -o '$HOME/Music/%(title)s.%(ext)s'
 alias play="mpg123"
 alias wow="~/.local/share/lutris/runners/wine/lutris-4.16-x86_64/bin/wine64 ~/Games/world-of-warcraft/drive_c/Program\ Files\ \(x86\)/World\ of\ Warcraft/_classic_/Wow.exe"
 alias pacman="sudo pacman"
+alias psqlopen="sudo su postgres -c psql"

@@ -28,6 +28,14 @@ command=~/.scripts/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=pango
 
+[music]
+label=🎵
+interval=once
+signal=11
+
+[bluetooth]
+interval=10
+
 [vpn]
 label=🌍
 interval=5
@@ -39,11 +47,6 @@ interval=5
 [battery]
 command=~/.scripts/i3blocks/battery BAT0
 interval=5
-
-[music]
-label=🎵
-interval=once
-signal=11
 
 #[news]
 #interval=once

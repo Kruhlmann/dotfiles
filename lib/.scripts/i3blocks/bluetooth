@@ -1,0 +1,30 @@
+#!/bin/bash
+
+state()
+{
+    systemctl status bluetooth.service > /dev/null 2>&1
+    echo $?
+}
+
+toggle()
+{
+    if [ $(state) -eq 0 ]; then
+        sudo systemctl stop bluetooth.service
+        killall blueman-applet
+    else
+        sudo systemctl start bluetooth.service
+        nohup blueman-applet > /tmp/blueman-applet.log 2>&1 &
+    fi
+}
+
+case $BLOCK_BUTTON in
+    1) toggle ;; # left click, toggle
+    2) toggle ;; # middle click, toggle
+    3) toggle ;; # right click, toggle
+esac
+
+if [ $(state) -eq 0 ]; then
+    echo "<span color='#0000ff'>B</span>"
+else
+    echo "<span color='gray'>B</span>"
+fi

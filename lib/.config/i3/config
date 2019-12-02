@@ -92,6 +92,7 @@ bindsym $mod+Left exec i3-msg move workspace to output left
 # USB mounting/unmounting
 bindsym F9 exec mount_drive
 bindsym F10 exec umount_drive
+bindsym $mod+F2 exec i3-msg reload
 # Dmenu
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 # Easy shutdown

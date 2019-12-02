@@ -31,14 +31,17 @@ markup=pango
 [vpn]
 interval=5
 
+[iplocate]
+interval=15
+
 [battery]
 command=~/.scripts/i3blocks/battery BAT0
 interval=5
 
-#[music]
-#label=🎼
-#interval=once
-#signal=11
+[music]
+label=🎵
+interval=once
+signal=11
 
 #[news]
 #interval=once
@@ -66,9 +69,9 @@ interval=15
 label=💻
 min_width=CPU 100.0
 
-#[volume]
-#interval=once
-#signal=10
+[volume]
+interval=once
+signal=10
 
 [disk]
 interval=60

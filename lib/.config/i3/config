@@ -133,6 +133,8 @@ bar {
 		#urgent_workspace	$bar-alert-color	$bar-alert-color	$bar-text-color
 
 	}
+    font pango:FontAwesome 10
+    position top
     status_command i3blocks -c ~/.config/i3/i3blocks
 }
 

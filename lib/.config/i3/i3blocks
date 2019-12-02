@@ -29,10 +29,12 @@ separator_block_width=15
 markup=pango
 
 [vpn]
+label=🌍
 interval=5
 
-[iplocate]
-interval=15
+#[iplocate]
+#label=🌍
+#interval=15
 
 [battery]
 command=~/.scripts/i3blocks/battery BAT0
@@ -49,8 +51,7 @@ signal=11
 
 [pacpackages]
 label=📦
-interval=once
-signal=8
+interval=30
 
 #[torrent]
 #interval=20

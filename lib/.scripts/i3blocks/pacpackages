@@ -12,4 +12,4 @@ case $BLOCK_BUTTON in
 esac
 
 
-pacman -Qu | grep -v "\[ignored\]" | wc -l | sed -e "s/^0$//g"
+pacman -Qu | grep -v "\[ignored\]" | wc -l | sed -e "s/^0$/<span color='#00ff00'>0<\/span>/" | sed -e "s/^/ /"

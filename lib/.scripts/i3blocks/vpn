@@ -1,7 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
-if protonvpn-cli --status | grep --silent "\[OpenVPN Status\]: Not Running\|\[Internet Status\]: Offline"; then
-    echo "VPN <span color='#ff0000'>OFF</span>"
+LOCATION=$(geoiplookup 94.18.233.72 | sed "s/^[^,]*,//" | sed "s/ //")
+
+if [ -z $(nmcli con show --active | grep -q -i vpn) ]; then
+    echo " VPN <span color='#ff0000'>✗</span> <span color='gray' font_style='italic'>$LOCATION</span>"
 else
-    echo "VPN <span color='#00ff00'>$(protonvpn-cli --ip)</span>"
+    echo " VPN <span color='#00ff00'>✓</span>"
 fi

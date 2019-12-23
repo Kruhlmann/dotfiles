@@ -1,5 +1,12 @@
 #!/usr/bin/env sh
 
+if ! [ -x "$(command -v youtube-dl)" ]; then
+    echo "Error: Unable to locate youtube-dl. Run the following commands to install it:"
+    echo "sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl"
+    echo "sudo chmod a+rx /usr/local/bin/youtube-dl"
+    exit 1
+fi
+
 grep ^# -v /home/ges/.config/sync_music.conf | while read playlist; do
     youtube-dl --yes-playlist --download-archive /home/ges/.yt-cache --audio-format mp3 -ciwx -o "/home/ges/Music/%(title)s.%(ext)s" $playlist
 done

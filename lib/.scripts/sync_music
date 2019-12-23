@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+grep ^# -v /home/ges/.config/sync_music.conf | while read playlist; do
+    youtube-dl --yes-playlist --download-archive /home/ges/.yt-cache --audio-format mp3 -ciwx -o "/home/ges/Music/%(title)s.%(ext)s" $playlist
+done
+
+

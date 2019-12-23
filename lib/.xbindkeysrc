@@ -2,7 +2,7 @@
 "i3-msg reload && xrdb ~/.Xresources && killall -USR1 termite && xbindkeys --poll-rc"
     XF86Launch1
 # Lock button
-"lock"
+"i3lock-fancy"
     XF86ScreenSaver
 # Mute button
 "amixer -q -D pulse sset Master toggle"
@@ -16,3 +16,15 @@
 # Toggle mic
 "amixer set Capture toggle && amixer get Capture | grep '\[off\]' && notify-send \"MIC switched OFF\" || notify-send \"MIC switched ON\""
     XF86AudioMicMute
+# MPC next
+"mpc next"
+    XF86AudioNext
+# MPC prev
+"mpc prev"
+    XF86AudioPrev
+# MPC toggle
+"mpc toggle"
+    XF86AudioPlay
+# MPC pause
+"mpc pause"
+    XF86AudioStop

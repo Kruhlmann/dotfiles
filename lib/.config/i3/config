@@ -8,12 +8,12 @@ set $term termite
 set $workspace1 ""
 set $workspace2 ""
 set $workspace3 ""
-set $workspace4 "4 "
-set $workspace5 "5 "
-set $workspace6 "6 "
-set $workspace7 "7 🎮"
-set $workspace8 "8 "
-set $workspace9 "9 "
+set $workspace4 "4"
+set $workspace5 "5"
+set $workspace6 "6"
+set $workspace7 "🎮"
+set $workspace8 "8"
+set $workspace9 "9"
 set $workspace10 ""
 set $shutdown "poweroff"
 set $mod Mod4
@@ -99,6 +99,7 @@ for_window [class="Skype"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
+for_window [class="Caprine"] floating enable
 
 # Switch to workspace
 bindsym $mod+1 workspace $workspace1

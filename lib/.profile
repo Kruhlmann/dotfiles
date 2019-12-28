@@ -31,7 +31,12 @@ if [ -d "$HOME/.scripts" ]; then
     PATH="$HOME/.scripts:$PATH"
 fi
 
-mpd
+# Include gems
+PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
+
+if [ -x "$(command -v mpd)" ]; then
+    mpd
+fi
 
 export BROWSER=/usr/bin/firefox
 export I3CONFIG=~/.config/i3/config

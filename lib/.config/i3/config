@@ -129,6 +129,11 @@ bindsym $mod+Right exec i3-msg move workspace to output right
 bindsym $mod+Left exec i3-msg move workspace to output left
 
 # Quicklaunch bindings
+
+# autorandr presets
+bindsym $mod+comma exec autorandr work-setup
+bindsym $mod+period exec autorandr laptop
+
 # USB mounting/unmounting
 bindsym F9 exec mount_drive
 bindsym F10 exec umount_drive

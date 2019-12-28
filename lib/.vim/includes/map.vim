@@ -30,5 +30,7 @@ nnoremap L g_
 " CTRLP
 map <leader>p :CtrlP<CR>
 
+nnoremap ; :
+
 " Commenting
 map <leader>/ <plug>NERDCommenterToggle<CR>

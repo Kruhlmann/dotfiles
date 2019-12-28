@@ -212,7 +212,7 @@ exec --no-startup-id compton -f
 # VPN
 exec --no-startup-id openvpn ~/.vpn/proton-vpn-nl-free-02.ovpn
 # Background
-exec --no-startup-id feh --bg-scale ~/Pictures/wallpapers/green_mountains.jpg
+exec --no-startup-id feh --randomize --bg-scale ~/Pictures/wallpapers/
 # VOIP
 exec --no-startup-id discord
 # Wi-fi connection
@@ -222,7 +222,6 @@ exec --no-startup-id xbindkeys<F7><F7>
 # MPD server
 exec --no-startup-id mpd
 exec --no-startup-id mpc ls | mpc add
-exec --no-startup-id termite -e ncmpcpp
 # SSH keys
 exec --no-startup-id find ~/.ssh/ -type f -exec grep -l "PRIVATE" {} \; | xargs ssh-add &> /dev/null
 # Remote desktop

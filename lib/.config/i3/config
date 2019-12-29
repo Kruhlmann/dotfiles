@@ -69,7 +69,7 @@ for_window [instance="dropdown_dropdowncalc"] resize set 800 300
 for_window [instance="dropdown_tmuxdd"] border pixel 3
 for_window [instance="dropdown_dropdowncalc"] border pixel 2
 for_window [instance="dropdown_*"] move position center
-bindsym $mod+a exec --no-startup-id ddspawn dropdowncalc -f mono:pixelsize=24
+#bindsym $mod+a exec --no-startup-id ddspawn dropdowncalc -f mono:pixelsize=24
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -100,6 +100,7 @@ for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 for_window [class="Caprine"] floating enable
+for_window [name="calcurse"] floating enable
 
 # Switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -156,6 +157,7 @@ bindsym $mod+c exec $term -e castero
 bindsym $mod+e exec $term -e ranger
 bindsym $mod+n exec $term -e ncmpcpp
 bindsym $mod+m exec $term -e neomutt
+bindsym $mod+a exec $term -e calcurse
 
 # Resize window (you can also use the mouse for that)
 mode "resize" {

@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-scale '/home/ges/Pictures/wallpapers/vibrant.jpg' '/home/ges/Pictures/wallpapers/dolomites.jpg' '/home/ges/Pictures/wallpapers/classicwp.png' '/home/ges/Pictures/wallpapers/girl_buying_fish_digital.jpg' '/home/ges/Pictures/wallpapers/green_mountains.jpg' '/home/ges/Pictures/wallpapers/denmark_flag-1920x1080.jpg' '/home/ges/Pictures/wallpapers/korea-wallpaper-32.jpg' 
+feh --no-fehbg --bg-scale '/home/ges/Pictures/wallpapers/dolomites.jpg' 

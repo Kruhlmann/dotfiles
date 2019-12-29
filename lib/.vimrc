@@ -80,9 +80,9 @@ aug i3config_ft_detection
 aug end
 
 " Colors
-colo cobalt
-hi Normal ctermbg=8
-hi ColorColumn ctermbg=237 guibg=#000000
+"colo cobalt
+"hi Normal ctermbg=8
+"hi ColorColumn ctermbg=237 guibg=#000000
 
 " Basic configuration
 set nocompatible

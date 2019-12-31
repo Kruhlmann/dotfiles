@@ -73,31 +73,14 @@ for_window [instance="dropdown_*"] move position center
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
-for_window [class="calamares"] floating enable border normal
-for_window [class="Clipgrab"] floating enable
-for_window [title="File Transfer*"] floating enable
-for_window [class="fpakman"] floating enable
-for_window [class="Galculator"] floating enable border pixel 1
-for_window [class="GParted"] floating enable border normal
-for_window [class="Nitrogen"] floating enable sticky enable border normal
-for_window [class="Oblogout"] fullscreen enable
-for_window [class="octopi"] floating enable
-for_window [title="About Pale Moon"] floating enable
-for_window [class="Pamac-manager"] floating enable
 for_window [class="Pavucontrol"] floating enable
-for_window [class="qt5ct"] floating enable sticky enable border normal
-for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
-for_window [class="Simple-scan"] floating enable border normal
-for_window [class="(?i)System-config-printer.py"] floating enable border normal
-for_window [class="Skype"] floating enable border normal
-for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
-for_window [class="Xfburn"] floating enable
 for_window [class="Caprine"] floating enable
 for_window [title="calcurse"] floating enable border normal
 for_window [title="calcurse"] resize set 900 600
 for_window [title="ranger"] floating enable border normal
 for_window [title="ranger"] resize set 900 600
+for_window [title="GNU Image Manipulation Program"] floating enable
 
 # Switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -149,7 +132,7 @@ bindsym Print exec maimpick
 # Clipboard
 bindsym $mod+Shift+v exec cbp
 
-bindsym $mod+w exec firefox
+bindsym $mod+w exec brave
 bindsym $mod+c exec $term -e castero
 bindsym $mod+e exec $term -e ranger
 bindsym $mod+n exec $term -e ncmpcpp

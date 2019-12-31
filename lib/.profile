@@ -38,5 +38,5 @@ if [ -x "$(command -v mpd)" ]; then
     mpd
 fi
 
-export BROWSER=/usr/bin/firefox
+export BROWSER=/usr/bin/brave
 export I3CONFIG=~/.config/i3/config

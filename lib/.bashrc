@@ -179,6 +179,8 @@ fi
 # Keyboard layout
 setxkbmap -variant altgr-intl
 
+eval "$(thefuck --alias)"
+
 export DOTFILES="$HOME/Documents/src/dotfiles/lib"
 export EDITOR="vim"
 export TERMINAL="termite"

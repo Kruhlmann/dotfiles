@@ -19,4 +19,4 @@ alias wow="~/.local/share/lutris/runners/wine/lutris-4.16-x86_64/bin/wine64 ~/Ga
 alias pacman="sudo pacman"
 alias psqlopen="sudo su postgres -c psql"
 alias i3lock="i3lock-fancy"
-
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'

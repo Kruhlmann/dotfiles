@@ -11,3 +11,7 @@ plugins=(
     sudo
     zsh-syntax-highlighting
 )
+
+zstyle :omz:plugins:ssh-agent agent-forwarding on
+zstyle :omz:plugins:ssh-agent identities t420
+zstyle :omz:plugins:ssh-agent lifetime

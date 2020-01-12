@@ -6,10 +6,10 @@ ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="false"
 
 # History file.
-HISTFILE="~/.zsh_history"
+HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
-setopt SHARE_HISTORY
+setopt appendhistory
 
 source ~/.config/.zsh/plugins.sh
 source ~/.config/.zsh/vars.sh

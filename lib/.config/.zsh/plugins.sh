@@ -9,6 +9,8 @@ plugins=(
     pip
     ssh-agent
     sudo
+    zsh-autosuggestions
+    zsh-completions
     zsh-syntax-highlighting
 )
 

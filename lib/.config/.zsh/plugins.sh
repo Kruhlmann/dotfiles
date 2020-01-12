@@ -1,6 +1,12 @@
 plugins=(
-    git
-    bundler
-    dotenv
-    ruby
+    catimg
+    docker
+    extract
+    gem
+    gitfast
+    last-working-dir
+    npm
+    pip
+    sudo
+    zsh-syntax-highlighting
 )

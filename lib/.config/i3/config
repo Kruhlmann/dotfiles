@@ -3,6 +3,7 @@
 
 # Vars
 set $term termite
+set $shell zsh
 
 # Aliases
 set $workspace1 ""
@@ -31,7 +32,7 @@ font pango:Input Mono 11
 floating_modifier $mod
 
 # Start a terminal
-bindsym $mod+Return exec $term
+bindsym $mod+Return exec $term -e $shell
 
 # Kill focused window
 bindsym $mod+q kill
@@ -46,7 +47,7 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 # bindsym $mod+s layout stacking
-# bindsym $mod+w layout tabbed
+bindsym $mod+t layout tabbed
 # bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 # bindsym $mod+space focus mode_toggle
@@ -192,7 +193,7 @@ exec --no-startup-id redshift
 # Pseudo mouse driver
 exec --no-startup-id ckb-next
 # Transparency and fading
-exec --no-startup-id compton -f
+# exec --no-startup-id compton -f
 # VPN
 exec --no-startup-id openvpn ~/.vpn/proton-vpn-nl-free-02.ovpn
 # Background

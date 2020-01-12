@@ -8,3 +8,4 @@ export TERMINAL="termite"
 export SHELL="zsh"
 export TERM=xterm-color
 export NVM_DIR="$HOME/.nvm"
+export I3CONFIG=""~/.config/i3/config"

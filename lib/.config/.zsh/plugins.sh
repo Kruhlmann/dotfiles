@@ -7,6 +7,7 @@ plugins=(
     last-working-dir
     npm
     pip
+    ssh-agent
     sudo
     zsh-syntax-highlighting
 )

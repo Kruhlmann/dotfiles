@@ -1,0 +1,1 @@
+/home/ges/Documents/src/dotfiles/lib/.config/.zsh/aliases.sh

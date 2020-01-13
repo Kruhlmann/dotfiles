@@ -1,5 +1,5 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-export ZSH="/home/ges/.oh-my-zsh"
+export ZSH="/home/ges/.config/.oh-my-zsh"
 
 ZSH_THEME="oxide"
 ENABLE_CORRECTION="true"
@@ -11,9 +11,9 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
-source ~/.config/.zsh/plugins.sh
-source ~/.config/.zsh/vars.sh
-source ~/.config/.zsh/aliases.sh
+source ~/.config/zsh/plugins.sh
+source ~/.config/zsh/vars.sh
+source ~/.config/zsh/aliases.sh
 source $ZSH/oh-my-zsh.sh
 
 # Keyboard layout

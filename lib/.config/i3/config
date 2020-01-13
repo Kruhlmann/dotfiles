@@ -6,16 +6,16 @@ set $term termite
 set $shell zsh
 
 # Aliases
-set $workspace1 ""
-set $workspace2 ""
-set $workspace3 ""
+set $workspace1 "1:   Brave "
+set $workspace2 "2:   Code "
+set $workspace3 "3:   Chat "
 set $workspace4 "4"
 set $workspace5 "5"
 set $workspace6 "6"
-set $workspace7 "🎮"
+set $workspace7 "7: 🎮 Games "
 set $workspace8 "8"
 set $workspace9 "9"
-set $workspace10 ""
+set $workspace10 "10:   Settings "
 set $shutdown "poweroff"
 set $mod Mod4
 set $bar-color					#2f3a3f
@@ -81,6 +81,8 @@ for_window [title="calcurse"] floating enable border normal
 for_window [title="calcurse"] resize set 900 600
 for_window [title="ranger"] floating enable border normal
 for_window [title="ranger"] resize set 900 600
+for_window [title="neomutt"] floating enable border normal
+for_window [title="neomutt"] resize set 900 600
 for_window [class="stacer"] floating enable border normal
 for_window [class="blueberry.py"] floating enable border normal
 for_window [title="GNU Image Manipulation Program"] floating enable border normal
@@ -143,7 +145,7 @@ bindsym $mod+m exec $term -e neomutt
 bindsym $mod+a exec $term -e calcurse
 
 # Resize window (you can also use the mouse for that)
-mode "resize" {
+mode "  " {
         bindsym h resize shrink width 10 px or 10 ppt
         bindsym j resize grow height 10 px or 10 ppt
         bindsym k resize shrink height 10 px or 10 ppt
@@ -151,7 +153,7 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-bindsym $mod+r mode "resize"
+bindsym $mod+r mode "  "
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)

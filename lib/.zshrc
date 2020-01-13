@@ -1,7 +1,7 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH="/home/ges/.oh-my-zsh"
 
-ZSH_THEME="bira"
+ZSH_THEME="oxide"
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="false"
 

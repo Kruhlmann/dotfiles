@@ -1,12 +1,20 @@
 {
-  "suggest.noselect": false,
-  "coc.preferences.formatOnSaveFiletypes": [
-    "javascript",
-    "typescript",
-    "typescriptreact",
-    "json",
-    "javascriptreact",
-    "typescript.tsx",
-    "graphql"
-  ]
+    "suggest.noselect": false,
+    "coc.preferences.formatOnSaveFiletypes": [
+        "javascript",
+        "typescript",
+        "typescriptreact",
+        "json",
+        "javascriptreact",
+        "typescript.tsx",
+        "graphql"
+    ],
+    "prettier.printWidth": 80,
+    "prettier.tabWidth": 4,
+    "prettier.singleQuote": false,
+    "prettier.trailingComma": "es5",
+    "prettier.bracketSpacing": true,
+    "prettier.semi": true,
+    "prettier.useTabs": false,
+    "prettier.arrowParens": "always"
 }

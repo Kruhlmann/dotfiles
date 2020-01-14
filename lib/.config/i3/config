@@ -205,7 +205,7 @@ exec --no-startup-id discord
 # Wi-fi connection
 exec --no-startup-id nm-applet
 # Xorg keyboard shortcuts
-exec --no-startup-id xbindkeys<F7><F7>
+exec --no-startup-id xbindkeys
 # MPD server
 exec --no-startup-id mpd
 exec --no-startup-id mpc ls | mpc add
@@ -213,8 +213,8 @@ exec --no-startup-id mpc ls | mpc add
 exec --no-startup-id find ~/.ssh/ -type f -exec grep -l "PRIVATE" {} \; | xargs ssh-add &> /dev/null
 # Remote desktop
 exec --no-startup-id teamviewer
-# Primary monitor
-exec --no-startup-id xrandr --output DP-0 --primary
+# ProtonMial Bridge
+exec --no-startup-id protonmail-bridge
 
 assign [class="Firefox"] $workspace1
 assign [class="discord"] $workspace3
@@ -222,3 +222,4 @@ assign [class="caprine"] $workspace3
 assign [class="Mainwindow.py"] $workspace4
 assign [class="TeamViewer"] $workspace10
 assign [class="ckb-next"] $workspace10
+assign [class="protonmail-bridge"] $workspace10

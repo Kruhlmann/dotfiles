@@ -8,7 +8,8 @@ map <C-l> <C-w>l
 nnoremap <C-left> 5<C-w><
 nnoremap <C-right> 5<C-w>>
 
-" File system navigationmap <C-n> :NERDTreeToggle<CR>n
+" File system navigation
+nmap <C-b> :NERDTreeFocus<CR>
 map <leader>p :vsplit %:p:h/package.json<CR>
 map <leader>ev :vsplit ~/.config/nvim/includes<CR>
 map <leader>ei :vsplit ~/.config/nvim/includes<CR>

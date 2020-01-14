@@ -26,7 +26,7 @@ set colorcolumn=80,120
 set ffs=unix,dos
 set t_Co=256
 set signcolumn=yes
-set cmdheight=2
+set cmdheight=1
 set hidden
 set shortmess+=c
 

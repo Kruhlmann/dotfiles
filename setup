@@ -23,5 +23,6 @@ for LIBFILE in $FILES; do
 
     ln -s -f "$SCRIPTPATH/lib/$FILE" "$HOME/$FILE" 2>&1 >/dev/null
     ((COUNT++))
+    echo -e -n "\e[36mUpdated $COUNT files.\e[0m\r"
 done
 echo -e "\e[36mUpdated $COUNT files.\e[0m"

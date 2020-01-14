@@ -29,3 +29,5 @@ endfunction
 autocmd BufEnter * call SyncTree()
 " Close NERDTree if it's the only buffer left
 autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+" CoC prettier command on save
+command! -nargs=0 Prettier :CocCommand prettier.formatFile

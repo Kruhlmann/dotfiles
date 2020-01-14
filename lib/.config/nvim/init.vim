@@ -9,12 +9,14 @@ call plug#begin()
     Plug 'prettier/vim-prettier', { 'do': 'npm install' }
     Plug 'ap/vim-css-color'
     Plug 'scrooloose/syntastic'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     " Language syntax
     Plug 'cakebaker/scss-syntax.vim'
     Plug 'glench/vim-jinja2-syntax'
     Plug 'evanleck/vim-svelte'
     Plug 'mboughaba/i3config.vim'
+    Plug 'HerringtonDarkholme/yats.vim'
 
     " Appearance
     Plug 'junegunn/goyo.vim'

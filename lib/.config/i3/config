@@ -15,7 +15,7 @@ set $workspace6 "6"
 set $workspace7 "7: 🎮 Games "
 set $workspace8 "8"
 set $workspace9 "9"
-set $workspace10 "10:   Settings "
+set $workspace10 "10:   Config "
 set $shutdown "poweroff"
 set $mod Mod4
 set $bar-color					#2f3a3f

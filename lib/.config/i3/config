@@ -25,7 +25,7 @@ set $bar-text-color		#f3f4f5
 set $bar-inactive-text-color 	#676e7d
 set $bar-alert-color		#e53935
 
-font pango:Input Mono 9n
+font pango:Input Mono 9
 floating_modifier $mod
 
 # Start a terminal

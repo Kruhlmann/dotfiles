@@ -1,7 +1,7 @@
 set nocompatible
 syntax on
 set shell=bash
-set encoding=utf-8
+set encoding=UTF-8
 set number
 set relativenumber
 set cursorline
@@ -29,6 +29,7 @@ set signcolumn=yes
 set cmdheight=1
 set hidden
 set shortmess+=c
+set conceallevel=3
 
 
 if exists('+clipboard')

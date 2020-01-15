@@ -23,3 +23,6 @@ let g:coc_global_extensions = [
     \ 'coc-prettier',
     \ 'coc-json',
     \]
+
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:DevIconsEnableFoldersOpenClose = 1

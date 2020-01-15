@@ -7,7 +7,7 @@ call plug#begin()
     Plug 'airblade/vim-gitgutter'
     Plug 'scrooloose/nerdcommenter'
     Plug 'prettier/vim-prettier', { 'do': 'npm install' }
-    Plug 'ap/vim-css-color'
+    Plug 'norcalli/nvim-colorizer.lua'
     Plug 'scrooloose/syntastic'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'junegunn/fzf.vim'

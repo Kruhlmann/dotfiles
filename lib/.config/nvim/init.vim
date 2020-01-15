@@ -22,6 +22,7 @@ call plug#begin()
     " Appearance
     Plug 'junegunn/goyo.vim'
     Plug 'morhetz/gruvbox'
+    Plug 'bling/vim-airline'
 call plug#end()
 
 so ~/.config/nvim/includes/basic.vim

@@ -36,13 +36,15 @@ map <leader>/ <plug>NERDCommenterToggle<CR>
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
+" FZF (Ctrl-P)
+nnoremap <silent> <C-p> :Files <C-R>=expand('%:h')<CR><CR>
+
 " CoC
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
 
 function! s:check_back_space() abort
   let col = col('.') - 1

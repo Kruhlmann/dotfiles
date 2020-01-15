@@ -10,6 +10,7 @@ call plug#begin()
     Plug 'ap/vim-css-color'
     Plug 'scrooloose/syntastic'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'junegunn/fzf.vim'
 
     " Language syntax
     Plug 'cakebaker/scss-syntax.vim'

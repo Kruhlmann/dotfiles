@@ -10,6 +10,7 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
+unsetopt correct_all
 
 source ~/.config/zsh/path.sh
 source ~/.config/zsh/plugins.sh

@@ -5,7 +5,7 @@
 set $term termite
 set $shell zsh
 
-set $workspace1 "1:   Brave "
+set $workspace1 "1:   Web "
 set $workspace2 "2:   Code "
 set $workspace3 "3:   Chat "
 set $workspace4 "4"

@@ -53,6 +53,7 @@ module-margin-right = 2
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
+font-3 = InputMono:pixelsize=10;3
 
 modules-left = bspwm i3
 modules-center = mpd

@@ -177,9 +177,9 @@ for_window [instance="metask"] move scratchpad; [instance="metask"] scratchpad s
 bindsym $mod+u [instance="metask"] scratchpad show
 
 # i3gaps config
-for_window [class="^.*"] border pixel 3
-gaps inner 10
-gaps outer 15
+for_window [class="^.*"] border pixel 0
+gaps inner 0
+gaps outer 0 
 
 # Capslock/Numpad
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks

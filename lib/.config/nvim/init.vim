@@ -18,6 +18,7 @@ call plug#begin()
     Plug 'evanleck/vim-svelte'
     Plug 'mboughaba/i3config.vim'
     Plug 'HerringtonDarkholme/yats.vim'
+    Plug 'mattn/emmet-vim'
 
     " Appearance
     Plug 'junegunn/goyo.vim'

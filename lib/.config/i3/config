@@ -126,8 +126,8 @@ bindsym F10 exec umount_drive
 bindsym $mod+F2 exec i3-msg reload
 # Dmenu
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-# Easy shutdown
-bindsym $mod+Shift+x exec prompt "Shutdown?" "$shutdown"
+# Locking
+bindsym $mod+shift+x exec betterlockscreen -l
 
 # Screenshots
 bindsym $mod+Shift+s exec maim -s | xclip -selection clipboard -t image/png
@@ -177,7 +177,7 @@ for_window [instance="metask"] move scratchpad; [instance="metask"] scratchpad s
 bindsym $mod+u [instance="metask"] scratchpad show
 
 # i3gaps config
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 1
 gaps inner 0
 gaps outer 0 
 

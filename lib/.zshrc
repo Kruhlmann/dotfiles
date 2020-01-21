@@ -31,3 +31,4 @@ fi
 
 # Thefuck
 eval $(thefuck --alias)
+. /usr/lib/siemens-proxy/siemens-proxy.sh && proxy_update

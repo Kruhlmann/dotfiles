@@ -29,7 +29,7 @@ font pango:Input Mono 9
 floating_modifier $mod
 
 # Start a terminal
-bindsym $mod+Return exec $term -e $shell
+bindsym $mod+Return exec $term 
 
 # Kill focused window
 bindsym $mod+q kill
@@ -136,7 +136,7 @@ bindsym Print exec ~/.scripts/maimpick
 # Clipboard
 bindsym $mod+Shift+v exec ~/.scripts/cbp
 
-bindsym $mod+w exec brave
+bindsym $mod+w exec firefox-developer-edition
 bindsym $mod+e exec $term -e ranger --name ranger-term
 bindsym $mod+n exec $term -e ncmpcpp --name ncmpcpp-term
 bindsym $mod+m exec $term -e neomutt --name neomutt-term

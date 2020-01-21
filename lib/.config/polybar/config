@@ -38,8 +38,7 @@ foreground = #fff
 modules-left = date
 
 [bar/default]
-monitor = ${env:MONITOR:}
-;monitor = ${env:MONITOR:HDMI-1}
+monitor = ${env:MONITOR}
 width = 100%
 height = 27
 ;offset-x = 1%

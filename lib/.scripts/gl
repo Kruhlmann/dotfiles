@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+$BROWSER `grep -i "$(gl-repos-list | dmenu -i -l 10)" $GITLAB_REPO_CACHE | awk '{sub(/.*:/,"")}1' | awk '{ print "https:" $1 }'`

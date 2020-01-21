@@ -139,7 +139,9 @@ label-mode-padding = 1;
 [module/pacman]
 type = custom/script
 exec = /home/ges/.scripts/pacman_packages
+label = "%{F#458588}%{F-} %output%"
 interval = 600
+click-left = "pacman -Suy"
 
 [module/mpd]
 type = internal/mpd

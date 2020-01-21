@@ -21,3 +21,4 @@ alias i3lock="i3lock-fancy"
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias vim="nvim"
 alias lock="betterlockscreen -l \"blur\""
+alias scd="ldapsearch -x -H ldap://scd2ldap.siemens.net:389"

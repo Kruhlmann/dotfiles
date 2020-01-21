@@ -11,6 +11,7 @@ call plug#begin()
     Plug 'scrooloose/syntastic'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'junegunn/fzf.vim'
+    Plug 'majutsushi/tagbar'
 
     " Language syntax
     Plug 'cakebaker/scss-syntax.vim'
@@ -33,6 +34,4 @@ so ~/.config/nvim/includes/plugins.vim
 so ~/.config/nvim/includes/map.vim
 so ~/.config/nvim/includes/filetypes.vim
 so ~/.config/nvim/includes/events.vim
-
-" Custom syntax
 so ~/.config/nvim/includes/syntax/pgn.vim

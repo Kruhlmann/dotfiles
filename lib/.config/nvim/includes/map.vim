@@ -1,5 +1,15 @@
 let mapleader=' '
 
+" Hardmode
+nnoremap <Up> <Nop>
+nnoremap <Down> <Nop>
+nnoremap <Left> <Nop>
+nnoremap <Right> <Nop>
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
+
 " Split navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -12,7 +22,7 @@ nnoremap <C-right> 5<C-w>>
 nmap <C-b> :NERDTreeFocus<CR>
 map <leader>p :vsplit %:p:h/package.json<CR>
 map <leader>ev :vsplit ~/.config/nvim/includes<CR>
-map <leader>ei :vsplit ~/.config/nvim/includes<CR>
+map <leader>ei :vsplit ~/.config/i3/config<CR>
 
 " Search
 map <leader><leader> :noh<CR>
@@ -22,6 +32,9 @@ nnoremap * *<C-O>
 
 " Zen mode
 map <leader>z :Goyo<CR>
+
+" Tagbar
+map <leader>t :TagbarToggle<CR>
 
 " Line navigation
 nnoremap H ^
@@ -37,7 +50,8 @@ noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
 " FZF (Ctrl-P)
-nnoremap <silent> <C-p> :Files <C-R>=expand('%:h')<CR><CR>
+nnoremap <silent> <C-p> :GitFiles <C-R>=expand('%:h')<CR><CR>
+nnoremap <silent> <C-P> :Files <C-R>=expand('%:h')<CR><CR>
 
 " CoC
 inoremap <silent><expr> <TAB>

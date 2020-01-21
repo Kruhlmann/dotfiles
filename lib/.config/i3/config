@@ -215,7 +215,7 @@ exec --no-startup-id teamviewer
 # ProtonMial Bridge
 exec --no-startup-id protonmail-bridge
 # Polybar
-exec --no-startup-id polybar default
+exec_always --no-startup-id $HOME/.scripts/launch_polybar
 
 assign [class="Firefox"] $ws1
 assign [class="discord"] $ws3

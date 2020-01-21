@@ -27,9 +27,18 @@ primary = #ffb52a
 secondary = #e60053
 alert = #cc241d
 
+[bar/tmp]
+width = 100%
+height = 27
+radius = 0
+fixed-center = false
+
+background = #000
+foreground = #fff 
+modules-left = date
+
 [bar/default]
-monitor = ${env:MONITOR:}
-;monitor = ${env:MONITOR:HDMI-1}
+monitor = ${env:MONITOR}
 width = 100%
 height = 27
 ;offset-x = 1%
@@ -56,11 +65,12 @@ module-margin-right = 1
 font-0 = "Input Mono:pixelsize=9;3"
 font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=13;3"
 font-2 = "Font Awesome 5 Brands:style=Solid:pixelsize=13;3"
+font-3 = "Siemens Sans:style=Bold:pixelsize=13;3"
 ;font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm i3
 modules-center = mpd
-modules-right = pacman mailbox github filesystem pulseaudio memory cpu wlan eth battery temperature date powermenu
+modules-right = siemens pacman mailbox github filesystem pulseaudio memory cpu battery temperature date powermenu
 
 tray-position = right
 tray-padding = 0
@@ -79,6 +89,13 @@ tray-padding = 0
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+[module/siemens]
+type = custom/script
+label-font = 4
+format-foreground = "#458588"
+exec = ~/.scripts/siemens-connection
+interval = 10 
 
 [module/xwindow]
 type = internal/xwindow
@@ -117,7 +134,7 @@ label-mode = 
 
 index-sort = true
 format = <label-state> <label-mode>
-pin-workspaces = false
+pin-workspaces = true
 strip-wsnumbers = true
 enable-scroll = false
 
@@ -138,8 +155,8 @@ label-mode-padding = 1;
 
 [module/pacman]
 type = custom/script
-exec = /home/ges/.scripts/pacman_packages
 label = "%{F#458588}%{F-} %output%"
+exec = ~/.scripts/pacman_packages
 interval = 600
 click-left = "pacman -Suy"
 
@@ -223,7 +240,7 @@ label = %date% %time%
 
 [module/mailbox]
 type = custom/script
-exec = /home/ges/.scripts/unread_mail
+exec = ~/.scripts/unread_mail
 interval = 90
 format-prefix = "%{F#458588}%{F-} "
 click-left = "termite -e neomutt --name neomutt-term"
@@ -269,15 +286,12 @@ interval = 10
 type = internal/battery
 battery = BAT0
 adapter = ADP1
-full-at = 98
+full-at = 95
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
-
 format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 

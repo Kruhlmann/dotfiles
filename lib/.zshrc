@@ -1,5 +1,5 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-export ZSH="/home/ges/.config/.oh-my-zsh"
+export ZSH="$HOME/.config/.oh-my-zsh"
 
 ZSH_THEME="oxide"
 ENABLE_CORRECTION="true"

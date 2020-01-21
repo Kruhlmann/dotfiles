@@ -7,8 +7,8 @@ if ! [ -x "$(command -v youtube-dl)" ]; then
     exit 1
 fi
 
-grep ^# -v /home/ges/.config/sync_music.conf | while read playlist; do
-    youtube-dl --yes-playlist --download-archive /home/ges/.yt-cache --audio-format mp3 -ciwx -o "/home/ges/Music/%(title)s.%(ext)s" $playlist
+grep ^# -v /home/$USER/.config/sync_music.conf | while read playlist; do
+    youtube-dl --yes-playlist --download-archive /home/$USER/.yt-cache --audio-format mp3 -ciwx -o "/home/$USER/Music/%(title)s.%(ext)s" $playlist
 done
 
 

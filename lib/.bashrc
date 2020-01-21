@@ -191,3 +191,4 @@ export NVM_DIR="$HOME/.nvm"
 if which ruby >/dev/null && which gem >/dev/null; then
     PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 fi
+. /usr/lib/siemens-proxy/siemens-proxy.sh && proxy_update

@@ -29,7 +29,7 @@ font pango:Input Mono 9
 floating_modifier $mod
 
 # Start a terminal
-bindsym $mod+Return exec $term -e $shell
+bindsym $mod+Return exec $term 
 
 # Kill focused window
 bindsym $mod+q kill
@@ -135,12 +135,11 @@ bindsym Print exec ~/.scripts/maimpick
 
 # Clipboard
 bindsym $mod+Shift+v exec ~/.scripts/cbp
-
 # MPC commands
 bindsym $mod+period exec mpc next
 bindsym $mod+comma exec mpc prev
 
-bindsym $mod+w exec brave
+bindsym $mod+w exec firefox-developer-edition
 bindsym $mod+e exec $term -e ranger --name ranger-term
 bindsym $mod+n exec $term -e ncmpcpp --name ncmpcpp-term
 bindsym $mod+m exec $term -e neomutt --name neomutt-term
@@ -219,9 +218,9 @@ exec --no-startup-id teamviewer
 # ProtonMial Bridge
 exec --no-startup-id protonmail-bridge
 # Polybar
-exec --no-startup-id polybar default
+exec_always --no-startup-id $HOME/.scripts/launch_polybar
 
-assign [class="Firefox"] $ws1
+assign [class="firefoxdeveloperedition"] $ws1
 assign [class="discord"] $ws3
 assign [class="caprine"] $ws3
 assign [class="Mainwindow.py"] $ws4

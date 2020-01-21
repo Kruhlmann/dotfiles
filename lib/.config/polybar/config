@@ -70,11 +70,7 @@ font-2 = "Font Awesome 5 Brands:style=Solid:pixelsize=13;3"
 
 modules-left = bspwm i3
 modules-center = mpd
-<<<<<<< HEAD
-modules-right = mailbox github filesystem pulseaudio memory cpu battery temperature date powermenu
-=======
-modules-right = pacman mailbox github filesystem pulseaudio memory cpu wlan eth battery temperature date powermenu
->>>>>>> dfd3d7d25d2bde82e4d356cd25490d724be64cd9
+modules-right = pacman mailbox github filesystem pulseaudio memory cpu battery temperature date powermenu
 
 tray-position = right
 tray-padding = 0
@@ -103,10 +99,7 @@ type = internal/fs
 interval = 25
 
 mount-0 = /
-<<<<<<< HEAD
-=======
 ;mount-1 = /mnt/hdd
->>>>>>> dfd3d7d25d2bde82e4d356cd25490d724be64cd9
 
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted

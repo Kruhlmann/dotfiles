@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+siemens-on-cn && echo "SIEMENS" || exit

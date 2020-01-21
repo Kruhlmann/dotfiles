@@ -1,5 +1,6 @@
 #!/bin/bash
 
+<<<<<<< HEAD
 # Terminate already running bar instances
 killall -q polybar
 
@@ -9,3 +10,12 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 for m in $(polybar --list-monitors | cut -d":" -f1); do
     MONITOR=$m polybar tmp &
 done
+=======
+if type "xrandr"; then
+  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+    MONITOR=$m polybar --reload default &
+  done
+else
+  polybar --reload example &
+fi
+>>>>>>> dfd3d7d25d2bde82e4d356cd25490d724be64cd9

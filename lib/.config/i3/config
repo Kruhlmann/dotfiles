@@ -117,8 +117,8 @@ bindsym $mod+Left exec i3-msg move workspace to output left
 # Quicklaunch bindings
 
 # autorandr presets
-bindsym $mod+comma exec autorandr work-setup
-bindsym $mod+period exec autorandr laptop
+bindsym $mod+Shift+comma exec autorandr work-setup
+bindsym $mod+Shift+period exec autorandr laptop
 
 # USB mounting/unmounting
 bindsym F9 exec ~/.scripts/mount_drive
@@ -136,7 +136,15 @@ bindsym Print exec ~/.scripts/maimpick
 # Clipboard
 bindsym $mod+Shift+v exec ~/.scripts/cbp
 
+<<<<<<< HEAD
 bindsym $mod+w exec firefox-developer-edition
+=======
+# MPC commands
+bindsym $mod+period exec mpc next
+bindsym $mod+comma exec mpc prev
+
+bindsym $mod+w exec brave
+>>>>>>> dfd3d7d25d2bde82e4d356cd25490d724be64cd9
 bindsym $mod+e exec $term -e ranger --name ranger-term
 bindsym $mod+n exec $term -e ncmpcpp --name ncmpcpp-term
 bindsym $mod+m exec $term -e neomutt --name neomutt-term

@@ -38,6 +38,7 @@ foreground = #fff
 modules-left = date
 
 [bar/default]
+monitor = ${env:MONITOR:}
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 27
@@ -69,7 +70,11 @@ font-2 = "Font Awesome 5 Brands:style=Solid:pixelsize=13;3"
 
 modules-left = bspwm i3
 modules-center = mpd
+<<<<<<< HEAD
 modules-right = mailbox github filesystem pulseaudio memory cpu battery temperature date powermenu
+=======
+modules-right = pacman mailbox github filesystem pulseaudio memory cpu wlan eth battery temperature date powermenu
+>>>>>>> dfd3d7d25d2bde82e4d356cd25490d724be64cd9
 
 tray-position = right
 tray-padding = 0
@@ -98,6 +103,10 @@ type = internal/fs
 interval = 25
 
 mount-0 = /
+<<<<<<< HEAD
+=======
+;mount-1 = /mnt/hdd
+>>>>>>> dfd3d7d25d2bde82e4d356cd25490d724be64cd9
 
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
@@ -144,6 +153,11 @@ label-urgent-padding = 1;
 label-mode-background = ${colors.alert}
 label-mode-padding = 1;
 
+[module/pacman]
+type = custom/script
+exec = /home/ges/.scripts/pacman_packages
+interval = 600
+
 [module/mpd]
 type = internal/mpd
 format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
@@ -160,7 +174,7 @@ label-song-ellipsis = true
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = "%{F#458588} %{F-}"
 format-prefix-foreground = ${colors.foreground}
 label = %percentage:2%%
 
@@ -168,7 +182,7 @@ label = %percentage:2%%
 type = internal/memory
 interval = 2
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground}
+format-prefix-foreground = #458588
 label = %percentage_used%%
 
 [module/wlan]
@@ -198,7 +212,7 @@ interface = enp0s31f6
 interval = 3.0
 
 format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground}
+format-connected-prefix-foreground = #458588
 label-connected = %local_ip%
 
 format-disconnected =
@@ -217,7 +231,7 @@ date-alt = " %Y-%m-%d"
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = 
+format-prefix = "%{F#458588}%{F-}"
 format-prefix-foreground = ${colors.foreground}
 
 label = %date% %time%
@@ -226,14 +240,14 @@ label = %date% %time%
 type = custom/script
 exec = /home/ges/.scripts/unread_mail
 interval = 90
-format-prefix = " "
+format-prefix = "%{F#458588}%{F-} "
 click-left = "termite -e neomutt --name neomutt-term"
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
+label-volume = "%{F#458588}%{F-} %percentage%%"
 label-volume-foreground = ${root.foreground}
 
 label-muted = VOL  muted
@@ -262,7 +276,7 @@ type = internal/github
 ; Accessing an access token stored in file
 token = ${file:/home/ges/.github-access-token}
 empty-notifications = true
-label =  %notifications%
+label = "%{F#458588}%{F-} %notifications%"
 interval = 10
 ; Default: https://api.github.com/
 
@@ -310,9 +324,9 @@ label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+ramp-0 = "%{F#458588}%{F-}"
+ramp-1 = "%{F#458588}%{F-}"
+ramp-2 = "%{F#458588}%{F-}"
 ramp-foreground = ${colors.foreground}
 
 [module/powermenu]

@@ -134,7 +134,7 @@ label-mode = 
 
 index-sort = true
 format = <label-state> <label-mode>
-pin-workspaces = false
+pin-workspaces = true
 strip-wsnumbers = true
 enable-scroll = false
 

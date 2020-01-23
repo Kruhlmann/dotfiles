@@ -10,8 +10,8 @@ call plug#begin()
     Plug 'norcalli/nvim-colorizer.lua'
     Plug 'scrooloose/syntastic'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'junegunn/fzf.vim'
     Plug 'majutsushi/tagbar'
+    Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 
     " Language syntax
     Plug 'cakebaker/scss-syntax.vim'
@@ -20,6 +20,7 @@ call plug#begin()
     Plug 'mboughaba/i3config.vim'
     Plug 'HerringtonDarkholme/yats.vim'
     Plug 'mattn/emmet-vim'
+    Plug 'pangloss/vim-javascript'
 
     " Appearance
     Plug 'junegunn/goyo.vim'

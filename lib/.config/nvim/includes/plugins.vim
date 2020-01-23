@@ -30,3 +30,6 @@ let g:DevIconsEnableFoldersOpenClose = 1
 
 " Airline
 let g:airline_powerline_fonts = 1
+
+" Goyo
+let g:goyo_width = 120

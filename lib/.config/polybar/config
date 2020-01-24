@@ -63,8 +63,8 @@ module-margin-right = 1
 ;font-0 = "Input Mono:pixelsize=9;3"
 ;font-1 = "Input Mono:pixelsize=13;3"
 font-0 = "Input Mono:pixelsize=9;3"
-font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=13;3"
-font-2 = "Font Awesome 5 Brands:style=Solid:pixelsize=13;3"
+font-1 = "FuraCode NF:pixelsize=22;5"
+font-2 = "FuraCode NF:pixelsize=13;3"
 font-3 = "Siemens Sans:style=Bold:pixelsize=13;3"
 ;font-2 = siji:pixelsize=10;1
 
@@ -115,13 +115,13 @@ label-unmounted-foreground = ${colors.foreground-alt}
 [module/i3]
 type = internal/i3
 
-ws-icon-0 = 1;龜
-ws-icon-1 = 2;
-ws-icon-2 = 3;
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;ﭮ
 ws-icon-3 = 4;
-ws-icon-4 = 5;
+ws-icon-4 = 5;
 ws-icon-6 = 6;
-ws-icon-7 = 7;
+ws-icon-7 = 7;
 ws-icon-8 = 8;
 ws-icon-9 = 9;
 ws-icon-10 = 10;
@@ -183,7 +183,7 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = #458588
 label = %percentage_used%%
 
@@ -323,9 +323,9 @@ label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
-ramp-0 = "%{F#458588}%{F-}"
-ramp-1 = "%{F#458588}%{F-}"
-ramp-2 = "%{F#458588}%{F-}"
+ramp-0 = "%{F#458588}%{F-}"
+ramp-1 = "%{F#458588}%{F-}"
+ramp-2 = "%{F#458588}%{F-}"
 ramp-foreground = ${colors.foreground}
 
 [module/powermenu]

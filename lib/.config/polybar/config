@@ -252,7 +252,7 @@ format-volume = <label-volume> <bar-volume>
 label-volume = "%{F#458588}%{F-} %percentage%%"
 label-volume-foreground = ${root.foreground}
 
-label-muted = VOL  muted
+label-muted = VOL  muted
 label-muted-foreground = #666
 
 bar-volume-width = 10

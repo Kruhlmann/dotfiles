@@ -1,2 +1,2 @@
 #!/usr/bin/env sh
-siemens-on-cn && echo "SIEMENS" || exit
+if [ -x "$(command -v siemens-on-cn)"]; then siemens-on-cn && echo "SIEMENS"; else echo ""; fi

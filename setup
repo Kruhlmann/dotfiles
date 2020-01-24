@@ -1,6 +1,6 @@
 #!/bin/bash
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
-FILES=$(find home ! -path home -type f)
+FILES=$(find lib ! -path lib -type f)
 COUNT=0
 
 mkdir -p ~/.vim/tmp/undo
@@ -21,7 +21,7 @@ for LIBFILE in $FILES; do
         rm "$HOME/$FILE"
     fi
 
-    ln -s -f "$SCRIPTPATH/home/$FILE" "$HOME/$FILE" 2>&1 >/dev/null
+    ln -s -f "$SCRIPTPATH/lib/$FILE" "$HOME/$FILE" 2>&1 >/dev/null
     ((COUNT++))
     echo -e -n "\e[36mUpdated $COUNT files.\e[0m\r"
 done

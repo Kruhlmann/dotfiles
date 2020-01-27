@@ -105,10 +105,11 @@ label = %title:0:30:...%
 type = internal/fs
 interval = 25
 
+format-prefix = "%{F#458588} %{F-}"
 mount-0 = /
-;mount-1 = /mnt/hdd
+mount-1 = /home
 
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-mounted = %{F#458588}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 

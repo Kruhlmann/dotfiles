@@ -70,7 +70,7 @@ font-3 = "Siemens Sans:style=Bold:pixelsize=13;3"
 
 modules-left = bspwm i3
 modules-center = mpd
-modules-right = siemens pacman mailbox github filesystem pulseaudio memory cpu battery temperature date powermenu
+modules-right = siemens updates-arch-combined mailbox github filesystem pulseaudio memory cpu battery temperature date powermenu
 
 tray-position = right
 tray-padding = 0
@@ -109,7 +109,7 @@ format-prefix = "%{F#458588} %{F-}"
 mount-0 = /
 mount-1 = /home
 
-label-mounted = %{F#458588}%mountpoint%%{F-}: %percentage_used%%
+label-mounted = %{F#458588}%mountpoint%:%{F-} %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
@@ -161,12 +161,10 @@ label-mode-font = 3
 label-mode-background = ${colors.alert}
 label-mode-padding = 1;
 
-[module/pacman]
+[module/updates-arch-combined]
 type = custom/script
-label = "%{F#458588}%{F-} %output%"
-exec = ~/.scripts/pacman_packages
+exec = ~/.scripts/updates-arch-combined
 interval = 600
-click-left = "pacman -Suy"
 
 [module/mpd]
 type = internal/mpd
@@ -178,8 +176,9 @@ icon-play = 
 icon-pause = 
 icon-next = 
 
-label-song-maxlen = 35
+label-song-maxlen = 45
 label-song-ellipsis = true
+label-song = "%title%"
 
 [module/cpu]
 type = internal/cpu

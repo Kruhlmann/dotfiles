@@ -21,6 +21,8 @@ call plug#begin()
     Plug 'HerringtonDarkholme/yats.vim'
     Plug 'mattn/emmet-vim'
     Plug 'pangloss/vim-javascript'
+    Plug 'dart-lang/dart-vim-plugin'
+    Plug 'thosakwe/vim-flutter'
 
     " Appearance
     Plug 'junegunn/goyo.vim'

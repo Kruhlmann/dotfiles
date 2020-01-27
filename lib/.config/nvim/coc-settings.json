@@ -7,7 +7,8 @@
         "json",
         "javascriptreact",
         "typescript.tsx",
-        "graphql"
+        "graphql",
+        "dart"
     ],
     "prettier.printWidth": 80,
     "prettier.tabWidth": 4,

@@ -18,6 +18,7 @@ set $ws10 "10"
 
 set $shutdown "poweroff"
 set $mod Mod4
+set $alt Mod1
 
 set $bar-color			#2f3a3f
 set $bar-inactive-color		#2f343f
@@ -60,6 +61,7 @@ bindsym $mod+v split v
 bindsym $mod+Shift+p move scratchpad
 # Show scratchpad
 bindsym $mod+p scratchpad show
+bindsym $alt+Ctrl+Tab scratchpad show
 
 # General dropdown window traits. The order can matter.
 for_window [instance="dropdown_*"] floating enable
@@ -139,7 +141,7 @@ bindsym $mod+Shift+v exec ~/.scripts/cbp
 bindsym $mod+period exec mpc next
 bindsym $mod+comma exec mpc prev
 
-bindsym $mod+w exec firefox-developer-edition
+bindsym $mod+w exec brave 
 bindsym $mod+e exec $term -e ranger --name ranger-term
 bindsym $mod+n exec $term -e ncmpcpp --name ncmpcpp-term
 bindsym $mod+m exec $term -e neomutt --name neomutt-term

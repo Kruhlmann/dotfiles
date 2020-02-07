@@ -19,7 +19,8 @@ nnoremap <C-left> 5<C-w><
 nnoremap <C-right> 5<C-w>>
 
 " File system navigation
-nmap <C-b> :NERDTreeFocus<CR>
+nmap <C-b> :NERDTreeToggle<CR>
+nmap <C-t> :TagbarToggle<CR>
 map <leader>p :vsplit %:p:h/package.json<CR>
 map <leader>ev :e ~/.config/nvim/includes<CR>
 map <leader>ei :vsplit ~/.config/i3/config<CR>
@@ -32,9 +33,6 @@ nnoremap * *<C-O>
 
 " Zen mode
 map <leader>z :Goyo<CR>
-
-" Tagbar
-map <leader>t :TagbarToggle<CR>
 
 " Line navigation
 nnoremap H ^
@@ -50,8 +48,7 @@ noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
 " FZF (Ctrl-P)
-nnoremap <silent> <C-p> :GitFiles <C-R>=expand('%:h')<CR><CR>
-nnoremap <silent> <C-P> :Files <C-R>=expand('%:h')<CR><CR>
+nnoremap <silent> <C-p> :Leaderf file --popup<CR>
 
 " CoC
 inoremap <silent><expr> <TAB>

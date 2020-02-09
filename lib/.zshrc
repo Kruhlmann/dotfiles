@@ -1,5 +1,5 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-export ZSH="/home/ges/.config/.oh-my-zsh"
+export ZSH="$HOME/.config/.oh-my-zsh"
 
 ZSH_THEME="oxide"
 ENABLE_CORRECTION="true"
@@ -10,6 +10,7 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
+unsetopt correct_all
 
 source ~/.config/zsh/path.sh
 source ~/.config/zsh/plugins.sh

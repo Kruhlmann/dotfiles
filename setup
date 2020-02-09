@@ -6,6 +6,14 @@ COUNT=0
 mkdir -p ~/.vim/tmp/undo
 mkdir -p ~/.vim/tmp/backup
 mkdir -p ~/.vim/tmp/swap
+mkdir -p ~/.config/mpd/res
+touch ~/.config/mpd/log
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+/usr/bin/vim +PlugInstall +qall
+/usr/bin/nvim +PlugInstall +qall
 
 for LIBFILE in $FILES; do
     FILE=${LIBFILE:4}

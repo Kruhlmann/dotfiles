@@ -1,11 +1,19 @@
 #!/bin/bash
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
-FILES=$(find home ! -path home -type f)
+FILES=$(find lib ! -path lib -type f)
 COUNT=0
 
 mkdir -p ~/.vim/tmp/undo
 mkdir -p ~/.vim/tmp/backup
 mkdir -p ~/.vim/tmp/swap
+mkdir -p ~/.config/mpd/res
+touch ~/.config/mpd/log
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+/usr/bin/vim +PlugInstall +qall
+/usr/bin/nvim +PlugInstall +qall
 
 for LIBFILE in $FILES; do
     FILE=${LIBFILE:4}
@@ -21,7 +29,7 @@ for LIBFILE in $FILES; do
         rm "$HOME/$FILE"
     fi
 
-    ln -s -f "$SCRIPTPATH/home/$FILE" "$HOME/$FILE" 2>&1 >/dev/null
+    ln -s -f "$SCRIPTPATH/lib/$FILE" "$HOME/$FILE" 2>&1 >/dev/null
     ((COUNT++))
     echo -e -n "\e[36mUpdated $COUNT files.\e[0m\r"
 done

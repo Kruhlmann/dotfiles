@@ -6,7 +6,7 @@
 #cell_width_scale = 1.0
 #clickable_url = true
 #dynamic_title = true
-font = FuraCode NF
+font = Fira Code 
 #fullscreen = true
 #icon_name = terminal
 #mouse_autohide = false
@@ -40,7 +40,6 @@ scrollback_lines = 10000
 # "off", "left" or "right"
 #scrollbar = off
 
-[colors]
 [colors]
 # hard contrast: background = #1d2021
 background = #282828

@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+cd "$HOME/.calcurse"
+git remote update
+if grep -q "Your branch is behind" "$(git status -uno)"; then
+    git pull
+    notify-send "Calendar pulled" -i ~/.calcurse/notify-splash.png  
+fi
+if git diff-index --quiet HEAD --; then
+    git add .
+    git commit -am "Updated calendar"
+    git push -u origin master
+    notify-send "Calendar pushed" -i ~/.calcurse/notify-splash.png  
+fi

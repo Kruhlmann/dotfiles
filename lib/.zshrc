@@ -31,3 +31,7 @@ fi
 
 # Thefuck
 eval $(thefuck --alias)
+
+# Entr
+echo "$HOME/.config/i3/config" | entr -p i3-msg reload &
+echo "$HOME/.config/polybar/config" | entr -p notify-send x a &

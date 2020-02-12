@@ -29,6 +29,7 @@ call plug#begin()
     Plug 'morhetz/gruvbox'
     Plug 'bling/vim-airline'
     Plug 'kien/rainbow_parentheses.vim'
+    Plug 'gko/vim-coloresque'
 call plug#end()
 
 so ~/.config/nvim/includes/basic.vim

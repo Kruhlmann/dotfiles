@@ -34,3 +34,6 @@ for LIBFILE in $FILES; do
     echo -e -n "\e[36mUpdated $COUNT files.\e[0m\r"
 done
 echo -e "\e[36mUpdated $COUNT files.\e[0m"
+
+systemctl enable --user synccal
+systemctl start --user synccal

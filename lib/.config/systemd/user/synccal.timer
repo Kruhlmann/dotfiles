@@ -1,0 +1,9 @@
+[Unit]
+Description=Synchronize caldanar with remote git repo every minute after boot. 
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=1min 
+
+[Install]
+WantedBy=timers.target

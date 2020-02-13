@@ -1,0 +1,9 @@
+[Unit]
+Description=Synchronize music with YouTube playlists
+
+[Timer]
+OnBootSec=30min
+OnUnitActiveSec=30min 
+
+[Install]
+WantedBy=timers.target

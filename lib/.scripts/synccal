@@ -4,7 +4,7 @@ cd "$HOME/.calcurse"
 git remote update
 
 if [[ `git rev-list HEAD...origin/master --count` != 0 ]] ; then
-    git pull
+    git pull origin master
     notify-send "Calendar pulled" -i ~/.calcurse/notify-splash.png  
 fi
 if [[ `git status --porcelain --untracked-files=no` ]]; then

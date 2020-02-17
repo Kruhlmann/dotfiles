@@ -13,6 +13,7 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 let g:NERDTreeIgnore = ['^node_modules$']
+let g:NERDTreeShowHidden = 1
 
 " CoC
 let g:coc_global_extensions = [
@@ -23,6 +24,7 @@ let g:coc_global_extensions = [
     \ 'coc-prettier',
     \ 'coc-json',
     \ 'coc-python',
+    \ 'coc-dart',
     \]
 
 " Devicons

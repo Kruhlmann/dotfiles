@@ -23,6 +23,7 @@ call plug#begin()
     Plug 'pangloss/vim-javascript'
     Plug 'dart-lang/dart-vim-plugin'
     Plug 'thosakwe/vim-flutter'
+    Plug 'digitaltoad/vim-pug'
 
     " Appearance
     Plug 'junegunn/goyo.vim'

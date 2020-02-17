@@ -17,5 +17,6 @@
     "prettier.bracketSpacing": true,
     "prettier.semi": true,
     "prettier.useTabs": false,
-    "prettier.arrowParens": "always"
+    "prettier.arrowParens": "always",
+    "flutter.lsp.initialization.closingLabels": true
 }

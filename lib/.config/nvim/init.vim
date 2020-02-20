@@ -27,10 +27,13 @@ call plug#begin()
 
     " Appearance
     Plug 'junegunn/goyo.vim'
-    Plug 'morhetz/gruvbox'
     Plug 'bling/vim-airline'
     Plug 'kien/rainbow_parentheses.vim'
     Plug 'gko/vim-coloresque'
+
+    " Themes
+    Plug 'morhetz/gruvbox'
+    Plug 'agude/vim-eldar'
 call plug#end()
 
 so ~/.config/nvim/includes/basic.vim

@@ -30,13 +30,14 @@ set cmdheight=1
 set hidden
 set shortmess+=c
 set conceallevel=3
+set background=dark
+set termguicolors
 
+colorscheme gruvbox
+"colorscheme eldar
 
 if exists('+clipboard')
   set clipboard=unnamedplus  " Yanks go to the ctrl-c '+' clipboard register
 endif
 
-set background=dark
-colorscheme gruvbox
-set termguicolors
 

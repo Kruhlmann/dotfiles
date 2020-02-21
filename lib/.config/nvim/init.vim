@@ -24,6 +24,7 @@ call plug#begin()
     Plug 'dart-lang/dart-vim-plugin'
     Plug 'thosakwe/vim-flutter'
     Plug 'digitaltoad/vim-pug'
+    Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
     " Appearance
     Plug 'junegunn/goyo.vim'

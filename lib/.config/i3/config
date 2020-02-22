@@ -203,7 +203,7 @@ exec --no-startup-id ckb-next
 # VPN
 exec --no-startup-id openvpn ~/.vpn/proton-vpn-nl-free-02.ovpn
 # Background
-exec --no-startup-id feh --bg-scale ~/Pictures/wallpapers/4k_landscape.jpg
+exec --no-startup-id feh --bg-scale ~/Pictures/.wallpaper
 # VOIP
 exec --no-startup-id discord
 # Wi-fi connection

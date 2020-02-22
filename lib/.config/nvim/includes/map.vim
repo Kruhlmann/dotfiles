@@ -17,6 +17,10 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 nnoremap <C-left> 5<C-w><
 nnoremap <C-right> 5<C-w>>
+map <leader>h <C-w>h
+map <leader>j <C-w>j
+map <leader>k <C-w>k
+map <leader>l <C-w>l
 
 " File system navigation
 nmap <C-b> :NERDTreeToggle<CR>

@@ -23,13 +23,18 @@ call plug#begin()
     Plug 'pangloss/vim-javascript'
     Plug 'dart-lang/dart-vim-plugin'
     Plug 'thosakwe/vim-flutter'
+    Plug 'digitaltoad/vim-pug'
+    Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
     " Appearance
     Plug 'junegunn/goyo.vim'
-    Plug 'morhetz/gruvbox'
     Plug 'bling/vim-airline'
     Plug 'kien/rainbow_parentheses.vim'
     Plug 'gko/vim-coloresque'
+
+    " Themes
+    Plug 'morhetz/gruvbox'
+    Plug 'agude/vim-eldar'
 call plug#end()
 
 so ~/.config/nvim/includes/basic.vim

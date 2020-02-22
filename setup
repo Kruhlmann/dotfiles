@@ -39,3 +39,5 @@ systemctl enable --user synccal.timer
 systemctl start --user synccal.timer
 systemctl enable --user sync_music.timer
 systemctl start --user sync_music.timer
+systemctl enable --user mpd.service
+systemctl start --user mpd.service

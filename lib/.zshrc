@@ -11,6 +11,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 unsetopt correct_all
+unsetopt correct
 
 source ~/.config/zsh/path.sh
 source ~/.config/zsh/plugins.sh

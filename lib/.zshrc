@@ -1,9 +1,9 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH="$HOME/.config/.oh-my-zsh"
 
-ZSH_THEME="oxide"
-ENABLE_CORRECTION="true"
-COMPLETION_WAITING_DOTS="false"
+ ZSH_THEME="oxide"
+ENABLE_CORRECTION="false"
+COMPLETION_WAITING_DOTS="true"
 
 # History file.
 HISTFILE=~/.zsh_history
@@ -33,6 +33,5 @@ fi
 # Thefuck
 eval $(thefuck --alias)
 
-# Entr
-echo "$HOME/.config/i3/config" | entr -p i3-msg reload &
-echo "$HOME/.config/polybar/config" | entr -p notify-send x a &
+# NO_PROXY Siemens
+export NO_PROXY=".siemens.dk,$NOPROXY"

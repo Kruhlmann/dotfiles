@@ -14,6 +14,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.g
 
 /usr/bin/vim +PlugInstall +qall
 /usr/bin/nvim +PlugInstall +qall
+/usr/bin/nvim +CocInstall coc-tsserver +qall
 
 for LIBFILE in $FILES; do
     FILE=${LIBFILE:4}

@@ -3,7 +3,7 @@ export ZSH="$HOME/.config/.oh-my-zsh"
 
  ZSH_THEME="oxide"
 ENABLE_CORRECTION="false"
-COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="false"
 
 # History file.
 HISTFILE=~/.zsh_history

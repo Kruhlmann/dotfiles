@@ -23,3 +23,4 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias vim="nvim"
 alias lock="betterlockscreen -l \"blur\""
 alias scd="ldapsearch -x -H ldap://scd2ldap.siemens.net:389"
+alias tsm="transmission-remote"

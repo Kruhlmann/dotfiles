@@ -1,0 +1,7 @@
+#!/bin/sh
+cd ~/Documents/src/dotfiles
+git pull
+git add lib
+git commit -am "Updated dotfiles"
+git push
+./setup

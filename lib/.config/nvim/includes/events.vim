@@ -28,9 +28,6 @@ autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 " CoC prettier command on save
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
-" Auto open tagbar.
-autocmd FileType javascript, typescript call tagbar#autoopen(0)
-
 " Rainbow
 au VimEnter * RainbowParenthesesActivate
 au Syntax * RainbowParenthesesLoadRound

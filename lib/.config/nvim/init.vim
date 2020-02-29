@@ -10,7 +10,6 @@ call plug#begin()
     Plug 'norcalli/nvim-colorizer.lua'
     Plug 'scrooloose/syntastic'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'majutsushi/tagbar'
     Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 
     " Language syntax

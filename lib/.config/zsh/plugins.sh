@@ -1,5 +1,6 @@
 plugins=(
     catimg
+    colored-man-pages
     docker
     extract
     gem

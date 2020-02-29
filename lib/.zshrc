@@ -1,7 +1,7 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH="$HOME/.config/.oh-my-zsh"
 
- ZSH_THEME="oxide"
+ZSH_THEME="avit"
 ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="false"
 

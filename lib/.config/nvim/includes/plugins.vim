@@ -13,10 +13,10 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 let g:NERDTreeIgnore = [
-    \ '**/*.inject.summary'
-    \ '**/*.inject.dart'
-    \ '**/*.g.dart'
-]
+    \'.inject.summary$',
+    \'.inject.dart$',
+    \'.g.dart$'
+    \]
 let g:NERDTreeShowHidden = 1
 
 " CoC

@@ -36,6 +36,8 @@ for LIBFILE in $FILES; do
 done
 echo -e "\e[36mUpdated $COUNT files.\e[0m"
 
+fc-cache
+
 systemctl enable --user synccal.timer
 systemctl restart --user synccal.timer
 systemctl enable --user sync_music.timer

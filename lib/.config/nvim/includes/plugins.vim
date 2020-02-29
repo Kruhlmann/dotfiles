@@ -12,7 +12,11 @@ let g:NERDTreeIndicatorMapCustom = {
     \ 'Ignored'   : '☒',
     \ "Unknown"   : "?"
     \ }
-let g:NERDTreeIgnore = ['^node_modules$']
+let g:NERDTreeIgnore = [
+    \ '**/*.inject.summary'
+    \ '**/*.inject.dart'
+    \ '**/*.g.dart'
+]
 let g:NERDTreeShowHidden = 1
 
 " CoC

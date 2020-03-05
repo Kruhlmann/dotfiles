@@ -15,6 +15,7 @@ c_fg_purple = "#d3869b"
 
 # Aliases
 c.aliases["tor-on"] = "set content.proxy socks://localhost:9050/"
+c.aliases["tor-off"] = "set content.proxy none"
 
 # UA
 config.set("content.headers.user_agent", "Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}", "https://web.whatsapp.com/")

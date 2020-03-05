@@ -9,4 +9,4 @@ settings:
   content.notifications:
     https://www.reddit.com: false
   content.proxy:
-    global: socks://localhost:9050/
+    global: none

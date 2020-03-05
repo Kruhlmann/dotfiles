@@ -110,12 +110,12 @@ label-unmounted-foreground = ${colors.foreground-alt}
 [module/i3]
 type = internal/i3
 
-ws-icon-0 = 1; Web
+ws-icon-0 = 1;爵 Web
 ws-icon-1 = 2; Vim
 ws-icon-2 = 3;ﭮ Discord
 ws-icon-3 = 4; SSH
 ws-icon-4 = 5; Bitwarden
-ws-icon-5 = 6;
+ws-icon-5 = 6; Docs
 ws-icon-6 = 7; Games
 ws-icon-7 = 8;
 ws-icon-8 = 9;

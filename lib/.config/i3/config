@@ -141,7 +141,7 @@ bindsym $mod+Shift+v exec ~/.scripts/cbp
 bindsym $mod+period exec mpc next
 bindsym $mod+comma exec mpc prev
 
-bindsym $mod+w exec brave 
+bindsym $mod+w exec qutebrowser 
 bindsym $mod+e exec $term -e ranger --name ranger-term
 bindsym $mod+n exec $term -e ncmpcpp --name ncmpcpp-term
 bindsym $mod+m exec $term -e neomutt --name neomutt-term

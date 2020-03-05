@@ -12,6 +12,8 @@ c_bg_blue = "#458588"
 c_fg_blue = "#83a598"
 c_bg_purple = "#b16286"
 c_fg_purple = "#d3869b"
+c_bg_aqua = "#689d6a"
+c_fg_aqua = "#8ec07c"
 
 # Aliases
 c.aliases["tor-on"] = "set content.proxy socks://localhost:9050/"
@@ -373,22 +375,49 @@ c.colors.prompts.bg = c_bg
 c.colors.prompts.border = c_bg_hl
 c.colors.prompts.fg = c_fg
 c.colors.prompts.selected.bg = c_bg_hl
+
 c.colors.statusbar.caret.bg = c_bg_purple
-c.colors.statusbar.caret.fg = c_fg
-c.colors.statusbar.caret.selection.bg = c_fg_purple
+c.colors.statusbar.caret.fg = c_fg_purple
+c.colors.statusbar.caret.selection.bg = c_bg_purple
 c.colors.statusbar.caret.selection.fg = c_fg
-c.colors.statusbar.command.bg = c_bg_blue
-c.colors.statusbar.command.fg = c_fg
-c.colors.statusbar.command.private.bg = c_fg_blue
-c.colors.statusbar.command.private.fg = c_fg
-c.colors.statusbar.insert.bg = c_bg_green
-c.colors.statusbar.insert.fg = c_fg
+c.colors.statusbar.command.bg = c_bg
+c.colors.statusbar.command.fg = c_fg_blue
+c.colors.statusbar.command.private.bg = c_bg
+c.colors.statusbar.command.private.fg = c_bg_blue
+c.colors.statusbar.insert.bg = c_bg
+c.colors.statusbar.insert.fg = c_fg_aqua
+c.colors.statusbar.url.error.fg = c_fg_red
+c.colors.statusbar.url.fg = c_fg
+c.colors.statusbar.url.hover.fg = c_fg_blue
+c.colors.statusbar.url.success.http.fg = c_fg_yellow
+c.colors.statusbar.url.success.https.fg = c_fg_aqua
+c.colors.statusbar.url.warn.fg = c_fg_yellow
+
+c.colors.tabs.bar.bg = c_bg
+c.colors.tabs.even.bg = c_bg
+c.colors.tabs.even.fg = c_fg
+c.colors.tabs.indicator.error = c_bg_red
+c.colors.tabs.indicator.start = c_bg_blue
+c.colors.tabs.indicator.stop = c_bg_aqua
+c.colors.tabs.odd.bg = c_bg
+c.colors.tabs.odd.fg = c_fg
+c.colors.tabs.pinned.even.bg = c_bg_aqua
+c.colors.tabs.pinned.even.fg = c_fg
+c.colors.tabs.pinned.odd.bg = c_bg_aqua
+c.colors.tabs.pinned.odd.fg = c_fg
+c.colors.tabs.selected.even.bg = c_bg_hl
+c.colors.tabs.selected.odd.fg = c_fg_hl
+c.colors.tabs.selected.even.bg = c_bg_hl
+c.colors.tabs.selected.odd.fg = c_fg_hl
+
 
 # Appearance
 c.statusbar.padding = { "top": 1, "bottom": 1, "left": 5, "right": 5}
 
 c.tabs.max_width = -1
 c.tabs.min_width = -1
+
+c.colors.webpage.prefers_color_scheme_dark = True
 
 # Behavior
 c.auto_save.session = True

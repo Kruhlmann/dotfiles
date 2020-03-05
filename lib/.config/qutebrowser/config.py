@@ -401,9 +401,9 @@ c.colors.tabs.indicator.start = c_bg_blue
 c.colors.tabs.indicator.stop = c_bg_aqua
 c.colors.tabs.odd.bg = c_bg
 c.colors.tabs.odd.fg = c_fg
-c.colors.tabs.pinned.even.bg = c_bg_aqua
+c.colors.tabs.pinned.even.bg = c_bg
 c.colors.tabs.pinned.even.fg = c_fg
-c.colors.tabs.pinned.odd.bg = c_bg_aqua
+c.colors.tabs.pinned.odd.bg = c_bg
 c.colors.tabs.pinned.odd.fg = c_fg
 c.colors.tabs.selected.even.bg = c_bg_hl
 c.colors.tabs.selected.odd.fg = c_fg_hl
@@ -416,6 +416,7 @@ c.statusbar.padding = { "top": 1, "bottom": 1, "left": 5, "right": 5}
 
 c.tabs.max_width = -1
 c.tabs.min_width = -1
+c.tabs.indicator.width = 0
 
 c.colors.webpage.prefers_color_scheme_dark = True
 

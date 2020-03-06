@@ -6,9 +6,13 @@
 
 To import these dotfiles run the following commands:
 
-```bash
+```sh
 git clone https://github.com/Kruhlmann/dotfiles
 cd dotfiles
+# Only necessary first time
+sudo pacman -S yay
+yay -S - < dependencies
+#
 chmod +x setup
 ./setup
 ```

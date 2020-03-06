@@ -28,6 +28,7 @@ set $bar-alert-color		#e53935
 
 font pango:Input Mono 9
 floating_modifier $mod
+popup_during_fullscreen smart
 
 # Start a terminal
 bindsym $mod+Return exec $term 

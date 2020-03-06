@@ -60,7 +60,7 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = "FiraCode Nerd Font:pixelsize=11;3"
+font-0 = "FiraCode Nerd Font:pixelsize=12;3"
 
 modules-left = bspwm i3
 modules-center = mpd
@@ -117,11 +117,11 @@ ws-icon-3 = 4; SSH
 ws-icon-4 = 5; Bitwarden
 ws-icon-5 = 6; Docs
 ws-icon-6 = 7; Games
-ws-icon-7 = 8;
-ws-icon-8 = 9;
-ws-icon-9 = 10;
+ws-icon-7 = 8;  Desktop
+ws-icon-8 = 9;  Desktop
+ws-icon-9 = 10;  Desktop
 ws-icon-10 = 11; Settings
-ws-icon-default = 
+ws-icon-default =   Desktop
 
 label-font = 0
 label-focused = " %icon% "
@@ -136,23 +136,23 @@ pin-workspaces = true
 strip-wsnumbers = true
 enable-scroll = false
 
-label-visible-font = 3
+label-visible-font = 0
 label-visible-background = ${colors.background-alt}
 label-visible-padding = 1;
 
-label-unfocused-font = 3
+label-unfocused-font = 0
 label-unfocused-foreground = #afafaf
 label-unfocused-padding = 1;
 
-label-focused-font = 3
+label-focused-font = 0
 label-focused-background = ${colors.background-alt}
 label-focused-padding = 1;
 
-label-urgent-font = 3
+label-urgent-font = 0
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 1;
 
-label-mode-font = 3
+label-mode-font = 0
 label-mode-background = ${colors.alert}
 label-mode-padding = 1;
 

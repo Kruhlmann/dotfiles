@@ -1,23 +1,19 @@
 #!/bin/bash
-SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
-FILES=$(find lib ! -path lib -type f)
-COUNT=0
 
+SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
+COUNT=0
+FILE_CNT=$(find lib ! -path lib -type f | wc -l)
+
+# Required paths for vim and mpd
 mkdir -p ~/.vim/tmp/undo
 mkdir -p ~/.vim/tmp/backup
 mkdir -p ~/.vim/tmp/swap
 mkdir -p ~/.config/mpd/res
 touch ~/.config/mpd/log
 
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-/usr/bin/vim +PlugInstall +qall
-/usr/bin/nvim +PlugInstall +qall
-/usr/bin/nvim +CocInstall coc-tsserver +qall
-
-for LIBFILE in $FILES; do
-    FILE=${LIBFILE:4}
+# Symlink and backup all files in ./lib
+find lib ! -path lib -type f | while read FILE; do
+    FILE=${FILE:4}
     DIR=$(dirname "$HOME/$FILE")
     BACKUPFILE="$SCRIPTPATH/back/$FILE"
     BACKUPDIR=$(dirname "$SCRIPTPATH/back/$FILE")
@@ -29,18 +25,39 @@ for LIBFILE in $FILES; do
         cp "$HOME/$FILE" "$BACKUPFILE"
         rm "$HOME/$FILE"
     fi
-
+    
     ln -s -f "$SCRIPTPATH/lib/$FILE" "$HOME/$FILE" 2>&1 >/dev/null
     ((COUNT++))
-    echo -e -n "\e[36mUpdated $COUNT files.\e[0m\r"
+    echo -e -n "\e[36mUpdated $COUNT/$FILE_CNT files.\e[0m\r"
 done
-echo -e "\e[36mUpdated $COUNT files.\e[0m"
+echo
 
+
+# Vim plug & OhMyZSH
+[[ -f ~/.vim/autoload/plug.vim ]] || curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+[[ -f ~/.local/share/nvim/site/autoload/plug.vim ]] || curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+[[ -d ~/.config/.oh-my-zsh ]] || sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# OhMyZSH non-standard plugins
+[[ -d ~/.config/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]] || git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+    [[ -d ~/.config/.oh-my-zsh/custom/plugins/zsh-completions ]] || git clone https://github.com/zsh-users/zsh-completions ~/.config/.oh-my-zsh/custom/plugins/zsh-completions
+[[ -d ~/.config/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]] || git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+
+# VIM & NVIM plugins
+/usr/bin/vim +PlugInstall +PlugClean +qall
+/usr/bin/nvim +PlugInstall +PlugClean +qall
+/usr/bin/nvim +CocInstall coc-tsserver +qall
+
+# Update font cache
 fc-cache
 
+# Setup user services
 systemctl enable --user synccal.timer
 systemctl restart --user synccal.timer
 systemctl enable --user sync_music.timer
 systemctl restart --user sync_music.timer
 systemctl enable --user mpd.service
 systemctl restart --user mpd.service
+
+# Update wallpaper
+/usr/bin/sh ~/.fehbg

@@ -1,14 +1,17 @@
 #!/bin/bash
+
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 COUNT=0
 FILE_CNT=$(find lib ! -path lib -type f | wc -l)
 
+# Required paths for vim and mpd
 mkdir -p ~/.vim/tmp/undo
 mkdir -p ~/.vim/tmp/backup
 mkdir -p ~/.vim/tmp/swap
 mkdir -p ~/.config/mpd/res
 touch ~/.config/mpd/log
 
+# Symlink and backup all files in ./lib
 find lib ! -path lib -type f | while read FILE; do
     FILE=${FILE:4}
     DIR=$(dirname "$HOME/$FILE")
@@ -45,8 +48,10 @@ echo
 /usr/bin/nvim +PlugInstall +PlugClean +qall
 /usr/bin/nvim +CocInstall coc-tsserver +qall
 
+# Update font cache
 fc-cache
 
+# Setup user services
 systemctl enable --user synccal.timer
 systemctl restart --user synccal.timer
 systemctl enable --user sync_music.timer
@@ -54,4 +59,5 @@ systemctl restart --user sync_music.timer
 systemctl enable --user mpd.service
 systemctl restart --user mpd.service
 
+# Update wallpaper
 /usr/bin/sh ~/.fehbg

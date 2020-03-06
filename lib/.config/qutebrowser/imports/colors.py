@@ -91,10 +91,10 @@ def apply(c):
     c.colors.tabs.indicator.stop = c_bg_aqua
     c.colors.tabs.odd.bg = c_bg_hl
     c.colors.tabs.odd.fg = c_fg_hl
-    c.colors.tabs.pinned.even.bg = c_bg
+    c.colors.tabs.pinned.even.bg = c_bg_yellow
     c.colors.tabs.pinned.even.fg = c_fg
-    c.colors.tabs.pinned.odd.bg = c_bg_hl
-    c.colors.tabs.pinned.odd.fg = c_fg_hl
+    c.colors.tabs.pinned.odd.bg = c_bg_yellow
+    c.colors.tabs.pinned.odd.fg = c_fg
     c.colors.tabs.pinned.selected.even.bg = c_bg_orange
     c.colors.tabs.pinned.selected.even.fg = c_fg
     c.colors.tabs.pinned.selected.odd.bg = c_bg_orange

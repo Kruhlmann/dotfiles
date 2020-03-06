@@ -21,7 +21,6 @@ FILE_CNT=$(find lib ! -path lib -type f | wc -l)
 
 find lib ! -path lib -type f | while read FILE; do
     FILE=${FILE:4}
-    FILE=$(printf '%q' "$FILE")
     DIR=$(dirname "$HOME/$FILE")
     BACKUPFILE="$SCRIPTPATH/back/$FILE"
     BACKUPDIR=$(dirname "$SCRIPTPATH/back/$FILE")

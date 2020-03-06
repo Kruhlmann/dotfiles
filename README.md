@@ -77,11 +77,11 @@ Podboat replacement. Queues downloads from newsboat using taskspooler.
 
 ### `qute-bitwarden`
 
-Biwarden userscript for qutebrowser. Run by loggin in to bitwarden-cli with `bw login` and exporting the session. Then use it in qutebrowser with <Ctrl>+<Shift>+p by default.
+Biwarden userscript for qutebrowser. Run by loggin in to bitwarden-cli with `bw login` and exporting the session. Then use it in qutebrowser with \<Ctrl\>+\<Shift\>+p by default.
 
 ### `qute-goyo`
 
-Reading mode for qutebrowser. Triggered by <Space>+z.
+Reading mode for qutebrowser. Triggered by \<Space\>+z.
 
 ### `rss_add`
 

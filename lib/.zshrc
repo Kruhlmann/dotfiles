@@ -35,3 +35,4 @@ eval $(thefuck --alias)
 
 # NO_PROXY Siemens
 export NO_PROXY=".siemens.dk,$NOPROXY"
+export DOTFILES="$HOME/doc/src/github.com/kruhlmann/dotfiles"

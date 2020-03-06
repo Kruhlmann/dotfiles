@@ -6,5 +6,5 @@
 
 config_version: 2
 settings:
-  window.hide_decoration:
-    global: true
+  content.proxy:
+    global: none

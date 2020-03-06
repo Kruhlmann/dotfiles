@@ -427,3 +427,6 @@ c.content.geolocation = False
 c.search.ignore_case = "smart"
 c.tabs.position = "top"
 c.downloads.location.directory = "~/dl"
+c.url.searchengines = {
+    "DEFAULT": "https://google.com/search?q={}",
+}

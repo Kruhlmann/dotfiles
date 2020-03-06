@@ -2,4 +2,4 @@
 Description=Synchronize calendar with remote git repo
 
 [Service]
-ExecStart=/home/ask/.scripts/synccal
+ExecStart=/home/ges/.scripts/synccal

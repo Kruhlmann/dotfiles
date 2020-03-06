@@ -95,10 +95,6 @@ Updates newsboat RSS feeds.
 
 Run an application scaled by a factor.
 
-### `siemens-connection`
-
-Outputs "SIEMENS" if I am connected to my work network.
-
 ### `synccal`
 
 Synchronizes calendar from calcurse to a private git repository.

@@ -105,7 +105,7 @@ Synchronizes calendar from calcurse to a private git repository.
 
 ### `sync_music`
 
-Uses youtube-dl to download audio files in playlists specified in `lib/.config/sync\_music.conf`.
+Uses youtube-dl to download audio files in playlists specified in `lib/.config/sync_music.conf`.
 
 ### `transadd`
 

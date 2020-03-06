@@ -27,6 +27,10 @@ to their path from `$HOME` (`~/.config/nvim/init.vim` is saved under
 
 A large array of scripts are available post import:
 
+### `bain`
+
+Battery indicator wallpaper. Supports arch, debian and manjaro logo.
+
 ### `cbp`
 
 Uses xdotool to send the content of the clipboard to a window. Useful for wine configurations/virtual machines where clipboard is not shared.

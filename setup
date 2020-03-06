@@ -7,6 +7,7 @@ mkdir -p ~/.vim/tmp/undo
 mkdir -p ~/.vim/tmp/backup
 mkdir -p ~/.vim/tmp/swap
 mkdir -p ~/.config/mpd/res
+mkdir -p ~/.local/share/fonts
 touch ~/.config/mpd/log
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -16,10 +17,11 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.g
 /usr/bin/nvim +PlugInstall +qall
 /usr/bin/nvim +CocInstall coc-tsserver +qall
 
-for LIBFILE in $FILES; do
-    FILE=${LIBFILE:4}
+FILE_CNT=$(find lib ! -path lib -type f | wc -l)
+
+find lib ! -path lib -type f | while read FILE; do
+    FILE=${FILE:4}
     FILE=$(printf '%q' "$FILE")
-    echo $FILE
     DIR=$(dirname "$HOME/$FILE")
     BACKUPFILE="$SCRIPTPATH/back/$FILE"
     BACKUPDIR=$(dirname "$SCRIPTPATH/back/$FILE")
@@ -31,12 +33,12 @@ for LIBFILE in $FILES; do
         cp "$HOME/$FILE" "$BACKUPFILE"
         rm "$HOME/$FILE"
     fi
-
+    
     ln -s -f "$SCRIPTPATH/lib/$FILE" "$HOME/$FILE" 2>&1 >/dev/null
     ((COUNT++))
-    #echo -e -n "\e[36mUpdated $COUNT files.\e[0m\r"
+    echo -e -n "\e[36mUpdated $COUNT/$FILE_CNT files.\e[0m\r"
 done
-#echo -e "\e[36mUpdated $COUNT files.\e[0m"
+echo
 
 fc-cache
 

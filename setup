@@ -47,3 +47,5 @@ systemctl enable --user sync_music.timer
 systemctl restart --user sync_music.timer
 systemctl enable --user mpd.service
 systemctl restart --user mpd.service
+
+/usr/bin/sh ~/.fehbg

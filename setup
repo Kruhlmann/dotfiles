@@ -36,9 +36,9 @@ echo
 [[ -d ~/.config/.oh-my-zsh ]] || sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # OhMyZSH non-standard plugins
-[[ -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ]] || git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-[[ -d ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions ]] || git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
-[[ -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ]] || git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+[[ -d ~/.config/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]] || git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+    [[ -d ~/.config/.oh-my-zsh/custom/plugins/zsh-completions ]] || git clone https://github.com/zsh-users/zsh-completions ~/.config/.oh-my-zsh/custom/plugins/zsh-completions
+[[ -d ~/.config/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]] || git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
 # VIM & NVIM plugins
 /usr/bin/vim +PlugInstall +PlugClean +qall

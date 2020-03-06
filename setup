@@ -19,6 +19,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.g
 for LIBFILE in $FILES; do
     FILE=${LIBFILE:4}
     FILE=$(printf '%q' "$FILE")
+    echo $FILE
     DIR=$(dirname "$HOME/$FILE")
     BACKUPFILE="$SCRIPTPATH/back/$FILE"
     BACKUPDIR=$(dirname "$SCRIPTPATH/back/$FILE")
@@ -33,9 +34,9 @@ for LIBFILE in $FILES; do
 
     ln -s -f "$SCRIPTPATH/lib/$FILE" "$HOME/$FILE" 2>&1 >/dev/null
     ((COUNT++))
-    echo -e -n "\e[36mUpdated $COUNT files.\e[0m\r"
+    #echo -e -n "\e[36mUpdated $COUNT files.\e[0m\r"
 done
-echo -e "\e[36mUpdated $COUNT files.\e[0m"
+#echo -e "\e[36mUpdated $COUNT files.\e[0m"
 
 fc-cache
 

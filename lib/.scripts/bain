@@ -7,7 +7,7 @@ create_and_set() {
 	image_size=`identify -format '%wx%h' $original_image`
 
 	if [[ "$battery_status" == "Charging" ]]; then
-		color='#B8BB26'
+		color='#8EC07C'
 	else
 		if [ "$battery_percentage" -ge 30 ]; then
 			color='#FABD2F'

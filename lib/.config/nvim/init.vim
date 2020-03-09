@@ -23,7 +23,7 @@ call plug#begin()
     Plug 'dart-lang/dart-vim-plugin'
     Plug 'thosakwe/vim-flutter'
     Plug 'digitaltoad/vim-pug'
-    Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+    Plug 'lervag/vim-tex'
 
     " Appearance
     Plug 'junegunn/goyo.vim'
@@ -43,4 +43,6 @@ so ~/.config/nvim/includes/plugins.vim
 so ~/.config/nvim/includes/map.vim
 so ~/.config/nvim/includes/filetypes.vim
 so ~/.config/nvim/includes/events.vim
+so ~/.config/nvim/includes/userfunc.vim
+
 so ~/.config/nvim/includes/syntax/pgn.vim

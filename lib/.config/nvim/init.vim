@@ -8,7 +8,7 @@ call plug#begin()
     Plug 'scrooloose/nerdcommenter'
     Plug 'prettier/vim-prettier', { 'do': 'npm install' }
     Plug 'norcalli/nvim-colorizer.lua'
-    Plug 'scrooloose/syntastic'
+    "Plug 'scrooloose/syntastic'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 

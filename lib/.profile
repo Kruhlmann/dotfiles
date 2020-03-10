@@ -7,9 +7,9 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-if [ -x "$(command -v mpd)" ]; then
-    mpd
-fi
+#if [ -x "$(command -v mpd)" ]; then
+    #mpd
+#fi
 
 export MANPATH="/usr/local/man:$MANPATH"
 export EDITOR="nvim"

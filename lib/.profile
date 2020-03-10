@@ -10,5 +10,3 @@ fi
 if [ -x "$(command -v mpd)" ]; then
     mpd
 fi
-
-bain manjaro &

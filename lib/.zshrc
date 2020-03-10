@@ -15,7 +15,6 @@ unsetopt correct
 
 source ~/.config/zsh/path.sh
 source ~/.config/zsh/plugins.sh
-source ~/.config/zsh/vars.sh
 source ~/.config/zsh/aliases.sh
 source $ZSH/oh-my-zsh.sh
 

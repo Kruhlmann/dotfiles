@@ -9,6 +9,10 @@ fi
 
 grep ^# -v /home/$USER/.config/sync_music.conf | while read playlist; do
     youtube-dl --yes-playlist --download-archive /home/$USER/.yt-cache --audio-format mp3 -ciwx -o "/home/$USER/Music/%(title)s.%(ext)s" $playlist
+    playlistname=$(youtube-dl -i --flat-playlist --skip-download -J "$playlist" | jq -r ".title")
+    mpdplaylist="/home/$USER/.config/mpd/res/playlists/$playlistname.m3u"
+    youtube-dl -i --flat-playlist --skip-download -J "$playlist" | jq -r ".entries[].title" | awk 'NF{print $0 ".mp3"}' > "$mpdplaylist"
 done
 
+notify-send "Music synced" -i ~/img/lib/mpd_logo.png
 

@@ -47,6 +47,10 @@ echo
 /usr/bin/vim +PlugInstall +PlugClean +qall
 /usr/bin/nvim +PlugInstall +PlugClean +qall
 /usr/bin/nvim +CocInstall coc-tsserver +qall
+/usr/bin/nvim +CocInstall coc-flutter +qall
+/usr/bin/nvim +CocInstall coc-python +qall
+/usr/bin/nvim +CocInstall coc-solargraph +qall
+/usr/bin/nvim +CocInstall coc-texlab +qall
 
 # Update font cache
 fc-cache

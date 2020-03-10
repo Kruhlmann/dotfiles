@@ -1,0 +1,5 @@
+dotfiles ~/doc/src/github.com/kruhlmann/dotfiles
+kpi_frontend ~/doc/src/mo-gitlab.siemens.dk/sw-group/banedanmark/s-bane/pykpi/components/dashboard
+latex ~/doc/latex
+tlog_frontend ~/doc/src/mo-gitlab.siemens.dk/sw-group/banedanmark/s-bane/pykpi/tlog
+vimrc ~/.config/nvim/init.vim

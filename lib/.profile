@@ -1,5 +1,3 @@
-SHELL=/bin/zsh
-
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
@@ -7,10 +5,7 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-#if [ -x "$(command -v mpd)" ]; then
-    #mpd
-#fi
-
+SHELL=/bin/zsh
 export MANPATH="/usr/local/man:$MANPATH"
 export EDITOR="nvim"
 export BROWSER="qutebrowser"

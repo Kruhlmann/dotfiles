@@ -12,7 +12,6 @@ export BROWSER="qutebrowser"
 export FILE="ranger"
 export NVM_DIR="$HOME/.nvm"
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-export TERMINAL="termite"
 export SHELL="/bin/zsh"
 export TERM="xterm-color"
 export TERMINAL="termite"

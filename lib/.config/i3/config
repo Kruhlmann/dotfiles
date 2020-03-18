@@ -202,7 +202,7 @@ exec --no-startup-id redshift
 # Pseudo mouse driver
 exec --no-startup-id ckb-next
 # Transparency and fading
-# exec --no-startup-id compton -f
+ exec --no-startup-id compton -f
 # VPN
 exec --no-startup-id openvpn ~/.vpn/proton-vpn-nl-free-02.ovpn
 # Background

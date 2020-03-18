@@ -20,9 +20,21 @@ content.apply(config, c)
 notifications.apply(config)
 
 c.auto_save.session = True
-c.search.ignore_case = "smart"
+c.confirm_quit = ["downloads"]
 c.downloads.location.directory = "~/dl"
+c.downloads.location.prompt = False
+c.input.insert_mode.auto_leave = True
+c.input.insert_mode.auto_load = True
+c.search.ignore_case = "smart"
 c.url.searchengines = {
-    "DEFAULT": "https://google.com/search?q={}",
+    "DEFAULT": "https://google.com/search?hl=en&q={}",
+    "4": "https://4chan.org/{}",
+    "aw": "https://wiki.archlinux.org/?search={}",
+    "r": "https://old.reddit.com/r/{}",
+    "stp": "https://stp.siemens.dk/{}",
+    "tw": "https://twitter.com/{}",
+    "wiki": "https://en.wikipedia.org/?search={}",
+    "yt": "https://youtube.com/results?search_query={}",
 }
-c.editor.command = ["kitty", "nvim", "{file}", "+norm {line}G{column}|"]
+c.url.start_pages = "https://google.com"
+c.editor.command = ["termite", "-e", "vim '{}'"]

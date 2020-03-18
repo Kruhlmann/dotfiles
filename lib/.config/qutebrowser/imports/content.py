@@ -13,6 +13,6 @@ def apply(config, c):
     c.content.local_content_can_access_remote_urls = False
     c.content.local_storage = True
     c.content.pdfjs = True
-    c.content.proxy = None
+    c.content.proxy = "none"
     c.content.default_encoding = "utf-8"
     c.content.geolocation = False

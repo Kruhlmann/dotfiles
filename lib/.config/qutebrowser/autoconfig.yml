@@ -6,6 +6,6 @@
 
 config_version: 2
 settings:
-  content.media_capture:
-    https://circuit.siemens.com: true
-    https://discordapp.com: true
+  content.notifications:
+    https://mo-gitlab.siemens.dk: true
+    https://stp.siemens.dk: true

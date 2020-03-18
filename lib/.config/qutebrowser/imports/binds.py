@@ -306,3 +306,4 @@ def apply_custom(config):
     config.bind(",", "tab-prev")
     config.bind("<Ctrl-Shift-p>", "spawn --userscript ~/.scripts/qute-bitwarden")
     config.bind(" z", "spawn --userscript ~/.scripts/qute-goyo")
+    config.bind("e", "open-editor")

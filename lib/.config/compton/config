@@ -36,5 +36,18 @@ alpha-step = 0.06;			# XRender backend: Step size for alpha pictures. Increasing
 blur-background-fixed = false;		# Do not let blur radius adjust based on window opacity.
 blur-background-exclude = [ "window_type = 'dock'", "window_type = 'desktop'" ];
 					# Exclude conditions for background blur.
-
 # Fading
+fading = true;                  # Fade windows during opacity changes.
+fade-delta = 12;                # The time between steps in a fade in milliseconds. (default 10).
+fade-in-step = 0.15;            # Opacity change between steps while fading in. (default 0.028).
+fade-out-step = 0.15;           # Opacity change between steps while fading out. (default 0.03).
+no-fading-openclose = false;    # Fade windows in/out when opening/closing.
+ 
+# Other
+inactive-dim = 0.5;            # Dim inactive windows. (0.0 - 1.0, defaults to 0).
+mark-wmwin-focused = true;      # Try to detect WM windows and mark them as active.
+mark-ovredir-focused = true;
+detect-rounded-corners = true;
+
+opacity-rule = ["85:class_g = 'Termite'"];
+

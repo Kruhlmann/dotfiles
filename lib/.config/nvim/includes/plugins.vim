@@ -18,6 +18,7 @@ let g:NERDTreeIgnore = [
     \'.g.dart$'
     \]
 let g:NERDTreeShowHidden = 1
+let g:NERDTreeShowBookmarks = 1
 
 " CoC
 let g:coc_global_extensions = [

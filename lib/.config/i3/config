@@ -133,7 +133,6 @@ bindsym $mod+d exec --no-startup-id ~/.scripts/dmenu_apps
 
 # Locking
 bindsym $mod+shift+x exec --no-startup-id betterlockscreen -l 
-bindsym $mod+d exec "dmenu_run "
 
 # Screenshots
 bindsym $mod+Shift+s exec maim -s | xclip -selection clipboard -t image/png

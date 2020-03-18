@@ -6,5 +6,6 @@
 
 config_version: 2
 settings:
-  content.notifications:
-    https://www.youtube.com: false
+  content.media_capture:
+    https://circuit.siemens.com: true
+    https://discordapp.com: true

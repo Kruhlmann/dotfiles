@@ -66,3 +66,6 @@ systemctl restart --user mpd.service
 
 # Update wallpaper
 feh --bg-scale ~/img/.wallpaper
+
+# Restart polybar
+~/.scripts/launch_polybar

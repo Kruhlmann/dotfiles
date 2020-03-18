@@ -129,7 +129,7 @@ bindsym F10 exec ~/.scripts/umount_drive
 bindsym $mod+F2 exec i3-msg reload
 # Dmenu
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop 
-bindsym $mod+d exec --no-startup-id "i3-dmenu-desktop --dmenu=\"dmenu -nf '#ebdbb2' -nb '#282828' -sb '#A89984' -sf '#282828' -fn 'monospace-12' -p 'Run >'\""
+bindsym $mod+d exec --no-startup-id ~/.scripts/dmenu_apps
 
 # Locking
 bindsym $mod+shift+x exec --no-startup-id betterlockscreen -l 

@@ -7,5 +7,4 @@
 config_version: 2
 settings:
   content.notifications:
-    https://mo-gitlab.siemens.dk: true
-    https://stp.siemens.dk: true
+    global: ask

@@ -23,4 +23,4 @@ c.downloads.location.directory = "~/dl"
 c.url.searchengines = {
     "DEFAULT": "https://google.com/search?q={}",
 }
-
+c.editor.command = ["kitty", "nvim", "{file}", "+norm {line}G{column}|"]

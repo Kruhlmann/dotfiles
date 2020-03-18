@@ -128,9 +128,12 @@ bindsym F9 exec ~/.scripts/mount_drive
 bindsym F10 exec ~/.scripts/umount_drive
 bindsym $mod+F2 exec i3-msg reload
 # Dmenu
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop 
+bindsym $mod+d exec --no-startup-id "i3-dmenu-desktop --dmenu=\"dmenu -nf '#ebdbb2' -nb '#282828' -sb '#A89984' -sf '#282828' -fn 'monospace-12' -p 'Run >'\""
+
 # Locking
-bindsym $mod+shift+x exec betterlockscreen -l
+bindsym $mod+shift+x exec --no-startup-id betterlockscreen -l 
+bindsym $mod+d exec "dmenu_run "
 
 # Screenshots
 bindsym $mod+Shift+s exec maim -s | xclip -selection clipboard -t image/png
@@ -183,7 +186,7 @@ for_window [instance="dropdown"] border pixel 5
 exec --no-startup-id $term --name dropdown -e "ssh ges@kruhlmann.dev"
 
 # i3gaps config
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 2
 gaps inner 0
 gaps outer 0 
 

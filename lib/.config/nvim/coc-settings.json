@@ -33,6 +33,15 @@
           "command": "digestif",
           "filetypes": ["tex", "plaintex", "context"]
         },
+"golang": {
+      "command": "go-langserver",
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "gocodeCompletionEnabled": true,
+        "diagnosticsEnabled": true,
+        "lintTool": "golint"
+      }
+    },
         "lua": {
           "command": "lua-lsp",
           "filetypes": ["lua"]

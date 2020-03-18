@@ -7,6 +7,7 @@ from imports import user_agent
 from imports import content
 from imports import fonts
 from imports import layout
+from notifications import notifications
 
 aliases.apply(c)
 colors.apply(c)
@@ -16,6 +17,7 @@ layout.apply(c)
 binds.apply(config)
 user_agent.apply(config)
 content.apply(config, c)
+notifications.apply(config)
 
 c.auto_save.session = True
 c.search.ignore_case = "smart"

@@ -7,7 +7,7 @@ from imports import user_agent
 from imports import content
 from imports import fonts
 from imports import layout
-from notifications import notifications
+from imports import notifications
 
 aliases.apply(c)
 colors.apply(c)

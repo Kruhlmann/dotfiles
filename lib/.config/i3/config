@@ -117,7 +117,6 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 bindsym $mod+Right exec i3-msg move workspace to output right
 bindsym $mod+Left exec i3-msg move workspace to output left
 
-# Quicklaunch bindings
 
 # autorandr presets
 bindsym $mod+Shift+comma exec autorandr work-setup
@@ -145,6 +144,7 @@ bindsym $mod+period exec mpc next
 bindsym $mod+comma exec mpc prev
 
 bindsym $mod+w exec qutebrowser 
+bindsym $mod+s exec rofi -show ssh
 bindsym $mod+e exec $term -e ranger --name ranger-term
 bindsym $mod+n exec $term -e ncmpcpp --name ncmpcpp-term
 bindsym $mod+m exec $term -e neomutt --name neomutt-term

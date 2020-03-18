@@ -65,4 +65,4 @@ systemctl enable --user mpd.service
 systemctl restart --user mpd.service
 
 # Update wallpaper
-feh ~/img/.wallpaper
+feh --bg-scale ~/img/.wallpaper

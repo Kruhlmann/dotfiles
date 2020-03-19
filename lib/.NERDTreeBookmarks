@@ -1,6 +1,6 @@
 vimrc ~/.config/nvim/init.vim
 dotfiles ~/doc/src/github.com/kruhlmann/dotfiles
+latex ~/doc/latex
 
 kpi_frontend ~/doc/src/mo-gitlab.siemens.dk/sw-group/banedanmark/s-bane/pykpi/components/dashboard
-latex ~/doc/latex
 tlog ~/doc/src/mo-gitlab.siemens.dk/sw-group/banedanmark/s-bane/pykpi/tlog

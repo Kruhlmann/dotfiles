@@ -117,7 +117,6 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 bindsym $mod+Right exec i3-msg move workspace to output right
 bindsym $mod+Left exec i3-msg move workspace to output left
 
-# Quicklaunch bindings
 
 # autorandr presets
 bindsym $mod+Shift+comma exec autorandr work-setup
@@ -128,9 +127,11 @@ bindsym F9 exec ~/.scripts/mount_drive
 bindsym F10 exec ~/.scripts/umount_drive
 bindsym $mod+F2 exec i3-msg reload
 # Dmenu
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop 
+bindsym $mod+d exec --no-startup-id ~/.scripts/dmenu_apps
+
 # Locking
-bindsym $mod+shift+x exec betterlockscreen -l
+bindsym $mod+shift+x exec --no-startup-id betterlockscreen -l 
 
 # Screenshots
 bindsym $mod+Shift+s exec maim -s | xclip -selection clipboard -t image/png
@@ -143,6 +144,7 @@ bindsym $mod+period exec mpc next
 bindsym $mod+comma exec mpc prev
 
 bindsym $mod+w exec qutebrowser 
+bindsym $mod+s exec rofi -show ssh
 bindsym $mod+e exec $term -e ranger --name ranger-term
 bindsym $mod+n exec $term -e ncmpcpp --name ncmpcpp-term
 bindsym $mod+m exec $term -e neomutt --name neomutt-term
@@ -183,7 +185,7 @@ for_window [instance="dropdown"] border pixel 5
 exec --no-startup-id $term --name dropdown -e "ssh ges@kruhlmann.dev"
 
 # i3gaps config
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 2
 gaps inner 0
 gaps outer 0 
 
@@ -200,7 +202,7 @@ exec --no-startup-id redshift
 # Pseudo mouse driver
 exec --no-startup-id ckb-next
 # Transparency and fading
-# exec --no-startup-id compton -f
+ exec --no-startup-id compton -f
 # VPN
 exec --no-startup-id openvpn ~/.vpn/proton-vpn-nl-free-02.ovpn
 # Background

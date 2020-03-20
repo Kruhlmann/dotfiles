@@ -197,16 +197,14 @@ bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 exec --no-startup-id xmodmap -e 'keycode 135 = Super_R' && xset -r 135
 
 # Start programs
-# Walmart f.lux
-exec --no-startup-id redshift
 # Pseudo mouse driver
 exec --no-startup-id ckb-next
 # Transparency and fading
- exec --no-startup-id compton -f
+exec --no-startup-id compton -f
 # VPN
-exec --no-startup-id openvpn ~/.vpn/proton-vpn-nl-free-02.ovpn
+#exec --no-startup-id openvpn ~/.vpn/proton-vpn-nl-free-02.ovpn
 # Background
-exec --no-startup-id feh --bg-scale ~/Pictures/.wallpaper
+exec --no-startup-id feh --bg-fill ~/img/.wallpaper
 # VOIP
 exec --no-startup-id discord
 # Wi-fi connection
@@ -215,7 +213,6 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xbindkeys
 # MPD server
 exec --no-startup-id mpd
-exec --no-startup-id mpc ls | mpc add
 # SSH keys
 exec --no-startup-id find ~/.ssh/ -type f -exec grep -l "PRIVATE" {} \; | xargs ssh-add &> /dev/null
 # Remote desktop

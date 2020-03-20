@@ -65,7 +65,7 @@ systemctl enable --user mpd.service
 systemctl restart --user mpd.service
 
 # Update wallpaper
-feh --bg-scale ~/img/.wallpaper
+feh --bg-fill ~/img/.wallpaper
 
 # Restart polybar
 ~/.scripts/launch_polybar

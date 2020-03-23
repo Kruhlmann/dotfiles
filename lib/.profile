@@ -23,3 +23,5 @@ export GITLAB_REPO_CACHE="$HOME/.repo-cache"
 export no_proxy=$no_proxy,siemens.dk
 export NO_PROXY=$NO_PROXY,siemens.dk
 export QT_QPA_PLATFORMTHEME=gtk3
+export ANDROID_HOME=/opt/android-sdk
+export ANDROID_SDK=/opt/android-sdk

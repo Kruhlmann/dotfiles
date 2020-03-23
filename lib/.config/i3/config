@@ -88,6 +88,7 @@ for_window [instance="ranger-term"] floating enable resize set 900 600
 for_window [class="stacer"] floating enable border normal
 for_window [class="blueberry.py"] floating enable border normal
 for_window [title="GNU Image Manipulation Program"] floating enable border normal
+for_window [title="Microsoft Teams Notification"] floating enable border normal
 
 # Switch to workspace
 bindsym $mod+1 workspace $ws1

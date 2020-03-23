@@ -33,6 +33,7 @@ c.url.searchengines = {
     "r": "https://old.reddit.com/r/{}",
     "stp": "https://stp.siemens.dk/{}",
     "tw": "https://twitter.com/{}",
+    "twitch": "https://twitch.tv/{}",
     "wiki": "https://en.wikipedia.org/?search={}",
     "yt": "https://youtube.com/results?search_query={}",
 }

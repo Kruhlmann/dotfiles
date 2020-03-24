@@ -7,6 +7,7 @@ def apply(config, c):
     config.set("content.javascript.enabled", True, "devtools://*")
     config.set("content.javascript.enabled", True, "chrome://*/*")
     config.set("content.javascript.enabled", True, "qute://*/*")
+    c.content.cookies.accept = "all"
     c.content.dns_prefetch = True
     c.content.headers.do_not_track = True
     c.content.local_content_can_access_file_urls = True

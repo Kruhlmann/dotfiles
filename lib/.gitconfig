@@ -10,3 +10,5 @@
 	smudge = git-lfs smudge -- %f
 [alias]
 	conflicts = diff --name-only --diff-filter=U
+[credential]
+	helper = store

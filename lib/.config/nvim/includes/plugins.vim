@@ -20,6 +20,15 @@ let g:NERDTreeIgnore = [
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeShowBookmarks = 1
 
+" Floating term
+let g:floaterm_type = 'floating'
+let g:floaterm_height = 0.6
+let g:floaterm_width = 0.6
+let g:floaterm_winblend = 20
+let g:floaterm_position = 'center'
+hi FloatermNF guibg=black
+hi FloatermBorderNF guibg=black
+
 " CoC
 let g:coc_global_extensions = [
     \ 'coc-snippets',

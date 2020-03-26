@@ -35,13 +35,20 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap * *<C-O>
 
+" Lazygit
+map <leader>g :FloatermNew lazygit<CR>
+
 " Zen mode
 map <leader>z :Goyo<CR>
+
+" Toggle floating terminal
+let g:floaterm_keymap_toggle = '<Leader>`'
 
 " Line navigation
 nnoremap H ^
 nnoremap L g_
 
+" Easy command mode
 nnoremap ; :
 
 " Commenting

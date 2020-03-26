@@ -5,6 +5,7 @@ allowed = [
     "office365.com",
     "github.com",
     "gitlab.com",
+    "circuit.siemens.com",
 ]
 
 blocked = [

@@ -11,6 +11,7 @@ call plug#begin()
     "Plug 'scrooloose/syntastic'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+    Plug 'voldikss/vim-floaterm'
 
     " Language syntax
     Plug 'cakebaker/scss-syntax.vim'

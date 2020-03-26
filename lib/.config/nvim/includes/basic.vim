@@ -1,6 +1,6 @@
 set nocompatible
 syntax on
-set shell=bash
+set shell=zsh
 set encoding=UTF-8
 set number
 set relativenumber

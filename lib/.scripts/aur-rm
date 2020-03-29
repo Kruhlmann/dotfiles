@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+yay -Qeq | fzf -m --preview 'yay -Qi {1}' | xargs -ro yay -Rs

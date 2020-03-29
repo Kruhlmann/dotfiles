@@ -16,6 +16,8 @@ unsetopt correct
 source ~/.config/zsh/path.sh
 source ~/.config/zsh/plugins.sh
 source ~/.config/zsh/aliases.sh
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 source $ZSH/oh-my-zsh.sh
 
 # Keyboard layout

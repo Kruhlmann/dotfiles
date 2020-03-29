@@ -24,7 +24,6 @@ map <leader>l <C-w>l
 
 " File system navigation
 nmap <C-b> :NERDTreeToggle<CR>
-nmap <C-t> :TagbarToggle<CR>
 map <leader>p :vsplit %:p:h/package.json<CR>
 map <leader>ev :e ~/.config/nvim/includes<CR>
 map <leader>ei :vsplit ~/.config/i3/config<CR>
@@ -42,7 +41,8 @@ map <leader>g :FloatermNew lazygit<CR>
 map <leader>z :Goyo<CR>
 
 " Toggle floating terminal
-let g:floaterm_keymap_toggle = '<Leader>t'
+let g:floaterm_keymap_toggle = '<C-t>'
+let g:floaterm_keymap_close = '<Leader>c'
 
 " Line navigation
 nnoremap H ^

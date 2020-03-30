@@ -140,9 +140,11 @@ bindsym Print exec ~/.scripts/maimpick
 
 # Clipboard
 bindsym $mod+Shift+v exec ~/.scripts/cbp
+
 # MPC commands
 bindsym $mod+period exec mpc next
 bindsym $mod+comma exec mpc prev
+bindsym $mod+space exec mpc toggle
 
 bindsym $mod+w exec qutebrowser 
 bindsym $mod+s exec rofi -show ssh

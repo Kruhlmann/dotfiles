@@ -52,14 +52,16 @@ inherit = bar/master
 modules-left = i3 bspwm
 modules-right = mpd 
 
+padding-right = 2
 bottom = true
 
 [bar/top]
 inherit = bar/master
 
 modules-left = xwindow
-modules-right = mailbox filesystem pulseaudio memory cpu battery temperature date powermenu
+modules-right = github mailbox filesystem pulseaudio memory cpu battery temperature date powermenu
 
+padding-left = 1
 bottom = false
 
 tray-position = right

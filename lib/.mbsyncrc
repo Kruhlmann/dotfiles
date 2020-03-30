@@ -75,3 +75,30 @@ MaxMessages 0
 ExpireUnread no
 # End profile
 
+IMAPStore kr_dev-remote
+Host 127.0.0.1
+Port  1143
+User andreas@kruhlmann.dev
+PassCmd "pass mutt-wizard-kr_dev"
+AuthMechs LOGIN
+SSLType None
+AuthMech LOGIN
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore kr_dev-local
+Subfolders Verbatim
+Path ~/.local/share/mail/kr_dev/
+Inbox ~/.local/share/mail/kr_dev/INBOX
+Flatten .
+
+Channel kr_dev
+Expunge Both
+Master :kr_dev-remote:
+Slave :kr_dev-local:
+Patterns * !"[Gmail]/All Mail"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
+

@@ -1,1 +1,10 @@
-echo "$(du -a ~/.local/share/mail/*/INBOX/new/* 2>/dev/null | sed -n '$=')$(cat /tmp/imapsyncicon_$USER 2>/dev/null)"
+#!/usr/bin/env sh
+
+RES=""
+while read LINE; do
+    ACC=$(echo $LINE | sed 's/=/ /' | awk '{print $1}')
+    ICO=$(echo $LINE | sed 's/=/ /' | awk '{print $2}')
+    CNT=$(du -a --exclude="All\ Mail*" ~/.local/share/mail/$ACC/*/new 2>/dev/null | grep -v "\/new$" | sed -n '$=')
+    RES="$RES %{F#458588}$ICO%{F-} $CNT"
+done < ~/.config/mailicons
+echo $RES | cut -c 1-

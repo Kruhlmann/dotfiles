@@ -35,6 +35,7 @@ c.url.searchengines = {
     "tw": "https://twitter.com/{}",
     "twitch": "https://twitch.tv/{}",
     "wiki": "https://en.wikipedia.org/?search={}",
+    "wh": "https://classic.wowhead.com/search?q={}",
     "yt": "https://youtube.com/results?search_query={}",
 }
 c.url.start_pages = "https://google.com"

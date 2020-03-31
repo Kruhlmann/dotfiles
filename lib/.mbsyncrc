@@ -102,3 +102,30 @@ MaxMessages 0
 ExpireUnread no
 # End profile
 
+IMAPStore kruhlmann-remote
+Host 127.0.0.1
+Port  1143
+User andreas@kruhlmann.dev
+PassCmd "pass mutt-wizard-kruhlmann"
+AuthMechs LOGIN
+SSLType None
+AuthMech LOGIN
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore kruhlmann-local
+Subfolders Verbatim
+Path ~/.local/share/mail/kruhlmann/
+Inbox ~/.local/share/mail/kruhlmann/INBOX
+Flatten .
+
+Channel kruhlmann
+Expunge Both
+Master :kruhlmann-remote:
+Slave :kruhlmann-local:
+Patterns * !"[Gmail]/All Mail"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
+

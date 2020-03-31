@@ -5,6 +5,7 @@ plugins=(
     extract
     gem
     gitfast
+    last-working-dir
     npm
     pip
     ssh-agent

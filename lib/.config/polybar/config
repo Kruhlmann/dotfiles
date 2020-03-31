@@ -58,8 +58,7 @@ bottom = true
 [bar/top]
 inherit = bar/master
 
-modules-left = xwindow
-modules-center = nextapt
+modules-left = nextapt
 modules-right = corona github mailbox filesystem pulseaudio memory cpu battery temperature date powermenu
 
 padding-left = 1

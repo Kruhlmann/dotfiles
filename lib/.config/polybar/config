@@ -59,7 +59,7 @@ bottom = true
 inherit = bar/master
 
 modules-left = nextapt
-modules-right = corona github mailbox filesystem pulseaudio memory cpu battery temperature date powermenu
+modules-right = menu-apps corona github mailbox filesystem pulseaudio memory cpu battery temperature date powermenu
 
 padding-left = 1
 bottom = false

@@ -132,7 +132,7 @@ bindsym $mod+d exec --no-startup-id ~/.scripts/dmenu_apps
 bindsym $mod+shift+x exec --no-startup-id betterlockscreen -l 
 
 # Screenshots
-bindsym $mod+Shift+s exec maim -s | xclip -selection clipboard -t image/png
+bindsym $mod+Shift+s exec "maim -sl -c 0.2,0.4,1.0,0.7 -b 0 | xclip -selection clipboard -t image/png"
 bindsym Print exec ~/.scripts/maimpick
 
 # Clipboard

@@ -32,6 +32,7 @@ set shortmess+=c
 set conceallevel=3
 set background=dark
 set termguicolors
+set viminfo+=n~/.cache/viminfo
 
 colorscheme gruvbox
 "colorscheme eldar

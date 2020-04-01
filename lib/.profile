@@ -1,10 +1,3 @@
-if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
-    fi
-fi
-
 # Default programs:
 export EDITOR="nvim"
 export TERMINAL="termite"
@@ -23,8 +16,9 @@ export PASSWORD_STORE_DIR="$HOME/.local/share/password-store"
 export ANDROID_HOME=/opt/android-sdk
 export ANDROID_SDK=/opt/android-sdk
 export NVM_DIR="$HOME/.local/bin/nvm"
-export I3CONFIG="~/.config/i3/config"
+export I3CONFIG="$HOME/.config/i3/config"
 export MANPATH="/usr/local/man:$MANPATH"
+export XDG_CACHE_HOME="$HOME/.cache"
 
 # Other program settings:
 export DICS="/usr/share/stardict/dic/"
@@ -49,3 +43,11 @@ export LF_ICONS="di=:fi=:ln=:or=:ex=:*.c=:*.cc=:*.clj=:*
 export no_proxy=$no_proxy,siemens.dk
 export NO_PROXY=$NO_PROXY,siemens.dk
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
+
+if [ -n "$BASH_VERSION" ]; then
+    if [ -f "$HOME/.bashrc" ]; then
+	. "$HOME/.bashrc"
+    fi
+else
+    . "$HOME/.config/zsh/.zshrc"
+fi

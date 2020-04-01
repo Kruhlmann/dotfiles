@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-fill '/home/ges/img/.wallpaper' 
+feh --no-fehbg --bg-fill '/home/ges/.config/wallpaper' 

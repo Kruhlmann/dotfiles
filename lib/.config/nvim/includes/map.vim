@@ -41,8 +41,8 @@ map <leader>g :FloatermNew lazygit<CR>
 map <leader>z :Goyo<CR>
 
 " Toggle floating terminal
-let g:floaterm_keymap_toggle = '<Leader>t'
-let g:floaterm_keymap_close = '<Leader>c'
+let g:floaterm_keymap_toggle = '<C-t>'
+let g:floaterm_keymap_close = '<C-x>'
 
 " Line navigation
 nnoremap H ^

@@ -44,6 +44,7 @@ for_window [class="Caprine"] floating enable
 for_window [instance="calcurse-term"] floating enable resize set 900 600
 for_window [instance="ranger-term"] floating enable resize set 900 600
 for_window [instance="neomutt-term"] floating enable resize set 900 600
+for_window [instance="ncmpcpp-term"] floating enable resize set 900 600
 for_window [instance="ranger-term"] floating enable resize set 900 600
 for_window [class="stacer"] floating enable border normal
 for_window [class="blueberry.py"] floating enable border normal

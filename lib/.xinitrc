@@ -13,6 +13,7 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 xbindkeys
 
 DEFAULT_SESSION='i3 --shmlog-size 0'
+#DEFAULT_SESSION = 'dwm'
 
 # merge in defaults and keymaps
 
@@ -69,3 +70,4 @@ get_session(){
 xset r rate 300 25
 
 exec $(get_session)
+#exec dwm

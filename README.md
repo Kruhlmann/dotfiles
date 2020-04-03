@@ -6,6 +6,8 @@
 
 ## Setup
 
+*These dotfiles used to support i3, but are now being used with dwm. They may still prove useful for an i3 setup, but these files are not being maintained!*
+
 To import these dotfiles run the following commands:
 
 ```sh

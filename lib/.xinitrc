@@ -44,6 +44,7 @@ mpd &
 protonmail-bridge &
 redshift &
 nm-applet &
+dwmbar &
 
 feh --bg-fill ~/.config/wallpaper
 find ~/.ssh/ -type f -exec grep -l "PRIVATE" {} \; | xargs ssh-add &> /dev/null

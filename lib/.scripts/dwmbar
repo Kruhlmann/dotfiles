@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 
-DELIM=" | "
-
 $HOME/.scripts/refdwmbar
 
 while :; do

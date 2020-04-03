@@ -1,4 +1,7 @@
 #!/usr/bin/env sh
 
 ps -ef | grep "dwm_clock" | awk '{print $2}' | xargs kill -9
+ps -ef | grep "dwm_mail" | awk '{print $2}' | xargs kill -9
+
 $HOME/.scripts/dwm/dwm_clock &
+$HOME/.scripts/dwm/dwm_mail &

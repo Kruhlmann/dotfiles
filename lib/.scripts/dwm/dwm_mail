@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+while :; do
+    mkdir -p $HOME/.cache/dwmbar/
+    $HOME/.scripts/unread_mail > $HOME/.cache/dwmbar/0002_mail
+    sleep 1;
+done

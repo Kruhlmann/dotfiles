@@ -68,6 +68,9 @@ systemctl restart --user mpd.service
 # Update wallpaper
 feh --bg-fill ~/.config/wallpaper
 
+# Refresh DWM bar
+refdwmbar
+
 # Rebuild DWM
 cd $HOME/doc/src/github.com/kruhlmann/dwm/
 sudo make install

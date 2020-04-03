@@ -9,5 +9,5 @@ fi
 
 (
 	echo "$status" | awk 'NR==2 {print}' | sed 's/].*$//g;s/playing/>/g;s/paused/|/g;s/$/] /g'
-	echo "$status" | head -1 | sed 's/\.mp3//'
+    echo "$status" | head -1 | sed 's/\.mp3//g' | sed -e 's/([^()]*)//g' | xargs
 ) | tr -d '\n'

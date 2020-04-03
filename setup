@@ -5,6 +5,7 @@ COUNT=0
 FILE_CNT=$(find lib ! -path lib -type f | wc -l)
 
 git submodule foreach git pull origin master
+git submodule foreach git push origin master
 
 # Required paths for vim and mpd
 mkdir -p ~/.vim/tmp/undo

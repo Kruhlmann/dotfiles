@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+DELIM=" | "
+
+dwm_clock &
+
+while :; do
+    mkdir $HOME/.cache/dwmbar/*
+    xsetroot -name "$(cat $HOME/.cache/dwmbar/* | tr '\n' '$DELIM')"
+    sleep 1s
+done

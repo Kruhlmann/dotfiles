@@ -4,9 +4,6 @@ SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 COUNT=0
 FILE_CNT=$(find lib ! -path lib -type f | wc -l)
 
-git submodule foreach git pull origin master
-git submodule foreach git push origin master
-
 # Required paths for vim and mpd
 mkdir -p ~/.vim/tmp/undo
 mkdir -p ~/.vim/tmp/backup
@@ -74,4 +71,8 @@ refdwmbar
 
 # Rebuild DWM
 cd $HOME/doc/src/github.com/kruhlmann/dwm/
+git pull
+git add .
+git commit -am "Updated through dotfiles (https://github.com/Kruhlmann/dotfiles)"
+git push
 sudo make install

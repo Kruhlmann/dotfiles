@@ -2,6 +2,6 @@
 
 while :; do
     mkdir -p $HOME/.cache/dwmbar/
-    date +"%a %b %d %T" > $HOME/.cache/dwmbar/0001_clock
+    date +"%a %b %d %T" > $HOME/.cache/dwmbar/top_0001_clock
     sleep 1;
 done

@@ -4,6 +4,6 @@ $HOME/.scripts/refdwmbar
 
 while :; do
     mkdir $HOME/.cache/dwmbar/
-    xsetroot -name "$(cat $HOME/.cache/dwmbar/* | tr '\n' ' ')"
+    xsetroot -name "$(cat $HOME/.cache/dwmbar/top_* | tr '\n' ' ');$(cat $HOME/.cache/dwmbar/bot_* | tr '\n' ' ')"
     sleep 1s
 done

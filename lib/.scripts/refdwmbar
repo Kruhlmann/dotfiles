@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+rm $HOME/.cache/dwmbar/*
+
 ps -ef | grep "dwm_clock" | awk '{print $2}' | xargs kill -9
 ps -ef | grep "dwm_mail" | awk '{print $2}' | xargs kill -9
 

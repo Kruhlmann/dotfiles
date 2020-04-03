@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 
 while :; do
-    echo 1 > $HOME/.cache/dwmbar/0001_clock
+    mkdir -p $HOME/.cache/dwmbar/
+    date +"%a %b %d %T" > $HOME/.cache/dwmbar/0001_clock
     sleep 1;
 done

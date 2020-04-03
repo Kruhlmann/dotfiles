@@ -2,10 +2,10 @@
 
 DELIM=" | "
 
-dwm_clock &
+$HOME/.scripts/refdwmbar
 
 while :; do
-    mkdir $HOME/.cache/dwmbar/*
-    xsetroot -name "$(cat $HOME/.cache/dwmbar/* | tr '\n' '$DELIM')"
+    mkdir $HOME/.cache/dwmbar/
+    xsetroot -name "$(cat $HOME/.cache/dwmbar/* | tr '\n' ' ')"
     sleep 1s
 done

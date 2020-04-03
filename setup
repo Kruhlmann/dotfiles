@@ -33,7 +33,6 @@ find lib ! -path lib -type f | while read FILE; do
 done
 echo
 
-
 # Vim plug & OhMyZSH
 [[ -f ~/.vim/autoload/plug.vim ]] || curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 [[ -f ~/.local/share/nvim/site/autoload/plug.vim ]] || curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -67,5 +66,6 @@ systemctl restart --user mpd.service
 # Update wallpaper
 feh --bg-fill ~/.config/wallpaper
 
-# Restart polybar
-~/.scripts/launch_polybar
+# Rebuild DWM
+cd $HOME/doc/src/github.com/kruhlmann/dwm/
+sudo make install

@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+while :; do
+    mkdir -p $HOME/.cache/dwmbar/
+    $HOME/.scripts/corona denmark > $HOME/.cache/dwmbar/top_0004_mail
+    sleep 300;
+done

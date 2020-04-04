@@ -4,7 +4,7 @@
 
 # Progress bar length
 # Default length is 50, but overridden by $1
-length=${1:-"50"}
+length=${1:-"30"}
 
 # Parse cmus status message, extracting seconds played and total seconds
 status=$(mpc)

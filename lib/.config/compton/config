@@ -49,5 +49,5 @@ mark-wmwin-focused = true;      # Try to detect WM windows and mark them as acti
 mark-ovredir-focused = true;
 detect-rounded-corners = true;
 
-opacity-rule = ["85:class_g = 'Termite'"];
+#opacity-rule = ["85:class_g = 'Termite'"];
 

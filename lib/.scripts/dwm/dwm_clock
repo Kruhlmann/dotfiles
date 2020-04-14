@@ -2,6 +2,7 @@
 
 while :; do
     mkdir -p $HOME/.cache/dwmbar/
-    date +"%a %b %d %T" > $HOME/.cache/dwmbar/bot_0001_clock
+    DATE="$(date +"%a %b %d %T")"
+    echo " $DATE" > $HOME/.cache/dwmbar/bot_0001_clock
     sleep 1;
 done

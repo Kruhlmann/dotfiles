@@ -2,6 +2,7 @@
 
 while :; do
     mkdir -p $HOME/.cache/dwmbar/
-    $HOME/.scripts/nextapt > $HOME/.cache/dwmbar/top_0001_calcurse
-    sleep 1;
+    OUT="$($HOME/.scripts/nextapt)"
+    echo $OUT > $HOME/.cache/dwmbar/top_0001_calcurse
+    sleep 10;
 done

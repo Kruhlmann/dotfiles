@@ -2,6 +2,7 @@
 
 while :; do
     mkdir -p $HOME/.cache/dwmbar/
-    $HOME/.scripts/cputemp > $HOME/.cache/dwmbar/bot_0005_cputemp
+    OUT="$($HOME/.scripts/cputemp)"
+    echo $OUT > $HOME/.cache/dwmbar/bot_0004_cputemp
     sleep 1;
 done

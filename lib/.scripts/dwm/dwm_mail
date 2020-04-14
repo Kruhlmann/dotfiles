@@ -2,6 +2,7 @@
 
 while :; do
     mkdir -p $HOME/.cache/dwmbar/
-    $HOME/.scripts/unread_mail > $HOME/.cache/dwmbar/bot_0002_mail
-    sleep 1;
+    OUT="$($HOME/.scripts/unread_mail)"
+    echo $OUT > $HOME/.cache/dwmbar/bot_0002_mail
+    sleep 5;
 done

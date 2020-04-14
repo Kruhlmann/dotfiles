@@ -2,14 +2,18 @@
 
 rm $HOME/.cache/dwmbar/*
 
+ps -ef | grep "dwm_calcurse" | awk '{print $2}' | xargs kill -9
+
 ps -ef | grep "dwm_clock" | awk '{print $2}' | xargs kill -9
 ps -ef | grep "dwm_mail" | awk '{print $2}' | xargs kill -9
 ps -ef | grep "dwm_corona" | awk '{print $2}' | xargs kill -9
-
 ps -ef | grep "dwm_mpd" | awk '{print $2}' | xargs kill -9
+ps -ef | grep "dwm_cputemp" | awk '{print $2}' | xargs kill -9
+
+$HOME/.scripts/dwm/dwm_calcurse &
 
 $HOME/.scripts/dwm/dwm_clock &
 $HOME/.scripts/dwm/dwm_mail &
 $HOME/.scripts/dwm/dwm_corona &
-
 $HOME/.scripts/dwm/dwm_mpd &
+$HOME/.scripts/dwm/dwm_cputemp &

@@ -2,6 +2,6 @@
 
 while :; do
     mkdir -p $HOME/.cache/dwmbar/
-    $HOME/.scripts/corona denmark > $HOME/.cache/dwmbar/top_0004_mail
+    $HOME/.scripts/corona denmark > $HOME/.cache/dwmbar/bot_0003_corona
     sleep 300;
 done

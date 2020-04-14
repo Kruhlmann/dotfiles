@@ -37,11 +37,9 @@ fi
 xbindkeys
 xset r rate 300 25
 
-ckb-next &
 compton -f &
 discord &
 mpd &
-protonmail-bridge &
 redshift &
 nm-applet &
 dwmbar &

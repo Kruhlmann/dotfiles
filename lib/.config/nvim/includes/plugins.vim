@@ -44,8 +44,10 @@ let g:coc_global_extensions = [
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 
-" Airline
-let g:airline_powerline_fonts = 1
+" Lightline
+let g:lightline = {
+      \ 'colorscheme': 'jellybeans',
+      \ }
 
 " Goyo
 let g:goyo_width = 120

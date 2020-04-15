@@ -24,6 +24,7 @@ call plug#begin()
     Plug 'dart-lang/dart-vim-plugin'
     Plug 'thosakwe/vim-flutter'
     Plug 'digitaltoad/vim-pug'
+    Plug 'OmniSharp/omnisharp-vim'
 
     " Appearance
     Plug 'junegunn/goyo.vim'

@@ -19,6 +19,7 @@ set splitbelow splitright
 set smarttab
 set backspace=indent,eol,start
 set incsearch
+set previewheight=8
 set autoread
 set complete-=i
 set showmatch
@@ -33,6 +34,7 @@ set conceallevel=3
 set background=dark
 set termguicolors
 set noshowmode
+set completeopt=longest,menuone,preview
 set viminfo+=n~/.cache/viminfo
 
 colorscheme gruvbox

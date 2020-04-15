@@ -22,6 +22,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 # Other program settings:
 export DICS="/usr/share/stardict/dic/"
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
 export TERM="xterm-color"

@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+
+import fileinput
+import random
+
+chars = {
+        "a": "åä",
+        "e": "ë",
+        "o": "öø",
+}
+
+res = ""
+for l in fileinput.input():
+    for c in l:
+        if c in chars and bool(random.getrandbits(1)):
+            c = random.choice(chars[c])
+        res += c
+    print(res)
+    res = ""

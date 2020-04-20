@@ -16,7 +16,7 @@ call plug#begin()
     " Language syntax
     Plug 'cakebaker/scss-syntax.vim'
     Plug 'glench/vim-jinja2-syntax'
-    Plug 'evanleck/vim-svelte'
+    Plug 'leafoftree/vim-svelte-plugin'
     Plug 'mboughaba/i3config.vim'
     Plug 'HerringtonDarkholme/yats.vim'
     Plug 'mattn/emmet-vim'
@@ -35,6 +35,7 @@ call plug#begin()
     " Themes
     Plug 'morhetz/gruvbox'
     Plug 'agude/vim-eldar'
+    Plug 'leafOfTree/vim-svelte-theme'
 call plug#end()
 
 so ~/.config/nvim/includes/basic.vim

@@ -20,6 +20,12 @@ let g:NERDTreeIgnore = [
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeShowBookmarks = 1
 
+" Svelte
+let g:vim_svelte_plugin_use_pug = 1
+let g:vim_svelte_plugin_use_typescript = 1
+let g:vim_svelte_plugin_use_sass = 1
+let g:vim_svelte_plugin_has_init_indent = 0
+
 " vim8.0+ or neovim: Use the stdio server, it is used asynchronously and there
 " is no python requirement.
 let g:OmniSharp_server_stdio = 1

@@ -52,6 +52,7 @@ echo
 /usr/bin/nvim +CocInstall coc-solargraph +qall
 /usr/bin/nvim +CocInstall coc-texlab +qall
 /usr/bin/nvim +CocInstall coc-omnisharp +qall
+/usr/bin/nvim +CocInstall coc-svelte +qall
 
 # Update font cache
 fc-cache

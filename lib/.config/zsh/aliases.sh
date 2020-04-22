@@ -29,3 +29,4 @@ alias ura="sudo openconnect --protocol=anyconnect --user=ask --disable-ipv6 http
 alias gg="lazygit"
 alias weather="curl wttr.in "
 alias fif="grep \"$0\" . -R"
+alias br="br --sizes"

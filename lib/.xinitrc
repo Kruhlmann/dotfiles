@@ -37,7 +37,7 @@ fi
 xbindkeys
 xset r rate 300 25
 
-compton -f &
+#compton -f &
 discord &
 mpd &
 redshift &

@@ -64,9 +64,8 @@ systemctl enable --user sync_music.timer
 systemctl restart --user sync_music.timer
 systemctl enable --user mpd.service
 systemctl restart --user mpd.service
-
-# Update wallpaper
-feh --bg-fill ~/.config/wallpaper
+systemctl enable --user bing-wallpaper.service
+systemctl restart --user bing-wallpaper.service
 
 # Refresh DWM bar
 refdwmbar

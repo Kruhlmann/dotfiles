@@ -30,3 +30,6 @@ alias gg="lazygit"
 alias weather="curl wttr.in "
 alias fif="grep \"$0\" . -R"
 alias br="br --sizes"
+
+alias wttr="curl wttr.in"
+alias myip="curl ifconfig.co"

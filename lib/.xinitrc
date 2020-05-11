@@ -37,14 +37,14 @@ fi
 xbindkeys
 xset r rate 300 25
 
-#compton -f &
+compton -f &
 discord &
 mpd &
 redshift &
 nm-applet &
 dwmbar &
+bing-wallpaper &
 
-feh --bg-fill ~/.config/wallpaper
 find ~/.ssh/ -type f -exec grep -l "PRIVATE" {} \; | xargs ssh-add &> /dev/null
 
 exec dwm

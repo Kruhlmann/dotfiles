@@ -33,3 +33,4 @@ alias br="br --sizes"
 
 alias wttr="curl wttr.in"
 alias myip="curl ifconfig.co"
+alias imgc="xclip -selection clipboard -t image/png -o > "

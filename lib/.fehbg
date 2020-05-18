@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-fill '/home/ges/.config/wallpaper' 
+feh --no-fehbg --bg-scale '/home/ges/1b58ef6e3d36a42e01992accf5c52d6eea244353.jpg' 

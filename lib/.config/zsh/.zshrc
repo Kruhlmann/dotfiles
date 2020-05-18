@@ -35,8 +35,8 @@ fi
 # Thefuck
 eval $(thefuck --alias)
 
-# NO_PROXY Siemens
-export NO_PROXY=".siemens.dk,$NOPROXY"
-export DOTFILES="$HOME/doc/src/github.com/kruhlmann/dotfiles"
+# GPG
+export GPG_TTY=$(tty)
+export SSH_AUTH_SOCK="/run/user/$(id -u)/gnupg/S.gpg-agent.ssh"
 
-source /home/ges/.config/broot/launcher/bash/br
+export DOTFILES="$HOME/doc/src/github.com/kruhlmann/dotfiles"

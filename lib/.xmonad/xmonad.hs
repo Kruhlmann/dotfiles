@@ -1,58 +1,30 @@
---
--- xmonad example config file.
---
--- A template showing all available configuration hooks,
--- and how to override the defaults in your own xmonad.hs conf file.
---
--- Normally, you'd only override those defaults you care about.
---
-
 import XMonad
+import XMonad.Util.Run
 import XMonad.Util.SpawnOnce
+import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.ManageDocks
 import Data.Monoid
 import System.Exit
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
--- The preferred terminal program, which is used in a binding below and by
--- certain contrib modules.
---
 myTerminal = "termite"
-
--- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = True
-
--- Whether clicking on a window to focus also passes the click to the window
 myClickJustFocuses :: Bool
 myClickJustFocuses = True
-
--- Width of the window border in pixels.
---
 myBorderWidth = 2
-
--- modMask lets you specify which modkey you want to use. The default
--- is mod1Mask ("left alt").  You may also consider using mod3Mask
--- ("right alt"), which does not conflict with emacs keybindings. The
--- "windows key" is usually mod4Mask.
---
 myModMask = mod4Mask
 myWorkspaces    = ["Web", "Vim", "Discord", "Teams", "Bitwarden", "Docs", "Games", "Steam", "Settings"]
-
--- Border colors for unfocused and focused windows, respectively.
---
 myNormalBorderColor  = "#dddddd"
 myFocusedBorderColor = "#ff0000"
-
-------------------------------------------------------------------------
--- Key bindings. Add, modify or remove key bindings here.
---
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- launch a terminal
     [ ((modm,               xK_Return), spawn $ XMonad.terminal conf)
     , ((modm,               xK_d     ), spawn "rofi -modi drun -show drun")
-    , ((modm,               xK_q     ), kill)
+    , ((modm,               xK_q     ), kill),
+    ((modm .|. shiftMask,   xK_s     ), spawn "maim -sl -u -c 0.2,0.4,1.0,0.7 -b 0 | xclip -selection clipboard -t image/png")
 
      -- Rotate through the available layout algorithms
     , ((modm,               xK_Tab ), sendMessage NextLayout)
@@ -113,18 +85,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
     -- you may also bind events to the mouse scroll wheel (button4 and button5)
     ]
 
-------------------------------------------------------------------------
--- Layouts:
-
--- You can specify and transform your layouts by modifying these values.
--- If you change layout bindings be sure to use 'mod-shift-space' after
--- restarting (with 'mod-q') to reset your layout state to the new
--- defaults, as xmonad preserves your old layout settings by default.
---
--- The available layouts.  Note that each layout is separated by |||,
--- which denotes layout choice.
---
-myLayout = tiled ||| Mirror tiled ||| Full
+myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full)
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
@@ -191,9 +152,12 @@ myStartupHook = do
     spawnOnce "compton -f &"
     spawnOnce "nm-applet &"
 
-main = do 
-    xmproc <- spawnPipe "xmobar -x 0 ~/.config/xmobar/xmobarrc"
-    xmonad defaults
+
+main = xmonad =<< xmobar defaults
+-- Custom PP, configure it as you like. It determines what is being written to the bar.
+--main = do 
+    --xmproc <- spawnPipe "xmobar -x 0 ~/.config/xmobar/xmobarrc"
+    --xmonad $ docks defaults
 
 -- A structure containing your configuration settings, overriding
 -- fields in the default config. Any you don't override, will

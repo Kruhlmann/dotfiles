@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+new=$(find "$HOME/mail/$1/INBOX/new/" -type f -newer ~/.cache/mailsynclast | wc -l)
+touch ~/.cache/mailsynclast
+if [ $new -gt 0 ]; then
+    notify-send --app-name "neomutt" "Neomutt" "📬 $new new mail(s) in \`$1\` account."
+fi

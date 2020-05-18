@@ -1,0 +1,14 @@
+[user]
+    name = "Andreas Stigsbøl Krühlmann"
+
+[includeIf "gitdir:~/doc/src/code.siemens.com"]
+    path ~= ~/.config/git/siemens
+
+[includeIf "gitdir:~/doc/src/mo-gitlab.siemens.dk"]
+    path ~= ~/.config/git/siemens
+
+[includeIf "gitdir:~/doc/src/github.com"]
+    path ~= ~/.config/git/personal
+
+[includeIf "gitdir:~/doc/src/gitlab.com"]
+    path ~= ~/.config/git/personal

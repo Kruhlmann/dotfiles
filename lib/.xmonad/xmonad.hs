@@ -152,12 +152,9 @@ myStartupHook = do
     spawnOnce "compton -f &"
     spawnOnce "nm-applet &"
 
-
-main = xmonad =<< xmobar defaults
--- Custom PP, configure it as you like. It determines what is being written to the bar.
---main = do 
-    --xmproc <- spawnPipe "xmobar -x 0 ~/.config/xmobar/xmobarrc"
-    --xmonad $ docks defaults
+main = do
+    xmproc <- spawnPipe "xmobar -x 0 ~/.config/xmobar/xmobarrc"
+    xmonad defaults
 
 -- A structure containing your configuration settings, overriding
 -- fields in the default config. Any you don't override, will

@@ -66,14 +66,16 @@ systemctl enable --user mpd.service
 systemctl restart --user mpd.service
 systemctl enable --user bing-wallpaper.service
 systemctl restart --user bing-wallpaper.service
+systemctl enable --user mbsync.timer
+systemctl restart --user mbsync.timer
 
 # Refresh DWM bar
-refdwmbar
+#refdwmbar
 
 # Rebuild DWM
-cd $HOME/doc/src/github.com/kruhlmann/dwm/
-git pull
-git add .
-git commit -am "Updated through dotfiles (https://github.com/Kruhlmann/dotfiles)"
-git push
-sudo make install
+#cd $HOME/doc/src/github.com/kruhlmann/dwm/
+#git pull
+#git add .
+#git commit -am "Updated through dotfiles (https://github.com/Kruhlmann/dotfiles)"
+#git push
+#sudo make install

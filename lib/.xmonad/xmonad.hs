@@ -8,6 +8,7 @@
 --
 
 import XMonad
+import XMonad.Util.Run
 import XMonad.Util.SpawnOnce
 import Data.Monoid
 import System.Exit
@@ -191,7 +192,7 @@ myStartupHook = do
     spawnOnce "compton -f &"
     spawnOnce "nm-applet &"
 
-main = do 
+main = do
     xmproc <- spawnPipe "xmobar -x 0 ~/.config/xmobar/xmobarrc"
     xmonad defaults
 

@@ -3,6 +3,7 @@ import XMonad.Util.Run
 import XMonad.Util.SpawnOnce
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.ManageHelpers (isFullscreen,doFullFloat,doCenterFloat,doRectFloat)
 import Data.Monoid
 import System.Exit
 import qualified XMonad.StackSet as W
@@ -32,7 +33,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     --  Reset the layouts on the current workspace to default
     , ((modm .|. shiftMask, xK_o ), setLayout $ XMonad.layoutHook conf)
 
-    , ((modm,               xK_n     ), refresh)
+    --, ((modm,               xK_n     ), refresh)
     , ((modm,               xK_j     ), windows W.focusDown)
     , ((modm,               xK_k     ), windows W.focusUp  )
     , ((modm,               xK_i     ), windows W.focusMaster  )
@@ -40,9 +41,20 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_k     ), windows W.swapUp    )
     , ((modm,               xK_h     ), sendMessage Shrink)
     , ((modm,               xK_l     ), sendMessage Expand)
-    , ((modm .|. shiftMask, xK_space     ), withFocused $ windows . W.sink)
-    , ((modm              , xK_comma ), sendMessage (IncMasterN 1))
-    , ((modm              , xK_period), sendMessage (IncMasterN (-1)))
+    , ((modm .|. shiftMask, xK_space ), withFocused $ windows . W.sink),
+    --, ((modm              , xK_comma ), sendMessage (IncMasterN 1))
+    --, ((modm              , xK_period), sendMessage (IncMasterN (-1)))
+
+    ((modm              , xK_u      ), spawn "termite --name floatterm -e fzmp"),
+    ((modm              , xK_g      ), spawn "termite --name floatterm -e lazygit"),
+    ((modm              , xK_e      ), spawn "termite --name floatterm -e ranger"),
+    ((modm              , xK_n      ), spawn "termite --name floatterm -e ncmpcpp"),
+    ((modm              , xK_m      ), spawn "termite --name floatterm -e neomutt"),
+    ((modm              , xK_a      ), spawn "termite --name floatterm -e calcurse"),
+    ((modm              , xK_v      ), spawn "cbp"),
+    ((modm              , xK_p      ), spawn "mpc toggle"),
+    ((modm              , xK_period ), spawn "mpc next"),
+    ((modm              , xK_comma  ), spawn "mpc prev")
 
     -- Toggle the status bar gap
     -- Use this binding with avoidStruts from Hooks.ManageDocks.
@@ -63,7 +75,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     ++
     [((m .|. modm, key), screenWorkspace sc >>= flip whenJust (windows . f))
-        | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
+        -- | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
+        | (key, sc) <- zip [] [0..]
         , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
 ------------------------------------------------------------------------
@@ -114,10 +127,19 @@ myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full)
 -- To match on the WM_NAME, you can use 'title' in the same way that
 -- 'className' and 'resource' are used below.
 --
-myManageHook = composeAll
-    [ className =? "floatme"        --> doFloat
-    , resource  =? "desktop_window" --> doIgnore
-    , resource  =? "kdesktop"       --> doIgnore ]
+myManageHook = composeAll [
+    -- Positions.
+    className =? "discord" --> doShift "3",
+    className =? "teams-for-linux" --> doShift "4",
+    className =? "ckb-next" --> doShift "9",
+    -- Float.
+    resource  =? "floatterm" --> doRectFloat (W.RationalRect 0.2 0.2 0.6 0.6),
+    className =? "Gimp" --> doCenterFloat,
+    title     =? "Firefox Preferences" --> doFloat,
+    title     =? "Session Manager - Mozilla Firefox" --> doFloat,
+    title     =? "Firefox Add-on Updates" --> doFloat,
+    title     =? "Clear Private Data" --> doFloat
+    ]
 
 ------------------------------------------------------------------------
 -- Event handling

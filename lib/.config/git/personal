@@ -1,6 +1,6 @@
 [user]
     email = andreas@kruhlmann.dev
-    signingkey = AEEA6631892B8751DC5253A7B9BBAA8075C788BD
+    signingkey = 78B3386E5834D349
 
 [commit]
     gpgsign = true

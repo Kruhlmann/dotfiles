@@ -6,7 +6,7 @@
 
 ## Setup
 
-*These dotfiles used to support i3, but are now being used with dwm. They may still prove useful for an i3 setup, but these files are not being maintained!*
+*These dotfiles used to support i3 and dwm, but are now being used with xmonad. They may still prove useful for an these other WMs, but these files are not being maintained!*
 
 To import these dotfiles run the following commands:
 

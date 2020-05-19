@@ -1,14 +1,29 @@
 [user]
     name = "Andreas Stigsbøl Krühlmann"
 
-[includeIf "gitdir:~/doc/src/code.siemens.com"]
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+
+[alias]
+	conflicts = diff --name-only --diff-filter=U
+
+[merge]
+    tool = vimdiff
+
+[alias]
+	conflicts = diff --name-only --diff-filter=U
+
+[includeIf "gitdir:~/doc/src/code.siemens.com/"]
     path = ~/.config/git/siemens
 
-[includeIf "gitdir:~/doc/src/mo-gitlab.siemens.dk"]
+[includeIf "gitdir:~/doc/src/mo-gitlab.siemens.dk/"]
     path = ~/.config/git/siemens
 
-[includeIf "gitdir:~/doc/src/github.com"]
+[includeIf "gitdir:~/doc/src/github.com/"]
     path = ~/.config/git/personal
 
-[includeIf "gitdir:~/doc/src/gitlab.com"]
+[includeIf "gitdir:~/doc/src/gitlab.com/"]
     path = ~/.config/git/personal

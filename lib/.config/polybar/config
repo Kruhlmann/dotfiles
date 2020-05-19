@@ -23,7 +23,7 @@ include-file = ~/.config/polybar/modules.conf
 [bar/master]
 monitor = ${env:MONITOR:}
 width = 100%
-height = 27
+height = 30
 radius = 0
 fixed-center = false
 
@@ -42,6 +42,7 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = "FiraCode Nerd Font:pixelsize=12;3"
+font-1 = "FiraCode Nerd Font:pixelsize=14;3"
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -49,7 +50,8 @@ cursor-scroll = ns-resize
 [bar/bottom]
 inherit = bar/master
 
-modules-left = i3 bspwm
+modules-left = i3 bspwm workspaces-xmonad title-xmonad
+modules-cetner =
 modules-right = mpd 
 
 padding-right = 2
@@ -59,6 +61,7 @@ bottom = true
 inherit = bar/master
 
 modules-left = nextapt
+modules-cetner =
 modules-right = corona github mailbox filesystem pulseaudio memory cpu battery temperature date powermenu
 
 padding-left = 1
@@ -71,8 +74,8 @@ tray-padding = 0
 screenchange-reload = true
 
 [global/wm]
-margin-top = 5
-margin-bottom = 5
+margin-top = 0
+margin-bottom = 0
 
 
 ; vim:ft=dosini

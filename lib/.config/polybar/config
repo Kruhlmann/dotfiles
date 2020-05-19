@@ -49,7 +49,8 @@ cursor-scroll = ns-resize
 [bar/bottom]
 inherit = bar/master
 
-modules-left = i3 bspwm
+modules-left = i3 bspwm workspaces-xmonad title-xmonad
+modules-cetner =
 modules-right = mpd 
 
 padding-right = 2
@@ -59,6 +60,7 @@ bottom = true
 inherit = bar/master
 
 modules-left = nextapt
+modules-cetner =
 modules-right = corona github mailbox filesystem pulseaudio memory cpu battery temperature date powermenu
 
 padding-left = 1
@@ -71,8 +73,8 @@ tray-padding = 0
 screenchange-reload = true
 
 [global/wm]
-margin-top = 5
-margin-bottom = 5
+margin-top = 0
+margin-bottom = 0
 
 
 ; vim:ft=dosini

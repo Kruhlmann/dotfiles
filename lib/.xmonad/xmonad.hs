@@ -22,7 +22,6 @@ import Data.Function (on)
 import Control.Monad (forM_, join)
 import XMonad.Util.Run (safeSpawn)
 import XMonad.Util.NamedWindows (getName)
-
 import Graphics.X11.ExtraTypes.XF86
 import XMonad.Actions.CycleWS
 import XMonad.Hooks.SetWMName

@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/bin/feh --no-fehbg --bg-scale '/home/ges/img/bing_wallpapers/th?id=OHR.RoaringFork_ZH-CN0315142196_1920x1200.jpg' 

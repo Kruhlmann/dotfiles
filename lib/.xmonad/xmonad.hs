@@ -121,9 +121,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 --
 myStartupHook = do
     spawnOnce "bing-wallpaper"
-    spawnOnce "discord &"
-    spawnOnce "compton -f &"
-    spawnOnce "nm-applet &"
+    spawnOnce "discord"
+    spawnOnce "compton -f"
+    spawnOnce "nm-applet"
+    spawnOnce "launch_polybar"
  
 myManageHook = composeAll [
     -- Positions.
@@ -184,8 +185,8 @@ eventLogHook = do
   io $ appendFile "/tmp/.xmonad-workspace-log" (wsStr ++ "\n")
 
   where fmt currWs ws
-          | currWs == ws = "[" ++ ws ++ "]"
-          | otherwise    = " " ++ ws ++ " "
+          | currWs == ws = "%{F" ++ c_blue ++ "}" ws ++ "%{F-}"
+          | otherwise    = "%{F" ++ c_gray ++ "}" ws ++ "%{F-}"
         sort' = sortBy (compare `on` (!! 0))
 
 defaults = def{
@@ -194,10 +195,10 @@ defaults = def{
     , workspaces = myWorkspaces
     , keys = myKeys
     , layoutHook = smartBorders $ myLayoutHook
-    , focusedBorderColor = "#2E9AFE"
-    , normalBorderColor = "#000000"
+    , focusedBorderColor = c_blue
+    , normalBorderColor = c_gray_alt
     , mouseBindings = myMouseBindings                           
     , manageHook = myManageHook <+> manageHook def
-    , borderWidth = 1
+    , borderWidth = 2
     , startupHook = myStartupHook
     }

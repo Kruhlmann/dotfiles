@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-scale '/home/ges/Pictures/Bing/th?id=OHR.RoaringFork_ZH-CN0315142196_1920x1200.jpg' 
+/usr/bin/feh --no-fehbg --bg-tile '/home/ges/Pictures/Bing/th?id=OHR.RoaringFork_ZH-CN0315142196_1920x1200.jpg' 

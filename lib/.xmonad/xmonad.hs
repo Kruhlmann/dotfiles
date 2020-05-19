@@ -48,11 +48,13 @@ import qualified DBus.Client as D
 import qualified Codec.Binary.UTF8.String as UTF8
 
 -- Colors.
-c_gray = "#7F7F7F"
-c_gray_alt = "#222222"
-c_red = "#900000"
-c_blue = "#2E9AFE"
-c_white = "#EEEEEE"
+c_gray = "#928374"
+c_gray_alt = "#a89984"
+c_red = "#cc241d"
+c_blue = "#458588"
+c_white = "#eeeeee"
+c_green = "#98971a"
+c_yellow_alt = "#fabd2f"
 
 myTerminal = "termite"
 ---- Key binding to toggle the gap for the bar.
@@ -166,6 +168,7 @@ myLayoutHook = avoidStruts (
     ratio   = 1/2
  
     -- Percent of screen to increment by when resizing panes
+
 delta = 3/100 
 ----Main Function
 
@@ -185,8 +188,8 @@ eventLogHook = do
   io $ appendFile "/tmp/.xmonad-workspace-log" (wsStr ++ "\n")
 
   where fmt currWs ws
-          | currWs == ws = "%{F" ++ c_blue ++ "}" ws ++ "%{F-}"
-          | otherwise    = "%{F" ++ c_gray ++ "}" ws ++ "%{F-}"
+          | currWs == ws = " %{F" ++ c_white ++ "}" ++ ws ++ "%{F-} "
+          | otherwise    = " %{F" ++ c_gray ++ "}" ++ ws ++ "%{F-} "
         sort' = sortBy (compare `on` (!! 0))
 
 defaults = def{

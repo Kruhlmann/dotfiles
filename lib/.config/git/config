@@ -1,6 +1,15 @@
 [user]
     name = "Andreas Stigsbøl Krühlmann"
 
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+
+[alias]
+	conflicts = diff --name-only --diff-filter=U
+
 [merge]
     tool = vimdiff
 

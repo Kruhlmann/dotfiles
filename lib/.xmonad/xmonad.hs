@@ -58,8 +58,8 @@ c_white = "#EEEEEE"
 myTerminal = "termite"
 ---- Key binding to toggle the gap for the bar.
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
-myWorkspaces            :: [String]
-myWorkspaces            = ["1:\xfa9e", "2: \xe7c5", "3: \xfb6e", "4: \xf0c0", "5: \xf023", "6: \xf718", "7: \xe70f", "8: \xf1b6", "9: \xf085"]
+myWorkspaces :: [String]
+myWorkspaces = ["1:\xfa9e", "2: \xe7c5", "3: \xfb6e", "4: \xf0c0", "5: \xf023", "6: \xf718", "7: \xe70f", "8: \xf1b6", "9: \xf085"]
 
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm,               xK_Return), spawn $ XMonad.terminal conf)

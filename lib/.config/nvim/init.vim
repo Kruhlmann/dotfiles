@@ -12,6 +12,7 @@ call plug#begin()
     Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
     Plug 'voldikss/vim-floaterm'
     Plug 'ap/vim-buftabline'
+    Plug 'heavenshell/vim-jsdoc', { 'do': 'make install' }
 
     " Language syntax
     Plug 'cakebaker/scss-syntax.vim'

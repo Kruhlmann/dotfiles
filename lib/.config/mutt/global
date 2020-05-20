@@ -1,0 +1,34 @@
+# vim: filetype=neomuttrc
+#
+set mailcap_path = ~/.config/mutt/mailcap
+set date_format="%y/%m/%d %I:%M%p"
+set index_format="%2C %Z %?X?A& ? %D %-15.15F %s (%-4.4c)"
+set sort = 'reverse-date'
+set smtp_authenticators = 'gssapi:login'
+set query_command = "lbdbq '%s'"
+set mail_check_stats
+set rfc2047_parameters = yes
+set sleep_time = 0              # Pause 0 seconds for informational messages
+set markers = no                # Disables the `+` displayed at line wraps
+set mark_old = no               # Unread mail stay unread until read
+set mime_forward = yes          # attachments are forwarded with mail
+set wait_key = no               # mutt won't ask "press key to continue"
+set fast_reply                  # skip to compose when replying
+set fcc_attach                  # save attachments with the body
+set forward_format = "Fwd: %s"  # format of subject when forwarding
+set forward_quote               # include message in forwards
+set reverse_name                # reply as whomever it was to
+set include                     # include message in replies
+set mail_check=60               # to avoid lags using IMAP with some email
+                                # providers (yahoo for example)
+auto_view text/html             # automatically show html (mailcap uses w3m)
+auto_view application/pgp-encrypted
+alternative_order text/plain text/enriched text/html
+
+source ~/.config/mutt/macros
+source ~/.config/mutt/binds
+source ~/.config/mutt/colors
+source ~/.config/mutt/crypt
+source ~/.config/mutt/layout
+
+

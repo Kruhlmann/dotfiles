@@ -1,0 +1,45 @@
+# vim: filetype=neomuttrc
+# muttrc file for account siemens
+
+set realname = "Andreas Stigsbøl Krühlmann"
+set from = "andreas.kruehlmann@siemens.com"
+set sendmail = "msmtp -a siemens"
+alias me Andreas Stigsbøl Krühlmann <andreas.kruehlmann@siemens.com>
+set folder = "/home/ges/mail/siemens"
+set header_cache = /mail/siemens/headers
+set message_cachedir = /mail/siemens/bodies
+set mbox_type = Maildir
+
+bind index,pager gg noop
+bind index,pager g noop
+bind index,pager M noop
+bind index,pager C noop
+bind index gg first-entry
+macro index o "<shell-escape>mailsync -V siemens<enter>" "run mbsync to sync siemens"
+unmailboxes *
+
+set spoolfile = "+INBOX"
+set record = "+Sent"
+set postponed = "+Drafts"
+set trash = "+Trash"
+mailboxes "=INBOX" "=Sent" "=GitLab" "=TL;DR" "=_Opgaver" "=Drafts" "=Trash" "=Junk" 
+macro index,pager gi "<change-folder>=INBOX<enter>" "go to inbox" 
+macro index,pager Mi ";<save-message>=INBOX<enter>" "move mail to inbox" 
+macro index,pager Ci ";<copy-message>=INBOX<enter>" "copy mail to inbox" 
+macro index,pager gs "<change-folder>=Sent<enter>" "go to sent" 
+macro index,pager Ms ";<save-message>=Sent<enter>" "move mail to sent" 
+macro index,pager Cs ";<copy-message>=Sent<enter>" "copy mail to sent" 
+macro index,pager gd "<change-folder>=Drafts<enter>" "go to drafts" 
+macro index,pager Md ";<save-message>=Drafts<enter>" "move mail to drafts" 
+macro index,pager Cd ";<copy-message>=Drafts<enter>" "copy mail to drafts" 
+macro index,pager gt "<change-folder>=Trash<enter>" "go to trash" 
+macro index,pager Mt ";<save-message>=Trash<enter>" "move mail to trash" 
+macro index,pager Ct ";<copy-message>=Trash<enter>" "copy mail to trash"
+macro index,pager gS "<change-folder>=Spam<enter>" "go to spam"
+macro index,pager MS ";<save-message>=Spam<enter>" "move mail to spam"
+macro index,pager CS ";<copy-message>=Spam<enter>" "copy mail to spam"
+macro index,pager ga "<change-folder>=Archive<enter>" "go to archive" 
+macro index,pager Ma ";<save-message>=Archive<enter>" "move mail to archive" 
+macro index,pager Ca ";<copy-message>=Archive<enter>" "copy mail to archive"
+
+set smime_sign_as = 0xED4E9DC8

@@ -9,6 +9,7 @@ set folder = "/home/ges/mail/siemens"
 set header_cache = /mail/siemens/headers
 set message_cachedir = /mail/siemens/bodies
 set mbox_type = Maildir
+set signature="/home/ges/.config/mutt/sig/siemens"
 
 bind index,pager gg noop
 bind index,pager g noop

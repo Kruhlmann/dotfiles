@@ -64,7 +64,7 @@ myWorkspaces = ["1:\xfa9e", "2: \xe7c5", "3: \xfb6e", "4: \xf0c0", "5: \xf023", 
 
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm,               xK_Return), spawn $ XMonad.terminal conf)
-    , ((modm,               xK_d     ), spawn "rofi -modi drun -show drun")
+    , ((modm,               xK_d     ), spawn "rofi -modi drun -show drun -display-drun 'Run'")
     , ((modm,               xK_q     ), kill),
     ((modm .|. shiftMask,   xK_s     ), spawn "maim -sl -u -c 0.2,0.4,1.0,0.7 -b 0 | xclip -selection clipboard -t image/png")
 

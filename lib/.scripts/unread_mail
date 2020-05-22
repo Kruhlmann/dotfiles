@@ -6,9 +6,8 @@ while read LINE; do
     ICO=$(echo $LINE | sed 's/=/ /' | awk '{print $2}')
     CNT=$(du -a --exclude="All\ Mail*" ~/mail/$ACC/*/new 2>/dev/null | grep -v "\/new$" | sed -n '$=' | tr -d '\n' | sed 's/^$/0/')
     if [ -z "$CNT" ]; then
-        RES="$RES %{F#555555}$ICO 0%{F-}"
-    else
-        RES="$RES %{F#458588}$ICO%{F-} $CNT"
+      CNT=0 
     fi
+    RES="$RES %{F#458588}$ICO%{F-} $CNT"
 done < ~/.config/mailicons
 echo $RES | cut -c 1-

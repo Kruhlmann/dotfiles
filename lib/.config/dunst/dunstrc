@@ -46,11 +46,11 @@
     # Show age of message if message is older than show_age_threshold
     # seconds.
     # Set to -1 to disable.
-    show_age_threshold = 60
+    show_age_threshold = 10
     
     # Split notifications into multiple lines if they don't fit into
     # geometry.
-    word_wrap = no
+    word_wrap = yes
     
     # Ignore newlines '\n' in notifications.
     ignore_newline = no
@@ -106,7 +106,7 @@
     sticky_history = no
     
     # Maximum amount of notifications kept in history
-    history_length = 20
+    history_length = 5
     
     # Display indicators for URLs (U) and actions (A).
     show_indicators = yes
@@ -154,7 +154,7 @@
     icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
 
     # Limit icons size.
-    max_icon_size=32
+    max_icon_size=64
 
 [shortcuts]
 

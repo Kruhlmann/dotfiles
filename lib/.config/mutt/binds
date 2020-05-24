@@ -41,6 +41,4 @@ bind editor <Tab> complete-query
 bind index,pager \Ck sidebar-prev
 bind index,pager \Cj sidebar-next
 bind index,pager \Co sidebar-open
-bind index,pager \Cp sidebar-prev-new
-bind index,pager \Cn sidebar-next-new
-bind index,pager B sidebar-toggle-visible
+bind index,pager \Cb sidebar-toggle-visible

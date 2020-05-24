@@ -62,30 +62,22 @@ toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 myWorkspaces :: [String]
 myWorkspaces = ["1:\xfa9e", "2: \xe7c5", "3: \xfb6e", "4: \xf0c0", "5: \xf023", "6: \xf718", "7: \xe70f", "8: \xf1b6", "9: \xf085"]
 
-myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
-    [ ((modm,               xK_Return), spawn $ XMonad.terminal conf)
-    , ((modm,               xK_d     ), spawn "rofi -modi drun -show drun -display-drun 'Run'")
-    , ((modm,               xK_q     ), kill),
-    ((modm .|. shiftMask,   xK_s     ), spawn "maim -sl -u -c 0.2,0.4,1.0,0.7 -b 0 | xclip -selection clipboard -t image/png")
-
-     -- Rotate through the available layout algorithms
-    , ((modm,               xK_Tab ), sendMessage NextLayout)
-
-    --  Reset the layouts on the current workspace to default
-    , ((modm .|. shiftMask, xK_o ), setLayout $ XMonad.layoutHook conf)
-
-    --, ((modm,               xK_n     ), refresh)
-    , ((modm,               xK_j     ), windows W.focusDown)
-    , ((modm,               xK_k     ), windows W.focusUp  )
-    , ((modm,               xK_i     ), windows W.focusMaster  )
-    , ((modm .|. shiftMask, xK_j     ), windows W.swapDown  )
-    , ((modm .|. shiftMask, xK_k     ), windows W.swapUp    )
-    , ((modm,               xK_h     ), sendMessage Shrink)
-    , ((modm,               xK_l     ), sendMessage Expand)
-    , ((modm .|. shiftMask, xK_space ), withFocused $ windows . W.sink),
-    --, ((modm              , xK_comma ), sendMessage (IncMasterN 1))
-    --, ((modm              , xK_period), sendMessage (IncMasterN (-1)))
-
+binds conf@(XConfig {XMonad.modMask = modm}) = M.fromList $ [
+    ((modm,               xK_Return), spawn $ XMonad.terminal conf),
+    ((modm,               xK_d     ), spawn "rofi -modi drun -show drun -display-drun 'Run'"),
+    ((modm,               xK_q     ), kill),
+    ((modm .|. shiftMask, xK_s     ), spawn "maim -sl -u -c 0.2,0.4,1.0,0.7 -b 0 | xclip -selection clipboard -t image/png"),
+    ((modm .|. shiftMask, xK_l     ), spawn "xscreensaver-command --lock"),
+    ((modm,               xK_Tab   ), sendMessage NextLayout),
+    ((modm .|. shiftMask, xK_o     ), setLayout $ XMonad.layoutHook conf),
+    ((modm,               xK_j     ), windows W.focusDown),
+    ((modm,               xK_k     ), windows W.focusUp  ),
+    ((modm,               xK_i     ), windows W.focusMaster  ),
+    ((modm .|. shiftMask, xK_j     ), windows W.swapDown  ),
+    ((modm .|. shiftMask, xK_k     ), windows W.swapUp    ),
+    ((modm,               xK_h     ), sendMessage Shrink),
+    ((modm,               xK_l     ), sendMessage Expand),
+    ((modm .|. shiftMask, xK_space ), withFocused $ windows . W.sink),
     ((modm              , xK_u      ), spawn "termite --name floatterm -e fzmp"),
     ((modm              , xK_g      ), spawn "termite --name floatterm -e lazygit"),
     ((modm              , xK_e      ), spawn "termite --name floatterm -e ranger"),
@@ -95,29 +87,23 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     ((modm              , xK_v      ), spawn "cbp"),
     ((modm              , xK_p      ), spawn "mpc toggle"),
     ((modm              , xK_period ), spawn "mpc next"),
-    ((modm              , xK_comma  ), spawn "mpc prev")
+    ((modm              , xK_comma  ), spawn "mpc prev"),
+    ((modm              , xK_p      ), spawn "mpc toggle"),
+    ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess)),
+    ((modm              , xK_F2     ), spawn "xmonad --recompile; xmonad --restart")
+    --, ((modm,               xK_n     ), refresh)
+    --, ((modm              , xK_comma ), sendMessage (IncMasterN 1))
+    --, ((modm              , xK_period), sendMessage (IncMasterN (-1)))
+    --, ((modm              , xK_b     ), sendMessage ToggleStruts)
 
-    -- Toggle the status bar gap
-    -- Use this binding with avoidStruts from Hooks.ManageDocks.
-    -- See also the statusBar function from Hooks.DynamicLog.
-    --
-    -- , ((modm              , xK_b     ), sendMessage ToggleStruts)
-
-    -- Quit xmonad
-    , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
-    , ((modm              , xK_F2     ), spawn "xmonad --recompile; xmonad --restart")
+    ] ++ [((m .|. modm, k), windows $ f i)
+    | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
+    , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]
     ]
-
-    ++
-    [((m .|. modm, k), windows $ f i)
-        | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
-        , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
-
-    ++
-    [((m .|. modm, key), screenWorkspace sc >>= flip whenJust (windows . f))
-        -- | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
-        | (key, sc) <- zip [] [0..]
-        , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
+    -- ++ [((m .|. modm, key), screenWorkspace sc >>= flip whenJust (windows . f))
+    -- | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
+    -- | (key, sc) <- zip [] [0..]
+    --, (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
 ---spawn
 --
@@ -128,6 +114,7 @@ myStartupHook = do
     spawnOnce "nm-applet"
     spawnOnce "launch_polybar"
     spawnOnce "protonmail-bridge"
+    spawnOnce "xscreensaver"
  
 myManageHook = composeAll [
     -- Positions.
@@ -157,7 +144,7 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
     ]
 
 myLayoutHook = avoidStruts (
-       toggleLayouts Full (Grid) ||| toggleLayouts Full (ThreeColMid 1 (1/20) (1/2)) ||| simpleTabbed ||| toggleLayouts Full (tiled) ||| Mirror tiled)
+       toggleLayouts Full (ThreeColMid 1 (1/20) (1/2)) ||| simpleTabbed ||| toggleLayouts Full (tiled))
         where
     -- default tiling algorithm partitions the screen into two panes
     tiled   = Tall nmaster delta ratio
@@ -197,7 +184,7 @@ defaults = def{
     modMask= mod4Mask
     , terminal = myTerminal
     , workspaces = myWorkspaces
-    , keys = myKeys
+    , keys = binds
     , layoutHook = smartBorders $ myLayoutHook
     , focusedBorderColor = "red"
     , normalBorderColor = c_gray_alt

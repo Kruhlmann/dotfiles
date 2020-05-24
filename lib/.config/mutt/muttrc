@@ -1,2 +1,4 @@
 source ~/.config/mutt/global
-source ~/.config/mutt/acc/siemens
+#source ~/.config/mutt/acc/siemens
+source ~/.config/mutt/acc/gmail
+source ~/.config/mutt/acc/kruhlmann

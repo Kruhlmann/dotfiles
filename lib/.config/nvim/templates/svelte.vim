@@ -2,7 +2,6 @@
 <script lang="ts">
     /**
      * File <file> created on <date>.
-     *
      * Last modified on <last_mod>
      *
      * @fileoverview

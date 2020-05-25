@@ -138,6 +138,7 @@ myStartupHook = do
     spawnOnce "compton -f"
     spawnOnce "nm-applet"
     spawnOnce "launch_polybar"
+    spawnOnce "protonmail-bridge"
     spawnOnce "xscreensaver"
  
 myManageHook = composeAll [

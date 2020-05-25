@@ -1,6 +1,2 @@
 #!/bin/sh
-<<<<<<< HEAD
-/usr/bin/feh --no-fehbg --bg-scale '/home/ges/img/bing_wallpapers/th?id=OHR.TulipFieldsDE_ZH-CN8685077552_1920x1200.jpg' 
-=======
-/usr/bin/feh --no-fehbg --bg-tile '/home/ges/Pictures/Bing/th?id=OHR.TulipFieldsDE_ZH-CN8685077552_1920x1200.jpg' 
->>>>>>> 8a5453afb8a46c59ac0b0861fd7621bfed80620a
+/usr/bin/feh --no-fehbg --bg-scale '/home/ges/img/bing_wallpapers/th?id=OHR.CheetahCubs_ZH-CN8863575385_1920x1200.jpg' 

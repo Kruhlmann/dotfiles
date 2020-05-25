@@ -1,0 +1,12 @@
+[Unit]
+Description=Nodelock
+
+[Service]
+ExecStart=/usr/bin/nodelock
+Environment="SERIAL="36345A4757364957""
+Environment="ON_LOCK="/usr/bin/xlock""
+Environment="ON_UNLOCK="/usr/bin/xunlock""
+Environment="MODULE="/usr/lib/pkcs11/onepin-opensc-pkcs11.so""
+
+[Install]
+WantedBy=default.target

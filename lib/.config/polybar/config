@@ -62,7 +62,7 @@ inherit = bar/master
 
 modules-left = nextapt
 modules-cetner =
-modules-right = corona github mailbox filesystem pulseaudio memory cpu battery temperature date powermenu
+modules-right = bluetooth corona github mailbox filesystem pulseaudio memory cpu battery temperature date powermenu
 
 padding-left = 1
 bottom = false

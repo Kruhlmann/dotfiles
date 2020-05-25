@@ -23,9 +23,9 @@ map <leader>k <C-w>k
 map <leader>l <C-w>l
 
 " Tab (actually buffers) navigation
-map tk :bnext<CR>
-map tj :bprevious<CR>
-map td :bdelete<CR>
+map <C-k> :bnext<CR>
+map <C-j> :bprevious<CR>
+map <C-d> :bdelete<CR>
 
 " File system navigation
 nmap <C-b> :NERDTreeToggle<CR>

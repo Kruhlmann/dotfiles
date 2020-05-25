@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+mkdir -p ~/.cache
+touch ~/.cache/unread_mail
 RES=""
 while read LINE; do
     ACC=$(echo $LINE | sed 's/=/ /' | awk '{print $1}')
@@ -9,5 +11,13 @@ while read LINE; do
       CNT=0 
     fi
     RES="$RES %{F#458588}$ICO%{F-} $CNT"
+    PRE=$(cat ~/.cache/unread_mail)
+    if [ -z "$PRE" ]; then
+      PRE=0 
+    fi
+    if [ $PRE -lt $CNT ]; then
+        notify-send "Unread mail" "You have $CNT unread mails"
+        echo $CNT > ~/.cache/unread_mail
+    fi
 done < ~/.config/mailicons
 echo $RES | cut -c 1-

@@ -54,10 +54,10 @@ echo
 /usr/bin/nvim +CocInstall coc-omnisharp +qall
 /usr/bin/nvim +CocInstall coc-svelte +qall
 
-# Update font cache
+# Update font cache.
 fc-cache
 
-# Setup user services
+# Setup user services.
 systemctl enable --user synccal.timer
 systemctl restart --user synccal.timer
 systemctl enable --user sync_music.timer
@@ -69,13 +69,16 @@ systemctl restart --user bing-wallpaper.service
 systemctl enable --user mbsync.timer
 systemctl restart --user mbsync.timer
 
-# Refresh DWM bar
+# Refresh DWM bar.
 #refdwmbar
 
-# Rebuild DWM
+# Rebuild DWM.
 #cd $HOME/doc/src/github.com/kruhlmann/dwm/
 #git pull
 #git add .
 #git commit -am "Updated through dotfiles (https://github.com/Kruhlmann/dotfiles)"
 #git push
 #sudo make install
+
+# Rebuild and restart Xmonad.
+xmonad --recompile; xmonad --restart

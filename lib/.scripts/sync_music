@@ -14,5 +14,5 @@ grep ^# -v /home/$USER/.config/sync_music.conf | while read playlist; do
     youtube-dl -i --flat-playlist --skip-download -J "$playlist" | jq -r ".entries[].title" | awk 'NF{print $0 ".mp3"}' > "$mpdplaylist"
 done
 
-notify-send "Music synced" -i ~/img/lib/mpd_logo.png
+#notify-send "Music synced" -i ~/img/lib/mpd_logo.png
 

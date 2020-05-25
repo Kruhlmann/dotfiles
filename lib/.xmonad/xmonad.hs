@@ -105,7 +105,7 @@ binds conf@(XConfig {XMonad.modMask = modm}) = M.fromList $ [
     ((modm              , xK_g      ), spawn "termite --name floatterm -e lazygit"),
     ((modm              , xK_e      ), spawn "termite --name floatterm -e ranger"),
     ((modm              , xK_n      ), spawn "termite --name floatterm -e ncmpcpp"),
-    ((modm              , xK_m      ), spawn "termite --name floatterm -e neomutt"),
+    ((modm              , xK_m      ), spawn "neomutt_mailbox"),
     ((modm              , xK_a      ), spawn "termite --name floatterm -e calcurse"),
     ((modm              , xK_v      ), spawn "cbp"),
     ((modm              , xK_p      ), spawn "mpc toggle"),

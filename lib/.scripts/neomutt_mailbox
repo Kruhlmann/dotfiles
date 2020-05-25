@@ -1,3 +1,5 @@
 #!/usr/bin/env sh
 
-neomutt -F $1
+MBOX="$(ls $DOTFILES/lib/.config/mutt/cnf | rofi -dmenu)"
+CMD="neomutt -F \"~/.config/mutt/cnf/$MBOX\""
+termite --name floatterm -e "$CMD"

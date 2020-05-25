@@ -39,4 +39,4 @@ c.url.searchengines = {
     "yt": "https://youtube.com/results?search_query={}",
 }
 c.url.start_pages = "https://google.com"
-c.editor.command = ["termite", "-e", "vim '{}'"]
+c.editor.command = ["termite", "--name", "floatterm", "-e", "vim '{}'"]

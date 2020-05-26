@@ -106,6 +106,7 @@ binds conf@(XConfig {XMonad.modMask = modm}) = M.fromList $ [
     ((modm              , xK_e      ), spawn "termite --name floatterm -e ranger"),
     ((modm              , xK_n      ), spawn "termite --name floatterm -e ncmpcpp"),
     ((modm              , xK_m      ), spawn "neomutt_mailbox"),
+    ((modm              , xK_b      ), spawn "bitwarden-desktop"),
     ((modm              , xK_a      ), spawn "termite --name floatterm -e calcurse"),
     ((modm              , xK_v      ), spawn "cbp"),
     ((modm              , xK_p      ), spawn "mpc toggle"),
@@ -147,6 +148,7 @@ myManageHook = composeAll [
     className =? "teams-for-linux" --> doShift "4",
     className =? "ckb-next" --> doShift "9",
     -- Float.
+    resource  =? "bitwarden" --> doRectFloat (W.RationalRect 0.2 0.2 0.6 0.6),
     resource  =? "floatterm" --> doRectFloat (W.RationalRect 0.2 0.2 0.6 0.6),
     resource  =? "pavucontrol" --> doRectFloat (W.RationalRect 0.2 0.2 0.6 0.6),
     resource  =? "gnome-panel" --> doCenterFloat,

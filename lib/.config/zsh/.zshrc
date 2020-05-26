@@ -1,4 +1,3 @@
-export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH="$HOME/.config/.oh-my-zsh"
 
 ZSH_THEME="avit"
@@ -21,22 +20,6 @@ source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 source $ZSH/oh-my-zsh.sh
 
-# Keyboard layout
-setxkbmap -variant altgr-intl
-
-# ENTR
-if [ -f ~/.config/entr ]; then
-    ~/.config/entr
-fi
-
-# NVM
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# Thefuck
-eval $(thefuck --alias)
-
 # GPG
-export GPG_TTY=$(tty)
-export SSH_AUTH_SOCK="/run/user/$(id -u)/gnupg/S.gpg-agent.ssh"
-
-export DOTFILES="$HOME/doc/src/github.com/kruhlmann/dotfiles"
+# export GPG_TTY=$(tty)
+# export SSH_AUTH_SOCK="/run/user/$(id -u)/gnupg/S.gpg-agent.ssh"

@@ -21,3 +21,8 @@ autocmd bufnewfile *.html so ~/.config/nvim/templates/html.vim
 autocmd bufnewfile *.html exe "1," . 7 . "g/\<file\>/s//" .expand("%")
 autocmd bufnewfile *.html exe "1," . 7 . "g/\<date\>/s//" .strftime("%d-%m-%Y")
 autocmd Bufwritepre,filewritepre *.html exe "1," . 7 . "g/\Last modified on.*/s//Last modified on " .strftime("%c")
+
+autocmd bufnewfile *.pug so ~/.config/nvim/templates/pug.vim
+autocmd bufnewfile *.pug exe "1," . 5 . "g/\<file\>/s//" .expand("%")
+autocmd bufnewfile *.pug exe "1," . 5 . "g/\<date\>/s//" .strftime("%d-%m-%Y")
+autocmd Bufwritepre,filewritepre *.pug exe "1," . 5 . "g/\Last modified on.*/s//Last modified on " .strftime("%c")

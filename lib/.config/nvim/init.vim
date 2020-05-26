@@ -47,5 +47,6 @@ so ~/.config/nvim/includes/map.vim
 so ~/.config/nvim/includes/filetypes.vim
 so ~/.config/nvim/includes/events.vim
 so ~/.config/nvim/includes/userfunc.vim
+so ~/.config/nvim/includes/templates.vim
 
 so ~/.config/nvim/includes/syntax/pgn.vim

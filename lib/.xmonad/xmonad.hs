@@ -232,7 +232,7 @@ eventLogHook = do
   io $ appendFile "/tmp/.xmonad-workspace-log" (wsStr ++ "\n")
 
   where fmt currWs ws
-          | currWs == ws = " %{F" ++ c_white ++ "}" ++ ws ++ "%{F-} "
+          | currWs == ws = " %{F" ++ c_yellow_alt ++ "}" ++ ws ++ "%{F-} "
           | otherwise    = " %{F" ++ c_gray ++ "}" ++ ws ++ "%{F-} "
         sort' = sortBy (compare `on` (!! 0))
 

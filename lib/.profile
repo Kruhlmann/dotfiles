@@ -35,6 +35,7 @@ export LESS_TERMCAP_se="$(printf '%b' '[0m')"
 export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"
 export LESS_TERMCAP_ue="$(printf '%b' '[0m')"
 export QT_QPA_PLATFORMTHEME=gtk3
+export DOTFILES="$HOME/doc/src/github.com/kruhlmann/dotfiles"
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 export GITLAB_TOKEN=$(cat $HOME/.repo-cache)
 export GITLAB_ENDPOINT="https://mo-gitlab.siemens.dk/api/v4"
@@ -43,6 +44,9 @@ export LF_ICONS="di=:fi=:ln=:or=:ex=:*.c=:*.cc=:*.clj=:*
 
 export PATH="$PATH:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 export PATH=~/.npm-global/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+setxkbmap -variant altgr-intl
 
 if [ -n "$BASH_VERSION" ]; then
     if [ -f "$HOME/.bashrc" ]; then

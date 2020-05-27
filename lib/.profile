@@ -46,8 +46,6 @@ export PATH="$PATH:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//
 export PATH=~/.npm-global/bin:$PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-setxkbmap -variant altgr-intl
-
 if [ -n "$BASH_VERSION" ]; then
     if [ -f "$HOME/.bashrc" ]; then
 	. "$HOME/.bashrc"

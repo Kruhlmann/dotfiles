@@ -13,6 +13,7 @@ call plug#begin()
     Plug 'voldikss/vim-floaterm'
     Plug 'ap/vim-buftabline'
     Plug 'heavenshell/vim-jsdoc', { 'do': 'make install' }
+    Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 
     " Language syntax
     Plug 'cakebaker/scss-syntax.vim'
@@ -50,3 +51,4 @@ so ~/.config/nvim/includes/userfunc.vim
 so ~/.config/nvim/includes/templates.vim
 
 so ~/.config/nvim/includes/syntax/pgn.vim
+

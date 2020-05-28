@@ -1,6 +1,2 @@
 #!/bin/sh
-<<<<<<< HEAD
-/usr/bin/feh --no-fehbg --bg-tile '/home/ges/Pictures/Bing/th?id=OHR.EvergladesShowers_ZH-CN9209435866_1920x1200.jpg' 
-=======
-/usr/bin/feh --no-fehbg --bg-scale '/home/ges/img/bing_wallpapers/th?id=OHR.EvergladesShowers_ZH-CN9209435866_1920x1200.jpg' 
->>>>>>> 5d36ce4b416991e5be5134175bef6683cafd840b
+/usr/bin/feh --no-fehbg --bg-tile '/home/ges/Pictures/Bing/th?id=OHR.OldManWhiskers_ZH-CN9321160932_1920x1200.jpg' 

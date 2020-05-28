@@ -20,6 +20,9 @@ let g:NERDTreeIgnore = [
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeShowBookmarks = 1
 
+" Latex preview.
+let g:livepreview_previewer = 'zathura'
+
 " Svelte
 let g:vim_svelte_plugin_use_pug = 1
 let g:vim_svelte_plugin_use_typescript = 1

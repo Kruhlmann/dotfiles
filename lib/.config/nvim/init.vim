@@ -47,7 +47,6 @@ call plug#begin()
 call plug#end()
 
 " Vim config.
-so ~/.config/nvim/includes/lsp.vim
 so ~/.config/nvim/includes/basic.vim
 so ~/.config/nvim/includes/wildmenu.vim
 so ~/.config/nvim/includes/backup.vim
@@ -72,3 +71,4 @@ so ~/.config/nvim/includes/plugins/leaderf.vim
 so ~/.config/nvim/includes/plugins/nerd-commenter.vim
 so ~/.config/nvim/includes/plugins/floaterm.vim
 so ~/.config/nvim/includes/plugins/rainbow_parentheses.vim
+so ~/.config/nvim/includes/plugins/nvim-completion.vim

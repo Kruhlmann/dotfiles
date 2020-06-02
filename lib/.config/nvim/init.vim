@@ -58,6 +58,7 @@ so ~/.config/nvim/includes/templates.vim
 
 " Custom syntax.
 so ~/.config/nvim/includes/syntax/pgn.vim
+so ~/.config/nvim/includes/syntax/vcard.vim
 
 " Plugin configuration.
 luafile ~/.config/nvim/includes/lsp.lua
@@ -65,10 +66,10 @@ so ~/.config/nvim/includes/plugins/nerdtree.vim
 so ~/.config/nvim/includes/plugins/vim-latex-live-preview.vim
 so ~/.config/nvim/includes/plugins/vim-svelte-plugin.vim
 so ~/.config/nvim/includes/plugins/omnisharp-vim.vim
-"so ~/.config/nvim/includes/plugins/coc.vim
 so ~/.config/nvim/includes/plugins/goyo.vim
 so ~/.config/nvim/includes/plugins/leaderf.vim
 so ~/.config/nvim/includes/plugins/nerd-commenter.vim
 so ~/.config/nvim/includes/plugins/floaterm.vim
 so ~/.config/nvim/includes/plugins/rainbow_parentheses.vim
 so ~/.config/nvim/includes/plugins/nvim-completion.vim
+so ~/.config/nvim/includes/plugins/lsp-status.vim

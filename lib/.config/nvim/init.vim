@@ -17,6 +17,9 @@ call plug#begin()
 
     " LSP
     Plug 'neovim/nvim-lsp'
+    Plug 'haorenW1025/completion-nvim'
+    Plug 'haorenW1025/diagnostic-nvim'
+    Plug 'wbthomason/lsp-status.nvim'
 
     " Language syntax.
     Plug 'cakebaker/scss-syntax.vim'
@@ -43,6 +46,7 @@ call plug#begin()
     Plug 'leafOfTree/vim-svelte-theme'
 call plug#end()
 
+" Vim config.
 so ~/.config/nvim/includes/lsp.vim
 so ~/.config/nvim/includes/basic.vim
 so ~/.config/nvim/includes/wildmenu.vim
@@ -57,6 +61,7 @@ so ~/.config/nvim/includes/templates.vim
 so ~/.config/nvim/includes/syntax/pgn.vim
 
 " Plugin configuration.
+luafile ~/.config/nvim/includes/lsp.lua
 so ~/.config/nvim/includes/plugins/nerdtree.vim
 so ~/.config/nvim/includes/plugins/vim-latex-live-preview.vim
 so ~/.config/nvim/includes/plugins/vim-svelte-plugin.vim

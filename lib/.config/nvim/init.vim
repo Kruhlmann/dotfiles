@@ -50,5 +50,6 @@ so ~/.config/nvim/includes/events.vim
 so ~/.config/nvim/includes/userfunc.vim
 so ~/.config/nvim/includes/templates.vim
 
+" Custom syntax.
 so ~/.config/nvim/includes/syntax/pgn.vim
 

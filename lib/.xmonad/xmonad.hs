@@ -197,9 +197,9 @@ workspaceLayouts =
   where
     -- Combinations of our available layouts, which we can cycle through
     -- using mod-Space.  'Mirror' applies a 90-degree rotation to a layout.
-    codeLayouts = fixedLayout ||| tiledLayout
+    codeLayouts = fixedLayout ||| tiledLayout ||| simpleTabbed
     webLayouts = tiledLayout
-    imLayouts = simpleTabbed
+    imLayouts = simpleTabbed ||| Mirror tiledLayout
     defaultLayouts = tiledLayout ||| Mirror tiledLayout ||| fixedLayout |||
                      floatLayout ||| simpleTabbed
 

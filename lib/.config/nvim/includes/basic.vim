@@ -37,8 +37,8 @@ set noshowmode
 set completeopt=longest,menuone,preview
 set viminfo+=n~/.cache/viminfo
 
-colorscheme gruvbox
-"colorscheme eldar
+"colorscheme gruvbox
+colorscheme eldar
 
 if exists('+clipboard')
   set clipboard=unnamedplus  " Yanks go to the ctrl-c '+' clipboard register

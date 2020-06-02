@@ -18,3 +18,9 @@ let g:rbpt_colorpairs = [
     \ ]
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
+
+" Rainbow
+au VimEnter * RainbowParenthesesActivate
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces

@@ -43,8 +43,7 @@ call plug#begin()
     Plug 'leafOfTree/vim-svelte-theme'
 call plug#end()
 
-packadd nvim-lsp
-
+so ~/.config/nvim/includes/lsp.vim
 so ~/.config/nvim/includes/basic.vim
 so ~/.config/nvim/includes/wildmenu.vim
 so ~/.config/nvim/includes/backup.vim

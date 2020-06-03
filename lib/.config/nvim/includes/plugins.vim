@@ -62,15 +62,15 @@ hi FloatermNF guibg=black
 hi FloatermBorderNF guibg=black
 
 " CoC
-let g:coc_global_extensions = [
-    \ 'coc-snippets',
-    \ 'coc-pairs',
-    \ 'coc-tsserver',
-    \ 'coc-eslint',
-    \ 'coc-prettier',
-    \ 'coc-json',
-    \ 'coc-python',
-    \]
+"let g:coc_global_extensions = [
+    "\ 'coc-snippets',
+    "\ 'coc-pairs',
+    "\ 'coc-tsserver',
+    "\ 'coc-eslint',
+    "\ 'coc-prettier',
+    "\ 'coc-json',
+    "\ 'coc-python',
+    "\]
 
 " Devicons
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1

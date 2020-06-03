@@ -8,11 +8,18 @@ call plug#begin()
     Plug 'scrooloose/nerdcommenter'
     Plug 'prettier/vim-prettier', { 'do': 'npm install' }
     Plug 'norcalli/nvim-colorizer.lua'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'haorenW1025/completion-nvim'
     Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
     Plug 'voldikss/vim-floaterm'
     Plug 'ap/vim-buftabline'
     Plug 'heavenshell/vim-jsdoc', { 'do': 'make install' }
+
+    " LSP
+    "Plug 'neovim/nvim-lsp'
+    "Plug 'haorenW1025/completion-nvim'
+    "Plug 'haorenW1025/diagnostic-nvim'
+    "Plug 'wbthomason/lsp-status.nvim'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     " Language syntax
     Plug 'cakebaker/scss-syntax.vim'
@@ -34,11 +41,12 @@ call plug#begin()
     Plug 'itchyny/lightline.vim'
 
     " Themes
-    Plug 'morhetz/gruvbox'
+    Plug 'gruvbox-community/gruvbox'
     Plug 'agude/vim-eldar'
     Plug 'leafOfTree/vim-svelte-theme'
 call plug#end()
 
+"luafile ~/.config/nvim/init.lua
 so ~/.config/nvim/includes/basic.vim
 so ~/.config/nvim/includes/wildmenu.vim
 so ~/.config/nvim/includes/backup.vim

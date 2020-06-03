@@ -55,3 +55,5 @@ if [ -n "$BASH_VERSION" ]; then
 else
     . "$HOME/.config/zsh/.zshrc"
 fi
+
+export PATH="$HOME/.cargo/bin:$PATH"

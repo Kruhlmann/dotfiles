@@ -106,7 +106,7 @@ binds conf@(XConfig {XMonad.modMask = modm}) = M.fromList $ [
     ((modm              , xK_e      ), spawn "termite --name floatterm -e ranger"),
     ((modm              , xK_n      ), spawn "termite --name floatterm -e ncmpcpp"),
     ((modm              , xK_m      ), spawn "neomutt_mailbox"),
-    ((modm              , xK_b      ), spawn "bitwarden-desktop"),
+    ((modm              , xK_b      ), spawn "rofi -modi bw:rofi-bw -show bw"),
     ((modm              , xK_a      ), spawn "termite --name floatterm -e calcurse"),
     ((modm              , xK_v      ), spawn "cbp"),
     ((modm              , xK_p      ), spawn "mpc toggle"),
@@ -119,7 +119,6 @@ binds conf@(XConfig {XMonad.modMask = modm}) = M.fromList $ [
     ((modm .|. shiftMask, xK_Right), shiftNextScreen),
     ((modm .|. shiftMask, xK_Left),  shiftPrevScreen),
     ((modm              , xK_F2     ), spawn "xmonad --recompile; xmonad --restart")
-    --, ((modm              , xK_b     ), sendMessage ToggleStruts)
 
     ] ++ [((m .|. modm, k), windows $ f i)
     | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
@@ -196,9 +195,9 @@ workspaceLayouts =
   where
     -- Combinations of our available layouts, which we can cycle through
     -- using mod-Space.  'Mirror' applies a 90-degree rotation to a layout.
-    codeLayouts = fixedLayout ||| tiledLayout
+    codeLayouts = fixedLayout ||| tiledLayout ||| simpleTabbed
     webLayouts = tiledLayout
-    imLayouts = simpleTabbed
+    imLayouts = simpleTabbed ||| Mirror tiledLayout
     defaultLayouts = tiledLayout ||| Mirror tiledLayout ||| fixedLayout |||
                      floatLayout ||| simpleTabbed
 

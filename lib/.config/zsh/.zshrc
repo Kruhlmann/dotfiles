@@ -12,6 +12,8 @@ setopt appendhistory
 unsetopt correct_all
 unsetopt correct
 
+setxkbmap -variant altgr-intl
+
 source ~/.config/zsh/path.sh
 source ~/.config/zsh/plugins.sh
 source ~/.config/zsh/aliases.sh

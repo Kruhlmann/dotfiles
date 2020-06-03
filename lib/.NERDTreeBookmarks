@@ -3,6 +3,6 @@ i3 ~/.config/i3/config
 polybar ~/.config/polybar/config
 vimrc ~/.config/nvim/init.vim
 
+tlog ~/doc/src/mo-gitlab.siemens.dk/sw-group/banedanmark/s-bane/pykpi/tlog
 latex ~/doc/latex
 kpi_frontend ~/doc/src/mo-gitlab.siemens.dk/sw-group/banedanmark/s-bane/pykpi/components/dashboard
-tlog ~/doc/src/mo-gitlab.siemens.dk/sw-group/banedanmark/s-bane/pykpi/tlog

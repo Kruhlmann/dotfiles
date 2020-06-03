@@ -26,3 +26,8 @@ autocmd bufnewfile *.pug so ~/.config/nvim/templates/pug.vim
 autocmd bufnewfile *.pug exe "1," . 5 . "g/\<file\>/s//" .expand("%")
 autocmd bufnewfile *.pug exe "1," . 5 . "g/\<date\>/s//" .strftime("%d-%m-%Y")
 autocmd Bufwritepre,filewritepre *.pug exe "1," . 5 . "g/\Last modified on.*/s//Last modified on " .strftime("%c")
+
+autocmd bufnewfile *.py so ~/.config/nvim/templates/py.vim
+autocmd bufnewfile *.py exe "1," . 5 . "g/\<file\>/s//" .expand("%")
+autocmd bufnewfile *.py exe "1," . 5 . "g/\<date\>/s//" .strftime("%d-%m-%Y")
+autocmd Bufwritepre,filewritepre *.py exe "1," . 5 . "g/\Last modified on.*/s//Last modified on " .strftime("%c")

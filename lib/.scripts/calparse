@@ -1,0 +1,28 @@
+#!/usr/bin/env sh
+
+ORGANIZER="$(vcal --organizer $1 | sed '1d' | tr -d '\n\r' | tr -s ' ')"
+REQUIRED="$(vcal --required $1 | sed '1d' | sed 's/,//' | sed 's/^[ \t]*//'  | tr -s ' ' | tr '\n\r' ' ')"
+OPTIONAL="$(vcal --optional $1 | sed '1d' | sed 's/,//' | sed 's/^[ \t]*//'  | tr -s ' ' | tr '\n\r' ' ')"
+LOCATION="$(grep '^LOCATION' $1 | sed 's/^LOCATION.*\://'| sed 's/^[ \t]*//;s/[ \t]*$//'| tr '\n\r' ' ')"
+SUMMARY="$(grep '^SUMMARY' $1 | sed 's/^SUMMARY.*\://'| sed 's/^[ \t]*//;s/[ \t]*$//'| tr '\n\r' ' ')"
+UID_LINE="$(grep -n -m 1 "UID:" $1 | sed 's/:.*//')"
+DESCRIPTION_LINE="$(grep -n -m 1 "DESCRIPTION;" $1 | sed 's/:.*//')"
+DESCRIPTION=$(sed -n "$DESCRIPTION_LINE,$UID_LINE p" $1 | sed 's/^[ \t]*//' | sed 's/UID:.*//' | sed 's/.*\://' | tr -d '\n\r' | tr -s ' ' )
+DESCRIPTION_FULL="$(echo \"[$RESPONSE] $SUMMARY\\nOrganizer: $ORGANIZER\\nRequired: $REQUIRED\\nOptional: $OPTIONAL\\n$DESCRIPTION\" | sed 's/[^A-Za-z0-9 \\n\.æøå]//g')"
+echo $DESCRIPTION_FULL
+RESPONSE=$(grep '^X-MICROSOFT-CDO-BUSYSTATUS:TENTATIVE' $1 | sed 's/^.*\://' | cut -c1-1)
+
+echo "" > /tmp/calcurse_import
+cat << EOT >> /tmp/calcurse_import
+$(grep -E '^DT.*|^TZ.*|^BEGIN.*|^END.*|^METHOD.*|^PRODID.*|^VERSION.*|^UID.*' $1 | grep -vE '^END\:VEVENT|^END\:VCALENDAR|^BEGIN\:VALARM|^END\:VALARM')
+DESCRIPTION:$DESCRIPTION_FULL
+SUMMARY:<Siemens> $SUMMARY
+LOCATION:$LOCATION
+END:VEVENT
+END:VCALENDAR
+EOT
+grep "\S" /tmp/calcurse_import | sed 's/\r//' | fmt -78 -t -g 78 | sed 's/   / /' > /tmp/calcurse_tmp
+cat /tmp/calcurse_tmp > /tmp/calcurse_import
+
+#DESCRIPTION:[$RESPONSE] $SUMMARY\\nOrganizer: $ORGANIZER\\nRequired: $REQUIRED\\nOptional: $OPTIONAL\\n$DESCRIPTION
+

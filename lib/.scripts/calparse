@@ -12,8 +12,8 @@ DESCRIPTION_FULL="$(echo \"[$RESPONSE] $SUMMARY\\nOrganizer: $ORGANIZER\\nRequir
 echo $DESCRIPTION_FULL
 RESPONSE=$(grep '^X-MICROSOFT-CDO-BUSYSTATUS:TENTATIVE' $1 | sed 's/^.*\://' | cut -c1-1)
 
-echo "" > /tmp/calcurse_import
-cat << EOT >> /tmp/calcurse_import
+echo "" > $2
+cat << EOT >> $2
 $(grep -E '^DT.*|^TZ.*|^BEGIN.*|^END.*|^METHOD.*|^PRODID.*|^VERSION.*|^UID.*' $1 | grep -vE '^END\:VEVENT|^END\:VCALENDAR|^BEGIN\:VALARM|^END\:VALARM')
 DESCRIPTION:$DESCRIPTION_FULL
 SUMMARY:<Siemens> $SUMMARY
@@ -21,8 +21,6 @@ LOCATION:$LOCATION
 END:VEVENT
 END:VCALENDAR
 EOT
-grep "\S" /tmp/calcurse_import | sed 's/\r//' | fmt -78 -t -g 78 | sed 's/   / /' > /tmp/calcurse_tmp
-cat /tmp/calcurse_tmp > /tmp/calcurse_import
-
-#DESCRIPTION:[$RESPONSE] $SUMMARY\\nOrganizer: $ORGANIZER\\nRequired: $REQUIRED\\nOptional: $OPTIONAL\\n$DESCRIPTION
-
+grep "\S" $2 | sed 's/\r//' | fmt -78 -t -g 78 | sed 's/   / /' > /tmp/calcurse_tmp
+cat /tmp/calcurse_tmp > $2
+rm /tmp/calcurse_tmp

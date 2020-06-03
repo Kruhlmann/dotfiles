@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+calimport $1 /tmp/calcurse_import
+calcurse -i /tmp/calcurse_import

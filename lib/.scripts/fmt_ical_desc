@@ -1,7 +1,0 @@
-#!/usr/bin/env python3
-
-import sys
-import re
-print(re)
-
-print ('\n  '.join(line.strip() for line in re.findAll(r'.{1,78}(?:\s+|$)', sys.stdin)))

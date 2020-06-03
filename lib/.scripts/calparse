@@ -8,11 +8,12 @@ SUMMARY="$(grep '^SUMMARY' $1 | sed 's/^SUMMARY.*\://'| sed 's/^[ \t]*//;s/[ \t]
 UID_LINE="$(grep -n -m 1 "UID:" $1 | sed 's/:.*//')"
 DESCRIPTION_LINE="$(grep -n -m 1 "DESCRIPTION;" $1 | sed 's/:.*//')"
 DESCRIPTION=$(sed -n "$DESCRIPTION_LINE,$UID_LINE p" $1 | sed 's/^[ \t]*//' | sed 's/UID:.*//' | sed 's/.*\://' | tr -d '\n\r' | tr -s ' ' )
-DESCRIPTION_FULL="$(echo \"[$RESPONSE] $SUMMARY\\nOrganizer: $ORGANIZER\\nRequired: $REQUIRED\\nOptional: $OPTIONAL\\n$DESCRIPTION\" | sed 's/[^A-Za-z0-9 \\n\.æøå]//g')"
+DESCRIPTION_FULL="$(echo \"[$RESPONSE] $SUMMARY\\nOrganizer: $ORGANIZER\\nRequired: $REQUIRED\\nOptional: $OPTIONAL\\n$DESCRIPTION\" | sed 's/[^A-Za-z0-9 \\n\.æøå]//g')" | sed 's/\\\\//'
 echo $DESCRIPTION_FULL
 RESPONSE=$(grep '^X-MICROSOFT-CDO-BUSYSTATUS:TENTATIVE' $1 | sed 's/^.*\://' | cut -c1-1)
 
 echo "" > $2
+echo "" > /tmp/calcurse_tmp
 cat << EOT >> $2
 $(grep -E '^DT.*|^TZ.*|^BEGIN.*|^END.*|^METHOD.*|^PRODID.*|^VERSION.*|^UID.*' $1 | grep -vE '^END\:VEVENT|^END\:VCALENDAR|^BEGIN\:VALARM|^END\:VALARM')
 DESCRIPTION:$DESCRIPTION_FULL
@@ -23,4 +24,3 @@ END:VCALENDAR
 EOT
 grep "\S" $2 | sed 's/\r//' | fmt -78 -t -g 78 | sed 's/   / /' > /tmp/calcurse_tmp
 cat /tmp/calcurse_tmp > $2
-rm /tmp/calcurse_tmp

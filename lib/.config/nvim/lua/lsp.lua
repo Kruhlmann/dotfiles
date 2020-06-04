@@ -19,6 +19,10 @@ lsp.gopls.setup {
     on_attach = on_attach;
 }
 
+lsp.bashls.setup {
+    on_attach = on_attach;
+}
+
 lsp.tsserver.setup {
     on_attach = on_attach;
 }

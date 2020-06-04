@@ -11,15 +11,19 @@ local on_attach = function(client)
 end
 
 
-lsp.vimls.setup{
+lsp.vimls.setup {
     on_attach = on_attach;
 }
 
-lsp.gopls.setup{
+lsp.gopls.setup {
     on_attach = on_attach;
 }
 
-lsp.pyls.setup{
+lsp.tsserver.setup {
+    on_attach = on_attach;
+}
+
+lsp.pyls.setup {
     on_attach = on_attach;
     settings = {
         pyls = {

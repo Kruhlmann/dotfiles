@@ -42,7 +42,4 @@ endfunction
 autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 
 " File system navigation
-nmap <C-b> :NERDTreeToggle<CR>
-map <leader>p :vsplit %:p:h/package.json<CR>
-map <leader>ev :e ~/.config/nvim/includes<CR>
-map <leader>ei :vsplit ~/.config/i3/config<CR>
+nmap <leader>f :NERDTreeToggle<CR>

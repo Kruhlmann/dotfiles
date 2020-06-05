@@ -24,6 +24,7 @@ set autoread
 set complete-=i
 set showmatch
 set colorcolumn=80,120
+set updatetime=100
 set ffs=unix,dos
 set t_Co=256
 set signcolumn=yes

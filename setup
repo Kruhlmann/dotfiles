@@ -46,13 +46,9 @@ echo
 # VIM & NVIM plugins
 /usr/bin/vim +PlugInstall +PlugClean +qall
 /usr/bin/nvim +PlugInstall +PlugClean +qall
-/usr/bin/nvim +CocInstall coc-tsserver +qall
-/usr/bin/nvim +CocInstall coc-flutter +qall
-/usr/bin/nvim +CocInstall coc-python +qall
-/usr/bin/nvim +CocInstall coc-solargraph +qall
-/usr/bin/nvim +CocInstall coc-texlab +qall
-/usr/bin/nvim +CocInstall coc-omnisharp +qall
-/usr/bin/nvim +CocInstall coc-svelte +qall
+/usr/bin/nvim +LspInstall bashls +qall
+/usr/bin/nvim +LspInstall gopls +qall
+/usr/bin/nvim +LspInstall tsserver +qall
 
 # Update font cache.
 fc-cache

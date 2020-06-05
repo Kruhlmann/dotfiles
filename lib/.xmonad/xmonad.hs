@@ -151,7 +151,6 @@ myManageHook = composeAll [
     resource  =? "floatterm" --> doRectFloat (W.RationalRect 0.2 0.2 0.6 0.6),
     resource  =? "pavucontrol" --> doRectFloat (W.RationalRect 0.2 0.2 0.6 0.6),
     resource  =? "gnome-panel" --> doCenterFloat,
-    className =? "Gimp" --> doCenterFloat,
     title     =? "Firefox Preferences" --> doFloat,
     title     =? "Session Manager - Mozilla Firefox" --> doFloat,
     title     =? "Firefox Add-on Updates" --> doFloat,

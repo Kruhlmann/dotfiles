@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/bin/feh --no-fehbg --bg-tile '/home/ges/Pictures/Bing/th?id=OHR.SynchronousFireflies_ZH-CN6323931412_1920x1200.jpg' 

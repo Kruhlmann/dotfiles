@@ -1,2 +1,2 @@
 #!/bin/sh
-/usr/bin/feh --no-fehbg --bg-tile '/home/ges/Pictures/Bing/th?id=OHR.SynchronousFireflies_ZH-CN6323931412_1920x1200.jpg' 
+/usr/bin/feh --no-fehbg --bg-scale '/home/ges/img/bing_wallpapers/th?id=OHR.LionSurfing_ZH-CN7369892268_1920x1200.jpg' 

@@ -3,6 +3,7 @@ Description=Nodelock
 
 [Service]
 ExecStart=/usr/bin/nodelock
+Restart=on-failure
 Environment="SERIAL="36345A4757364957""
 Environment="ON_LOCK="/usr/bin/xlock""
 Environment="ON_UNLOCK="/usr/bin/xunlock""

@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-fill '/home/ges/Pictures/Bing/th?id=OHR.EvergladesShowers_ZH-CN9209435866_1920x1200.jpg' 
+/usr/bin/feh --no-fehbg --bg-tile '/home/ges/Pictures/Bing/th?id=OHR.SurfSeason_ZH-CN9212464908_1920x1200.jpg' 

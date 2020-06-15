@@ -54,6 +54,7 @@ import XMonad.Layout.SimpleFloat
 import XMonad.Layout.Tabbed
 import XMonad.Layout.ToggleLayouts
 import XMonad.Layout.WindowArranger
+import Xmonad.Hooks.Swallow
 import qualified DBus as D
 import qualified DBus.Client as D
 import qualified Codec.Binary.UTF8.String as UTF8
@@ -83,7 +84,7 @@ myWorkspaces :: [String]
 myWorkspaces = ["1:\xfa9e", "2: \xe7c5", "3: \xfb6e", "4: \xf0c0", "5: \xf023", "6: \xf718", "7: \xe70f", "8: \xf1b6", "9: \xf085"]
 
 binds conf@(XConfig {XMonad.modMask = modm}) = M.fromList $ [
-    ((modm,               xK_Return), spawn $ XMonad.terminal conf),
+    ((modm,               xK_Return), spawn $ "termite -e tmux"),
     ((modm,               xK_d     ), spawn spRofi),
     ((modm,               xK_q     ), kill),
     ((modm .|. shiftMask, xK_s     ), spawn spMaim),
@@ -237,15 +238,16 @@ eventLogHook = do
         sort' = sortBy (compare `on` (!! 0))
 
 defaults = def{
-    modMask= mod4Mask
-    , terminal = myTerminal
-    , workspaces = myWorkspaces
-    , keys = binds
-    , layoutHook = smartBorders $ myLayout
-    , focusedBorderColor = "red"
-    , normalBorderColor = c_gray_alt
-    , mouseBindings = myMouseBindings                           
-    , manageHook = myManageHook <+> manageHook def
-    , borderWidth = 2
-    , startupHook = myStartupHook
+    modMask= mod4Mask,
+    terminal = myTerminal,
+    workspaces = myWorkspaces,
+    keys = binds,
+    layoutHook = smartBorders $ myLayout,
+    focusedBorderColor = "red",
+    normalBorderColor = c_gray_alt,
+    mouseBindings = myMouseBindings,
+    manageHook = myManageHook <+> manageHook def,
+    borderWidth = 2,
+    startupHook = myStartupHook,
+    handleEventHook    = swallowEventHook pidHashTable windowHashTable
     }

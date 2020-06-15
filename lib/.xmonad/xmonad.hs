@@ -54,7 +54,6 @@ import XMonad.Layout.SimpleFloat
 import XMonad.Layout.Tabbed
 import XMonad.Layout.ToggleLayouts
 import XMonad.Layout.WindowArranger
-import Xmonad.Hooks.Swallow
 import qualified DBus as D
 import qualified DBus.Client as D
 import qualified Codec.Binary.UTF8.String as UTF8
@@ -248,6 +247,5 @@ defaults = def{
     mouseBindings = myMouseBindings,
     manageHook = myManageHook <+> manageHook def,
     borderWidth = 2,
-    startupHook = myStartupHook,
-    handleEventHook    = swallowEventHook pidHashTable windowHashTable
+    startupHook = myStartupHook
     }

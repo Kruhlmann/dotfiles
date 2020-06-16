@@ -8,3 +8,4 @@ so ~/.config/nvim/includes/plugins/nerd-commenter.vim
 so ~/.config/nvim/includes/plugins/rainbow_parentheses.vim
 so ~/.config/nvim/includes/plugins/pathfinder.vim
 so ~/.config/nvim/includes/plugins/indentline.vim
+so ~/.config/nvim/includes/plugins/vimspector.vim

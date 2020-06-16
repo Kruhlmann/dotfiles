@@ -17,7 +17,6 @@ call plug#begin("~/.local/share/nvim/plugged/")
     " Appearance
     Plug 'junegunn/goyo.vim'                       " Focus mode.
     Plug 'kien/rainbow_parentheses.vim'            " Colors matching brackets.
-    Plug 'wellle/context.vim'                      " Code aware context view.
     Plug 'Yggdroot/indentLine'                     " Indentation indicators.
 
     " Functionality.
@@ -31,6 +30,8 @@ call plug#begin("~/.local/share/nvim/plugged/")
         \{ 'do': './install.sh' }                  " workspace.
     Plug 'preservim/nerdcommenter'                 " Commenter.
     Plug 'AlphaMycelium/pathfinder.vim'            " Movement suggestions.
+    Plug 'unblevable/quick-scope'                  " Line navigation.
+    Plug 'puremourning/vimspector'                 " Debugger.
 
     " Syntax highlighting.
     Plug 'cakebaker/scss-syntax.vim'               " SCSS.

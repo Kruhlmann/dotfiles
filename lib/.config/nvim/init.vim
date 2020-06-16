@@ -17,6 +17,8 @@ call plug#begin("~/.local/share/nvim/plugged/")
     " Appearance
     Plug 'junegunn/goyo.vim'                       " Focus mode.
     Plug 'kien/rainbow_parentheses.vim'            " Colors matching brackets.
+    Plug 'wellle/context.vim'                      " Code aware context view.
+    Plug 'Yggdroot/indentLine'                     " Indentation indicators.
 
     " Functionality.
     Plug 'Chiel92/vim-autoformat'                  " Code formatter.

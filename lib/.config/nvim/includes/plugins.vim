@@ -6,3 +6,4 @@ so ~/.config/nvim/includes/plugins/vim-latex-live-preview.vim
 so ~/.config/nvim/includes/plugins/goyo.vim
 so ~/.config/nvim/includes/plugins/nerd-commenter.vim
 so ~/.config/nvim/includes/plugins/rainbow_parentheses.vim
+so ~/.config/nvim/includes/plugins/pathfinder.vim

@@ -28,6 +28,7 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'Yggdroot/LeaderF',                       " FZF for files in
         \{ 'do': './install.sh' }                  " workspace.
     Plug 'preservim/nerdcommenter'                 " Commenter.
+    Plug 'AlphaMycelium/pathfinder.vim'            " Movement suggestions.
 
     " Syntax highlighting.
     Plug 'cakebaker/scss-syntax.vim'               " SCSS.

@@ -1,2 +1,6 @@
 #!/bin/sh
+<<<<<<< HEAD
 /usr/bin/feh --no-fehbg --bg-scale '/home/ges/img/bing_wallpapers/th?id=OHR.Havasupai_ZH-CN0016003195_1920x1200.jpg' 
+=======
+/usr/bin/feh --no-fehbg --bg-tile '/home/ges/Pictures/Bing/th?id=OHR.StStephens_ZH-CN9373191410_1920x1200.jpg' 
+>>>>>>> 905b45cd2655de0739640bddef578ece5421d9bb

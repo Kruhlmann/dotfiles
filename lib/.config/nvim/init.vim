@@ -17,6 +17,7 @@ call plug#begin("~/.local/share/nvim/plugged/")
     " Appearance
     Plug 'junegunn/goyo.vim'                       " Focus mode.
     Plug 'kien/rainbow_parentheses.vim'            " Colors matching brackets.
+    Plug 'Yggdroot/indentLine'                     " Indentation indicators.
 
     " Functionality.
     Plug 'Chiel92/vim-autoformat'                  " Code formatter.
@@ -28,6 +29,9 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'Yggdroot/LeaderF',                       " FZF for files in
         \{ 'do': './install.sh' }                  " workspace.
     Plug 'preservim/nerdcommenter'                 " Commenter.
+    Plug 'AlphaMycelium/pathfinder.vim'            " Movement suggestions.
+    Plug 'unblevable/quick-scope'                  " Line navigation.
+    Plug 'puremourning/vimspector'                 " Debugger.
 
     " Syntax highlighting.
     Plug 'cakebaker/scss-syntax.vim'               " SCSS.
@@ -53,7 +57,7 @@ luafile ~/.config/nvim/lua/lsp.lua
 
 so ~/.config/nvim/includes/lsp.vim	               " LSP vim configuration.
 so ~/.config/nvim/includes/basic.vim               " Basic vim settings.
-so ~/.config/nvim/includes/wildmenu.vim               " Basic vim settings.
+so ~/.config/nvim/includes/wildmenu.vim            " Basic vim settings.
 so ~/.config/nvim/includes/backup.vim              " Vim backup and swap files.
 so ~/.config/nvim/includes/userfunc.vim            " User-defined functions.
 so ~/.config/nvim/includes/binds.vim               " Key bindings.

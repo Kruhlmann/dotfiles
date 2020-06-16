@@ -45,8 +45,8 @@ endfunction
 set statusline=%{UpdateColors(mode())}
 
 " Left side items
-set statusline+=%#StatuslineAccent#\ %{statusline#get_mode(mode())}\
-
+set statusline+=%#StatuslineAccent#\ %{statusline#get_mode(mode())}\ 
+ 
 " Filetype icon
 set statusline+=%#StatuslineFiletype#\ %{statusline#icon()}
 

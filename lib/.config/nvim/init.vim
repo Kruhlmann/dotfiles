@@ -8,11 +8,12 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'Xuyuanp/nerdtree-git-plugin'             " Show git status of files
                                                    " in NERDTree buffers.
     " Language server protocol.
-    Plug 'neovim/nvim-lsp'                         " NVIM LSP configuration
+    "Plug 'neovim/nvim-lsp'                         " NVIM LSP configuration
                                                    " helper.
-    Plug 'haorenW1025/diagnostic-nvim'             " NVIM LSP diagnostics.
-    Plug 'wbthomason/lsp-status.nvim'              " NVIM LSP based status bar.
-    Plug 'haorenW1025/completion-nvim'             " NVIM LSP code completion.
+    "Plug 'haorenW1025/diagnostic-nvim'             " NVIM LSP diagnostics.
+    "Plug 'wbthomason/lsp-status.nvim'              " NVIM LSP based status bar.
+    "Plug 'haorenW1025/completion-nvim'             " NVIM LSP code completion.
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     " Appearance
     Plug 'junegunn/goyo.vim'                       " Focus mode.
@@ -29,7 +30,7 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'Yggdroot/LeaderF',                       " FZF for files in
         \{ 'do': './install.sh' }                  " workspace.
     Plug 'preservim/nerdcommenter'                 " Commenter.
-    Plug 'AlphaMycelium/pathfinder.vim'            " Movement suggestions.
+    "Plug 'AlphaMycelium/pathfinder.vim'            " Movement suggestions.
     Plug 'unblevable/quick-scope'                  " Line navigation.
     Plug 'puremourning/vimspector'                 " Debugger.
 
@@ -53,9 +54,9 @@ call plug#begin("~/.local/share/nvim/plugged/")
 call plug#end()
 
 " LSP lua configuration.
-luafile ~/.config/nvim/lua/lsp.lua
+"luafile ~/.config/nvim/lua/lsp.lua
 
-so ~/.config/nvim/includes/lsp.vim	               " LSP vim configuration.
+"so ~/.config/nvim/includes/lsp.vim	               " LSP vim configuration.
 so ~/.config/nvim/includes/basic.vim               " Basic vim settings.
 so ~/.config/nvim/includes/wildmenu.vim            " Basic vim settings.
 so ~/.config/nvim/includes/backup.vim              " Vim backup and swap files.

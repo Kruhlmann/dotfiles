@@ -1,2 +1,2 @@
 #!/bin/sh
-/usr/bin/feh --no-fehbg --bg-scale '/home/ges/img/bing_wallpapers/th?id=OHR.Havasupai_ZH-CN0016003195_1920x1200.jpg' 
+feh --no-fehbg --bg-fill '/home/ges/img/wallpapers/dolomites.jpg' 

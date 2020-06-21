@@ -83,7 +83,7 @@ myWorkspaces :: [String]
 myWorkspaces = ["1:\xfa9e", "2: \xe7c5", "3: \xfb6e", "4: \xf0c0", "5: \xf023", "6: \xf718", "7: \xe70f", "8: \xf1b6", "9: \xf085"]
 
 binds conf@(XConfig {XMonad.modMask = modm}) = M.fromList $ [
-    ((modm,               xK_Return), spawn $ "termite -e tmux"),
+    ((modm,               xK_Return), spawn $ "termite"),
     ((modm,               xK_d     ), spawn spRofi),
     ((modm,               xK_q     ), kill),
     ((modm .|. shiftMask, xK_s     ), spawn spMaim),

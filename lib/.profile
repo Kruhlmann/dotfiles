@@ -5,6 +5,7 @@ export BROWSER="qutebrowser"
 export READER="zathura"
 export FILE="ranger"
 export SHELL="/bin/zsh"
+export TERM="xterm-color"
 
 # ~/ Clean-up:
 export NOTMUCH_CONFIG="$HOME/.config/notmuch-config"

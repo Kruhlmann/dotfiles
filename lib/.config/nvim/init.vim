@@ -29,6 +29,7 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'puremourning/vimspector'                 " Debugger.
     Plug 'editorconfig/editorconfig-vim'           " Editorconfig file support.
     Plug 'moll/vim-node'                           " NodeJS navigation.
+    Plug 'takac/vim-hardtime'                      " Stop bad habits.
 
     " Syntax highlighting.
     Plug 'cakebaker/scss-syntax.vim'               " SCSS.

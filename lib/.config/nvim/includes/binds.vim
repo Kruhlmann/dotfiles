@@ -1,6 +1,6 @@
 let mapleader=' '
 
-" Hardmode
+" Medium-mode
 nnoremap <Up> <Nop>
 nnoremap <Down> <Nop>
 nnoremap <Left> <Nop>

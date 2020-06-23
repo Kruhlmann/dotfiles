@@ -37,3 +37,10 @@ alias imgc="xclip -selection clipboard -t image/png -o > "
 alias sysu="systemctl --user"
 alias sysr="systemctl --user"
 alias gst="git status --short"
+
+# Devour
+alias mpv="devour mpv"
+alias zathura="devour zathura"
+alias feh="devour feh"
+alias lutris="devour lutris"
+alias qutebrowser="devour qutebrowser"

@@ -24,6 +24,7 @@ mkdir -p ~/.config/mpd/res/playlists
 touch ~/.config/mpd/log
 completed "Making directories"
 
+progress "Update $FILE_CNT symlinks"
 # Symlink and backup all files in ./lib
 find lib ! -path lib -type f | while read FILE; do
     FILE=${FILE:4}
@@ -41,9 +42,8 @@ find lib ! -path lib -type f | while read FILE; do
 
     ln -s -f "$SCRIPTPATH/lib/$FILE" "$HOME/$FILE" 2>&1 >/dev/null
     ((COUNT++))
-    progress "Updated $COUNT/$FILE_CNT symlinks"
 done
-completed "Updated $COUNT/$FILE_CNT symlinks"
+completed "Update $FILE_CNT symlinks"
 
 progress "Setup vim plug"
 [[ -f ~/.vim/autoload/plug.vim ]] || curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -80,5 +80,5 @@ completed "Start user services"
 
 # Rebuild and restart Xmonad.
 progress "Building Xmonad"
-xmonad --recompile; xmonad --restart
+xmonad --recompile; xmonad --restart > /dev/null
 completed "Building Xmonad"

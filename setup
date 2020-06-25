@@ -8,14 +8,11 @@ completed () {
     echo -e -n "\e[32m $1\e[0m\n"
 }
 
-# Stop on error.
-set -e
-
 progress "Setting env vars"
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 COUNT=0
 FILE_CNT=$(find lib ! -path lib -type f | wc -l)
-completed
+completed "Setting env vars"
 
 # Required paths for vim and mpd
 progress "Making directories"

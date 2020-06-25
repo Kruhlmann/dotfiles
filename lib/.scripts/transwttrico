@@ -1,0 +1,18 @@
+#!/usr/bin/env python3
+
+import sys
+
+for line in sys.stdin:
+    line = line.replace("☀", "")
+    line = line.replace("☁️", "")
+    line = line.replace("⛅️", "")
+    line = line.replace("⛈", "")
+    line = line.replace("✨", "")
+    line = line.replace("🌫", "")
+    line = line.replace("🌩","朗")
+    line = line.replace("❄️", "")
+    line = line.replace("🌨", "")
+    line = line.replace("🌧", "")
+    line = line.replace("🌦", "")
+    print(line)
+

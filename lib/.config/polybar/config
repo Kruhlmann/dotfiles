@@ -43,6 +43,7 @@ module-margin-right = 1
 
 font-0 = "FiraCode Nerd Font:pixelsize=12;3"
 font-1 = "FiraCode Nerd Font:pixelsize=14;3"
+font-2 = "Source Code Pro:pixelsize=14;3"
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -52,7 +53,7 @@ inherit = bar/master
 
 modules-left = i3 bspwm workspaces-xmonad title-xmonad
 modules-cetner =
-modules-right = mpd 
+modules-right = mpd
 
 padding-right = 2
 bottom = true
@@ -62,7 +63,7 @@ inherit = bar/master
 
 modules-left = nextapt
 modules-cetner =
-modules-right = pacman-updates ip bluetooth corona github mailbox filesystem pulseaudio memory cpu battery temperature date powermenu
+modules-right = weather pacman-updates ip bluetooth corona github mailbox filesystem pulseaudio memory cpu battery temperature date powermenu
 
 padding-left = 1
 bottom = false

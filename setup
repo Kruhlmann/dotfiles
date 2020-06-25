@@ -80,6 +80,6 @@ completed "Start user services"
 
 # Rebuild and restart Xmonad.
 progress "Building Xmonad"
-xmonad --recompile > /dev/null
+xmonad --recompile > /dev/null 2>&1
 xmonad --restart
 completed "Building Xmonad"

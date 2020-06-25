@@ -1,9 +1,12 @@
 #!/bin/bash
 
+echo -n " Setting env vars...\r                                               "
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 COUNT=0
 FILE_CNT=$(find lib ! -path lib -type f | wc -l)
+echo " Setting env vars                                                       "
 
+echo -n " Making directories\r                                                "
 # Required paths for vim and mpd
 mkdir -p ~/.vim/tmp/undo
 mkdir -p ~/.vim/tmp/backup
@@ -11,6 +14,7 @@ mkdir -p ~/.vim/tmp/swap
 mkdir -p ~/.config/mpd/res
 mkdir -p ~/.config/mpd/res/playlists
 touch ~/.config/mpd/log
+echo " Making directories                                                        "
 
 # Symlink and backup all files in ./lib
 find lib ! -path lib -type f | while read FILE; do
@@ -26,7 +30,7 @@ find lib ! -path lib -type f | while read FILE; do
         cp "$HOME/$FILE" "$BACKUPFILE"
         rm "$HOME/$FILE"
     fi
-    
+
     ln -s -f "$SCRIPTPATH/lib/$FILE" "$HOME/$FILE" 2>&1 >/dev/null
     ((COUNT++))
     echo -e -n "\e[36mUpdated $COUNT/$FILE_CNT files.\e[0m\r"

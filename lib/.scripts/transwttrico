@@ -14,5 +14,8 @@ for line in sys.stdin:
     line = line.replace("🌨", "")
     line = line.replace("🌧", "")
     line = line.replace("🌦", "")
-    print(line)
+    if len(sys.argv) > 2 and sys.argv[1] == "--color":
+        print("%%{F%s}%s %%{F-}: %s" % (sys.argv[2], line[0], line[3:]))
+    else:
+        print(line)
 

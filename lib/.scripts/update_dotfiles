@@ -3,5 +3,5 @@ cd ~/doc/src/github.com/kruhlmann/dotfiles
 git add lib
 git commit -am "Updated dotfiles"
 git pull
-git push > /dev/null
+git push
 ./setup

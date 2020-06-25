@@ -1,12 +1,20 @@
-#!/bin/bash
+#!/usr/bin/env sh
 
-echo -e -n " Setting env vars...\r                                               "
+progress () {
+    echo -e -n " $1\r"
+}
+
+completed () {
+    echo -e -n " $1\n"
+}
+
+progress "Setting env vars"
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 COUNT=0
 FILE_CNT=$(find lib ! -path lib -type f | wc -l)
-echo " Setting env vars                                                       "
+completed
 
-echo -e -n " Making directories\r                                                "
+progress "Making directories"
 # Required paths for vim and mpd
 mkdir -p ~/.vim/tmp/undo
 mkdir -p ~/.vim/tmp/backup
@@ -14,7 +22,7 @@ mkdir -p ~/.vim/tmp/swap
 mkdir -p ~/.config/mpd/res
 mkdir -p ~/.config/mpd/res/playlists
 touch ~/.config/mpd/log
-echo -e " Making directories                                                        "
+completed " Making directories"
 
 # Symlink and backup all files in ./lib
 find lib ! -path lib -type f | while read FILE; do
@@ -33,26 +41,26 @@ find lib ! -path lib -type f | while read FILE; do
 
     ln -s -f "$SCRIPTPATH/lib/$FILE" "$HOME/$FILE" 2>&1 >/dev/null
     ((COUNT++))
-    echo -e -n "\e[36mUpdated $COUNT/$FILE_CNT files.\e[0m\r"
+    progress "Updated $COUNT/$FILE_CNT symlinks"
 done
-echo
+completed "Updated $COUNT/$FILE_CNT symlinks"
 
-# Vim plug & OhMyZSH
+progress "Setup vim plug"
 [[ -f ~/.vim/autoload/plug.vim ]] || curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 [[ -f ~/.local/share/nvim/site/autoload/plug.vim ]] || curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-[[ -d ~/.config/.oh-my-zsh ]] || sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+completed "Setup vim plug"
 
-# OhMyZSH non-standard plugins
+progress "Setup oh-my-zsh"
+[[ -d ~/.config/.oh-my-zsh ]] || sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 [[ -d ~/.config/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]] || git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 [[ -d ~/.config/.oh-my-zsh/custom/plugins/zsh-completions ]] || git clone https://github.com/zsh-users/zsh-completions ~/.config/.oh-my-zsh/custom/plugins/zsh-completions
 [[ -d ~/.config/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]] || git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
+completed "Setup Oh-my-zsh"
+
 # VIM & NVIM plugins
 /usr/bin/vim +PlugInstall +PlugClean +qall
 /usr/bin/nvim +PlugInstall +PlugClean +qall
-/usr/bin/nvim +LspInstall bashls +qall
-/usr/bin/nvim +LspInstall gopls +qall
-/usr/bin/nvim +LspInstall tsserver +qall
 
 # Update font cache.
 fc-cache

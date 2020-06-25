@@ -57,7 +57,7 @@ progress "Setup oh-my-zsh"
 [[ -d ~/.config/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]] || git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 [[ -d ~/.config/.oh-my-zsh/custom/plugins/zsh-completions ]] || git clone https://github.com/zsh-users/zsh-completions ~/.config/.oh-my-zsh/custom/plugins/zsh-completions
 [[ -d ~/.config/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]] || git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-completed "Setup Oh-my-zsh"
+completed "Setup oh-my-zsh"
 
 # Update font cache.
 progress "Setup fonts"

@@ -46,3 +46,6 @@ noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
 " Rename variable
 map <F2> :call RenameWord()<CR>
+
+" Git merge conflicts goto.
+nnoremap <leader>c /\v^\<\<\<\<\<\<\< \|\=\=\=\=\=\=\=$\|\>\>\>\>\>\>\> /<CR>

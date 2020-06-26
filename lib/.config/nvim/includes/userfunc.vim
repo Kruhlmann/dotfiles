@@ -5,9 +5,3 @@ fun! CleanExtraSpaces() "Function to clean unwanted spaces
     call setpos('.', save_cursor)
     call setreg('/', old_query)
 endfun
-
-fun! RenameWord()
-    let cword = expand("<cword>")
-    let rword = input("New variable nmame: ")
-    exe "%s/" . cword . "/" . rword . "/gc"
-endfun

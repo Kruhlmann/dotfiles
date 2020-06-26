@@ -1,12 +1,9 @@
 call plug#begin("~/.local/share/nvim/plugged/")
     " File manager.
     Plug 'scrooloose/nerdtree'                     " File manager.
-    Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " Syntax highlighting in
-                                                   " NERDTree buffers.
-    Plug 'ryanoasis/vim-devicons'                  " File type icons in
-                                                   " NERDTree buffers.
-    Plug 'Xuyuanp/nerdtree-git-plugin'             " Show git status of files
-                                                   " in NERDTree buffers.
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " Syntax highlighting NERD.
+    Plug 'ryanoasis/vim-devicons'                  " File type icons.
+    Plug 'Xuyuanp/nerdtree-git-plugin'             " Show git status of files.
     " Language server protocol.
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 

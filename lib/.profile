@@ -20,6 +20,7 @@ export NVM_DIR="$HOME/.local/bin/nvm"
 export I3CONFIG="$HOME/.config/i3/config"
 export MANPATH="/usr/local/man:$MANPATH"
 export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # Other program settings:
 export DICS="/usr/share/stardict/dic/"

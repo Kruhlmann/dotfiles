@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 progress () {
     echo -e -n "\e[33m $1\e[0m\r"
@@ -9,7 +9,7 @@ completed () {
 }
 
 progress "Setting env vars"
-SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
+SCRIPTPATH="$( cd "$(dirname "$0")" || exit 1 ; pwd -P )"
 COUNT=0
 FILE_CNT=$(find lib ! -path lib -type f | wc -l)
 completed "Setting env vars"
@@ -26,7 +26,7 @@ completed "Making directories"
 
 progress "Update $FILE_CNT symlinks"
 # Symlink and backup all files in ./lib
-find lib ! -path lib -type f | while read FILE; do
+find lib ! -path lib -type f | while read -r FILE; do
     FILE=${FILE:4}
     DIR=$(dirname "$HOME/$FILE")
     BACKUPFILE="$SCRIPTPATH/back/$FILE"
@@ -40,7 +40,7 @@ find lib ! -path lib -type f | while read FILE; do
         rm "$HOME/$FILE"
     fi
 
-    ln -s -f "$SCRIPTPATH/lib/$FILE" "$HOME/$FILE" 2>&1 >/dev/null
+    ln -s -f "$SCRIPTPATH/lib/$FILE" "$HOME/$FILE" >/dev/null 2>&1 
     ((COUNT++))
 done
 completed "Update $FILE_CNT symlinks"
@@ -51,6 +51,10 @@ progress "Setup vim plug"
 /usr/bin/vim +PlugInstall +PlugClean[!] +qall
 /usr/bin/nvim +PlugInstall +PlugClean[!] +qall
 completed "Setup vim plug"
+
+progress "Setup vim LSP"
+/usr/bin/nvim +TSInstall lua python typescript javascript ruby +qall
+
 
 progress "Setup oh-my-zsh"
 [[ -d ~/.config/.oh-my-zsh ]] || sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

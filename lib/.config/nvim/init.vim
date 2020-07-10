@@ -77,4 +77,4 @@ so ~/.config/nvim/includes/syntax/vcard.vim        " VCard syntax highlighting.
 
 " Language server configuration.
 luafile ~/.config/nvim/lua/lsp.lua
-"luafile ~/.config/nvim/lua/tree_sit.lua
+luafile ~/.config/nvim/lua/tree_sit.lua

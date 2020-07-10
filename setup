@@ -40,7 +40,7 @@ find lib ! -path lib -type f | while read -r FILE; do
         rm "$HOME/$FILE"
     fi
 
-    ln -s -f "$SCRIPTPATH/lib/$FILE" "$HOME/$FILE" >/dev/null 2>&1 
+    ln -s -f "$SCRIPTPATH/lib/$FILE" "$HOME/$FILE" >/dev/null 2>&1
     ((COUNT++))
 done
 completed "Update $FILE_CNT symlinks"
@@ -53,7 +53,13 @@ progress "Setup vim plug"
 completed "Setup vim plug"
 
 progress "Setup vim LSP"
-/usr/bin/nvim +TSInstall lua python typescript javascript ruby +qall
+/usr/bin/nvim +TSInstall lua +qall
+/usr/bin/nvim +TSInstall ruby +qall
+/usr/bin/nvim +TSInstall typescript +qall
+/usr/bin/nvim +TSInstall javascript +qall
+/usr/bin/nvim +TSInstall python +qall
+/usr/bin/nvim +TSInstall c +qall
+completed "Seup vim LSP"
 
 
 progress "Setup oh-my-zsh"

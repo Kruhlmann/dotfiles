@@ -62,6 +62,80 @@ end
 
 local servers = {
     {
+        name = 'diagnosticls',
+        config = {
+            filetypes = {
+                'json',
+                'sh'
+            },
+            init_options = {
+                linters = {
+                    shellcheck = {
+                        command = "shellcheck",
+                        debounce = 100,
+                        args = { "--format=gcc", "--shell=sh", "-" },
+                        offsetLine = 0,
+                        offsetColumn = 0,
+                        sourceName = "shellcheck",
+                        formatLines = 1,
+                        formatPattern = {
+                            "^[^:]+:(\\d+):(\\d+):\\s+([^:]+):\\s+(.*)$",
+                            {
+                                line = 1,
+                                column = 2,
+                                message = 4,
+                                security = 3
+                            }
+                        },
+                        securities = {
+                            refactor = "info",
+                            convention = "info",
+                            error = "error",
+                            warning = "warning",
+                            note = "info"
+                        },
+                    },
+                    pylint = {
+                        command = "pylint",
+                        args = {
+                            "--output-format=text",
+                            "--score=no",
+                            "--msg-template='{line}:{column}:{category}:{msg} ({msg_id}:{symbol})'",
+                            "%file"
+                        },
+                        offsetLine = 1,
+                        offsetColumn = 1,
+                        sourceName = "pylint",
+                        formatLines = 1,
+                        formatPattern = {
+                            "^[^:]+:(\\d+):(\\d+):\\s+([^:]+):\\s+(.*)$",
+                            {
+                                line = 1,
+                                column = 2,
+                                message = 4,
+                                security = 3
+                            }
+                        },
+                        rootPatterns = {
+                            ".git", "setup.py"
+                        },
+                        securities = {
+                            informational = "hint",
+                            refactor = "info",
+                            convention = "info",
+                            warning = "warning",
+                            error = "error",
+                            fatal = "error"
+                        }
+                    }
+                },
+                filetypes = {
+                    sh = "shellcheck"
+                }
+            }
+        }
+    },
+    {
         name = 'yamlls',
         config = {
           settings = {
@@ -80,9 +154,9 @@ local servers = {
     {
         name = 'bashls'
     },
-    {
-        name = 'clangd'
-    },
+    --{
+        --name = 'clangd'
+    --},
     {
         name = 'jedi_language_server'
     },
@@ -91,6 +165,45 @@ local servers = {
     },
     {
         name = 'vimls'
+    },
+    {
+        name = 'pyls_ms',
+        config = {
+            settings={
+                python = {
+                    linting = {
+                        enabled = true;
+                    },
+                    analysis = {
+                        disabled = {
+                            "typing-generic-arguments",
+                            "typing-typevar-arguments"
+                        },
+                        information = {},
+                        warnings = {
+                            "inherit-non-class",
+                            "no-cls-argument",
+                            "no-method-argument",
+                            "no-self-argument",
+                            "parameter-already-specified",
+                            "parameter-missing",
+                            "positional-argument-after-keyword",
+                            "positional-only-named",
+                            "return-in-init",
+                            "too-many-function-arguments",
+                            "too-many-positional-arguments-before-star",
+                            "typing-newtype-arguments",
+                            "undefined-variable",
+                            "unknown-parameter-name",
+                            "unresolved-import",
+                            "variable-not-defined-globally",
+                            "variable-not-defined-nonlocal"
+                        },
+                        errors = {}
+                    }
+                }
+            };
+        }
     },
     {
         name = 'solargraph'

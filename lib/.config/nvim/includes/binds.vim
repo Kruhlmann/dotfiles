@@ -43,3 +43,10 @@ nnoremap ; :
 " j/k will move virtual lines (lines that wrap)
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+
+" Rename variable
+"map <F2> :call RenameWord()<CR>
+"map <F2> <Plug>(coc-rename)
+
+" Git merge conflicts goto.
+nnoremap <leader>c /\v^\<\<\<\<\<\<\< \|\=\=\=\=\=\=\=$\|\>\>\>\>\>\>\> /<CR>

@@ -23,7 +23,7 @@ set previewheight=8
 set autoread
 set complete-=i
 set showmatch
-set colorcolumn=81,121
+let &colorcolumn=join(range(81,999),",")
 set updatetime=100
 set ffs=unix,dos
 set t_Co=256
@@ -38,8 +38,9 @@ set noshowmode
 set completeopt=longest,menuone,preview
 set viminfo+=n~/.cache/viminfo
 
-"colorscheme gruvbox
-colorscheme eldar
+"colo gruvbox
+"colo eldar
+colo cobalt2
 
 if exists('+clipboard')
   set clipboard=unnamedplus  " Yanks go to the ctrl-c '+' clipboard register

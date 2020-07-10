@@ -14,7 +14,11 @@
     tool = vimdiff
     conflictstyle = diff3
 
+[mergetool "vimdiff"]
+    cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+
 [difftool]
+    tool = vimdiff --no-prompt -O
     prompt = 0
 
 [diff]

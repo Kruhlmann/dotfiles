@@ -5,6 +5,7 @@
         "typescript",
         "typescriptreact",
         "json",
+        "ruby",
         "javascriptreact",
         "typescript.tsx",
         "graphql",
@@ -14,6 +15,13 @@
     "prettier.tabWidth": 4,
     "prettier.singleQuote": false,
     "prettier.trailingComma": "es5",
+    "eslint.autoFix": true,
+    "solargraph.diagnostics": true,
+    "solargraph.autoformat": true,
+    "solargraph.completion": true,
+    "solargraph.rename": true,
+    "solargraph.formatting": true,
+    "solargraph.hover": true,
     "prettier.bracketSpacing": true,
     "prettier.semi": true,
     "prettier.useTabs": false,
@@ -22,6 +30,12 @@
     "latex.lint.onSave": true,
     "latex.build.onSave": true,
     "latex.forwardSearch.executable": "zathura",
+    "diagnostic.errorSign": "✘",
+    "diagnostic.warningSign": "",
+    "diagnostic.infoSign": "",
+    "diagnostic-languageserver.filetypes": {
+        "sh": "shellcheck"
+    },
     "languageserver": {
         "bash": {
             "command": "bash-language-server",

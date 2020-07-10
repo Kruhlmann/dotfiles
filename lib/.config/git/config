@@ -33,6 +33,9 @@
 [includeIf "gitdir:~/doc/src/mo-gitlab.siemens.dk/"]
     path = ~/.config/git/siemens
 
+[includeIf "gitdir:~/.calcurse"]
+    path = ~/.config/git/personal
+
 [includeIf "gitdir:~/doc/src/github.com/"]
     path = ~/.config/git/personal
 

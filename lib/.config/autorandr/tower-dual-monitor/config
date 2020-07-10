@@ -7,11 +7,14 @@ off
 output DVI-D-0
 off
 output DVI-I-1
+crtc 1
 mode 1680x1050
 pos 0x0
 rate 59.95
+rotate left
 output DP-0
+crtc 0
 mode 1920x1080
-pos 1680x0
+pos 1050x300
 primary
 rate 60.00

@@ -26,7 +26,7 @@ find lib ! -path lib -type f | while read FILE; do
         cp "$HOME/$FILE" "$BACKUPFILE"
         rm "$HOME/$FILE"
     fi
-    
+
     ln -s -f "$SCRIPTPATH/lib/$FILE" "$HOME/$FILE" 2>&1 >/dev/null
     ((COUNT++))
     echo -e -n "\e[36mUpdated $COUNT/$FILE_CNT files.\e[0m\r"
@@ -46,9 +46,9 @@ echo
 # VIM & NVIM plugins
 /usr/bin/vim +PlugInstall +PlugClean +qall
 /usr/bin/nvim +PlugInstall +PlugClean +qall
-/usr/bin/nvim +LspInstall bashls +qall
-/usr/bin/nvim +LspInstall gopls +qall
-/usr/bin/nvim +LspInstall tsserver +qall
+/usr/bin/nvim +CocInstall coc-tsserver +qall
+/usr/bin/nvim +CocInstall coc-css +qall
+/usr/bin/nvim +CocInstall coc-eslint +qall
 
 # Update font cache.
 fc-cache

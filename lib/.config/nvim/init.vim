@@ -8,7 +8,11 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'Xuyuanp/nerdtree-git-plugin'             " Show git status of files
                                                    " in NERDTree buffers.
     " Language server protocol.
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    "Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'neovim/nvim-lsp'                         " Native language server.
+    Plug 'haorenW1025/completion-nvim'             " LSP auto completion.
+    Plug 'haorenW1025/diagnostic-nvim'             " LSP diagnostics.
+    Plug 'wbthomason/lsp-status.nvim'              " LSP statusbar utilities.
 
     " Appearance
     Plug 'junegunn/goyo.vim'                       " Focus mode.
@@ -41,14 +45,15 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'dart-lang/dart-vim-plugin'               " Dart.
     Plug 'digitaltoad/vim-pug'                     " PUG/JADE.
     Plug 'OmniSharp/omnisharp-vim'                 " C#.
-    Plug 'numirias/semshi',                        " Python semantics.
-        \{'do': ':UpdateRemotePlugins'}
+    "Plug 'numirias/semshi',                        " Python semantics.
+    "    \{'do': ':UpdateRemotePlugins'}
 
     " Themes.
     Plug 'gruvbox-community/gruvbox'
     Plug 'agude/vim-eldar'
     Plug 'leafOfTree/vim-svelte-theme'
     Plug 'Kruhlmann/cobalt2-vim-theme'
+    Plug 'junegunn/seoul256.vim'
 call plug#end()
 
 " Global configuration.
@@ -68,3 +73,7 @@ so ~/.config/nvim/includes/lang/py.vim             " Python specific config.
 " Custom syntax configuration.
 so ~/.config/nvim/includes/syntax/pgn.vim          " PGN syntax highlighting.
 so ~/.config/nvim/includes/syntax/vcard.vim        " VCard syntax highlighting.
+
+" Language server configuration.
+luafile ~/.config/nvim/lua/lsp.lua                 " Main LSP config.
+luafile ~/.config/nvim/lua/tree_sit.lua            " LSP tree sit.

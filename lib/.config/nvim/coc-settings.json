@@ -30,6 +30,9 @@
     "latex.lint.onSave": true,
     "latex.build.onSave": true,
     "latex.forwardSearch.executable": "zathura",
+    "diagnostic.errorSign": "✘",
+    "diagnostic.warningSign": "",
+    "diagnostic.infoSign": "",
     "diagnostic-languageserver.filetypes": {
         "sh": "shellcheck"
     },

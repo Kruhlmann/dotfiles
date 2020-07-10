@@ -48,6 +48,7 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'gruvbox-community/gruvbox'
     Plug 'agude/vim-eldar'
     Plug 'leafOfTree/vim-svelte-theme'
+    Plug 'gertjanreynaert/cobalt2-vim-theme'
 call plug#end()
 
 " Global configuration.

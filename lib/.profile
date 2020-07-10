@@ -6,6 +6,7 @@ export READER="zathura"
 export FILE="ranger"
 export SHELL="/bin/zsh"
 export TERM="xterm-color"
+export MOD_KEY="mod4"
 
 # ~/ Clean-up:
 export NOTMUCH_CONFIG="$HOME/.config/notmuch-config"

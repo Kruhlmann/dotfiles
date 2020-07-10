@@ -62,45 +62,6 @@ end
 
 local servers = {
     {
-        name = 'pyls_ms',
-        config = {
-            settings={
-                python = {
-                    linting = {
-                        enabled = true;
-                    },
-                    analysis = {
-                        disabled = {
-                            "typing-generic-arguments",
-                            "typing-typevar-arguments"
-                        },
-                        information = {},
-                        warnings = {
-                            "inherit-non-class",
-                            "no-cls-argument",
-                            "no-method-argument",
-                            "no-self-argument",
-                            "parameter-already-specified",
-                            "parameter-missing",
-                            "positional-argument-after-keyword",
-                            "positional-only-named",
-                            "return-in-init",
-                            "too-many-function-arguments",
-                            "too-many-positional-arguments-before-star",
-                            "typing-newtype-arguments",
-                            "undefined-variable",
-                            "unknown-parameter-name",
-                            "unresolved-import",
-                            "variable-not-defined-globally",
-                            "variable-not-defined-nonlocal"
-                        },
-                        errors = {}
-                    }
-                }
-            };
-        }
-    },
-    {
         name = 'yamlls',
         config = {
           settings = {

@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+HEADSET_ICO="%{F#458588}%{F-}"
+LOGITECH_BATTERY=$(sudo headsetcontrol -b | grep Battery | sed 's/Battery: //')
+
+if [ ! -z "$LOGITECH_BATTERY" ]; then
+    echo "$HEADSET_ICO $LOGITECH_BATTERY"
+fi

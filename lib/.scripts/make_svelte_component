@@ -1,0 +1,32 @@
+#!/usr/bin/env sh
+
+PATH=$1
+FILENAME=$(basename $PATH)
+
+#cat << EOT >> "$PATH/$FILENAME.svelte"
+#<script context="module">
+
+#</script>
+
+#<script src="./$FILENAME.js">
+
+#</script>
+
+#<template lang="pug" src="./$FILENAME.pug">
+
+#</template>
+
+
+#<style lang="scss">
+    #@import "$FILENAME"
+#</style>
+#EOT
+
+#touch $SCSS_FILE
+#touch $TS_FILE
+#touch $PUG_FILE
+
+echo "Created $PATH/$FILENAME.svelte"
+echo "Created $PATH/$FILENAME.scss"
+echo "Created $PATH/$FILENAME.ts"
+echo "Created $PATH/$FILENAME.pug"

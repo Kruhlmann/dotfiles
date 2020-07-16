@@ -1,32 +1,32 @@
 #!/usr/bin/env sh
 
-PATH=$1
-FILENAME=$(basename $PATH)
+FILE_PATH=$1
+FILENAME=$(basename "$FILE_PATH")
 
-#cat << EOT >> "$PATH/$FILENAME.svelte"
-#<script context="module">
+mkdir -p $FILE_PATH
 
-#</script>
+cat << EOT >> "$FILE_PATH/$FILENAME.svelte"
+<script context="module">
 
-#<script src="./$FILENAME.js">
+</script>
 
-#</script>
+<script src="./$FILENAME.js">
 
-#<template lang="pug" src="./$FILENAME.pug">
+</script>
 
-#</template>
+<template lang="pug" src="./$FILENAME.pug"></template>
 
 
-#<style lang="scss">
-    #@import "$FILENAME"
-#</style>
-#EOT
+<style lang="scss">
+    @import "$FILENAME";
+</style>
+EOT
 
-#touch $SCSS_FILE
-#touch $TS_FILE
-#touch $PUG_FILE
+touch "$FILE_PATH/$FILENAME.scss"
+touch "$FILE_PATH/$FILENAME.ts"
+touch "$FILE_PATH/$FILENAME.pug"
 
-echo "Created $PATH/$FILENAME.svelte"
-echo "Created $PATH/$FILENAME.scss"
-echo "Created $PATH/$FILENAME.ts"
-echo "Created $PATH/$FILENAME.pug"
+echo "Created $FILE_PATH/$FILENAME.svelte"
+echo "Created $FILE_PATH/$FILENAME.scss"
+echo "Created $FILE_PATH/$FILENAME.ts"
+echo "Created $FILE_PATH/$FILENAME.pug"

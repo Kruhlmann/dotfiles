@@ -45,7 +45,7 @@ inherit = bar/master
 
 modules-left = nextapt
 modules-cetner =
-modules-right = weather pacman-updates ip bluetooth corona github mailbox filesystem pulseaudio memory cpu battery temperature date powermenu
+modules-right = peripherals weather ip bluetooth mailbox filesystem pulseaudio memory battery thermals date powermenu
 
 padding-left = 1
 bottom = false

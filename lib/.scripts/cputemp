@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-
-sensors | grep "Package id 0" | xargs | awk '{print $4}' | sed 's/\+//'

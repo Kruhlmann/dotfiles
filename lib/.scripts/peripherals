@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+RESET_COLOR="%{F-}"
+WARN_COLOR="%{F#AA7700}"
+SUCCESS_COLOR="%{F#258845}"
+DEFAULT_COLOR="%{F#458588}"
+HEADSET_ICO=""
+
+LOGITECH_OUT=$(sudo headsetcontrol -b)
+LOGITECH_BATTERY=$(echo "$LOGITECH_OUT" | tail -n 1 | grep -oE '[0-9]+')
+LOGITECH_CHARGING=$(echo "$LOGITECH_OUT"  | tail -n 1 | grep 'Battery: Charging')
+
+if [ ! -z "$LOGITECH_CHARGING" ]; then
+    echo "$SUCCESS_COLOR$HEADSET_ICO$RESET_COLOR"
+elif [ $LOGITECH_BATTERY -gt 30 ]; then
+    echo "$DEFAULT_COLOR$HEADSET_ICO$RESET_COLOR $LOGITECH_BATTERY%"
+elif [ $LOGITECH_BATTERY -gt 0 ]; then
+    echo "$WARN_COLOR$HEADSET_ICO$RESET_COLOR $LOGITECH_BATTERY%"
+fi

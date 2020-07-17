@@ -1,11 +1,11 @@
 -------------------------------------------------
 --   __   __                                _  --
 --   \ \ / /                               | | --
---    \ V / _ __ ___   ___  _ __   __ _  __| | --      
+--    \ V / _ __ ___   ___  _ __   __ _  __| | --
 --     > < | '_ ` _ \ / _ \| '_ \ / _` |/ _` | --
 --    / . \| | | | | | (_) | | | | (_| | (_| | --
 --   /_/ \_\_| |_| |_|\___/|_| |_|\__,_|\__,_| --
--------------------------------------------------                                
+-------------------------------------------------
 
 -- Imports
 import XMonad
@@ -135,12 +135,10 @@ binds conf@(XConfig {XMonad.modMask = modm}) = M.fromList $ [
 myStartupHook = do
     spawnOnce "bing-wallpaper"
     spawnOnce "discord"
-    spawnOnce "compton -f"
     spawnOnce "nm-applet"
     spawnOnce "launch_polybar"
     spawnOnce "protonmail-bridge"
-    spawnOnce "xscreensaver"
- 
+
 myManageHook = composeAll [
     -- Positions.
     className =? "discord" --> doShift "3",
@@ -160,7 +158,7 @@ myManageHook = composeAll [
     ]
 
 -- Mouse bindings
- 
+
 myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- mod-button1, Set the window to floating mode and move by dragging
     [ ((modMask, button1), (\w -> focus w >> mouseMoveWindow w

@@ -13,7 +13,6 @@ LOGITECH_BATTERY=$(echo "$LOGITECH_OUT" | tail -n 1 | grep -oE '[0-9]+')
 LOGITECH_CHARGING=$(echo "$LOGITECH_OUT"  | tail -n 1 | grep 'Battery: Charging')
 
 if [ "$LOGITECH_MIS" -lt 1 ]; then
-    echo $LOGITECH_MIS
     if [ -n "$LOGITECH_CHARGING" ]; then
         echo "$SUCCESS_COLOR$HEADSET_ICO$RESET_COLOR"
     elif [ "$LOGITECH_BATTERY" -gt 30 ]; then

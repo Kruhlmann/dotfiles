@@ -1,9 +1,10 @@
 #!/usr/bin/env sh
 
 
-CHOICE=$(show_git_emoji_selection | rofi -i -p  "Please select an appropriate symbol for this commit message:" -dmenu | grep "^.*:")
+CHOICE=$(show_git_emoji_selection | rofi -i -p  "Please select an appropriate symbol for this commit message" -dmenu | grep -o '^.*:' | sed 's/://')
 PREFIX=""
 
+echo $CHOICE
 case $CHOICE in
     1) PREFIX=":art:"; ;;
     2) PREFIX=":zap:"; ;;

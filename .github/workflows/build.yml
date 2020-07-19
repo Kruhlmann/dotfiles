@@ -6,7 +6,7 @@ on:
     branches: [ master ]
 jobs:
   build:
-    runs-on: arch-latest
+    runs-on: archlinux-latest
     steps:
     - uses: actions/checkout@v2
     - name: Install dotfiles

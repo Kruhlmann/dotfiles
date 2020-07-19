@@ -5,15 +5,30 @@ WARN_COLOR="%{F#AA7700}"
 SUCCESS_COLOR="%{F#258845}"
 DEFAULT_COLOR="%{F#458588}"
 HEADSET_ICO=""
+MOUSE_ICO=""
 
-LOGITECH_OUT=$(sudo headsetcontrol -b)
+LOGITECH_OUT=$(sudo headsetcontrol -b 2>&1)
+LOGITECH_MIS=$(echo "$LOGITECH_OUT" | grep -c 'No supported headset found')
 LOGITECH_BATTERY=$(echo "$LOGITECH_OUT" | tail -n 1 | grep -oE '[0-9]+')
 LOGITECH_CHARGING=$(echo "$LOGITECH_OUT"  | tail -n 1 | grep 'Battery: Charging')
 
-if [ ! -z "$LOGITECH_CHARGING" ]; then
-    echo "$SUCCESS_COLOR$HEADSET_ICO$RESET_COLOR"
-elif [ $LOGITECH_BATTERY -gt 30 ]; then
-    echo "$DEFAULT_COLOR$HEADSET_ICO$RESET_COLOR $LOGITECH_BATTERY%"
-elif [ $LOGITECH_BATTERY -gt 0 ]; then
-    echo "$WARN_COLOR$HEADSET_ICO$RESET_COLOR $LOGITECH_BATTERY%"
+if [ "$LOGITECH_MIS" -lt 1 ]; then
+    if [ -n "$LOGITECH_CHARGING" ]; then
+        echo "$SUCCESS_COLOR$HEADSET_ICO$RESET_COLOR"
+    elif [ "$LOGITECH_BATTERY" -gt 30 ]; then
+        echo "$DEFAULT_COLOR$HEADSET_ICO$RESET_COLOR $LOGITECH_BATTERY%"
+    elif [ "$LOGITECH_BATTERY" -gt 0 ]; then
+        echo "$WARN_COLOR$HEADSET_ICO$RESET_COLOR $LOGITECH_BATTERY%"
+    fi
+fi
+
+MX_MASTER_OUT=$(upower -i /org/freedesktop/UPower/devices/mouse_dev_E9_DE_56_06_E6_0F)
+MX_MASTER_BAT=$(echo "$MX_MASTER_OUT" | grep 'percentage' | grep -oE '[0-9]{1,3}')
+
+if [ -n "$MX_MASTER_BAT" ]; then
+    if [ "$MX_MASTER_BAT" -gt 30 ]; then
+        echo "$DEFAULT_COLOR$MOUSE_ICO$RESET_COLOR $MX_MASTER_BAT%"
+    else
+        echo "$WARN_COLOR$MOUSE_ICO$RESET_COLOR $MX_MASTER_BAT%"
+    fi
 fi

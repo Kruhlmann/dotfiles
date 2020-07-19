@@ -3,7 +3,7 @@ configuration {
     width: 50;
     lines: 15;
     columns: 1;
-    font: "Input Mono 14";
+    font: "FiraCode Nerd Font Mono 14";
     bw: 1;
     location: 0;
     padding: 5;

@@ -36,6 +36,7 @@ alias imgc="xclip -selection clipboard -t image/png -o > "
 alias sysu="systemctl --user"
 alias sysr="systemctl --user"
 alias gst="git status --short"
+alias commit="emoji_commit_selector"
 
 # Devour
 alias mpv="devour mpv"

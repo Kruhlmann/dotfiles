@@ -15,12 +15,3 @@ for monitor in $(xrandr -q | grep -w connected | awk '{print $1}'); do
     fi
     MONITOR=$monitor polybar bottom &
 done
-
-# Terminate already running compton instances
-killall -q compton
-
-# Wait until compton have been shutdown
-while pgrep -u $UID -x compton > /dev/null; do sleep 1; done
-
-# Start compton compositor
-compton --daemon

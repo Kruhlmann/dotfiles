@@ -10,3 +10,4 @@ so ~/.config/nvim/includes/plugins/vimspector.vim
 "so ~/.config/nvim/includes/plugins/nvim-lsp.vim
 "so ~/.config/nvim/includes/plugins/statusline.vim
 so ~/.config/nvim/includes/plugins/coc.vim
+so ~/.config/nvim/includes/plugins/vim-clang-format.vim

@@ -4,6 +4,7 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " Syntax highlighting NERD.
     Plug 'ryanoasis/vim-devicons'                  " File type icons.
     Plug 'Xuyuanp/nerdtree-git-plugin'             " Show git status of files.
+
     " Language server protocol.
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     "Plug 'neovim/nvim-lsp'                         " Native language server.
@@ -16,6 +17,7 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'junegunn/goyo.vim'                       " Focus mode.
     Plug 'kien/rainbow_parentheses.vim'            " Colors matching brackets.
     Plug 'Yggdroot/indentLine'                     " Indentation indicators.
+    Plug 'jackguo380/vim-lsp-cxx-highlight'        " Semantic highlight for cpp.
 
     " Functionality.
     Plug 'Chiel92/vim-autoformat'                  " Code formatter.
@@ -32,6 +34,7 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'editorconfig/editorconfig-vim'           " Editorconfig file support.
     Plug 'moll/vim-node'                           " NodeJS navigation.
     Plug 'ap/vim-buftabline'                       " Vim buffers as tabs.
+    Plug 'rhysd/vim-clang-format'                  " .clang-format formatter.
 
     " Syntax highlighting.
     Plug 'cakebaker/scss-syntax.vim'               " SCSS.

@@ -11,6 +11,11 @@
         "graphql",
         "dart"
     ],
+    "clangd.enabled": true,
+    "clangd.arguments": [],
+    "clangd.path": "clangd",
+    "clangd.checkUpdates": true,
+    "clangd.semanticHighlighting": true,
     "prettier.printWidth": 80,
     "prettier.tabWidth": 4,
     "prettier.singleQuote": false,

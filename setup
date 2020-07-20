@@ -92,7 +92,7 @@ systemctl restart --user mbsync.timer
 completed "Start user services"
 
 if [ $MPD_PLAYING -eq 1 ]; then
-    mpc toggle
+    mpc -q toggle
 fi
 
 # Rebuild and restart Xmonad.

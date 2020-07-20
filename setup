@@ -75,7 +75,7 @@ fc-cache
 completed "Setup fonts"
 
 MPD_PLAYING=0
-mpc | grep '\[playing\]' && MPD_PLAYING=1
+mpc | grep -q '\[playing\]' && MPD_PLAYING=1
 
 # Setup user services.
 progress "Start user services"

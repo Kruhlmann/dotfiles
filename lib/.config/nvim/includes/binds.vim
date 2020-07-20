@@ -33,10 +33,6 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap * *<C-O>
 
-" Line navigation
-nnoremap H ^
-nnoremap L g_
-
 " Easy command mode
 nnoremap ; :
 
@@ -48,5 +44,11 @@ noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 "map <F2> :call RenameWord()<CR>
 "map <F2> <Plug>(coc-rename)
 
-" Git merge conflicts goto.
-nnoremap <leader>c /\v^\<\<\<\<\<\<\< \|\=\=\=\=\=\=\=$\|\>\>\>\>\>\>\> /<CR>
+" Git diff mode
+if &diff
+    map <leader>1 :diffget LOCAL<CR>
+    map <leader>2 :diffget BASE<CR>
+    map <leader>3 :diffget REMOTE<CR>
+    nnoremap <leader>n ]c
+    nnoremap <leader>N [c
+endif

@@ -32,6 +32,7 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'editorconfig/editorconfig-vim'           " Editorconfig file support.
     Plug 'moll/vim-node'                           " NodeJS navigation.
     Plug 'takac/vim-hardtime'                      " Stop bad habits.
+    Plug 'ap/vim-buftabline'                       " Vim buffers as tabs.
 
     " Syntax highlighting.
     Plug 'cakebaker/scss-syntax.vim'               " SCSS.

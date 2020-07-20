@@ -31,7 +31,7 @@ set signcolumn=yes
 set cmdheight=1
 set hidden
 set shortmess+=c
-set conceallevel=3
+set conceallevel=0
 set background=dark
 set termguicolors
 set noshowmode

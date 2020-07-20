@@ -74,6 +74,9 @@ progress "Setup fonts"
 fc-cache
 completed "Setup fonts"
 
+MPD_PLAYING=0
+mpc | grep '\[playing\]' && MPD_PLAYING=1
+
 # Setup user services.
 progress "Start user services"
 systemctl enable --user synccal.timer
@@ -87,6 +90,10 @@ systemctl restart --user bing-wallpaper.service
 systemctl enable --user mbsync.timer
 systemctl restart --user mbsync.timer
 completed "Start user services"
+
+if [ $MPD_PLAYING -eq 1 ]; then
+    mpc toggle
+fi
 
 # Rebuild and restart Xmonad.
 progress "Building Xmonad"

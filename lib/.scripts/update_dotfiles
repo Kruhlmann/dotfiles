@@ -1,5 +1,6 @@
-#!/bin/sh
-cd ~/doc/src/github.com/kruhlmann/dotfiles
+#!/usr/bin/env sh
+
+cd ~/doc/src/github.com/kruhlmann/dotfiles || exit 1
 git add lib
 git commit -am "Updated dotfiles"
 git pull

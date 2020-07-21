@@ -36,7 +36,7 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'moll/vim-node'                           " NodeJS navigation.
     Plug 'ap/vim-buftabline'                       " Vim buffers as tabs.
     Plug 'rhysd/vim-clang-format'                  " .clang-format formatter.
-    Plug 'vim-syntastic/syntastic'                 " Python linter override.
+    Plug 'junegunn/fzf.vim'                        " Fuzzy find inside files.
 
     " Syntax highlighting.
     Plug 'cakebaker/scss-syntax.vim'               " SCSS.

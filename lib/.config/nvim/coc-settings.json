@@ -5,6 +5,7 @@
         "typescript",
         "typescriptreact",
         "json",
+        "python",
         "ruby",
         "javascriptreact",
         "typescript.tsx",
@@ -27,14 +28,14 @@
     "solargraph.rename": true,
     "solargraph.formatting": true,
     "solargraph.hover": true,
+    "python.jediEnabled": false,
+    "python.linting.enabled": true,
+    "python.pythonPath": "/usr/bin/python3",
     "prettier.bracketSpacing": true,
     "prettier.semi": true,
     "prettier.useTabs": false,
     "prettier.arrowParens": "always",
     "flutter.lsp.initialization.closingLabels": true,
-    "latex.lint.onSave": true,
-    "latex.build.onSave": true,
-    "latex.forwardSearch.executable": "zathura",
     "diagnostic.errorSign": "✘",
     "diagnostic.warningSign": "",
     "diagnostic.infoSign": "",
@@ -64,12 +65,6 @@
         "lua": {
             "command": "lua-lsp",
             "filetypes": ["lua"]
-        },
-        "python": {
-            "command": "python",
-            "args": ["-mpyls", "-vv", "--log-file", "/tmp/lsp_python.log"],
-            "trace.server": "verbose",
-            "filetypes": ["python"]
         }
     }
 }

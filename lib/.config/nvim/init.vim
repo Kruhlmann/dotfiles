@@ -6,7 +6,8 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'Xuyuanp/nerdtree-git-plugin'             " Show git status of files.
 
     " Language server protocol.
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'neoclide/coc.nvim', {'branch': 'release'} " Conquerer of Code LSP.
+    Plug 'davidhalter/jedi-vim'                     " Python LSP
     "Plug 'neovim/nvim-lsp'                         " Native language server.
     "Plug 'haorenW1025/completion-nvim'             " LSP auto completion.
     "Plug 'haorenW1025/diagnostic-nvim'             " LSP diagnostics.
@@ -35,6 +36,7 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'moll/vim-node'                           " NodeJS navigation.
     Plug 'ap/vim-buftabline'                       " Vim buffers as tabs.
     Plug 'rhysd/vim-clang-format'                  " .clang-format formatter.
+    Plug 'vim-syntastic/syntastic'                 " Python linter override.
 
     " Syntax highlighting.
     Plug 'cakebaker/scss-syntax.vim'               " SCSS.

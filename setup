@@ -64,6 +64,8 @@ progress "Setup vim language server protocol"
 /usr/bin/nvim +CocInstall coc-tsserver +qall
 /usr/bin/nvim +CocInstall coc-css +qall
 /usr/bin/nvim +CocInstall coc-eslint +qall
+/usr/bin/nvim +CocInstall coc-clangd +qall
+/usr/bin/nvim +CocInstall coc-python +qall
 /usr/bin/nvim +LspInstall bashls +qall
 /usr/bin/nvim +LspInstall gopls +qall
 /usr/bin/nvim +LspInstall tsserver +qall

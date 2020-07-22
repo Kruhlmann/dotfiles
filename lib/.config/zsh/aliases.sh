@@ -37,6 +37,7 @@ alias sysu="systemctl --user"
 alias sysr="systemctl --user"
 alias gst="git status --short"
 alias commit="emoji_commit_selector"
+alias dockerm="docker ps -a | awk '{ print $1 }' | xargs docker rm"
 
 # Devour
 alias mpv="devour mpv"

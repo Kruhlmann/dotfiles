@@ -100,7 +100,7 @@ fi
 
 # Restart polybar
 progress "Updating polybar"
-~/.scripts/launch_polybar
+~/.scripts/launch_polybar &
 completed "Updating polybar"
 
 # Rebuild and restart Xmonad.

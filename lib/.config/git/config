@@ -1,5 +1,5 @@
 [user]
-    name = "Andreas Stigsbøl Krühlmann"
+    name = "Andreas Krühlmann"
 
 [filter "lfs"]
 	process = git-lfs filter-process

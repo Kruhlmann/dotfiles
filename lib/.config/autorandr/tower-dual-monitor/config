@@ -15,5 +15,5 @@ rate 60.00
 output HDMI-0
 crtc 1
 mode 1920x1080
-pos 0x540
-rate 60.00
+pos 0x499
+rate 119.98

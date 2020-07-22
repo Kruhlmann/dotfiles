@@ -98,6 +98,11 @@ if [ $MPD_PLAYING -eq 1 ]; then
     mpc -q toggle
 fi
 
+# Restart polybar
+progress "Updating polybar"
+~/.scripts/launch_polybar
+completed "Updating polybar"
+
 # Rebuild and restart Xmonad.
 progress "Building Xmonad"
 xmonad --recompile > /dev/null 2>&1

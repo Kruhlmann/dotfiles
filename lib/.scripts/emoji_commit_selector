@@ -84,4 +84,5 @@ if [ "$CONFIRM" = "n" ] | [ "$CONFIRM" = "N" ]; then
     exit 1
 fi
 
+echo "git commit -m \"$PREFIX $COMMIT_TITLE\" -m \"$COMMIT_DESCRIPTION\"" > /tmp/.commit-cache
 git commit -m "$PREFIX $COMMIT_TITLE" -m "$COMMIT_DESCRIPTION"

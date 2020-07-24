@@ -1,10 +1,9 @@
 [user]
     email = andreas.kruehlmann@siemens.com
-    signingkey = 0xED4E9DC8
+    signingkey = B9BBAA8075C788BD
 
 [commit]
     gpgsign = true
 
 [gpg]
-    program = gpgsm
-    format = x509
+    program = gpg

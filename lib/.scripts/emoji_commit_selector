@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 
+set -e
 
 CHOICE=$(show_git_emoji_selection | rofi -i -p  "Please select an appropriate symbol for this commit message" -dmenu | grep -o '^.*:' | sed 's/://')
 PREFIX=""

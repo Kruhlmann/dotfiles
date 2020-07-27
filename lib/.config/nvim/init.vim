@@ -19,6 +19,7 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'kien/rainbow_parentheses.vim'            " Colors matching brackets.
     Plug 'Yggdroot/indentLine'                     " Indentation indicators.
     Plug 'jackguo380/vim-lsp-cxx-highlight'        " Semantic highlight for cpp.
+    Plug 'jaxbot/semantic-highlight.vim'           " Semantic highlight for ts.
 
     " Functionality.
     Plug 'Chiel92/vim-autoformat'                  " Code formatter.

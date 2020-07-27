@@ -40,9 +40,8 @@ nnoremap ; :
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
-" Rename variable
-"map <F2> :call RenameWord()<CR>
-"map <F2> <Plug>(coc-rename)
+" Plug install.
+nnoremap <silent><leader>i :source $MYVIMRC \| :PlugInstall<CR>
 
 " Git diff mode
 if &diff

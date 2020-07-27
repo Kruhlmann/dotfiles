@@ -70,19 +70,12 @@ case $CHOICE in
     60) PREFIX=":wastebasket:"; ;;
 esac
 
-<<<<<<< HEAD
 COMMIT_TITLE=$(echo "" | rofi -dmenu -i -p "Commit title" -lines 0  -separator-style "none")
 
 if [ ${#COMMIT_TITLE} -gt 50 ]; then
     printf "\e[1;33mWarning. Commit message is too long (> 50 characters)\e[0m\n\n"
 fi
-||||||| 2fc5502
-echo Prefix: $PREFIX
-=======
-COMMIT_TITLE=$(echo "" | rofi -dmenu -i -p "Commit title" -lines 0  -separator-style "none")
->>>>>>> d38e5a85
 
-<<<<<<< HEAD
 cat > .git/COMMIT_EDITMSG << EOF
 # Please enter the commit message for your changes. Lines starting
 # with '#' will be ignored, and an empty message aborts the commit.
@@ -95,63 +88,13 @@ cat > .git/COMMIT_EDITMSG << EOF
 # Changes to be committed:
 #   $FILES_CHANGED
 #
-||||||| 2fc5502
-echo "Commit title"
-read -r COMMIT_TITLE
-=======
-if [ ${#COMMIT_TITLE} -gt 50 ]; then
-    printf "\e[1;33mWarning. Commit message is too long (> 50 characters)\e[0m\n\n"
-fi
->>>>>>> d38e5a85
-
-<<<<<<< HEAD
 EOF
-||||||| 2fc5502
-echo "Commit description (optional):"
-read -r COMMIT_DESCRIPTION
-=======
-cat > .git/COMMIT_EDITMSG << EOF
-# Please enter the commit message for your changes. Lines starting
-# with '#' will be ignored, and an empty message aborts the commit.
-#
-# On branch $BRANCH
-#
-# Commit title:
-#   $COMMIT_TITLE
-#
-# Changes to be committed:
-#   $FILES_CHANGED
-#
->>>>>>> d38e5a85
 
-<<<<<<< HEAD
 $EDITOR .git/COMMIT_EDITMSG
-COMMIT_DESCRIPTION=$(cat .git/COMMIT_EDITMSG)
-COMMIT_DESCRIPTION=$(cat .git/COMMIT_EDITMSG)
-echo "" > .git/COMMIT_EDITMSG
-||||||| 2fc5502
-echo "Is this correct? (Y/n):"
-echo "git commit -m '$PREFIX $COMMIT_TITLE' -m '$COMMIT_DESCRIPTION'"
-read -r CONFIRM
-=======
-EOF
->>>>>>> d38e5a85
-
-<<<<<<< HEAD
-echo "git commit -m \"$PREFIX $COMMIT_TITLE\" -m \"$COMMIT_DESCRIPTION\"" >> ~/.bash_history
-echo "git commit -m \"$PREFIX $COMMIT_TITLE\" -m \"$COMMIT_DESCRIPTION\"" >> ~/.zsh_history
-||||||| 2fc5502
-if [ "$CONFIRM" = "n" ] | [ "$CONFIRM" = "N" ]; then
-    exit 1
-fi
-=======
-$EDITOR .git/COMMIT_EDITMSG
-COMMIT_DESCRIPTION=$(cat .git/COMMIT_EDITMSG)
 COMMIT_DESCRIPTION=$(cat .git/COMMIT_EDITMSG)
 echo "" > .git/COMMIT_EDITMSG
 
 echo "git commit -m \"$PREFIX $COMMIT_TITLE\" -m \"$COMMIT_DESCRIPTION\"" >> ~/.bash_history
 echo "git commit -m \"$PREFIX $COMMIT_TITLE\" -m \"$COMMIT_DESCRIPTION\"" >> ~/.zsh_history
->>>>>>> d38e5a85
 
 git commit -m "$PREFIX $COMMIT_TITLE" -m "$COMMIT_DESCRIPTION"

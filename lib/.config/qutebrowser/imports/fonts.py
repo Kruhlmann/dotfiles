@@ -1,6 +1,7 @@
 # pylint: skip-file
 
-font_family = "Source Code Pro"
+font_family = "Fira Code Mono"
+
 
 def apply(c):
     c.fonts.default_family = font_family

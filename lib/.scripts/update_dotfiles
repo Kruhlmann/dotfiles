@@ -8,8 +8,10 @@ completed () {
     printf "\e[32m %s\e[0m\n" "$1"
 }
 
+set -e
+
 progress "Synchronizing git repository"
-cd ~/doc/src/github.com/kruhlmann/dotfiles || exit 1
+cd ~/doc/src/github.com/kruhlmann/dotfiles
 git add lib
 git commit --quiet -am "Updated dotfiles"
 git pull --quiet

@@ -11,8 +11,8 @@ completed () {
 progress "Synchronizing git repository"
 cd ~/doc/src/github.com/kruhlmann/dotfiles || exit 1
 git add lib
-git commit -am "Updated dotfiles" 1>/dev/null
-git pull 1>/dev/null
-git push 1>/dev/null
+git commit --quiet -am "Updated dotfiles"
+git pull --quiet
+git push --quiet
 completed "Synchronizing git repository"
 ./setup

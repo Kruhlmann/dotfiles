@@ -50,5 +50,3 @@ find ~/.ssh/ -type f -exec grep -l "PRIVATE" {} \; | xargs ssh-add &> /dev/null
 sh "$HOME/.screenlayout/$(hostname)"
 
 exec xmonad
-#exec startplasma-x11
-#exec qtile

@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+desktops = `xprop -root | grep '_NET_DESKTOP_NAMES\(UTF8_STRING\)'`.split(/ = /)[1]
+current_desktop = `xprop -root | grep '_NET_CURRENT_DESKTOP(CARDINAL)'`.split(/ = /)[1].to_i
+desktop_string = ''
+active_color = '%{F#fabd2f}'
+inactive_color = '%{F#928374}'
+
+if !desktops || !current_desktop
+  puts 'ERR'
+  exit 1
+end
+
+desktops.split(',').each_with_index do |desktop, index|
+  desktop_string += if index == current_desktop
+                      "#{active_color}#{desktop.gsub('"', '').strip}%{F-} "
+                    else
+                      "#{inactive_color}#{desktop.gsub('"', '').strip}%{F-} "
+                    end
+end
+
+puts desktop_string

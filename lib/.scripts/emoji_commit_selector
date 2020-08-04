@@ -91,7 +91,7 @@ cat > .git/COMMIT_EDITMSG << EOF
 EOF
 
 $EDITOR .git/COMMIT_EDITMSG
-COMMIT_DESCRIPTION=$(cat .git/COMMIT_EDITMSG)
+COMMIT_DESCRIPTION=$(grep -v '^#' .git/COMMIT_EDITMSG)
 echo "" > .git/COMMIT_EDITMSG
 
 echo "git commit -m \"$PREFIX $COMMIT_TITLE\" -m \"$COMMIT_DESCRIPTION\"" >> /tmp/last-commit

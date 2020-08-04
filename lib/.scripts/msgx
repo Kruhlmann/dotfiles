@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+die() {
+    echo "Error $2"
+    exit "$1"
+}
+
+[ -f "$1" ] || die 1 "No such file $1"
+
+outdir=$(basename "$1")
+msgconvert --outfile - "$1" | ripmime -i - -d "$outdir"

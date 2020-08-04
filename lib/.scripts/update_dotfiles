@@ -13,7 +13,7 @@ set -e
 progress "Synchronizing git repository"
 cd ~/doc/src/github.com/kruhlmann/dotfiles
 git add lib
-git commit --quiet -am "Updated dotfiles"
+git commit --quiet -am "Updated dotfiles" || true
 git pull --quiet
 git push --quiet
 completed "Synchronizing git repository"

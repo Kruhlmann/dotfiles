@@ -11,9 +11,9 @@ configuration {
     xoffset: 0;
     fixed-num-lines: true;
     show-icons: true;
-    terminal: "rofi-sensible-terminal";
+    terminal: "termite";
     ssh-client: "ssh";
-    ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";
+    ssh-command: "{terminal} -e '{ssh-client} {host}'";
     run-command: "{cmd}";
     run-list-command: "";
     run-shell-command: "{terminal} -e {cmd}";

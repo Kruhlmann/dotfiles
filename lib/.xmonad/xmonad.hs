@@ -51,6 +51,7 @@ import XMonad.Layout.NoBorders
 import XMonad.Layout.PerWorkspace
 import XMonad.Layout.Reflect
 import XMonad.Layout.SimpleFloat
+import XMonad.Layout.Spacing
 import XMonad.Layout.Tabbed
 import XMonad.Layout.ToggleLayouts
 import XMonad.Layout.WindowArranger
@@ -86,6 +87,7 @@ binds conf@(XConfig {XMonad.modMask = modm}) = M.fromList $ [
     ((modm,               xK_Return), spawn $ "termite"),
     ((modm,               xK_d     ), spawn spRofi),
     ((modm,               xK_q     ), kill),
+    ((modm,               xK_s     ), spawn "rofi -show ssh"),
     ((modm .|. shiftMask, xK_s     ), spawn spMaim),
     ((modm .|. shiftMask, xK_l     ), spawn "xscreensaver-command --lock"),
     ((modm,               xK_Tab   ), sendMessage NextLayout >> (curLayout >>= \d->spawn $"notify-send "++d)),

@@ -38,6 +38,7 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'ap/vim-buftabline'                       " Vim buffers as tabs.
     Plug 'rhysd/vim-clang-format'                  " .clang-format formatter.
     Plug 'junegunn/fzf.vim'                        " Fuzzy find inside files.
+    Plug 'rhysd/vim-grammarous'                    " Grammar check
 
     " Syntax highlighting.
     Plug 'cakebaker/scss-syntax.vim'               " SCSS.
@@ -49,8 +50,6 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'dart-lang/dart-vim-plugin'               " Dart.
     Plug 'digitaltoad/vim-pug'                     " PUG/JADE.
     Plug 'OmniSharp/omnisharp-vim'                 " C#.
-    "Plug 'numirias/semshi',                        " Python semantics.
-    "    \{'do': ':UpdateRemotePlugins'}
 
     " Themes.
     Plug 'gruvbox-community/gruvbox'

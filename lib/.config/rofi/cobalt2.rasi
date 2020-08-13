@@ -1,0 +1,38 @@
+* {
+    highlight: bold italic;
+
+    cobalt-background: #193549;
+    cobalt-active-background: #35434d;
+    cobalt-foreground: #FFC600;
+    cobalt-seperator: #0D3A58;
+
+    background:                  @cobalt-background;
+    background-color:            @cobalt-background;
+    foreground:                  @cobalt-foreground;
+    border-color:                @cobalt-seperator;
+    separatorcolor:              @cobalt-seperator;
+    scrollbar-handle:            @cobalt-seperator;
+
+    normal-background:           @cobalt-background;
+    normal-foreground:           @cobalt-foreground;
+    alternate-normal-background: @cobalt-background;
+    alternate-normal-foreground: @foreground;
+    selected-normal-background:  @cobalt-active-background;
+    selected-normal-foreground:  @cobalt-foreground;
+
+    active-background:           @cobalt-active-background;
+    active-foreground:           @cobalt-foreground;
+    alternate-active-background: @active-background;
+    alternate-active-foreground: @active-foreground;
+    selected-active-background:  @active-background;
+    selected-active-foreground:  @active-foreground;
+
+    urgent-background:           @cobalt-foreground;
+    urgent-foreground:           @cobalt-background;
+    alternate-urgent-background: @urgent-background;
+    alternate-urgent-foreground: @urgent-foreground;
+    selected-urgent-background:  @urgent-background;
+    selected-urgent-foreground:  @urgent-foreground;
+}
+
+@import "common.rasi"

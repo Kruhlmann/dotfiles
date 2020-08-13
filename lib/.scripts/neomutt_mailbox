@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-MBOX="$(ls $DOTFILES/lib/.config/mutt/cnf | rofi -dmenu)"
+MBOX="$(ls $DOTFILES/lib/.config/mutt/cnf | rofi -dmenu -p ' Open mailbox')"
 [ -z "$MBOX" ] && exit 1
 CMD="neomutt -F \"~/.config/mutt/cnf/$MBOX\""
 termite --name floatterm -e "$CMD"

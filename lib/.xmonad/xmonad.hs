@@ -102,7 +102,7 @@ binds conf@(XConfig {XMonad.modMask = modm}) = M.fromList $ [
     ((modm,               xK_h     ), sendMessage Shrink),
     ((modm,               xK_l     ), sendMessage Expand),
     ((modm .|. shiftMask, xK_space ), withFocused $ windows . W.sink),
-    ((modm .|. shiftMask, xK_l     ), spawn "dm-tool lock"),
+    ((modm .|. shiftMask, xK_l     ), spawn "betterlockscreen -l"),
     ((modm,               xK_r     ), refresh),
     ((modm              , xK_u      ), spawn "termite --name floatterm -e fzmp"),
     ((modm              , xK_g      ), spawn "termite --name floatterm -e lazygit"),

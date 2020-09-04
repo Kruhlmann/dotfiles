@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+gpgsm --call-dirmngr lookup "$1" | gpgsm --import

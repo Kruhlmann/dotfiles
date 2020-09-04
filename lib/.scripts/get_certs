@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+ATOS_SERVER="dreamland.saacon.net"
+MAC=$(echo $1 | sed 's/-/:/g')
+TMPDIR=/tmp/machine_certs
+rm -r $TMPDIR
+mkdir -p $TMPDIR
+
+wget -e http_proxy=127.0.0.1:8021 -U debian-installer -O $TMPDIR/install-description http://$ATOS_SERVER/cgi-bin/preseed.pl?stage2=$MAC -q
+HOSTNAME=$( grep netcfg/hostname $TMPDIR/install-description | cut -d" " -f 4 )
+OUTFILE="$TMPDIR/udwp_files_$HOSTNAME.tar.gz"
+
+KEYKEY=$( grep -oP 'KEYKEY=.*' $TMPDIR/install-description )
+KEYKEY=$( echo $KEYKEY | cut -d'=' -f2- )
+# remove the trailing '"' (if found)
+KEYKEY=${KEYKEY%\"}
+
+wget http_proxy=127.0.0.1:8021 --user=$HOSTNAME --password=$KEYKEY http://$ATOS_SERVER/chf/DWP/$HOSTNAME/encrypted.aes -O $TMPDIR/encrypted.aes -q
+export KEYKEY=$KEYKEY
+echo $KEYKEY
+
+openssl enc -d -aes-128-cbc -md MD5 -pass env:KEYKEY -in $TMPDIR/encrypted.aes -out $OUTFILE
+echo "$OUTFILE fetched."

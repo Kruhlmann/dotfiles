@@ -19,7 +19,7 @@ user_agent.apply(config)
 content.apply(config, c)
 notifications.apply(config)
 
-c.auto_save.session = True
+c.auto_save.session = False
 c.confirm_quit = ["downloads"]
 c.downloads.location.directory = "~/dl"
 c.downloads.location.prompt = False
@@ -38,5 +38,5 @@ c.url.searchengines = {
     "wh": "https://classic.wowhead.com/search?q={}",
     "yt": "https://youtube.com/results?search_query={}",
 }
-c.url.start_pages = "https://google.com"
+c.url.start_pages = "https://kruhlmann.dev/startpage"
 c.editor.command = ["termite", "--name", "floatterm", "-e", "nvim '{}'"]

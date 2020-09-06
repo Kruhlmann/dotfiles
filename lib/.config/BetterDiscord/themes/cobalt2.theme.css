@@ -1,0 +1,47 @@
+/**
+ * @name Cobalt2
+ * @description Cobalt2 theme.
+ * @author Andreas Krühlmann
+ * @version 1.0.0
+ */
+
+:root {
+    --color-background: #234261;
+    --color-background-chat: #182E40;
+    --color-foreground: #ffc600;
+    --color-foreground-anchor: #3ad900;
+}
+
+.da-title.da-container *, .da-subText *, .da-membersGroup, .da-header, .da-messageContent, .da-sidebar > .da-panels *, .da-containerDefault .da-iconVisibility:not(.da-modeMuted) .da-name, .da-containerDefault .da-iconVisibility svg, .da-timestamp span, .da-channelTextArea > .da-webkit * {
+    color: var(--color-foreground) !important;
+
+}
+
+.da-searchBar, .da-expandedFolderIconWrapper, .da-expandedFolderBackground, .da-scroller::-webkit-scrollbar-track-piece, .da-chatContent {
+    background-color: var(--color-background-chat) !important;
+}
+
+.da-pill .da-item, .da-containerDefault .da-unread {
+    background-color: var(--color-foreground) !important;
+}
+
+.da-anchor {
+    color: var(--color-foreground-anchor) !important;
+}
+
+.da-wrapper.da-guilds, .da-members, .da-title.da-container, .da-scroller::-webkit-scrollbar-thumb, .da-membersGroup, .da-member, .da-members .da-content, .da-container > nav.da-wrapper, .da-embed, .da-containerDefault, .da-sidebar .da-header:not(:first-of-type), .da-content > .da-sidebar > .da-container, .da-sidebar > .da-panels, .da-channelTextArea > .da-webkit {
+    background-color: var(--color-background) !important;
+}
+
+.da-containerDefault .da-iconVisibility svg, .da-containerDefault .da-iconVisibility:not(.da-modeUnread) .da-name, .da-timestamp span, .da-channelTextArea > .da-webkit *::placeholder {
+    opacity: 0.5;
+}
+
+.da-containerDefault .da-iconVisibility svg, .da-containerDefault .da-iconVisibility.da-modeMuted .da-name {
+    color: gray;
+    text-decoration: line-through;
+}
+
+.da-attachButtonInner svg > path {
+    fill: var(--color-foreground) !important;
+}

@@ -37,6 +37,7 @@ set termguicolors
 set noshowmode
 set completeopt=longest,menuone,preview
 set viminfo+=n~/.cache/viminfo
+set guifont=Fira\ Code:h14
 
 "colo gruvbox
 "colo eldar

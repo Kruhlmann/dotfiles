@@ -2,13 +2,8 @@
 Description=Nodelock
 
 [Service]
-ExecStart=/usr/lib/node_modules/@kruhlmann/nodelock/nodelock
-Restart=on-failure
-Environment="SERIAL="36345A4757364957""
-Environment="ON_INIT="/usr/bin/xscreensaver""
-Environment="ON_LOCK="/usr/bin/xlock""
-Environment="ON_UNLOCK="/usr/bin/xunlock""
-Environment="MODULE="/usr/lib/pkcs11/onepin-opensc-pkcs11.so""
+ExecStart=%h/.scripts/nasa-wallpaper
+EnvironmentFile=~/.config/nasa-api-environment
 
 [Install]
 WantedBy=default.target

@@ -1,5 +1,5 @@
 let g:NERDTreeGitStatusWithFlags = 1
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
     \ "Untracked" : "✭",
@@ -14,7 +14,11 @@ let g:NERDTreeIndicatorMapCustom = {
 let g:NERDTreeIgnore = [
     \'.inject.summary$',
     \'.inject.dart$',
-    \'.g.dart$'
+    \'.g.dart$',
+    \'yarn.lock$',
+    \'package-lock.json$',
+    \'.o$',
+    \'LICENSE$'
     \]
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeShowBookmarks = 1
@@ -34,7 +38,7 @@ function! s:CloseIfOnlyNerdTreeLeft()
 endfunction
 
 " Check if NERDTree is open or active
-function! IsNERDTreeOpen()        
+function! IsNERDTreeOpen()
   return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
 endfunction
 

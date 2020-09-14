@@ -37,7 +37,9 @@ set termguicolors
 set noshowmode
 set completeopt=longest,menuone,preview
 set viminfo+=n~/.cache/viminfo
-set guifont=Fira\ Code:h14
+set guifont=FiraCode\ Nerd\ Font:h14
+setlocal spell
+set spelllang=da,en_us
 
 "colo gruvbox
 "colo eldar

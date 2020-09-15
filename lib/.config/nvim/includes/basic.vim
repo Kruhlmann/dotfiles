@@ -23,7 +23,7 @@ set previewheight=8
 set autoread
 set complete-=i
 set showmatch
-let &colorcolumn=join(range(81,999),",")
+let &colorcolumn=join(range(81,121),",")
 set updatetime=100
 set ffs=unix,dos
 set t_Co=256

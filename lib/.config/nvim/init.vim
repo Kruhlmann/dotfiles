@@ -30,7 +30,6 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'Yggdroot/LeaderF',                       " FZF for files in
         \{ 'do': './install.sh' }                  " workspace.
     Plug 'preservim/nerdcommenter'                 " Commenter.
-    Plug 'unblevable/quick-scope'                  " Line navigation.
     Plug 'puremourning/vimspector'                 " Debugger.
     Plug 'editorconfig/editorconfig-vim'           " Editorconfig file support.
     Plug 'moll/vim-node'                           " NodeJS navigation.

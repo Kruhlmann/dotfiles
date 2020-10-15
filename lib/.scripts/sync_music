@@ -7,11 +7,12 @@ if ! [ -x "$(command -v youtube-dl)" ]; then
     exit 1
 fi
 
-grep ^# -v /home/$USER/.config/sync_music.conf | while read playlist; do
-    youtube-dl --yes-playlist --download-archive /home/$USER/.cache/yt-cache --audio-format mp3 -ciwx -o "/home/$USER/mus/%(title)s.%(ext)s" $playlist
+grep ^# -v /home/$USER/.config/sync_music.conf | while read -r playlist; do
     playlistname=$(youtube-dl -i --flat-playlist --skip-download -J "$playlist" | jq -r ".title")
+    youtube-dl --quiet --yes-playlist --restrict-filenames --download-archive "/home/$USER/.cache/yt-cache" --audio-format mp3 -ciwx -o "/home/$USER/mus/$playlistname/%(title)s.%(ext)s" "$playlist"
     mpdplaylist="/home/$USER/.config/mpd/res/playlists/$playlistname.m3u"
-    youtube-dl -i --flat-playlist --skip-download -J "$playlist" | jq -r ".entries[].title" | awk 'NF{print $0 ".mp3"}' > "$mpdplaylist"
+    ls "/home/$USER/mus/$playlistname/*.mp3" > "$mpdplaylist"
+    cat $mpdplaylist;
 done
 
 #notify-send "Music synced" -i ~/img/lib/mpd_logo.png

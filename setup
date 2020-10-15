@@ -1,15 +1,11 @@
 #!/usr/bin/env bash
 
 progress() {
-    printf "\e[33m $1\e[0m\r"
-}
-
-subprogress() {
-    printf"\e[33m $1\e[0m $2\r"
+    printf "\e[33m %s\e[0m\r" "$1"
 }
 
 completed() {
-    printf "\e[32m $1\e[0m\n"
+    printf "\e[32m %s\e[0m\n" "$1"
 }
 
 progress "Install dependencies"
@@ -48,7 +44,7 @@ find lib ! -path lib -type f | while read -r FILE; do
         rm "$HOME/$FILE"
     fi
 
-    subprogress "Create symlink $SCRIPTPATH/lib/$FILE -> $HOME/$FILE"
+    progress "Create symlink $SCRIPTPATH/lib/$FILE -> $HOME/$FILE"
     ln -s -f "$SCRIPTPATH/lib/$FILE" "$HOME/$FILE" >/dev/null 2>&1
     ((COUNT++))
 done

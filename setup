@@ -12,10 +12,6 @@ progress "Install dependencies"
 yay -S --needed < ./dependencies
 completed "Install dependencies"
 
-progress "Save dependecies"
-yay -Qqe > ./dependencies
-completed "Save dependecies"
-
 progress "Setting env vars"
 SCRIPTPATH="$( cd "$(dirname "$0")" || exit 1 ; pwd -P )"
 COUNT=0

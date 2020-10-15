@@ -52,6 +52,11 @@ progress "Setup vim plug"
 /usr/bin/nvim +PlugInstall +PlugClean[!] +qall
 completed "Setup vim plug"
 
+progress "Updating vim plugins"
+/usr/bin/vim +PlugUpdate +qall
+/usr/bin/nvim +PlugUpdate +PlugClean[!] +qall
+completed "Updating vim plugins"
+
 progress "Setup oh-my-zsh"
 [[ -d ~/.config/.oh-my-zsh ]] || sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 [[ -d ~/.config/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]] || git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/.oh-my-zsh/custom/plugins/zsh-autosuggestions

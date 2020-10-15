@@ -8,6 +8,14 @@ completed () {
     echo -e -n "\e[32m $1\e[0m\n"
 }
 
+progress "Install dependencies"
+yay -S --needed < ./dependencies
+completed "Install dependencies"
+
+progress "Save dependecies"
+yay -Qqe > ./dependencies
+completed "Save dependecies"
+
 progress "Setting env vars"
 SCRIPTPATH="$( cd "$(dirname "$0")" || exit 1 ; pwd -P )"
 COUNT=0
@@ -52,11 +60,6 @@ progress "Setup vim plug"
 /usr/bin/nvim +PlugInstall +PlugClean[!] +qall
 completed "Setup vim plug"
 
-progress "Updating vim plugins"
-/usr/bin/vim +PlugUpdate +qall
-/usr/bin/nvim +PlugUpdate +PlugClean[!] +qall
-completed "Updating vim plugins"
-
 progress "Setup oh-my-zsh"
 [[ -d ~/.config/.oh-my-zsh ]] || sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 [[ -d ~/.config/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]] || git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/.oh-my-zsh/custom/plugins/zsh-autosuggestions
@@ -81,6 +84,11 @@ completed "Setup vim language server protocol"
 progress "Setup fonts"
 fc-cache
 completed "Setup fonts"
+
+progress "Update vim plugins"
+/usr/bin/vim +PlugUpdate +qall
+/usr/bin/nvim +PlugUpdate +PlugClean[!] +qall
+completed "Update vim plugins"
 
 MPD_PLAYING=0
 mpc | grep -q '\[playing\]' && MPD_PLAYING=1

@@ -1,11 +1,26 @@
 #!/usr/bin/env bash
 
 progress() {
-    printf "\e[33m %s\e[0m\r" "$1"
+    printf "\e[2K\e[33m %s\e[0m\r" "$1"
+}
+
+warning() {
+    printf "\e[2K\e[31m %s\e[0m\n" "$1"
 }
 
 completed() {
-    printf "\e[32m %s\e[0m\n" "$1"
+    printf "\e[2K\e[32m %s\e[0m\n" "$1"
+}
+
+make_directory() {
+    progress "Create directory $1"
+    mkdir -p "$1"
+}
+
+start_user_service() {
+    progress "Start $1"
+    systemctl enable --user "$1"
+    systemctl restart --user "$1"
 }
 
 progress "Install dependencies"
@@ -19,16 +34,17 @@ FILE_CNT=$(find lib ! -path lib -type f | wc -l)
 completed "Setting env vars"
 
 # Required paths for vim and mpd
-progress "Making directories"
-mkdir -p ~/.vim/tmp/undo
-mkdir -p ~/.vim/tmp/backup
-mkdir -p ~/.vim/tmp/swap
-mkdir -p ~/.config/mpd/res
-mkdir -p ~/.config/mpd/res/playlists
-touch ~/.config/mpd/log
-completed "Making directories"
+make_directory ~/.vim/tmp/undo
+make_directory ~/.vim/tmp/backup
+make_directory ~/.vim/tmp/swap
+make_directory ~/.config/mpd/res
+make_directory ~/.config/mpd/res/playlists
+completed "Make directories"
 
-progress "Update $FILE_CNT symlinks"
+progress "Create MPD log"
+touch ~/.config/mpd/log
+completed "Create MPD log"
+
 # Symlink and backup all files in ./lib
 find lib ! -path lib -type f | while read -r FILE; do
     FILE=${FILE:4}
@@ -44,64 +60,81 @@ find lib ! -path lib -type f | while read -r FILE; do
         rm "$HOME/$FILE"
     fi
 
-    progress "Create symlink $SCRIPTPATH/lib/$FILE -> $HOME/$FILE"
+    progress "Create file $HOME/$FILE"
     ln -s -f "$SCRIPTPATH/lib/$FILE" "$HOME/$FILE" >/dev/null 2>&1
+
     ((COUNT++))
 done
 completed "Update $FILE_CNT symlinks"
 
-progress "Setup vim plug"
-[[ -f ~/.vim/autoload/plug.vim ]] || curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-[[ -f ~/.local/share/nvim/site/autoload/plug.vim ]] || curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-/usr/bin/vim +PlugInstall +PlugClean[!] +qall
-/usr/bin/nvim +PlugInstall +PlugClean[!] +qall
-completed "Setup vim plug"
+if command -v vim &> /dev/null; then
+    progress "Setup vim plug"
+    [[ -f ~/.vim/autoload/plug.vim ]] || curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    "$TERMINAL" -e "/usr/bin/vim +PlugInstall +PlugClean[!] +qall" >/dev/null 2>&1
+    completed "Setup vim plug"
 
-progress "Setup oh-my-zsh"
-[[ -d ~/.config/.oh-my-zsh ]] || sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-[[ -d ~/.config/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]] || git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-[[ -d ~/.config/.oh-my-zsh/custom/plugins/zsh-completions ]] || git clone https://github.com/zsh-users/zsh-completions ~/.config/.oh-my-zsh/custom/plugins/zsh-completions
-[[ -d ~/.config/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]] || git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-completed "Setup oh-my-zsh"
+    progress "Update vim plugins"
+    "$TERMINAL" -e "/usr/bin/vim +PlugUpdate +qall" >/dev/null 2>&1
+    completed "Update vim plugins"
+else
+    warning "Vim installation not found. Skipping."
+fi
 
-# VIM & NVIM plugins
-progress "Setup vim language server protocol"
-/usr/bin/nvim +CocInstall coc-tsserver +qall
-/usr/bin/nvim +CocInstall coc-css +qall
-/usr/bin/nvim +CocInstall coc-eslint +qall
-/usr/bin/nvim +CocInstall coc-clangd +qall
-/usr/bin/nvim +CocInstall coc-python +qall
-/usr/bin/nvim +CocInstall coc-svelte +qall
-/usr/bin/nvim +LspInstall bashls +qall
-/usr/bin/nvim +LspInstall gopls +qall
-/usr/bin/nvim +LspInstall tsserver +qall
-completed "Setup vim language server protocol"
+if command -v nvim &> /dev/null; then
+    progress "Setup nvim plug"
+    [[ -f ~/.local/share/nvim/site/autoload/plug.vim ]] || curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    "$TERMINAL" -e "/usr/bin/nvim +PlugInstall +PlugClean[!] +qall" >/dev/null 2>&1
+    completed "Setup nvim plug"
+
+    progress "Setup neovim language server protocol"
+    "$TERMINAL" -e "/usr/bin/nvim +CocInstall coc-tsserver +qall" >/dev/null 2>&1
+    "$TERMINAL" -e "/usr/bin/nvim +CocInstall coc-css +qall" >/dev/null 2>&1
+    "$TERMINAL" -e "/usr/bin/nvim +CocInstall coc-eslint +qall" >/dev/null 2>&1
+    "$TERMINAL" -e "/usr/bin/nvim +CocInstall coc-clangd +qall" >/dev/null 2>&1
+    "$TERMINAL" -e "/usr/bin/nvim +CocInstall coc-python +qall" >/dev/null 2>&1
+    "$TERMINAL" -e "/usr/bin/nvim +CocInstall coc-svelte +qall" >/dev/null 2>&1
+    "$TERMINAL" -e "/usr/bin/nvim +LspInstall bashls +qall" >/dev/null 2>&1
+    "$TERMINAL" -e "/usr/bin/nvim +LspInstall gopls +qall" >/dev/null 2>&1
+    "$TERMINAL" -e "/usr/bin/nvim +LspInstall tsserver +qall" >/dev/null 2>&1
+    completed "Setup neovim language server protocol"
+
+    progress "Update neovim plugins"
+    "$TERMINAL" -e "/usr/bin/nvim +PlugUpdate +PlugClean[!] +qall">/dev/null 2>&1
+    completed "Update neovim plugins"
+else
+    warning "Neovim installation not found. Skipping."
+fi
+
+if command -v zsh &> /dev/null; then
+    progress "Setup oh-my-zsh"
+    [[ -d ~/.config/.oh-my-zsh ]] || sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    [[ -d ~/.config/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]] || git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+    [[ -d ~/.config/.oh-my-zsh/custom/plugins/zsh-completions ]] || git clone https://github.com/zsh-users/zsh-completions ~/.config/.oh-my-zsh/custom/plugins/zsh-completions
+    [[ -d ~/.config/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]] || git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+    completed "Setup oh-my-zsh"
+else
+    warning "ZSH installation not found. Skipping."
+fi
 
 # Update font cache.
 progress "Setup fonts"
 fc-cache
 completed "Setup fonts"
 
-progress "Update vim plugins"
-/usr/bin/vim +PlugUpdate +qall
-/usr/bin/nvim +PlugUpdate +PlugClean[!] +qall
-completed "Update vim plugins"
-
-MPD_PLAYING=0
-mpc | grep -q '\[playing\]' && MPD_PLAYING=1
+if command -v mpc &> /dev/null; then
+    MPD_PLAYING=0
+    mpc | grep -q '\[playing\]' && MPD_PLAYING=1
+else
+    warning "mpc installation not found. Skipping."
+fi
 
 # Setup user services.
-progress "Start user services"
-systemctl enable --user synccal.timer
-systemctl restart --user synccal.timer
-systemctl enable --user sync_music.timer
-systemctl restart --user sync_music.timer
-systemctl enable --user mpd.service
-systemctl restart --user mpd.service
-systemctl enable --user bing-wallpaper.service
-systemctl restart --user bing-wallpaper.service
-systemctl enable --user mbsync.timer
-systemctl restart --user mbsync.timer
+start_user_service "synccal.timer"
+start_user_service "syncmail.timer"
+start_user_service "sync_music.timer"
+start_user_service "mpd.service"
+start_user_service "bing-wallpaper.service"
+start_user_service "mbsync.timer"
 completed "Start user services"
 
 if [ $MPD_PLAYING -eq 1 ]; then

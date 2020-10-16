@@ -36,9 +36,11 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'ap/vim-buftabline'                       " Vim buffers as tabs.
     Plug 'rhysd/vim-clang-format'                  " .clang-format formatter.
     Plug 'junegunn/fzf.vim'                        " Fuzzy find inside files.
-    Plug 'rhysd/vim-grammarous'                    " Grammar check
+    Plug 'rhysd/vim-grammarous'                    " Grammar check.
     Plug 'iamcco/markdown-preview.nvim',           " Markdown preview.
-        \{ 'do': 'cd app && yarn install'  }
+        \{ 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+    Plug 'yuttie/comfortable-motion.vim'           " Smooth scrolling.
+    Plug 'davidbeckingsale/writegood.vim'          " No weasel words.
 
     " Syntax highlighting.
     Plug 'cakebaker/scss-syntax.vim'               " SCSS.

@@ -27,8 +27,8 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'mhinz/vim-signify'                       " Necessary for statusline.
     Plug 'xuhdev/vim-latex-live-preview',          " LaTEX live previewer.
         \{ 'for': 'tex' }
-    Plug 'Yggdroot/LeaderF',                       " FZF for files in
-        \{ 'do': './install.sh' }                  " workspace.
+    Plug 'Yggdroot/LeaderF',                       " FZF for files in workspace
+        \{ 'do': './install.sh' }
     Plug 'preservim/nerdcommenter'                 " Commenter.
     Plug 'puremourning/vimspector'                 " Debugger.
     Plug 'editorconfig/editorconfig-vim'           " Editorconfig file support.
@@ -37,6 +37,8 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'rhysd/vim-clang-format'                  " .clang-format formatter.
     Plug 'junegunn/fzf.vim'                        " Fuzzy find inside files.
     Plug 'rhysd/vim-grammarous'                    " Grammar check
+    Plug 'iamcco/markdown-preview.nvim',           " Markdown preview.
+        \{ 'do': 'cd app && yarn install'  }
 
     " Syntax highlighting.
     Plug 'cakebaker/scss-syntax.vim'               " SCSS.

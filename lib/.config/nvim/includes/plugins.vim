@@ -12,3 +12,4 @@ so ~/.config/nvim/includes/plugins/vimspector.vim
 so ~/.config/nvim/includes/plugins/coc.vim
 so ~/.config/nvim/includes/plugins/vim-clang-format.vim
 so ~/.config/nvim/includes/plugins/fzf.vim
+so ~/.config/nvim/includes/plugins/markdown-preview.vim

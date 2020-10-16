@@ -19,7 +19,7 @@ make_directory() {
 
 start_user_service() {
     progress "Start $1"
-    systemctl enable --user "$1"
+    systemctl enable --user "$1" >/dev/null
     systemctl restart --user "$1"
 }
 

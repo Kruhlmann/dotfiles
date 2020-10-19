@@ -33,6 +33,7 @@ to their path from `$HOME` (`~/.config/nvim/init.vim` is saved under
 
 * `calimport` Allows importing ICS calendar files into calcurse.
 * `calparse` Parser for `calimport`.
+* `msgx` MSG file converter.
 
 ### Status bars
 
@@ -52,6 +53,7 @@ to their path from `$HOME` (`~/.config/nvim/init.vim` is saved under
 
 #### DWM
 
+* `dwmbar` Starts DWM bar
 * `dwm_mpd` MPD wrapper
 * `dwm_calcurse` Calcurse wrapper
 * `dwm_clock` Clock
@@ -94,6 +96,11 @@ to their path from `$HOME` (`~/.config/nvim/init.vim` is saved under
 * `qute-bitwarden` Bitwarden rofi menu.
 * `qute-goyo` Reader mode.
 
+### Audio
+
+* `mute_mic` Mutes the default pulseaudio input.
+* `unmute_mic` Unmutes default pulseaudio input.
+
 ### Uncategorized
 
 * `aur` Fuzzy-find AUR packages.
@@ -101,7 +108,6 @@ to their path from `$HOME` (`~/.config/nvim/init.vim` is saved under
 * `colortest` Prints a pre-set array of colors to the console.
 * `devour` Replaces the terminal window with an X window whiel active.
 * `dmenu_apps` Dmenu application launcher.
-* `dwmbar` Starts DWM bar
 * `emoji_commit_selector` Create a commit message with an emoji prefix
 * `fmt_ical_desc` Formates the description in an ICS file for calcurse.
 * `fzmp` Fuzzy-find MPC tracks.
@@ -110,8 +116,6 @@ to their path from `$HOME` (`~/.config/nvim/init.vim` is saved under
 * `launch_polybar` Restarts polybar.
 * `maimpick` Maim shortcut for area to clipboard screenshot.
 * `mount_drive` Mounts a drive with dmenu.
-* `msgx` MSG file converter.
-* `mute_mic` Mutes the default pulseaudio input.
 * `neomutt_mailbox` Rofi menu for opening neomutt mailbox.
 * `notify_mail` Notifies of new mails.
 * `playdf` Launches dwarf fortress
@@ -125,7 +129,6 @@ to their path from `$HOME` (`~/.config/nvim/init.vim` is saved under
 * `transadd` Add torrent to transmission.
 * `twitch` Play Twitch stream with streamlink.
 * `umount_drive` Unmount drive with dmenu.
-* `unmute_mic` Unmutes default pulseaudio input.
 * `vcal` Browse calcurse from CLI.
 * `verify_qtile_config` Verifies QTile configuration.
 * `wifi` Connect to wifi network.

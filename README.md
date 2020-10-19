@@ -29,112 +29,106 @@ to their path from `$HOME` (`~/.config/nvim/init.vim` is saved under
 
 ## Scripts
 
-A large array of scripts are available post import:
+### Data manipulation
 
-### `bain`
+* `calimport` Allows importing ICS calendar files into calcurse.
+* `calparse` Parser for `calimport`.
+* `msgx` MSG file converter.
 
-Battery indicator wallpaper. Supports arch, debian and manjaro logo.
+### Status bars
 
-### `cbp`
+* `active_gitlab_merge_requests` Number of my active merge requests at work.
+* `bluetooth` Current bluetooth state.
+* `corona` Corona stats.
+* `mpd_progress` MPD progress line.
+* `mpd_status` MPD playing status.
+* `nextapt` Next appointment from calcurse.
+* `pacman_packages` Pacman updates available.
+* `peripherals` Mouse and headset battery status.
+* `thermals` CPU/Nvidia GPU temperature.
+* `transwttrico` Translate weather icon to nerdfont from unicode.
+* `unread_mail` Number of unread mails.
+* `weather` Current weather forecast.
+* `xmonad_workspaces`
 
-Uses xdotool to send the content of the clipboard to a window. Useful for wine configurations/virtual machines where clipboard is not shared.
+#### DWM
 
-### `colortest`
+* `dwmbar` Starts DWM bar
+* `dwm_mpd` MPD wrapper
+* `dwm_calcurse` Calcurse wrapper
+* `dwm_clock` Clock
+* `dwm_corona` Corona wrapper
+* `dwm_cputemp` CPU temperature wrapper
+* `dwm_mail` E-mail wrapper
 
-Prints a pre-set array of colors to the console.
+#### i3blocks
 
-### `.estlintrc.js`
+* `battery` Battery status.
+* `bluetooth` Bluetooth status.
+* `clock` Clock.
+* `cpu` CPU usage.
+* `disk` Disk usage.
+* `internet` Internet connection status.
+* `iplocate` IP location.
+* `mailbox` Unread mails.
+* `memory` Memory usage.
+* `music` MPD status.
+* `newsboat` RSS feed status.
+* `pacpackages` Number of available packages.
+* `torrent` Torrent count.
+* `volume` Volume meter.
+* `vpn` VPN status.
 
-Default ESLint configuration.
+### Clipboard
 
-### `fzmp`
+* `cbp` Uses xdotool to send the content of the clipboard to a window.
+* `cpimg` Copies the contents of an image to the clipboard.
 
-Fuzzy finder for MPD.
+### Synchronization
 
-### `i3blocks`
+* `synccal` Synchronize calendar with git.
+* `syncmail` Synchronize mailbox.
+* `sync_music` Synchronize music with YouTube.
+* `update_dotfiles` Synchronizes dotfiles.
 
-i3blocks script collection. Deprecated in favor of polybar.
+### Qutebrowser
 
-### `launch_polybar`
+* `qute-bitwarden` Bitwarden rofi menu.
+* `qute-goyo` Reader mode.
 
-Re-launches polybar with new configuration on all monitors.
+### Audio
 
-### `maimpick`
+* `mute_mic` Mutes the default pulseaudio input.
+* `unmute_mic` Unmutes default pulseaudio input.
 
-Shortcut for a variety of maim options. Presented through dmenu.
+### Uncategorized
 
-### `mount_drive`
-
-Interface for mounting external drives.
-
-### `mute_mic`
-
-Mutes the microphone. Useful for applications that do not support push-to-talk natively.
-
-### `prompt`
-
-Uses dmenu to prompt the user for a yes/no answer.
-
-### `qndl`
-
-Queues and downloads a URL using youtube-dl.
-
-### `queueandnotify`
-
-Podboat replacement. Queues downloads from newsboat using taskspooler.
-
-### `qute-bitwarden`
-
-Biwarden userscript for qutebrowser. Run by loggin in to bitwarden-cli with `bw login` and exporting the session. Then use it in qutebrowser with \<Ctrl\>+\<Shift\>+p by default.
-
-### `qute-goyo`
-
-Reading mode for qutebrowser. Triggered by \<Space\>+z.
-
-### `rss_add`
-
-Adds an RSS feed to newsboat.
-
-### `rss_update`
-
-Updates newsboat RSS feeds.
-
-### `run_scaled`
-
-Run an application scaled by a factor.
-
-### `synccal`
-
-Synchronizes calendar from calcurse to a private git repository.
-
-### `sync_music`
-
-Uses youtube-dl to download audio files in playlists specified in `lib/.config/sync_music.conf`.
-
-### `transadd`
-
-Adds a torrent to the transmission-daemon.
-
-### `umount_drive`
-
-Interface for unmounting external drives.
-
-### `unmute_mic`
-
-Mutes the microphone. Useful for applications that do not support push-to-talk natively.
-
-### `unread_mail`
-
-Outputs the number of unread items from neomutt.
-
-### `update_dotfiles`
-
-Updates the dotfiles repo and establishes new symlinks.
-
-### `wifi`
-
-Shortcut for connecting to a wifi network.
-
-### `xprop-i3`
-
-Runs xprop but outputs to an i3 friendly format.
+* `aur` Fuzzy-find AUR packages.
+* `aur-rm` Fuzzy-find uninstall AUR packages.
+* `colortest` Prints a pre-set array of colors to the console.
+* `devour` Replaces the terminal window with an X window whiel active.
+* `dmenu_apps` Dmenu application launcher.
+* `emoji_commit_selector` Create a commit message with an emoji prefix
+* `fmt_ical_desc` Formates the description in an ICS file for calcurse.
+* `fzmp` Fuzzy-find MPC tracks.
+* `get_ad_certs` Retrieve Active Directory certificates.
+* `get_certs` Retrieve machine certificates.
+* `launch_polybar` Restarts polybar.
+* `maimpick` Maim shortcut for area to clipboard screenshot.
+* `mount_drive` Mounts a drive with dmenu.
+* `neomutt_mailbox` Rofi menu for opening neomutt mailbox.
+* `notify_mail` Notifies of new mails.
+* `playdf` Launches dwarf fortress
+* `progress` Shows progress bar.
+* `prompt` Dmenu prompt
+* `run_scaled` Run scaled X window application.
+* `se` Edit scripts and config file.
+* `show_git_emoji_selection` Helper for `emoji_commit_selector`.
+* `sr` Run script or config file.
+* `swedify` Converts text into "Svidish".
+* `transadd` Add torrent to transmission.
+* `twitch` Play Twitch stream with streamlink.
+* `umount_drive` Unmount drive with dmenu.
+* `vcal` Browse calcurse from CLI.
+* `verify_qtile_config` Verifies QTile configuration.
+* `wifi` Connect to wifi network.

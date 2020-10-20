@@ -48,6 +48,6 @@ xset r rate 300 25
 find ~/.ssh/ -type f -exec grep -l "PRIVATE" {} \; | xargs ssh-add &> /dev/null
 
 sh "$HOME/.screenlayout/$(hostname)"
-sudo protonvpn c -r -p TCP
+sh "$HOME/.config/hostnamerc.d/$(hostname)"
 
 exec xmonad

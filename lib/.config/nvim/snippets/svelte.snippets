@@ -1,0 +1,33 @@
+snippet svelte-no-preload "Main script, main and style elements" b
+<script lang="ts">
+
+</script>
+
+<main>
+
+</main>
+
+<style lang="scss">
+	@import "${1:global_scss_file_path}"
+</style>
+endsnippet
+
+snippet svelte-preload "Main script, preload script, main and style elements" b
+<script context="module">
+	export async function preload(page, session) {
+
+	}
+</script>
+
+<script lang="ts">
+
+</script>
+
+<main>
+
+</main>
+
+<style lang="scss">
+	@import "${1:global_scss_file_path}"
+</style>
+endsnippet

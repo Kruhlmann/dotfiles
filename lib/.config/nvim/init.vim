@@ -41,6 +41,7 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'yuttie/comfortable-motion.vim'           " Smooth scrolling.
     Plug 'davidbeckingsale/writegood.vim'          " No weasel words.
     Plug 'liuchengxu/vim-which-key'                " Shortcut HUD.
+    Plug 'honza/vim-snippets'                      " Snippet collection.
 
     " Syntax highlighting.
     Plug 'cakebaker/scss-syntax.vim'               " SCSS.

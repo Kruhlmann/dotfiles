@@ -40,10 +40,9 @@ set viminfo+=n~/.cache/viminfo
 " setlocal spell
 set spelllang=da,en_us
 set guifont=Fira\ Code:h22
+set rtp+=~/.fzf
 
-"colo gruvbox
-"colo eldar
-colo cobalt2
+colo gruvbox
 
 if exists('+clipboard')
   set clipboard=unnamedplus  " Yanks go to the ctrl-c '+' clipboard register

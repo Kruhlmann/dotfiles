@@ -135,9 +135,12 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " Rename symbol.
-nmap <F2> <Plug>(coc-rename)
+nmap <leader>l2 <Plug>(coc-rename)
+nmap <silent> <Leader>lr <Plug>(coc-diagnostic-next-error)
 
-nmap <silent> <Leader>r <Plug>(coc-diagnostic-next-error)
+nmap <leader>lA :CocCommand snippets.editSnippets
+let g:coc_snippet_next = '<c-j>'
+let g:coc_snippet_prev = '<c-k>'
 
 nmap <space>f :CocCommand explorer<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif

@@ -8,17 +8,29 @@ let g:which_key_use_floating_win = 0
 nnoremap <leader>? :CocSearch <C-R>=expand("<cword>")<CR><CR>
 
 let g:which_key_map['?'] = 'search word'
-let g:which_key_map[' '] = 'remove search highlight'
+let g:which_key_map['<space>'] = [ ':noh'                         , 'remove search highlight' ]
 let g:which_key_map['/'] = [ '<plug>NERDCommenterToggle'          , 'toggle commenting' ]
-let g:which_key_map['d'] = [ ':Bdelete'                           , 'delete buffer']
+let g:which_key_map['d'] = [ ':ddelete'                           , 'delete buffer']
 let g:which_key_map['f'] = [ ':CocCommand explorer'               , 'explorer' ]
-let g:which_key_map['h'] = [ '<C-W>s'                             , 'split below']
+let g:which_key_map['i'] = [ ':PlugInstall'                       , 'install plugins' ]
+let g:which_key_map['j'] = [ ':bnext'                             , 'next buffer' ]
+let g:which_key_map['k'] = [ ':bprevious'                         , 'previous buffer' ]
 let g:which_key_map['o'] = [ ':Tags'                              , 'search tags' ]
 let g:which_key_map['p'] = [ ':Files'                             , 'search files' ]
-let g:which_key_map['q'] = [ ':quit'                                  , 'quit' ]
+let g:which_key_map['q'] = [ ':quit'                              , 'quit' ]
 let g:which_key_map['r'] = [ ':Ranger'                            , 'ranger' ]
-let g:which_key_map['z'] = [ ':Goyo'                               , 'zen' ]
+let g:which_key_map['u'] = [ ':PlugUpdate'                        , 'update plugins' ]
+let g:which_key_map['z'] = [ ':Goyo'                              , 'zen' ]
 
+let g:which_key_map.e = {
+      \ 'name' : '+files' ,
+      \ '.' : [':e ~/.config/nvim/init.vim'                                    , 'neovim rc'],
+      \ 'k' : [':e ~/.config/nvim/includes/plugins/vim-which-key.vim'          , 'vim keybinds'],
+      \ 'p' : [':e ~/.config/polybar/config'                                   , 'polybar config'],
+      \ 'm' : [':e ~/.config/polybar/modules.conf'                             , 'polybar modules'],
+      \ 'd' : [':e $DOTFILES/setup'                                            , 'dotfiles setup'],
+      \ 'x' : [':e ~/.xmonad/xmonad.hs'                                        , 'xmonad config'],
+      \ }
 let g:which_key_map.l = {
       \ 'name' : '+lsp' ,
       \ '.' : [':CocConfig'                          , 'config'],
@@ -31,6 +43,7 @@ let g:which_key_map.l = {
       \ 'd' : ['<Plug>(coc-definition)'              , 'definition'],
       \ 'D' : ['<Plug>(coc-declaration)'             , 'declaration'],
       \ 'e' : [':CocList extensions'                 , 'extensions'],
+      \ 'E' : [':CocList extensions'                 , 'extensions'],
       \ 'f' : ['<Plug>(coc-format-selected)'         , 'format selected'],
       \ 'F' : ['<Plug>(coc-format)'                  , 'format'],
       \ 'h' : ['<Plug>(coc-float-hide)'              , 'hide'],
@@ -67,7 +80,6 @@ let g:which_key_map.g = {
       \ 'G' : [':Gstatus'                          , 'status'],
       \ 'h' : [':GitGutterLineHighlightsToggle'    , 'highlight hunks'],
       \ 'H' : ['<Plug>(GitGutterPreviewHunk)'      , 'preview hunk'],
-      \ 'i' : [':Gist -b'                          , 'post gist'],
       \ 'j' : ['<Plug>(GitGutterNextHunk)'         , 'next hunk'],
       \ 'k' : ['<Plug>(GitGutterPrevHunk)'         , 'prev hunk'],
       \ 'l' : [':Git log'                          , 'log'],

@@ -1,9 +1,5 @@
 call plug#begin("~/.local/share/nvim/plugged/")
     " File manager.
-    Plug 'scrooloose/nerdtree'                      " File manager.
-    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'  " Syntax highlighting NERD.
-    Plug 'ryanoasis/vim-devicons'                   " File type icons.
-    Plug 'Xuyuanp/nerdtree-git-plugin'              " Show git status of files.
     Plug 'francoiscabrol/ranger.vim'                " Integrated ranger.
     Plug 'rbgrouleff/bclose.vim'                    " Ranger dependency.
 

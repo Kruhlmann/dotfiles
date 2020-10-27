@@ -1,4 +1,3 @@
-so ~/.config/nvim/includes/plugins/nerdtree.vim
 so ~/.config/nvim/includes/plugins/leaderf.vim
 so ~/.config/nvim/includes/plugins/vim-latex-live-preview.vim
 so ~/.config/nvim/includes/plugins/goyo.vim

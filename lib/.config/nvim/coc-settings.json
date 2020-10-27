@@ -51,22 +51,10 @@
     "explorer.focus": true,
     "explorer.toggle": true,
     "explorer.file.hiddenRules": {
-        "extensions": [
-            "o",
-            "a",
-            "obj",
-            "pyc"
-        ],
+        "extensions": ["o", "a", "obj", "pyc"],
         "filenames": [],
-        "patternMatches": [
-            "^\\.",
-            "node_modules"
-        ]
+        "patternMatches": ["^\\.", "node_modules"]
     },
-    "explorer.keyMappings": {
-    "<cr>": ["expandable?", "expand", "open"],
-    "v": "open:vsplit"
-  }
     "diagnostic.errorSign": "✘",
     "diagnostic.warningSign": "",
     "diagnostic.infoSign": "",

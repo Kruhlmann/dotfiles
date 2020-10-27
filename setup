@@ -90,6 +90,7 @@ if command -v nvim &> /dev/null; then
     "$TERMINAL" -e "/usr/bin/nvim +CocInstall coc-tsserver +qall" >/dev/null 2>&1
     "$TERMINAL" -e "/usr/bin/nvim +CocInstall coc-css +qall" >/dev/null 2>&1
     "$TERMINAL" -e "/usr/bin/nvim +CocInstall coc-eslint +qall" >/dev/null 2>&1
+    "$TERMINAL" -e "/usr/bin/nvim +CocInstall coc-explorer +qall" >/dev/null 2>&1
     "$TERMINAL" -e "/usr/bin/nvim +CocInstall coc-clangd +qall" >/dev/null 2>&1
     "$TERMINAL" -e "/usr/bin/nvim +CocInstall coc-python +qall" >/dev/null 2>&1
     "$TERMINAL" -e "/usr/bin/nvim +CocInstall coc-svelte +qall" >/dev/null 2>&1

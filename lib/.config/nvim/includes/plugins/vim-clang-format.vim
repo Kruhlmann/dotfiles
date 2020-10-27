@@ -1,5 +1,5 @@
 autocmd FileType c,cpp,objc,h,hpp ClangFormatAutoEnable
-g:clang_format#detect_style_file = 1
+let g:clang_format#detect_style_file = 1
 let g:clang_format#style_options = {
     \ "BasedOnStyle": "LLVM",
     \ "Language": "Cpp",

@@ -1,7 +1,3 @@
-" Don't use in python files.
-autocmd BufNew,BufEnter *.py execute "silent! CocDisable"
-autocmd BufLeave *.py execute "silent! CocEnable"
-
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
 set updatetime=300
@@ -142,3 +138,6 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 nmap <F2> <Plug>(coc-rename)
 
 nmap <silent> <Leader>r <Plug>(coc-diagnostic-next-error)
+
+nmap <space>f :CocCommand explorer<CR>
+autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif

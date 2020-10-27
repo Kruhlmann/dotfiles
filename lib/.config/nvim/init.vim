@@ -67,7 +67,6 @@ so ~/.config/nvim/includes/wildmenu.vim            " Basic vim settings.
 so ~/.config/nvim/includes/backup.vim              " Vim backup and swap files.
 so ~/.config/nvim/includes/userfunc.vim            " User-defined functions.
 so ~/.config/nvim/includes/binds.vim               " Key bindings.
-so ~/.config/nvim/includes/statusline.vim          " Plugin configuration.
 so ~/.config/nvim/includes/ftypes.vim              " Non-traditional filetypes.
 so ~/.config/nvim/includes/events.vim              " Vim event handling.
 so ~/.config/nvim/includes/plugins.vim             " Plugin configuration.
@@ -82,3 +81,4 @@ so ~/.config/nvim/includes/syntax/vcard.vim        " VCard syntax highlighting.
 " Language server configuration.
 "luafile ~/.config/nvim/lua/lsp.lua
 "luafile ~/.config/nvim/lua/tree_sit.lua
+" so ~/.config/nvim/includes/statusline.vim          " Plugin configuration.

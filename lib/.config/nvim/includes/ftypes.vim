@@ -1,6 +1,3 @@
-" Svelte
-au BufNewFile,BufRead *.svelte set syntax=html
-
 " PGN
 au BufNewFile,BufRead *.pgn set syntax=pgn
 

@@ -1,0 +1,29 @@
+[general]
+accounts = kruhlmann
+pythonfile = ~/.scripts/offlineimap_password_store.py
+
+[Account kruhlmann]
+localrepository = kruhlmann-local
+remoterepository = kruhlmann-remote
+autorefresh = 0.2
+quick = 10
+postsynchook = notmuch new
+
+
+[Repository kruhlmann-local]
+type = Maildir
+localfolders = ~/mail/kruhlmann
+sync_deletes = yes
+
+
+[Repository kruhlmann-remote]
+type = IMAP
+remoteport = 1243
+remotehost = 127.0.0.1
+remoteuser = andreas@kruhlmann.dev
+remotepasseval = get_pwd()
+keepalive = 60
+holdconnectionopen = yes
+expunge = yes
+folderfilter = lambda foldername: foldername in ['INBOX', 'Archive', 'Sent']
+ssl = no

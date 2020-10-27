@@ -135,6 +135,7 @@ start_user_service "sync_music.timer"
 start_user_service "mpd.service"
 start_user_service "bing-wallpaper.service"
 start_user_service "mbsync.timer"
+start_user_service "offlineimap.service"
 completed "Start user services"
 
 if [ $MPD_PLAYING -eq 1 ]; then

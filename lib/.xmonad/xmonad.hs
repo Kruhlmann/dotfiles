@@ -140,7 +140,7 @@ myStartupHook = do
     spawnOnce "discord"
     spawnOnce "nm-applet"
     spawnOnce "launch_polybar"
-    spawnOnce "protonmail-bridge"
+    spawnOnce "tmux has-session -t protonmail_bridge || tmux new -d -s protonmail_bridge 'protonmail-bridge --cli'"
 
 myManageHook = composeAll [
     -- Positions.

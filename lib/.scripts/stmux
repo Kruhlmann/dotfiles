@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+WORKSPACE_PATH="$DOTFILES"/lib/.config/tmux-blueprints
+WORKSPACE="$(find "$WORKSPACE_PATH"/* | tr '\n' '\0' | xargs -0 -n 1 basename| rofi -dmenu -p ' TMUX workspace')"
+[ -z "$WORKSPACE" ] && exit 1
+sh "$WORKSPACE_PATH/$WORKSPACE"

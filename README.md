@@ -125,6 +125,7 @@ to their path from `$HOME` (`~/.config/nvim/init.vim` is saved under
 * `se` Edit scripts and config file.
 * `show_git_emoji_selection` Helper for `emoji_commit_selector`.
 * `sr` Run script or config file.
+* `stmux` Open a TMUX workspace configured in [tmux-blueprints](./lib/.config/tmux-blueprints)
 * `swedify` Converts text into "Svidish".
 * `transadd` Add torrent to transmission.
 * `twitch` Play Twitch stream with streamlink.

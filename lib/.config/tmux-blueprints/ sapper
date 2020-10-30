@@ -6,16 +6,18 @@ SESSIONEXISTS=$(tmux list-sessions | grep "$SESSION")
 if [ "$SESSIONEXISTS" = "" ]; then
     tmux new-session -d -s "$SESSION"
 
-    tmux rename-window -t "$SESSION" 'shell'
+    tmux rename-window -t "$SESSION" ' shell'
     tmux send-keys -t 'shell' 'clear' C-m
 
-    tmux new-window -t "$SESSION" -n 'vim'
+    tmux new-window -t "$SESSION" -n ' vim'
     tmux send-keys -t 'vim' 'vim' C-m ':CocCommand explorer' C-m
-    tmux split-window -h -p 20 'make dev'
-    tmux select-pane -t 0
 
-    tmux new-window -t "$SESSION" -n 'git'
+    tmux new-window -t "$SESSION" -n '歷server'
+    tmux send-keys -t 'vim' 'vim' C-m ':CocCommand explorer' C-m
+
+    tmux new-window -t "$SESSION" -n ' git'
     tmux send-keys -t 'git' 'lazygit' C-m
 fi
 
+tmux select-window -t 2
 tmux attach-session -t "$SESSION"

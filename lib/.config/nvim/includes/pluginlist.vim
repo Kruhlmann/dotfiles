@@ -26,8 +26,6 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'mhinz/vim-signify'                       " Necessary for statusline.
     Plug 'xuhdev/vim-latex-live-preview',          " LaTEX live previewer.
         \{ 'for': 'tex' }
-    Plug 'Yggdroot/LeaderF',                       " FZF for files in workspace
-        \{ 'do': './install.sh' }
     Plug 'preservim/nerdcommenter'                 " Commenter.
     Plug 'puremourning/vimspector'                 " Debugger.
     Plug 'editorconfig/editorconfig-vim'           " Editorconfig file support.
@@ -51,7 +49,7 @@ call plug#begin("~/.local/share/nvim/plugged/")
     " Syntax highlighting.
     Plug 'cakebaker/scss-syntax.vim'               " SCSS.
     Plug 'glench/vim-jinja2-syntax'                " Jinja2.
-    Plug 'leafoftree/vim-svelte-plugin'            " SvelteJS.
+    Plug 'evanleck/vim-svelte', {'branch': 'main'} " SvelteJS.
     Plug 'mboughaba/i3config.vim'                  " i3 config.
     Plug 'HerringtonDarkholme/yats.vim'            " TypeScript.
     Plug 'pangloss/vim-javascript'                 " JavaScript.

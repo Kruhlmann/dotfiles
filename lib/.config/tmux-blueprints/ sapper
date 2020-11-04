@@ -3,20 +3,24 @@
 SESSION=" Sapper"
 SESSIONEXISTS=$(tmux list-sessions | grep "$SESSION")
 
+VIM_WINDOW_NAME=" vim"
+SHELL_WINDOW_NAME=" shell"
+SERVER_WINDOW_NAME="歷server"
+GIT_WINDOW_NAME=" git"
+
 if [ "$SESSIONEXISTS" = "" ]; then
     tmux new-session -d -s "$SESSION"
+    tmux rename-window -t "$SESSION" "$SHELL_WINDOW_NAME"
+    tmux send-keys -t "$SHELL_WINDOW_NAME" "clear" C-m
 
-    tmux rename-window -t "$SESSION" ' shell'
-    tmux send-keys -t 'shell' 'clear' C-m
+    tmux new-window -t "$SESSION" -n "$VIM_WINDOW_NAME"
+    tmux send-keys -t "$VIM_WINDOW_NAME" "vim" C-m ":CocCommand explorer" C-m ":wincmd l" C-m
 
-    tmux new-window -t "$SESSION" -n ' vim'
-    tmux send-keys -t 'vim' 'vim' C-m ':CocCommand explorer' C-m
+    tmux new-window -t "$SESSION" -n "$SERVER_WINDOW_NAME"
+    tmux send-keys -t "$SERVER_WINDOW_NAME" "make dev" C-m
 
-    tmux new-window -t "$SESSION" -n '歷server'
-    tmux send-keys -t 'vim' 'vim' C-m ':CocCommand explorer' C-m
-
-    tmux new-window -t "$SESSION" -n ' git'
-    tmux send-keys -t 'git' 'lazygit' C-m
+    tmux new-window -t "$SESSION" -n "$GIT_WINDOW_NAME"
+    tmux send-keys -t "$GIT_WINDOW_NAME" "lazygit" C-m
 fi
 
 tmux select-window -t 2

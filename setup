@@ -99,6 +99,10 @@ if command -v nvim &> /dev/null; then
     "$TERMINAL" -e "/usr/bin/nvim +LspInstall tsserver +qall" >/dev/null 2>&1
     completed "Setup neovim language server protocol"
 
+    progress "Installing treesitter configurations"
+    "$TERMINAL" -e "/usr/bin/nvim +TSInstall all +qall" >/dev/null 2>&1
+    completed "Installing treesitter configurations"
+
     progress "Update neovim plugins"
     "$TERMINAL" -e "/usr/bin/nvim +PlugUpdate +PlugClean[!] +qall">/dev/null 2>&1
     completed "Update neovim plugins"

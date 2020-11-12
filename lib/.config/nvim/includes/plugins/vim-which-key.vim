@@ -8,7 +8,7 @@ let g:which_key_use_floating_win = 0
 nnoremap <leader>? :CocSearch <C-R>=expand("<cword>")<CR><CR>
 
 let g:which_key_map['?'] = 'search word'
-let g:which_key_map['<space>'] = [ ':noh'                         , 'remove search highlight' ]
+let g:which_key_map['n'] = [ ':noh'                         , 'remove search highlight' ]
 let g:which_key_map['/'] = [ '<plug>NERDCommenterToggle'          , 'toggle commenting' ]
 let g:which_key_map['d'] = [ ':ddelete'                           , 'delete buffer']
 let g:which_key_map['f'] = [ ':CocCommand explorer'               , 'explorer' ]
@@ -31,8 +31,37 @@ let g:which_key_map.e = {
       \ 'd' : [':e $DOTFILES/setup'                                            , 'dotfiles setup'],
       \ 'x' : [':e ~/.xmonad/xmonad.hs'                                        , 'xmonad config'],
       \ }
+let g:which_key_map.w = {
+      \ 'name' : 'windows' ,
+      \ 'w' : ['<C-W>w'     , 'other-window']          ,
+      \ 'd' : ['<C-W>c'     , 'delete-window']         ,
+      \ '-' : ['<C-W>s'     , 'split-window-below']    ,
+      \ '|' : ['<C-W>v'     , 'split-window-right']    ,
+      \ '2' : ['<C-W>v'     , 'layout-double-columns'] ,
+      \ 'h' : ['<C-W>h'     , 'window-left']           ,
+      \ 'j' : ['<C-W>j'     , 'window-below']          ,
+      \ 'l' : ['<C-W>l'     , 'window-right']          ,
+      \ 'k' : ['<C-W>k'     , 'window-up']             ,
+      \ 'H' : ['<C-W>5<'    , 'expand-window-left']    ,
+      \ 'J' : ['resize +5'  , 'expand-window-below']   ,
+      \ 'L' : ['<C-W>5>'    , 'expand-window-right']   ,
+      \ 'K' : ['resize -5'  , 'expand-window-up']      ,
+      \ '=' : ['<C-W>='     , 'balance-window']        ,
+      \ 's' : ['<C-W>s'     , 'split-window-below']    ,
+      \ 'v' : ['<C-W>v'     , 'split-window-below']    ,
+      \ '?' : ['Windows'    , 'fzf-window']            ,
+      \ }
+
 let g:which_key_map.l = {
       \ 'name' : '+lsp' ,
+      \ 'd' : [':lua vim.lsp.buf.definition()'       , 'definition'],
+      \ 'D' : [':lua vim.lsp.util.show_line_diagnostics()', 'diagnostics'],
+      \ 'f' : [':lua vim.lsp.buf.formatting()'          , 'format'],
+      \ 'r' : [':lua vim.lsp.buf.rename()'          , 'rename'],
+      \ 'R' : [':lua vim.lsp.buf.references()'          , 'references'],
+    \ }
+let g:which_key_map.g = {
+      \ 'name' : '+coc' ,
       \ '.' : [':CocConfig'                          , 'config'],
       \ ';' : ['<Plug>(coc-refactor)'                , 'refactor'],
       \ 'a' : ['<Plug>(coc-codeaction)'              , 'line action'],
@@ -59,7 +88,7 @@ let g:which_key_map.l = {
       \ 'q' : ['<Plug>(coc-fix-current)'             , 'quickfix'],
       \ 'r' : ['<Plug>(coc-rename)'                  , 'rename'],
       \ 'R' : ['<Plug>(coc-references)'              , 'references'],
-      \ 's' : [':CocList -I symbols'                 , 'references'],
+      \ 's' : [':CocList -I symbols'                 , 'cymbols'],
       \ 'S' : [':CocList snippets'                   , 'snippets'],
       \ 't' : ['<Plug>(coc-type-definition)'         , 'type definition'],
       \ 'u' : [':CocListResume'                      , 'resume list'],
@@ -96,3 +125,16 @@ let g:which_key_map.g = {
       \ }
 
 call which_key#register('<Space>', "g:which_key_map")
+
+nnoremap <silent> <leader>ld    <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent> <leader>lD    <cmd>lua vim.lsp.util.show_line_diagnostics()<CR>
+nnoremap <silent> <leader>lr    <cmd>lua vim.lsp.buf.rename()<CR>
+nnoremap <silent> <leader>lR    <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> <leader>lf    <cmd>lua vim.lsp.buf.formatting()<CR>
+"nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
+"nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
+"nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
+"nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+"nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
+"nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
+"nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>

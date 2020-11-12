@@ -7,9 +7,9 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'neoclide/coc.nvim',                       " Conquerer of Code LSP.
                 \{ 'do': 'yarn install --frozen-lockfile'}
 
-    "Plug 'neovim/nvim-lsp'                         " Native language server.
-    "Plug 'haorenW1025/completion-nvim'             " LSP auto completion.
-    "Plug 'haorenW1025/diagnostic-nvim'             " LSP diagnostics.
+    Plug 'neovim/nvim-lspconfig'                         " Native language server.
+    Plug 'nvim-lua/completion-nvim'             " LSP auto completion.
+    Plug 'nvim-lua/diagnostic-nvim'             " LSP diagnostics.
     "Plug 'wbthomason/lsp-status.nvim'              " LSP statusbar utilities.
     Plug 'nvim-treesitter/nvim-treesitter'         " LSP tree sitter.
 
@@ -64,3 +64,29 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'Kruhlmann/cobalt2-vim-theme'
     Plug 'junegunn/seoul256.vim'
 call plug#end()
+
+let g:diagnostic_show_sign = 1
+let g:signify_sign_add = '▎'
+let g:signify_sign_delete = '▎'
+let g:signify_sign_delete_first_line = '▎'
+let g:signify_sign_change = '▎'
+let g:diagnostic_virtual_text_prefix = ''
+let g:diagnostic_enable_virtual_text = 1
+let g:completion_confirm_key = "\<C-x>"
+let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+
+:lua << EOF
+    local nvim_lsp = require("nvim_lsp")
+    local on_attach = function(_, buf_number)
+        require("diagnostic").on_attach()
+        require("completion").on_attach()
+    end
+
+    local servers = {'jsonls', 'pyls_ms', 'vimls', 'clangd', 'tsserver', 'cssls', 'html'}
+    for _, lsp in ipairs(servers) do
+        nvim_lsp[lsp].setup {
+            on_attach = on_attach,
+        }
+    end
+EOF
+

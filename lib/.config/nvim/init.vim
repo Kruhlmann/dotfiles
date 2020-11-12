@@ -1,4 +1,3 @@
-
 " Global configuration.
 so ~/.config/nvim/includes/pluginlist.vim               " Basic vim settings.
 so ~/.config/nvim/includes/basic.vim               " Basic vim settings.

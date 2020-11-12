@@ -35,7 +35,7 @@ set conceallevel=0
 set background=dark
 set termguicolors
 set noshowmode
-set completeopt=longest,menuone,preview
+set completeopt=menuone,noinsert,noselect
 set viminfo+=n~/.cache/viminfo
 " setlocal spell
 set spelllang=da,en_us

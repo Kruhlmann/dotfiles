@@ -11,7 +11,7 @@ call plug#begin("~/.local/share/nvim/plugged/")
     "Plug 'haorenW1025/completion-nvim'             " LSP auto completion.
     "Plug 'haorenW1025/diagnostic-nvim'             " LSP diagnostics.
     "Plug 'wbthomason/lsp-status.nvim'              " LSP statusbar utilities.
-    "Plug 'nvim-treesitter/nvim-treesitter'         " LSP tree sitter.
+    Plug 'nvim-treesitter/nvim-treesitter'         " LSP tree sitter.
 
     " Appearance
     Plug 'junegunn/goyo.vim'                       " Focus mode.

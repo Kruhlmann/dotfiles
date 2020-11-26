@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+CARD_INDEX=$(audio_card_from_mac "$1")
+pacmd list-cards | awk "/index: $CARD_INDEX/,/active profile/" | tail -n 1 | sed -e 's/active profile://g' -e 's/^ *//g'

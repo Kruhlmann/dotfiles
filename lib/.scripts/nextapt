@@ -1,3 +1,2 @@
 #!/usr/bin/env sh
-echo -n "%{F#458588} %{F-}"
 calcurse -n | sed -e 's/next appointment\://g' |  tr '\n' ' ' | xargs -0 | awk -v len=100 '{ if (length($0) == 0) print("Done for today!"); else if (length($0) > len) print substr($0, 1, len-3) "..."; else print; }' | tr -s ' '

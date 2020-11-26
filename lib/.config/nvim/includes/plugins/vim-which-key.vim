@@ -52,15 +52,15 @@ let g:which_key_map.w = {
       \ '?' : ['Windows'    , 'fzf-window']            ,
       \ }
 
+"let g:which_key_map.l = {
+      "\ 'name' : '+lsp' ,
+      "\ 'd' : [':lua vim.lsp.buf.definition()'       , 'definition'],
+      "\ 'D' : [':lua vim.lsp.util.show_line_diagnostics()', 'diagnostics'],
+      "\ 'f' : [':lua vim.lsp.buf.formatting()'          , 'format'],
+      "\ 'r' : [':lua vim.lsp.buf.rename()'          , 'rename'],
+      "\ 'R' : [':lua vim.lsp.buf.references()'          , 'references'],
+    "\ }
 let g:which_key_map.l = {
-      \ 'name' : '+lsp' ,
-      \ 'd' : [':lua vim.lsp.buf.definition()'       , 'definition'],
-      \ 'D' : [':lua vim.lsp.util.show_line_diagnostics()', 'diagnostics'],
-      \ 'f' : [':lua vim.lsp.buf.formatting()'          , 'format'],
-      \ 'r' : [':lua vim.lsp.buf.rename()'          , 'rename'],
-      \ 'R' : [':lua vim.lsp.buf.references()'          , 'references'],
-    \ }
-let g:which_key_map.g = {
       \ 'name' : '+coc' ,
       \ '.' : [':CocConfig'                          , 'config'],
       \ ';' : ['<Plug>(coc-refactor)'                , 'refactor'],
@@ -126,11 +126,11 @@ let g:which_key_map.g = {
 
 call which_key#register('<Space>', "g:which_key_map")
 
-nnoremap <silent> <leader>ld    <cmd>lua vim.lsp.buf.declaration()<CR>
-nnoremap <silent> <leader>lD    <cmd>lua vim.lsp.util.show_line_diagnostics()<CR>
-nnoremap <silent> <leader>lr    <cmd>lua vim.lsp.buf.rename()<CR>
-nnoremap <silent> <leader>lR    <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> <leader>lf    <cmd>lua vim.lsp.buf.formatting()<CR>
+"nnoremap <silent> <leader>ld    <cmd>lua vim.lsp.buf.declaration()<CR>
+"nnoremap <silent> <leader>lD    <cmd>lua vim.lsp.util.show_line_diagnostics()<CR>
+"nnoremap <silent> <leader>lr    <cmd>lua vim.lsp.buf.rename()<CR>
+"nnoremap <silent> <leader>lR    <cmd>lua vim.lsp.buf.references()<CR>
+"nnoremap <silent> <leader>lf    <cmd>lua vim.lsp.buf.formatting()<CR>
 "nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
 "nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
 "nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>

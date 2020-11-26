@@ -1,13 +1,13 @@
 #!/usr/bin/env sh
 
 MAC_ADDRESS="$1"
-CARD_INDEX=$(audio_card_from_mac "$MAC_ADDRESS")
 PROFILE=$(audio_profile_from_mac "$MAC_ADDRESS")
 
 [ -z "$PROFILE" ] && exit 1
 
 if [ "$PROFILE" = "headset_head_unit" ]; then
-    pacmd set-card-profile "$CARD_INDEX" "a2dp_sink_ldac"
+    echo %{F#458588}%{F-}""
 else
-    pacmd set-card-profile "$CARD_INDEX" "headset_head_unit"
+    echo %{F#555555}%{F-}""
 fi
+

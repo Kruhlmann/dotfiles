@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+VENVDIR="$HOME/.virtual_envionments"
+VENV="$(pwd | sha256sum | tr -d '[:space:]-')"
+
+[ -d "$VENVDIR" ] || mkdir -p "$VENVDIR"
+[ -d "$VENVDIR/$VENV" ] || python -m virtualenv "$VENVDIR/$VENV"
+
+echo "Activating virtual environment $VENVDIR/$VENV"
+. "$VENVDIR/$VENV/bin/activate"

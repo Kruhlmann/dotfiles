@@ -40,6 +40,7 @@ alias commit="emoji_commit_selector"
 alias recommit="sh /tmp/last-commit"
 alias dockerm="docker ps -a | awk '{ print $1 }' | xargs docker rm"
 alias cp="rsync --progress --inplace --verbose --human-readable"
+alias cnconline="protontricks -c \"wine 'C:\\Program Files (x86)\\Revora\\CNCOnline\\cnconline.exe'\" 17480"
 
 # Devour
 alias mpv="devour mpv"

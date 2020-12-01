@@ -43,6 +43,9 @@
 [includeIf "gitdir:~/doc/src/github.com/"]
     path = ~/.config/git/personal
 
+[includeIf "gitdir:/mnt/hdd/home/doc/src/github.com/"]
+    path = ~/.config/git/personal
+
 [includeIf "gitdir:~/doc/src/gitlab.com/"]
     path = ~/.config/git/personal
 

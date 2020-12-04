@@ -47,7 +47,7 @@ xset r rate 300 25
 
 find ~/.ssh/ -type f -exec grep -l "PRIVATE" {} \; | xargs ssh-add &> /dev/null
 
-sh "$HOME/.screenlayout/$(hostname)"
+#sh "$HOME/.screenlayout/$(hostname)"
 sh "$HOME/.config/hostnamerc.d/$(hostname)"
 
 exec xmonad

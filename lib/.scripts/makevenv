@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-VENVDIR="$HOME/.virtual_envionments"
+VENVDIR="/tmp/.virtual_envionments"
 VENV="$(pwd | sha256sum | tr -d '[:space:]-')"
 
 [ -d "$VENVDIR" ] || mkdir -p "$VENVDIR"
@@ -8,3 +8,4 @@ VENV="$(pwd | sha256sum | tr -d '[:space:]-')"
 
 echo "Activating virtual environment $VENVDIR/$VENV"
 . "$VENVDIR/$VENV/bin/activate"
+pip install pre_commit neovim rope

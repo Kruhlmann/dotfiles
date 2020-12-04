@@ -1,0 +1,80 @@
+#!/usr/bin/env sh
+
+on_gain() {
+    nslookup "mo-gitlab.siemens.dk" >/dev/null
+}
+
+tunnel_is_running() {
+    pgrep -f ura >/dev/null
+}
+
+disable_pac_file() {
+    # Proxy will not handle any requests.
+    echo 'RETURN "DIRECT";' > "$HOME/.config/proxy.pac"
+}
+
+enable_pac_file() {
+    # Proxy will hanle requests to *.siemens.dk and *.siemens.com
+cat << EOF > "$HOME/.config/proxy.pac"
+function FindProxyForURL(url, host) {
+    var useSocks = ["*.siemens.dk", "*.siemens.com", "*.siemens.io", "*.siemens.net", "149.212.223.*"];
+    for (var i= 0; i < useSocks.length; i++) {
+        if (shExpMatch(host, useSocks[i])) {
+            return "SOCKS localhost:8021";
+        }
+    }
+
+    return "DIRECT";
+}
+EOF
+}
+
+
+setup_tunnel() {
+    sudo sed -i "s/localjump/mobjump.siemens.dk mob-rdg.siemens.dk mo-gitlab.siemens.dk/g" /etc/hosts
+    enable_pac_file
+    if tunnel_is_running; then
+        notify-send "Tunnel is already running"
+        exit 0
+    fi
+    ssh -f -D 8021 ura -N
+    ssh -f -L 8020:mobjump.siemens.dk:8020 ura -N
+    ssh -f -L 8022:mob-rdg.siemens.dk:8020 ura -N
+    notify-send "SSH tunnel to Siemens created"
+}
+
+tear_down_tunnel() {
+    if tunnel_is_running; then
+        pkill -f ura
+    fi
+    sudo sed -i "s/mobjump.siemens.dk mob-rdg.siemens.dk mo-gitlab.siemens.dk/localjump/g" /etc/hosts
+    disable_pac_file
+    notify-send "SSH tunnel to Siemens stopped"
+}
+
+OPERATION="${1:-auto}"
+
+case $OPERATION in
+    auto)
+        if on_gain; then
+            # We are on GAIN, don't go trough tunnel.
+            tear_down_tunnel
+        else
+            # We are not on GAIN, connect via tunnel.
+            setup_tunnel
+        fi
+        ;;
+    toggle)
+        if tunnel_is_running; then
+            tear_down_tunnel
+        else
+            setup_tunnel
+        fi
+        ;;
+    off)
+        tear_down_tunnel
+        ;;
+    on)
+        setup_tunnel
+        ;;
+esac

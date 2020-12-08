@@ -81,7 +81,7 @@ spMaim = "maim -sl -u -c 0.2,0.4,1.0,0.7 -b 0 | xclip -selection clipboard -t im
 ---- Key binding to toggle the gap for the bar.
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 myWorkspaces :: [String]
-myWorkspaces = ["1:\xfa9e", "2: \xe7c5", "3: \xfb6e", "4: \xf0c0", "5: \xf023", "6: \xf718", "7: \xe70f", "8: \xf1b6", "9: \xf085"]
+myWorkspaces    = ["Firefox","Programming","Instant Messaging","SSH","Bitwarden","Virtual Machines","WINE Games","Steam Games","Settings"]
 
 binds conf@(XConfig {XMonad.modMask = modm}) = M.fromList $ [
     ((modm,               xK_Return), spawn $ "termite"),
@@ -141,12 +141,15 @@ myStartupHook = do
     spawnOnce "nm-applet"
     spawnOnce "launch_polybar"
     spawnOnce "tmux has-session -t protonmail_bridge || tmux new -d -s protonmail_bridge 'protonmail-bridge --cli'"
+    spawnOnce "teams-for-linux"
+    spawnOnce "firefox-developer-edition"
+    spawnOnce "ckb-next"
 
 myManageHook = composeAll [
     -- Positions.
-    className =? "discord" --> doShift "3",
-    className =? "teams-for-linux" --> doShift "4",
-    className =? "ckb-next" --> doShift "9",
+    className =? "discord" --> doShift "Instant Messaging",
+    className =? "teams-for-linux" --> doShift "Instant Messaging",
+    className =? "ckb-next" --> doShift "Settings",
     -- Float.
     resource  =? "bitwarden" --> doRectFloat (W.RationalRect 0.2 0.2 0.6 0.6),
     resource  =? "floatterm" --> doRectFloat (W.RationalRect 0.2 0.2 0.6 0.6),
@@ -189,32 +192,19 @@ tiledLayout = Tall nmaster delta ratio
 -- Inspired by:
 --   http://kitenet.net/~joey/blog/entry/xmonad_layouts_for_netbooks/
 workspaceLayouts =
-  onWorkspace "1:\xfa9e" webLayouts $
-  onWorkspace "2: \xe7c5" codeLayouts $
-  onWorkspace "3: \xfb6e" imLayouts $
+  onWorkspace "1:" webLayouts $
+  onWorkspace "2:" codeLayouts $
+  onWorkspace "3:" imLayouts $
   defaultLayouts
   where
-    -- Combinations of our available layouts, which we can cycle through
-    -- using mod-Space.  'Mirror' applies a 90-degree rotation to a layout.
     codeLayouts = fixedLayout ||| tiledLayout ||| simpleTabbed
     webLayouts = tiledLayout
     imLayouts = simpleTabbed ||| Mirror tiledLayout
     defaultLayouts = tiledLayout ||| Mirror tiledLayout ||| fixedLayout |||
                      floatLayout ||| simpleTabbed
-
-    -- An 80-column fixed layout for Emacs and terminals.  The master
-    -- pane will resize so that the contained window is 80 columns.
     fixedLayout = FixedColumn 1 20 80 10
-
-    -- A simple floating-window layout.  This isn't particularly good,
-    -- to be honest, but further configuration might improve it.
     floatLayout = windowArrange simpleFloat
 
--- Hook up my layouts.  We apply 'toggleLayouts' so that we can switch any
--- window into or out of full-screen mode with a single command (see
--- below).  We use 'smartBorders' to turn off the border around the focused
--- window if it's the only window on the screen.  And 'avoidStruts' leaves
--- space for gnome-panel and xmobar.
 myLayout = avoidStruts $ smartBorders $ toggleLayouts Full workspaceLayouts
 
 main = do

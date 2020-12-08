@@ -2,8 +2,8 @@ dotfiles ~/doc/src/github.com/kruhlmann/dotfiles
 i3 ~/.config/i3/config
 polybar ~/.config/polybar/config
 vimrc ~/.config/nvim/init.vim
+
 latex ~/doc/latex
 latex ~/doc/latex
 tlog ~/doc/src/mo-gitlab.siemens.dk/sw-group/banedanmark/s-bane/pykpi/tlog
-
 kpi_frontend ~/doc/src/mo-gitlab.siemens.dk/sw-group/banedanmark/s-bane/pykpi/components/dashboard

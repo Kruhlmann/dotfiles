@@ -33,8 +33,8 @@ cursor-scroll = ns-resize
 [bar/bottom]
 inherit = bar/master
 
-modules-left = i3 bspwm title-xmonad
-modules-cetner =
+modules-left = workspaces
+modules-cetner = title
 modules-right = mpd
 
 padding-right = 2

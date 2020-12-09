@@ -64,6 +64,20 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'leafOfTree/vim-svelte-theme'
     Plug 'Kruhlmann/cobalt2-vim-theme'
     Plug 'junegunn/seoul256.vim'
+
+    " CoC
+    Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'coc-extensions/coc-svelte', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'coc-extensions/coc-powershell', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'coc-extensions/coc-omnisharp', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'clangd/coc-clangd', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'fannheyward/coc-marketplace', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'weirongxu/coc-explorer', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'iamcco/coc-vimlsp', {'do': 'yarn install --frozen-lockfile'}
 call plug#end()
 
 let g:diagnostic_show_sign = 1

@@ -23,6 +23,12 @@ start_user_service() {
     systemctl restart --user "$1"
 }
 
+pin_neovim_plugin() {
+    cd "$HOME/.local/share/nvim/plugged/$1"
+    git checkout "$2"
+    progress "Pinning neovim plugin $1 to SHA $2"
+}
+
 progress "Install dependencies"
 yay -S --needed < ./dependencies
 completed "Install dependencies"
@@ -86,18 +92,11 @@ if command -v nvim &> /dev/null; then
     "$TERMINAL" -e "/usr/bin/nvim +PlugInstall +PlugClean[!] +qall" >/dev/null 2>&1
     completed "Setup nvim plug"
 
-    progress "Setup neovim language server protocol"
-    "$TERMINAL" -e "/usr/bin/nvim +CocInstall coc-tsserver +qall" >/dev/null 2>&1
-    "$TERMINAL" -e "/usr/bin/nvim +CocInstall coc-css +qall" >/dev/null 2>&1
-    "$TERMINAL" -e "/usr/bin/nvim +CocInstall coc-eslint +qall" >/dev/null 2>&1
-    "$TERMINAL" -e "/usr/bin/nvim +CocInstall coc-explorer +qall" >/dev/null 2>&1
-    "$TERMINAL" -e "/usr/bin/nvim +CocInstall coc-clangd +qall" >/dev/null 2>&1
-    "$TERMINAL" -e "/usr/bin/nvim +CocInstall coc-python +qall" >/dev/null 2>&1
-    "$TERMINAL" -e "/usr/bin/nvim +CocInstall coc-svelte +qall" >/dev/null 2>&1
-    "$TERMINAL" -e "/usr/bin/nvim +LspInstall bashls +qall" >/dev/null 2>&1
-    "$TERMINAL" -e "/usr/bin/nvim +LspInstall gopls +qall" >/dev/null 2>&1
-    "$TERMINAL" -e "/usr/bin/nvim +LspInstall tsserver +qall" >/dev/null 2>&1
-    completed "Setup neovim language server protocol"
+    #progress "Setup neovim language server protocol"
+    #"$TERMINAL" -e "/usr/bin/nvim +LspInstall bashls +qall" >/dev/null 2>&1
+    #"$TERMINAL" -e "/usr/bin/nvim +LspInstall gopls +qall" >/dev/null 2>&1
+    #"$TERMINAL" -e "/usr/bin/nvim +LspInstall tsserver +qall" >/dev/null 2>&1
+    #completed "Setup neovim language server protocol"
 
     progress "Installing treesitter configurations"
     "$TERMINAL" -e "/usr/bin/nvim +TSInstall all +qall" >/dev/null 2>&1
@@ -106,6 +105,8 @@ if command -v nvim &> /dev/null; then
     progress "Update neovim plugins"
     "$TERMINAL" -e "/usr/bin/nvim +PlugUpdate +PlugClean[!] +qall">/dev/null 2>&1
     completed "Update neovim plugins"
+
+    pin_neovim_plugin nvim-treesitter e5d8b6ad
 else
     warning "Neovim installation not found. Skipping."
 fi
@@ -133,6 +134,10 @@ else
     warning "mpc installation not found. Skipping."
 fi
 
+if [ $MPD_PLAYING -eq 1 ]; then
+    mpc -q toggle
+fi
+
 # Setup user services.
 start_user_service "synccal.timer"
 start_user_service "syncmail.timer"
@@ -142,10 +147,6 @@ start_user_service "bing-wallpaper.service"
 start_user_service "mbsync.timer"
 start_user_service "offlineimap.service"
 completed "Start user services"
-
-if [ $MPD_PLAYING -eq 1 ]; then
-    mpc -q toggle
-fi
 
 # Restart polybar
 progress "Updating polybar"

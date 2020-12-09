@@ -11,7 +11,8 @@ call plug#begin("~/.local/share/nvim/plugged/")
     "Plug 'nvim-lua/completion-nvim'             " LSP auto completion.
     "Plug 'nvim-lua/diagnostic-nvim'             " LSP diagnostics.
     "Plug 'wbthomason/lsp-status.nvim'              " LSP statusbar utilities.
-    Plug 'nvim-treesitter/nvim-treesitter'         " LSP tree sitter.
+    Plug 'nvim-treesitter/nvim-treesitter',        " LSP tree sitter.
+        \{ 'pinned': 1 }
 
     " Appearance
     Plug 'junegunn/goyo.vim'                       " Focus mode.

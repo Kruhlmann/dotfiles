@@ -46,6 +46,7 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'tpope/vim-fugitive'                      " Git integration.
     Plug 'junegunn/gv.vim'                         " Git log browser.
     Plug 'AndrewRadev/tagalong.vim'                " HTML tag editor.
+    Plug 'samoshkin/vim-mergetool'                 " Merge tool.
 
     " Syntax highlighting.
     Plug 'cakebaker/scss-syntax.vim'               " SCSS.
@@ -74,6 +75,7 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-java', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'neoclide/coc-emmet', {'do': 'yarn install --frozen-lockfile'}
     Plug 'coc-extensions/coc-svelte', {'do': 'yarn install --frozen-lockfile'}
     Plug 'coc-extensions/coc-powershell', {'do': 'yarn install --frozen-lockfile'}
     Plug 'coc-extensions/coc-omnisharp', {'do': 'yarn install --frozen-lockfile'}

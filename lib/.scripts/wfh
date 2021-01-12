@@ -16,7 +16,7 @@ disable_pac_file() {
 enable_pac_file() {
 cat << EOF > "$HOME/.config/proxy.pac"
 function FindProxyForURL(url, host) {
-    var useSocks = ["*.siemens.dk", "*.siemens.com", "*.siemens.io", "*.siemens.net", "149.212.223.*"];
+    var useSocks = ["*.siemens.dk", "*.siemens.com", "*.siemens.io", "*.siemens.net", "149.212.223.*", "*.mobnet.dk"];
     for (var i= 0; i < useSocks.length; i++) {
         if (shExpMatch(host, useSocks[i])) {
             return "SOCKS localhost:8021";

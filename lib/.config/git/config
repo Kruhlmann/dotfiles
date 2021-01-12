@@ -11,11 +11,16 @@
 	conflicts = diff --name-only --diff-filter=U
 
 [merge]
-    tool = vimdiff
-    conflictstyle = diff3
+    tool = vimmerge
+    guitool = diffmerge
+    conflictStyle = diff3
 
 [mergetool "vimdiff"]
     cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+
+[mergetool "vimmerge"]
+    cmd = nvim -f -c "MergetoolStart" "$MERGED" "$BASE" "$LOCAL" "$REMOTE"
+    trustExistCode = true
 
 [difftool]
     tool = vimdiff --no-prompt -O
@@ -35,6 +40,9 @@
     path = ~/.config/git/siemens
 
 [includeIf "gitdir:~/doc/src/mo-gitlab.siemens.dk/"]
+    path = ~/.config/git/siemens
+
+[includeIf "gitdir:/mnt/hdd/home/doc/src/mo-gitlab.siemens.dk/"]
     path = ~/.config/git/siemens
 
 [includeIf "gitdir:~/.calcurse"]

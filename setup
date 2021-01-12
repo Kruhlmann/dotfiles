@@ -24,9 +24,10 @@ start_user_service() {
 }
 
 pin_neovim_plugin() {
+    progress "Pin neovim plugin $1 to SHA $2"
     cd "$HOME/.local/share/nvim/plugged/$1"
-    git checkout "$2"
-    progress "Pinning neovim plugin $1 to SHA $2"
+    git checkout "$2" 1>/dev/null 2>/dev/null
+    completed "Pin neovim plugin $1 to v$2"
 }
 
 progress "Install dependencies"

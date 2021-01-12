@@ -1,4 +1,4 @@
-alias c='clear'
+alias c='commit'
 alias cd..='cd ..'
 alias chgrp='chgrp --preserve-root'
 alias chmod='chmod --preserve-root'

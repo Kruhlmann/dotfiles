@@ -100,7 +100,7 @@ curLayout = gets windowset >>= return . description . W.layout . W.workspace . W
 
 -- Spawn vars.
 spawnRofi = "rofi -modi drun -show drun -display-drun 'Run'"
-spawnGnomeScreenshot = "gnome-screenshot --area --border-effect=shadow --file=/tmp/screenshot && xclip -i -selection clipboard -target image/png < /tmp/screenshot && rm /tmp/screenshot"
+spawnGnomeScreenshot = "gnome-screenshot --area --border-effect=shadow --file=/tmp/screenshot && xclip -i -selection clipboard -target image/png < /tmp/screenshot"
 
 myWorkspaceNames :: [String]
 myWorkspaceNames    = ["Firefox","Programming","Instant Messaging","SSH","Bitwarden","Virtual Machines","WINE Games","Steam Games","Settings"]

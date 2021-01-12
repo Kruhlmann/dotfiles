@@ -34,8 +34,8 @@ cursor-scroll = ns-resize
 inherit = bar/master
 
 modules-left = workspaces
-modules-cetner = title
-modules-right = mpd
+modules-center = mpd
+modules-right = pulseaudio
 
 padding-right = 2
 bottom = true
@@ -44,8 +44,8 @@ bottom = true
 inherit = bar/master
 
 modules-left = nextapt
-modules-cetner =
-modules-right = canteen merge-requests peripherals weather ip call bluetooth mailbox filesystem pulseaudio memory battery thermals date powermenu
+modules-center = date
+modules-right = merge-requests peripherals weather ip call bluetooth mailbox filesystem battery powermenu
 
 padding-left = 1
 bottom = false

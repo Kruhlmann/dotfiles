@@ -7,8 +7,6 @@ import Control.Monad (forM_, join)
 import Data.Monoid
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
-import qualified DBus as D
-import qualified DBus.Client as D
 import qualified Codec.Binary.UTF8.String as UTF8
 
 import XMonad

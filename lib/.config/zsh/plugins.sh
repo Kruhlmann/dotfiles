@@ -9,7 +9,4 @@ plugins=(
     npm
     pip
     sudo
-    zsh-autosuggestions
-    zsh-completions
-    zsh-syntax-highlighting
 )

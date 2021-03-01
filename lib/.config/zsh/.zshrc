@@ -34,3 +34,4 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source /usr/share/nvm/init-nvm.sh

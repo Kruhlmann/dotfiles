@@ -36,9 +36,9 @@ setup_tunnel() {
         notify-send "Tunnel is already running"
         exit 0
     fi
-    ssh -f -D 8021 ura -N
-    ssh -f -L 8020:mobjump.siemens.dk:8020 ura -N
-    ssh -f -L 8022:mob-rdg.siemens.dk:8020 ura -N
+    ssh -f -D 8021 zenbook-win10 -N
+    ssh -f -L 8020:mobjump.siemens.dk:8020 zenbook-win10 -N
+    ssh -f -L 8022:mob-rdg.siemens.dk:8020 zenbook-win10 -N
     notify-send "SSH tunnel to Siemens created"
 }
 

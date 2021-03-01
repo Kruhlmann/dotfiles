@@ -54,6 +54,7 @@ export PATH="$PATH:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//
 export PATH=~/.npm-global/bin:$PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$PATH:/home/ges/.dotnet/tools"
 
 setxkbmap -layout us -variant altgr-intl
 

@@ -6,11 +6,6 @@ call plug#begin("~/.local/share/nvim/plugged/")
     " Language server protocol.
     Plug 'neoclide/coc.nvim',                       " Conquerer of Code LSP.
                 \{ 'do': 'yarn install --frozen-lockfile'}
-
-    "Plug 'neovim/nvim-lspconfig'                         " Native language server.
-    "Plug 'nvim-lua/completion-nvim'             " LSP auto completion.
-    "Plug 'nvim-lua/diagnostic-nvim'             " LSP diagnostics.
-    "Plug 'wbthomason/lsp-status.nvim'              " LSP statusbar utilities.
     Plug 'nvim-treesitter/nvim-treesitter',        " LSP tree sitter.
         \{ 'pinned': 1 }
 
@@ -58,6 +53,7 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'dart-lang/dart-vim-plugin'               " Dart.
     Plug 'digitaltoad/vim-pug'                     " PUG/JADE.
     Plug 'OmniSharp/omnisharp-vim'                 " C#.
+    Plug 'sheerun/vim-polyglot'                    " Language collection.
 
     " Themes.
     Plug 'gruvbox-community/gruvbox'
@@ -87,29 +83,3 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'josa42/coc-lua', {'do': 'yarn install --frozen-lockfile'}
     Plug 'voldikss/coc-cmake', {'do': 'yarn install --frozen-lockfile'}
 call plug#end()
-
-let g:diagnostic_show_sign = 1
-let g:signify_sign_add = '▎'
-let g:signify_sign_delete = '▎'
-let g:signify_sign_delete_first_line = '▎'
-let g:signify_sign_change = '▎'
-let g:diagnostic_virtual_text_prefix = ''
-let g:diagnostic_enable_virtual_text = 1
-let g:completion_confirm_key = "\<C-x>"
-let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
-
-":lua << EOF
-    "local nvim_lsp = require("nvim_lsp")
-    "local on_attach = function(_, buf_number)
-        "require("diagnostic").on_attach()
-        "require("completion").on_attach()
-    "end
-
-    "local servers = {'jsonls', 'pyls_ms', 'vimls', 'clangd', 'tsserver', 'cssls', 'html'}
-    "for _, lsp in ipairs(servers) do
-        "nvim_lsp[lsp].setup {
-            "on_attach = on_attach,
-        "}
-    "end
-"EOF
-

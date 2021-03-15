@@ -32,8 +32,7 @@ call plug#begin("~/.local/share/nvim/plugged/")
         \{ 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'rhysd/vim-grammarous'                    " Grammar check.
-    Plug 'iamcco/markdown-preview.nvim',           " Markdown preview.
-        \{ 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
     Plug 'yuttie/comfortable-motion.vim'           " Smooth scrolling.
     Plug 'davidbeckingsale/writegood.vim'          " No weasel words.
     Plug 'liuchengxu/vim-which-key'                " Shortcut HUD.
@@ -56,7 +55,7 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'sheerun/vim-polyglot'                    " Language collection.
 
     " Themes.
-    Plug 'gruvbox-community/gruvbox'
+    Plug 'kruhlmann/gruvbox-with-ANGRY-comments'
     Plug 'agude/vim-eldar'
     Plug 'leafOfTree/vim-svelte-theme'
     Plug 'Kruhlmann/cobalt2-vim-theme'

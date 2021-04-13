@@ -25,6 +25,7 @@ let g:which_key_map['z'] = [ ':Goyo'                              , 'zen' ]
 let g:which_key_map.e = {
       \ 'name' : '+files' ,
       \ '.' : [':e ~/.config/nvim/init.vim'                                    , 'neovim rc'],
+      \ 'i' : ['<Plug>(emoji-start-complete)'                                            , 'insert emoji'],
       \ 'k' : [':e ~/.config/nvim/includes/plugins/vim-which-key.vim'          , 'vim keybinds'],
       \ 'p' : [':e ~/.config/polybar/config'                                   , 'polybar config'],
       \ 'm' : [':e ~/.config/polybar/modules.conf'                             , 'polybar modules'],
@@ -32,7 +33,7 @@ let g:which_key_map.e = {
       \ 'x' : [':e ~/.xmonad/xmonad.hs'                                        , 'xmonad config'],
       \ }
 let g:which_key_map.w = {
-      \ 'name' : 'windows' ,
+      \ 'name' : '+windows' ,
       \ 'w' : ['<C-W>w'     , 'other-window']          ,
       \ 'd' : ['<C-W>c'     , 'delete-window']         ,
       \ '-' : ['<C-W>s'     , 'split-window-below']    ,

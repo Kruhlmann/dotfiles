@@ -32,7 +32,8 @@ call plug#begin("~/.local/share/nvim/plugged/")
         \{ 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'rhysd/vim-grammarous'                    " Grammar check.
-    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+    Plug 'iamcco/markdown-preview.nvim',           "  Auto HTML rendering of MD
+        \{ 'do': 'cd app && yarn install'  }
     Plug 'yuttie/comfortable-motion.vim'           " Smooth scrolling.
     Plug 'davidbeckingsale/writegood.vim'          " No weasel words.
     Plug 'liuchengxu/vim-which-key'                " Shortcut HUD.

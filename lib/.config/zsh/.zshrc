@@ -1,3 +1,12 @@
+function repo {
+    filter_params=""
+    if [ -n "$1" ]; then
+        filter_params="-q $1"
+    fi
+    repo_path=$(find ~/doc/* -name .git -type d -prune -maxdepth 5 | sed 's/\/.git$//' | sort | fzf $filter_params --select-1)
+    cd $repo_path
+}
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi

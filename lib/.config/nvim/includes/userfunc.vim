@@ -5,3 +5,4 @@ fun! CleanExtraSpaces() "Function to clean unwanted spaces
     call setpos('.', save_cursor)
     call setreg('/', old_query)
 endfun
+

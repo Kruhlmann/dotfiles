@@ -1,0 +1,6 @@
+#/usr/bin/env sh
+
+search_path=~/doc/src
+
+dir=$(find "$search_path" -type d -name "node_modules" -prune -o -type d -name ".git" | sed 's/\/home\/ges\/doc\/src\///g' | sed 's/\/\.git//g' | grep -v node_modules | rofi -dmenu -i -p "Select repository" -separator-style "none" -normal-window)
+termite -d "$search_path/$dir"

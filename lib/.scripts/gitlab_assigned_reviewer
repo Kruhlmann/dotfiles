@@ -2,7 +2,8 @@
 
 TOKEN="$HOME/.cache/gitlab-token"
 CACHE_FILE="$HOME/.cache/gitlab_merge_requests"
-BASE_DOMAIN=https://mo-gitlab.siemens.dk
+BASE_DOMAIN="https://mo-gitlab.siemens.dk"
+CACHE_REFRESH_SECONDS=180
 
 download_file()
 { 
@@ -12,7 +13,7 @@ download_file()
 
 if [ ! -f "${CACHE_FILE}" ] ; then
     download_file
-elif [ $(stat -c %Y "${CACHE_FILE}") -lt $(($(date +"%s")-180)) ] ; then 
+elif [ $(stat -c %Y "${CACHE_FILE}") -lt $(($(date +"%s")-${CACHE_REFRESH_SECONDS})) ] ; then 
     download_file
 fi
 

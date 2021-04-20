@@ -1,0 +1,37 @@
+#!/bin/sh
+
+TOKEN="$(cat "$HOME/.cache/gitlab-access-token")"
+CACHE_FILE="$HOME/.cache/gitlab_merge_requests_raw"
+CACHED_RESULT="$HOME/.cache/gitlab_merge_requests_last_result"
+BASE_DOMAIN="https://mo-gitlab.siemens.dk"
+CACHE_REFRESH_SECONDS=180
+GITLAB_USERNAME="ASK"
+
+download_file()
+{ 
+    curl -s "${BASE_DOMAIN}/api/v4/merge_requests?private_token=${TOKEN}&state=opened" | \
+        jq > "$CACHE_FILE"
+}
+
+if [ ! -f "${CACHE_FILE}" ] ; then
+    download_file
+elif [ $(stat -c %Y "${CACHE_FILE}") -lt $(($(date +"%s")-${CACHE_REFRESH_SECONDS})) ] ; then 
+    download_file
+fi
+
+OUTPUT="$(cat "${CACHE_FILE}" | \
+    jq --arg USR $GITLAB_USERNAME -r 'map(.reviewers) | .[] | .[] | select(.username==$USR) | .id' | \
+    wc -l)"
+
+echo " $OUTPUT"
+
+if [ ! -f "${CACHED_RESULT}" ] ; then
+    LAST_RESULT="0"
+else
+    LAST_RESULT="$(cat "${CACHED_RESULT}")"
+fi
+if [ "${LAST_RESULT}" -ne "${OUTPUT}" ] ; then
+    notify-send "You have been assigned as reviewer."
+fi
+
+echo "${OUTPUT}" > "${CACHED_RESULT}"

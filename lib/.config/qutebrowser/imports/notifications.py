@@ -1,3 +1,6 @@
+# pylint: skip-file
+from qutebrowser.config.configfiles import ConfigAPI
+
 allowed = [
     "mo-gitlab.siemens.dk",
     "teams.microsoft.com",
@@ -14,7 +17,7 @@ blocked = [
 ]
 
 
-def apply(config):
+def apply(config: ConfigAPI):
     config.set("content.notifications.enabled", "ask")
 
     for host in allowed:

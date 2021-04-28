@@ -18,6 +18,7 @@ c_fg_aqua = "#8ec07c"
 c_bg_orange = "#d65d03"
 c_fg_orange = "#fe8019"
 
+
 def apply(c):
     c.colors.completion.fg = c_fg
     c.colors.completion.category.bg = c_bg_orange
@@ -103,5 +104,3 @@ def apply(c):
     c.colors.tabs.selected.even.fg = c_fg
     c.colors.tabs.selected.odd.bg = c_bg_orange
     c.colors.tabs.selected.odd.fg = c_fg
-
-    c.colors.webpage.prefers_color_scheme_dark = True

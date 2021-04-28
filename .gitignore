@@ -1,3 +1,4 @@
 back/*
 !back/.gitkeep
 *.fehbg*
+.idea/

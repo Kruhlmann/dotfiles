@@ -1,4 +1,6 @@
 # pylint: skip-file
+from qutebrowser.config.config import ConfigContainer
+
 c_bg = "#282828"
 c_fg = "#dbdbb2"
 c_bg_hl = "#504945"
@@ -18,7 +20,8 @@ c_fg_aqua = "#8ec07c"
 c_bg_orange = "#d65d03"
 c_fg_orange = "#fe8019"
 
-def apply(c):
+
+def apply(c: ConfigContainer):
     c.colors.completion.fg = c_fg
     c.colors.completion.category.bg = c_bg_orange
     c.colors.completion.category.fg = c_fg
@@ -103,5 +106,3 @@ def apply(c):
     c.colors.tabs.selected.even.fg = c_fg
     c.colors.tabs.selected.odd.bg = c_bg_orange
     c.colors.tabs.selected.odd.fg = c_fg
-
-    c.colors.webpage.prefers_color_scheme_dark = True

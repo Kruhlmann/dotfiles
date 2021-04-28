@@ -9,6 +9,7 @@ from imports import fonts
 from imports import layout
 from imports import notifications
 
+config.load_autoconfig(False)
 aliases.apply(c)
 colors.apply(c)
 javascript.apply(c)

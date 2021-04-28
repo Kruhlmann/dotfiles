@@ -13,13 +13,14 @@ blocked = [
     "youtube.com",
 ]
 
+
 def apply(config):
-    config.set("content.notifications", "ask")
+    config.set("content.notifications.enabled", "ask")
 
     for host in allowed:
-        config.set("content.notifications", True, "*://%s" % host)
-        config.set("content.notifications", True, "*://*.%s" % host)
+        config.set("content.notifications.enabled", True, "*://%s" % host)
+        config.set("content.notifications.enabled", True, "*://*.%s" % host)
 
     for host in blocked:
-        config.set("content.notifications", False, "*://%s" % host)
-        config.set("content.notifications", False, "*://*.%s" % host)
+        config.set("content.notifications.enabled", False, "*://%s" % host)
+        config.set("content.notifications.enabled", False, "*://*.%s" % host)

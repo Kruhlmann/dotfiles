@@ -25,6 +25,7 @@ binds.apply(config)
 user_agent.apply(config)
 content.apply(config, c)
 notifications.apply(config)
+c.autoconfig()
 
 c.auto_save.session = False
 c.confirm_quit = ["downloads"]

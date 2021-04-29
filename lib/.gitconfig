@@ -5,3 +5,5 @@
 	required = true
 [http]
 	proxy = socks5://localhost:8021
+[init]
+	defaultBranch = master

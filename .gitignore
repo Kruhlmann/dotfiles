@@ -2,3 +2,6 @@ back/*
 !back/.gitkeep
 *.fehbg*
 .idea/
+tags
+*.pyc
+__pycache__/

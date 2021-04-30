@@ -37,13 +37,13 @@ fi
 xbindkeys
 xset r rate 300 25
 
-#compton -f &
-#discord &
-#mpd &
+compton -f --experimental-backends &
+discord &
+mpd &
+nm-applet &
+bing-wallpaper &
 #redshift &
-#nm-applet &
 #dwmbar &
-#bing-wallpaper &
 
 find ~/.ssh/ -type f -exec grep -l "PRIVATE" {} \; | xargs ssh-add &> /dev/null
 

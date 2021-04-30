@@ -55,32 +55,6 @@ import XMonad.Layout.Tabbed
 import XMonad.Layout.ToggleLayouts
 import XMonad.Layout.WindowArranger
 
-defaults = def {
-    borderWidth = size_border,
-    modMask = myModMask,
-    terminal = myTerminal,
-    workspaces = myWorkspaceNames,
-    keys = binds,
-    layoutHook = smartBorders $ myLayoutHook,
-    focusedBorderColor = "red",
-    normalBorderColor = c_gray_alt,
-    mouseBindings = myMouseBindings,
-    manageHook = myManageHook <+> manageHook def,
-    startupHook = myStartupHook
-}
-
-main = do xmonad
-    $ ewmh
-    $ docks
-    $ withUrgencyHook LibNotifyUrgencyHook
-    $ defaults
-
--- sizes
-size_gap = 3
-size_topbar = 10
-size_border = 0
-size_prompt = 20
-
 -- Colors.
 c_dark_gray = "#282828"
 c_gray = "#928374"
@@ -90,23 +64,6 @@ c_blue = "#458588"
 c_white = "#eeeeee"
 c_green = "#98971a"
 c_yellow_alt = "#fabd2f"
-
--- Layout string.
-curLayout :: X String
-curLayout = gets windowset >>= return . description . W.layout . W.workspace . W.current
-
-
--- Spawn vars.
-spawnRofi = "rofi -modi drun -show drun -display-drun 'Run'"
-spawnGnomeScreenshot = "gnome-screenshot --area --border-effect=shadow --file=/tmp/screenshot && xclip -i -selection clipboard -target image/png < /tmp/screenshot"
-
-myWorkspaceNames :: [String]
-myWorkspaceNames    = ["Firefox","Programming","Instant Messaging","SSH","Bitwarden","Virtual Machines","WINE Games","Steam Games","Settings"]
-myFont      = "-*-dejavu-*-*-*-*-16-*-*-*-*-*-*"
-myBigFont   = "-*-dejavu-*-*-*-*-24-*-*-*-*-*-*"
-myFocusFollowsMouse  = False
-myClickJustFocuses   = True
-myTerminal = "termite"
 
 topBarTheme = def
     { fontName              = myFont
@@ -155,9 +112,41 @@ hotPromptTheme = myPromptTheme
     , position              = Top
     }
 
+myTerminal      = "termite"
+myFocusFollowsMouse :: Bool
+myFocusFollowsMouse = True
+myBorderWidth   = 1
+myModMask       = mod4Mask
+myWorkspaces :: [String]
+myWorkspaces    = ["Firefox","Programming","Instant Messaging","SSH","Bitwarden","Virtual Machines","WINE Games","Steam Games","Settings"]
+myFont      = "-*-dejavu-*-*-*-*-16-*-*-*-*-*-*"
+myBigFont   = "-*-dejavu-*-*-*-*-24-*-*-*-*-*-*"
+myNormalBorderColor  = "#dddddd"
+myFocusedBorderColor = "#ff0000"
 
-myModMask = mod4Mask
-binds conf@(XConfig {XMonad.modMask = modm}) = M.fromList $ [
+-- layout string
+curLayout :: X String
+curLayout = gets windowset >>= return . description . W.layout . W.workspace . W.current
+
+-- spawn vars
+spawnRofi = "rofi -modi drun -show drun -display-drun 'Run'"
+spawnGnomeScreenshot = "gnome-screenshot --area --border-effect=shadow --file=/tmp/screenshot && xclip -i -selection clipboard -target image/png < /tmp/screenshot"
+
+-- sizes
+size_gap = 10
+size_topbar = 10
+size_border = 0
+size_prompt = 20
+
+data LibNotifyUrgencyHook = LibNotifyUrgencyHook deriving (Read, Show)
+instance UrgencyHook LibNotifyUrgencyHook where
+    urgencyHook LibNotifyUrgencyHook w = do
+        name     <- getName w
+        Just idx <- fmap (W.findTag w) $ gets windowset
+
+        safeSpawn "notify-send" [show name, "workspace " ++ idx]
+
+myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $ [
     -- General
     ((modm,               xK_q      ), kill),
     ((modm,               xK_r     ), refresh),
@@ -173,8 +162,6 @@ binds conf@(XConfig {XMonad.modMask = modm}) = M.fromList $ [
     ((modm              , xK_g      ), spawn "termite --name floatterm -e lazygit"),
     ((modm              , xK_e      ), spawn "termite --name floatterm -e ranger"),
     ((modm              , xK_n      ), spawn "termite --name floatterm -e ncmpcpp"),
-    ((modm              , xK_a      ), namedScratchpadAction myScratchpads "calendar"),
-    ((modm              , xK_w      ), namedScratchpadAction myScratchpads "weechat"),
     ((modm              , xK_m      ), spawn "neomutt_mailbox"),
     ((modm              , xK_v      ), spawn "cbp"),
     ((modm              , xK_p      ), spawn "mpc toggle"),
@@ -206,17 +193,39 @@ binds conf@(XConfig {XMonad.modMask = modm}) = M.fromList $ [
     , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]
     ]
 
-myStartupHook = do
-    spawnOnce "bing-wallpaper"
-    spawnOnce "nm-applet"
-    spawnOnce "launch_polybar"
-    spawnOnce "tmux has-session -t protonmail_bridge || tmux new -d -s protonmail_bridge 'protonmail-bridge --cli'"
-    spawnOn "Firefox" "ps ax | grep firefox | grep -v grep || firefox-developer-edition"
-    spawnOn "Instant Messaging" "pgrep Discord || discord"
-    spawnOn "Instant Messaging" "pgrep teams-for-linux || teams-for-linux"
-    spawnOn "Settings" "pgrep ckb-next || ckb-next"
-    spawnOn "Settings" "pgrep blueman || blueman"
-    spawnOn "Bitwarden" "pgrep bitwarden || bitwarden"
+
+myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
+    [
+        ((modMask, button1), (\w -> focus w >> mouseMoveWindow w >> windows W.shiftMaster)),
+        ((modMask, button2), (\w -> focus w >> windows W.shiftMaster))
+    ]
+
+myLayout = tiled ||| Mirror tiled ||| Full
+  where
+    tiled   = Tall nmaster delta ratio
+    nmaster = 1
+    ratio   = 1/2
+    delta   = 3/100
+
+myLayoutHook = toggleLayouts Full tall ||| threeCol ||| tabs
+    where
+        myGaps = gaps [(U, 0),(D, 0),(L, size_gap),(R, size_gap)]
+        mySpacing = spacing size_gap
+
+        threeCol = named "ThreeColumn"
+             $ avoidStruts
+             $ myGaps
+             $ mySpacing
+             $ ThreeColMid 1 (1/10) (1/2)
+
+        tabs = named "Tabs"
+             $ avoidStruts
+             $ addTabs shrinkText myTabTheme
+             $ Simplest
+
+        tall = named "Tall"
+            $ avoidStruts
+            $ Tall 1 (3/100) (1/2)
 
 myManageHook = composeAll [
     -- Positions.
@@ -234,53 +243,35 @@ myManageHook = composeAll [
     -- Fullscreen.
     isFullscreen --> doFullFloat
     ]
-    <+> namedScratchpadManageHook myScratchpads
 
-data LibNotifyUrgencyHook = LibNotifyUrgencyHook deriving (Read, Show)
-instance UrgencyHook LibNotifyUrgencyHook where
-    urgencyHook LibNotifyUrgencyHook w = do
-        name     <- getName w
-        Just idx <- fmap (W.findTag w) $ gets windowset
+myEventHook = mempty
+myLogHook = return ()
 
-        safeSpawn "notify-send" [show name, "workspace " ++ idx]
+myStartupHook = do
+    spawnOnce "bing-wallpaper"
+    spawnOnce "nm-applet"
+    spawnOnce "launch_polybar"
+    spawnOnce "tmux has-session -t protonmail_bridge || tmux new -d -s protonmail_bridge 'protonmail-bridge --cli'"
 
-myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
-    [
-        -- mod-button1, Set the window to floating mode and move by dragging
-        ((modMask, button1), (\w -> focus w >> mouseMoveWindow w >> windows W.shiftMaster)),
-        -- mod-button2, Raise the window to the top of the stack
-        ((modMask, button2), (\w -> focus w >> windows W.shiftMaster))
-    ]
+main = do xmonad
+    $ ewmh
+    $ docks
+    $ withUrgencyHook LibNotifyUrgencyHook
+    $ defaults
 
-myLayoutHook =
-    onWorkspace "Instant Messaging" tabs
-    $ onWorkspace "Programming" threeCol
-    $ toggleLayouts Full tall ||| threeCol ||| tabs
-    where
-        addTopBar = noFrillsDeco shrinkText topBarTheme
-        mySpacing = spacing size_gap
-        myGaps = gaps [(U, 0),(D, 0),(L, size_gap),(R, size_gap)]
-
-        threeCol = named "ThreeColumn"
-             $ avoidStruts
-             $ addTopBar
-             $ myGaps
-             $ mySpacing
-             $ ThreeColMid 1 (1/10) (1/2)
-
-        tabs = named "Tabs"
-             $ avoidStruts
-             $ addTabs shrinkText myTabTheme
-             $ Simplest
-
-        tall = named "Tall"
-            $ avoidStruts
-            $ addTopBar
-            $ myGaps
-            $ mySpacing
-            $ Tall 1 (3/100) (1/2)
-
-myScratchpads = [
-    NS "calendar" "termite --name scrpd_calcurse -e calcurse" (resource =? "scrpd_calcurse") (customFloating $ W.RationalRect (1/4) (1/4) (2/4) (2/4)),
-    NS "weechat" "termite --name scrpd_weechat -e weechat" (resource =? "scrpd_weechat") (customFloating $ W.RationalRect (1/6) (1/6) (2/3) (2/3))
-    ]
+defaults = defaultConfig {
+        terminal           = myTerminal,
+        focusFollowsMouse  = myFocusFollowsMouse,
+        borderWidth        = 0,
+        modMask            = myModMask,
+        workspaces         = myWorkspaces,
+        normalBorderColor  = myNormalBorderColor,
+        focusedBorderColor = myFocusedBorderColor,
+        keys               = myKeys,
+        mouseBindings      = myMouseBindings,
+        layoutHook         = myLayoutHook,
+        manageHook         = myManageHook,
+        handleEventHook    = myEventHook,
+        logHook            = myLogHook,
+        startupHook        = myStartupHook
+    }

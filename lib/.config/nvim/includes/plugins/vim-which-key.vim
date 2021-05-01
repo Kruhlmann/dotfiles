@@ -125,6 +125,18 @@ let g:which_key_map.g = {
       \ 'V' : [':GV!'                              , 'view buffer commits'],
       \ }
 
+let g:which_key_map.m = {
+      \ 'name' : '+make' ,
+      \ 'b' : [':!make build'                      , 'build'],
+      \ 'c' : [':!make clean'                      , 'clean'],
+      \ 'f' : [':!make fix'                        , 'fix'],
+      \ 'i' : [':!make test-integration'           , 'integration test'],
+      \ 'I' : [':!make install'                    , 'intall'],
+      \ 'l' : [':!make lint'                       , 'lint'],
+      \ 't' : [':!make test'                       , 'test'],
+      \ 'u' : [':!make test-unit'                  , 'unit test'],
+      \ }
+
 call which_key#register('<Space>', "g:which_key_map")
 
 "nnoremap <silent> <leader>ld    <cmd>lua vim.lsp.buf.declaration()<CR>

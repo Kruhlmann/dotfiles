@@ -37,11 +37,11 @@ fi
 xbindkeys
 xset r rate 300 25
 
-compton -f --experimental-backends &
-discord &
+picom --experimental-backends &
 mpd &
 nm-applet &
 bing-wallpaper &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 #redshift &
 #dwmbar &
 

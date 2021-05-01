@@ -45,7 +45,7 @@ inherit = bar/master
 
 modules-left = nextapt
 modules-center = date
-modules-right = merge-requests peripherals weather ip call bluetooth mailbox filesystem battery powermenu
+modules-right = weather ip call mailbox filesystem battery powermenu
 
 padding-left = 1
 bottom = false

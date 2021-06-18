@@ -51,6 +51,7 @@ import subprocess
 import sys
 import json
 import tldextract
+import pyotp
 
 argument_parser = argparse.ArgumentParser(
     description=__doc__,
@@ -138,6 +139,16 @@ def get_session_key(auto_lock):
             universal_newlines=True,
         ).strip()
 
+def get_totp_secret(candidate):
+    return candidate["login"]["totp"]
+
+def set_totp_clipboard(totp_secret: str):
+    token = get_current_token_from_totp_secret(totp_secret)
+    subprocess.Popen(["/bin/sh", "-c", f'echo {token} | xclip -in -sel clip'])
+
+def get_current_token_from_totp_secret(totp_secret: str):
+    secret = totp_secret.replace(" ", "")
+    return pyotp.TOTP(s=secret).now()
 
 def pass_(domain, encoding, auto_lock):
     session_key = get_session_key(auto_lock)
@@ -225,6 +236,9 @@ def main(arguments):
     if not selection:
         return ExitCodes.SUCCESS
 
+    totp_secret = get_totp_secret(candidate=selection)
+    if totp_secret:
+        set_totp_clipboard(totp_secret)
     username = selection['login']['username']
     password = selection['login']['password']
 

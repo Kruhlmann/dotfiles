@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-. lib.sh
-for f in ./install.d/*.sh; do
-    sh "$f"
-done

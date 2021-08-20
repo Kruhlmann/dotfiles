@@ -14,7 +14,7 @@
     ],
     "clangd.enabled": true,
     "clangd.arguments": [],
-    "clangd.path": "/home/ges/.config/coc/extensions/coc-clangd-data/install/11.0.0/clangd_11.0.0/bin/clangd",
+    "clangd.path": "/home/ges/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin/clangd",
     "clangd.checkUpdates": true,
     "clangd.semanticHighlighting": true,
     "codeLens.enable": true,
@@ -57,7 +57,7 @@
     "explorer.file.hiddenRules": {
         "extensions": ["o", "a", "obj", "pyc"],
         "filenames": [],
-        "patternMatches": ["^\\.", "node_modules"]
+        "patternMatches": ["^\\.", "node_modules", "__pycache__"]
     },
     "diagnostic.errorSign": "✘",
     "diagnostic.warningSign": "",

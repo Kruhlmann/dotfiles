@@ -5,7 +5,7 @@ on_gain() {
 }
 
 tunnel_is_running() {
-    pgrep -f ura >/dev/null
+    pgrep -f remote-vpn >/dev/null
 }
 
 disable_pac_file() {
@@ -39,15 +39,15 @@ setup_tunnel() {
     sudo systemctl daemon-reload
     sudo systemctl restart docker
     sudo systemctl start polipo
-    ssh -f -D 8021 ura -N
-    ssh -f -L 8020:mobjump.siemens.dk:8020 ura -N
-    ssh -f -L 8022:mob-rdg.siemens.dk:8020 ura -N
+    ssh -f -D 8021 remote-vpn -N
+    ssh -f -L 8020:mobjump.siemens.dk:8020 remote-vpn -N
+    ssh -f -L 8022:mob-rdg.siemens.dk:8020 remote-vpn -N
     notify-send "SSH tunnel to Siemens created"
 }
 
 tear_down_tunnel() {
     if tunnel_is_running; then
-        pkill -f ura
+        pkill -f remote-vpn
     fi
     sudo sed -i "s/mobjump.siemens.dk mob-rdg.siemens.dk mo-gitlab.siemens.dk/localjump/g" /etc/hosts
     disable_pac_file

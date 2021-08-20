@@ -15,7 +15,7 @@ so ~/.config/nvim/includes/lang/py.vim             " Python specific config.
 " Custom syntax configuration.
 so ~/.config/nvim/includes/syntax/pgn.vim          " PGN syntax highlighting.
 so ~/.config/nvim/includes/syntax/vcard.vim        " VCard syntax highlighting.
-so ~/.config/nvim/includes/syntax/treesitter.vim   " Treesitter highligting.
+"so ~/.config/nvim/includes/syntax/treesitter.vim   " Treesitter highligting.
 
 " Language server configuration.
 "luafile ~/.config/nvim/lua/lsp.lua

@@ -1,0 +1,35 @@
+#!/usr/bin/env sh
+
+smart_card_is_active() {
+    systemctl is-active pcscd.service > /dev/null
+}
+
+redirect_smart_card_to_guest() {
+    sudo systemctl stop pcscd.service 2> /dev/null
+    sudo systemctl stop pcscd.socket 2> /dev/null
+}
+
+redirect_smart_card_to_host() {
+    sudo systemctl start pcscd.service 2> /dev/null
+    sudo systemctl start pcscd.socket 2> /dev/null
+}
+
+OPERATION="${1:-toggle}"
+
+case $OPERATION in
+    toggle)
+        if smart_card_is_active; then
+            redirect_smart_card_to_guest
+        else
+            redirect_smart_card_to_host
+        fi
+        ;;
+    status)
+        if smart_card_is_active; then
+            echo ""
+        fi
+        ;;
+    *)
+        ;;
+esac
+

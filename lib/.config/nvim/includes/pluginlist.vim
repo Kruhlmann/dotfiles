@@ -37,7 +37,6 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'yuttie/comfortable-motion.vim'           " Smooth scrolling.
     Plug 'davidbeckingsale/writegood.vim'          " No weasel words.
     Plug 'liuchengxu/vim-which-key'                " Shortcut HUD.
-    Plug 'honza/vim-snippets'                      " Snippet collection.
     Plug 'tpope/vim-fugitive'                      " Git integration.
     Plug 'junegunn/gv.vim'                         " Git log browser.
     Plug 'AndrewRadev/tagalong.vim'                " HTML tag editor.

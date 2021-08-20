@@ -10,3 +10,4 @@ so ~/.config/nvim/includes/plugins/markdown-preview.vim
 so ~/.config/nvim/includes/plugins/vim-which-key.vim
 so ~/.config/nvim/includes/plugins/ranger.vim
 so ~/.config/nvim/includes/plugins/fzf.vim
+so ~/.config/nvim/includes/plugins/ultisnips.vim

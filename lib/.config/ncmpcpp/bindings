@@ -602,7 +602,7 @@ def_key "m"
 def_key "t"
   show_tag_editor
 def_key "v"
-  show_visualizer
+  reverse_selection
 def_key "G"
   move_end
 def_key "g"
@@ -623,6 +623,6 @@ def_key "x"
 def_key "P"
   show_playlist
 def_key "."
-  seek_forward 
+  seek_forward
 def_key ","
   seek_backward

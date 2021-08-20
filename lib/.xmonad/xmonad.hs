@@ -197,7 +197,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $ [
 myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
     [
         ((modMask, button1), (\w -> focus w >> mouseMoveWindow w >> windows W.shiftMaster)),
-        ((modMask, button2), (\w -> focus w >> windows W.shiftMaster))
+        ((modMask, button2), (\w -> focus w >> windows W.shiftMaster)),
+        ((modMask, button3), (\w -> focus w >> mouseResizeWindow w >> windows W.shiftMaster))
     ]
 
 myLayout = tiled ||| Mirror tiled ||| Full
@@ -213,18 +214,21 @@ myLayoutHook = toggleLayouts Full tall ||| threeCol ||| tabs
         mySpacing = spacing size_gap
 
         threeCol = named "ThreeColumn"
-             $ avoidStruts
-             $ myGaps
-             $ mySpacing
-             $ ThreeColMid 1 (1/10) (1/2)
+            $ avoidStruts
+            $ myGaps
+            $ mySpacing
+            $ ThreeColMid 1 (1/10) (1/2)
 
         tabs = named "Tabs"
-             $ avoidStruts
-             $ addTabs shrinkText myTabTheme
-             $ Simplest
+            $ avoidStruts
+            $ mySpacing
+            $ addTabs shrinkText myTabTheme
+            $ Simplest
 
         tall = named "Tall"
             $ avoidStruts
+            $ myGaps
+            $ mySpacing
             $ Tall 1 (3/100) (1/2)
 
 myManageHook = composeAll [
@@ -250,6 +254,9 @@ myLogHook = return ()
 myStartupHook = do
     spawnOnce "bing-wallpaper"
     spawnOnce "nm-applet"
+    spawnOnce "mpd"
+    spawnOnce "picom --experimental-backends"
+    spawnOnce "bing-wallpaper"
     spawnOnce "launch_polybar"
     spawnOnce "tmux has-session -t protonmail_bridge || tmux new -d -s protonmail_bridge 'protonmail-bridge --cli'"
 

@@ -1,3 +1,5 @@
+[http]
+	proxy = socks5://localhost:8021
 [user]
     email = andreas.kruehlmann@siemens.com
 #    signingkey = B9BBAA8075C788BD

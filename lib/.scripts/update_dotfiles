@@ -1,20 +1,10 @@
 #!/usr/bin/env sh
 
-progress () {
-     printf "\e[33m %s\e[0m\r" "$1"
-}
-
-completed () {
-    printf "\e[32m %s\e[0m\n" "$1"
-}
-
 set -e
 
-progress "Synchronizing git repository"
 cd ~/doc/src/github.com/kruhlmann/dotfiles
 git add lib
 git commit --quiet -am "Updated dotfiles" || true
 git pull --quiet
 git push --quiet
-completed "Synchronizing git repository"
-./setup
+./install --verbose

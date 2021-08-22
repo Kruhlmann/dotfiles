@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 pre_install aur python node
 

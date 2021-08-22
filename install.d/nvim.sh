@@ -1,6 +1,4 @@
-#!/bin/sh
-
-nvim_plug_file="${XDG_DATA_HOME:-$HOME/.local/share}/nvim/site/autoload/plug.vim"
+#!/usr/bin/env sh
 
 pre_install aur python node
 

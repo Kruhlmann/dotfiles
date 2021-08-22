@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 powerlevel10k_install_dir="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 

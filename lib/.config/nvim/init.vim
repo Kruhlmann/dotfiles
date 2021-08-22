@@ -21,3 +21,7 @@ so ~/.config/nvim/includes/syntax/vcard.vim        " VCard syntax highlighting.
 "luafile ~/.config/nvim/lua/lsp.lua
 "luafile ~/.config/nvim/lua/tree_sit.lua
 " so ~/.config/nvim/includes/statusline.vim          " Plugin configuration.
+
+lua << EOF
+require'lspconfig'.pyright.setup{}
+EOF

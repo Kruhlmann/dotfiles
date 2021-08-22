@@ -4,8 +4,8 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'rbgrouleff/bclose.vim'                    " Ranger dependency.
 
     " Language server protocol.
-    Plug 'neoclide/coc.nvim',                       " Conquerer of Code LSP.
-                \{ 'do': 'yarn install --frozen-lockfile'}
+    "Plug 'neoclide/coc.nvim',                       " Conquerer of Code LSP.
+                "\{ 'do': 'yarn install --frozen-lockfile'}
     Plug 'nvim-treesitter/nvim-treesitter',        " LSP tree sitter.
         \{ 'pinned': 1 }
 
@@ -61,24 +61,28 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'Kruhlmann/cobalt2-vim-theme'
     Plug 'junegunn/seoul256.vim'
 
+
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'neovim/nvim-lsp'
+
     " CoC
-    Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'neoclide/coc-java', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'neoclide/coc-emmet', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'coc-extensions/coc-svelte', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'coc-extensions/coc-powershell', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'coc-extensions/coc-omnisharp', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'clangd/coc-clangd', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'weirongxu/coc-explorer', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'iamcco/coc-vimlsp', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'josa42/coc-go', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'josa42/coc-sh', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'josa42/coc-lua', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'voldikss/coc-cmake', {'do': 'yarn install --frozen-lockfile'}
+    "Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+    "Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
+    "Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
+    "Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
+    "Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
+    "Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
+    "Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
+    "Plug 'neoclide/coc-java', {'do': 'yarn install --frozen-lockfile'}
+    "Plug 'neoclide/coc-emmet', {'do': 'yarn install --frozen-lockfile'}
+    "Plug 'coc-extensions/coc-svelte', {'do': 'yarn install --frozen-lockfile'}
+    "Plug 'coc-extensions/coc-powershell', {'do': 'yarn install --frozen-lockfile'}
+    "Plug 'coc-extensions/coc-omnisharp', {'do': 'yarn install --frozen-lockfile'}
+    "Plug 'clangd/coc-clangd', {'do': 'yarn install --frozen-lockfile'}
+    "Plug 'weirongxu/coc-explorer', {'do': 'yarn install --frozen-lockfile'}
+    "Plug 'iamcco/coc-vimlsp', {'do': 'yarn install --frozen-lockfile'}
+    "Plug 'josa42/coc-go', {'do': 'yarn install --frozen-lockfile'}
+    "Plug 'josa42/coc-sh', {'do': 'yarn install --frozen-lockfile'}
+    "Plug 'josa42/coc-lua', {'do': 'yarn install --frozen-lockfile'}
+    "Plug 'voldikss/coc-cmake', {'do': 'yarn install --frozen-lockfile'}
 call plug#end()

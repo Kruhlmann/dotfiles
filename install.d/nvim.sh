@@ -9,15 +9,13 @@ needs_install() {
 }
 
 setup() {
-    depends_on neovim-nightly-bin base-devel python node ctags ruby
+    depends_on neovim-nightly-bin base-devel python node universal-ctags ruby git pyright typescript typescript-language-server bash-language-server
     pip install neovim >/dev/null
     yarn global add neovim >/dev/null
     gem install neovim >/dev/null
-    [ -f  "$nvim_plug_file" ] || curl -fLo "$nvim_plug_file" --create-dirs "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 }
 
 postinstall() {
-    /usr/bin/nvim --headless +PlugInstall +qall
-    /usr/bin/nvim --headless +PlugUpdate +qall
-    /usr/bin/nvim --headless +TSInstall all +qall
+    /usr/bin/nvim --headless +PackerInstall +qall
+    /usr/bin/nvim --headless +PackerSync +qall
 }

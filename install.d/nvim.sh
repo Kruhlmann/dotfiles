@@ -7,7 +7,7 @@ needs_install() {
 }
 
 setup() {
-    depends_on neovim-nightly-bin base-devel python node universal-ctags ruby git pyright typescript typescript-language-server bash-language-server
+    depends_on neovim-nightly-bin base-devel python node universal-ctags ruby git pyright typescript typescript-language-server bash-language-server tmux
     pip install neovim >/dev/null
     yarn global add neovim >/dev/null
     gem install neovim >/dev/null

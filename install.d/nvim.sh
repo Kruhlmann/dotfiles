@@ -7,10 +7,14 @@ needs_install() {
 }
 
 setup() {
-    depends_on neovim-nightly-bin base-devel python node universal-ctags ruby git pyright typescript typescript-language-server bash-language-server tmux
+    depends_on neovim-nightly-bin base-devel python node universal-ctags ruby git pyright typescript typescript-language-server bash-language-server tmux lua-checker misspell shellharden prettier_d eslint_d prettier eslint
     pip install neovim >/dev/null
     yarn global add neovim >/dev/null
     gem install neovim >/dev/null
+    cd /tmp/
+    curl -L https://git.io/misspell | sh
+    sudo mv ./bin/misspell /usr/bin/misspell
+    cd -
 }
 
 postinstall() {

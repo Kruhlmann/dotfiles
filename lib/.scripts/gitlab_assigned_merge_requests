@@ -2,7 +2,7 @@
 
 TOKEN="$(cat "$HOME/.cache/gitlab-access-token")"
 CACHE_FILE="$HOME/.cache/gitlab_merge_requests_raw"
-CACHED_RESULT="$HOME/.cache/gitlab_reviews_last_result"
+CACHED_RESULT="$HOME/.cache/gitlab_merge_requests_assigned_last_result"
 BASE_DOMAIN="https://mo-gitlab.siemens.dk"
 CACHE_REFRESH_SECONDS=180
 GITLAB_USERNAME="ASK"
@@ -20,18 +20,8 @@ elif [ $(stat -c %Y "${CACHE_FILE}") -lt $(($(date +"%s")-${CACHE_REFRESH_SECOND
 fi
 
 OUTPUT="$(cat "${CACHE_FILE}" | \
-    jq --arg USR $GITLAB_USERNAME -r 'map(.reviewers) | .[] | .[] | select(.username==$USR) | .id' | \
+    jq --arg USR $GITLAB_USERNAME -r 'map(.assignees) | .[] | .[] | select(.username==$USR) | .id' | \
     wc -l)"
 
 echo "$OUTPUT"
-
-if [ ! -f "${CACHED_RESULT}" ] ; then
-    LAST_RESULT="0"
-else
-    LAST_RESULT="$(cat "${CACHED_RESULT}")"
-fi
-if [ "${LAST_RESULT}" -lt "${OUTPUT}" ] ; then
-    notify-send -u critical -i "$HOME/img/lib/gitlab-icon.png" "You have been assigned as reviewer."
-fi
-
 echo "${OUTPUT}" > "${CACHED_RESULT}"

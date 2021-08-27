@@ -28,7 +28,6 @@ export DICS="/usr/share/stardict/dic/"
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
-export TERM="xterm-color"
 export LESS=-R
 export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"
 export LESS_TERMCAP_md="$(printf '%b' '[1;36m')"
@@ -47,6 +46,7 @@ export LF_ICONS="di=:fi=:ln=:or=:ex=:*.c=:*.cc=:*.clj=:*
 export SONAR_SCANNER_HOME="/opt/sonar-scanner"
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export EDITOR=/usr/bin/nvim
 
 # Path configuration
 export PATH="$PATH:$SONAR_SCANNER_HOME/bin"

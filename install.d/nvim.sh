@@ -7,7 +7,7 @@ needs_install() {
 }
 
 setup() {
-    depends_on neovim-nightly-bin base-devel python node universal-ctags ruby git pyright typescript typescript-language-server bash-language-server tmux lua-format misspell shellharden prettier_d_slim eslint_d prettier eslint luacheck asmfmt write-good uncrustify
+    depends_on neovim-nightly-bin base-devel python node universal-ctags ruby git pyright typescript typescript-language-server bash-language-server tmux lua-format misspell shellharden prettier_d_slim eslint_d prettier eslint luacheck asmfmt write-good uncrustify noto-fonts-emoji
     pip install neovim >/dev/null
     yarn global add neovim >/dev/null
     gem install neovim >/dev/null
@@ -20,4 +20,5 @@ setup() {
 postinstall() {
     /usr/bin/nvim --headless +PackerInstall +qall
     /usr/bin/nvim --headless +PackerSync +qall
+    mkdir -p ~/.cache/nvim/{undo,backup,swap}
 }

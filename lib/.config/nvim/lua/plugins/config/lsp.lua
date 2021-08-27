@@ -14,13 +14,11 @@ local sources = {
     null_ls.builtins.formatting.lua_format,
     null_ls.builtins.formatting.nginx_beautifier,
     null_ls.builtins.formatting.rufo, null_ls.builtins.formatting.shellcheck,
-    null_ls.builtins.formatting.sqlformat,
     null_ls.builtins.formatting.shellharden,
     null_ls.builtins.formatting.uncrustify,
     null_ls.builtins.diagnostics.luacheck,
     null_ls.builtins.diagnostics.write_good,
-    null_ls.builtins.diagnostics.misspell, null_ls.builtins.diagnostics.vint,
-    null_ls.builtins.diagnostics.selene
+    null_ls.builtins.diagnostics.misspell, null_ls.builtins.diagnostics.vint
 }
 
 null_ls.config({sources = sources})
@@ -65,7 +63,7 @@ local function document_highlight()
 	]], false)
 end
 
-local on_attach = function(client, bufnr)
+local on_attach_def = function(client)
     protocol.CompletionItemKind = {
         '', 'ƒ', 'ƒ', '', '識', '𝑋', '', '', '', '',
         '猪', '', '了', '', '﬌', '', '', '', '', '',
@@ -75,18 +73,15 @@ local on_attach = function(client, bufnr)
         vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
     end
 end
-local on_attach_null_ls = function(client, bufnr)
-    on_attach(client, bufnr)
-    document_highlight()
-end
+local on_attach_null_ls = function(client, bufnr) on_attach_def(client, bufnr) end
 
 local on_attach = function(client, bufnr)
-    on_attach(client, bufnr)
+    on_attach_def(client, bufnr)
     document_highlight()
     client.resolved_capabilities.document_formatting = false
 end
 
-local on_attach_ts = function(client, bufnr)
+local on_attach_ts = function(client)
     -- disable tsserver formatting if you plan on formatting via null-ls
     client.resolved_capabilities.document_formatting = false
     client.resolved_capabilities.document_range_formatting = false
@@ -135,17 +130,6 @@ local on_attach_ts = function(client, bufnr)
 
     -- required to fix code action ranges and filter diagnostics
     ts_utils.setup_client(client)
-
-    -- no default maps, so you may want to define some here
-    local opts = {silent = true}
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ltf", ":TSLspOrganize<CR>",
-                                opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ltq",
-                                ":TSLspFixCurrent<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ltr",
-                                ":TSLspRenameFile<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lti",
-                                ":TSLspImportAll<CR>", opts)
 end
 
 local on_attach_no_hl = function(client, bufnr)

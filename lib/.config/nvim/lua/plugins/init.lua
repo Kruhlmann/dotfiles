@@ -52,6 +52,8 @@ return require("packer").startup(function(use)
     use {"Raimondi/delimitMate"}
     use {"junegunn/vim-easy-align"}
     use {"mhartington/formatter.nvim"}
+    use {"saadparwaiz1/cmp_luasnip"}
+    use {"L3MON4D3/LuaSnip"}
     use {"rafamadriz/friendly-snippets"}
     use {
         "kyazdani42/nvim-tree.lua",

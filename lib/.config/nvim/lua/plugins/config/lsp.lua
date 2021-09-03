@@ -31,6 +31,9 @@ saga.init_lsp_saga()
 protocol.make_client_capabilities()
 
 cmp.setup {
+    snippet = {
+        expand = function(args) require('luasnip').lsp_expand(args.body) end
+    },
     sources = {{name = "nvim_lsp"}},
     mapping = {
         ['<S-Tab>'] = cmp.mapping.select_prev_item(), -- previous suggestion
@@ -48,6 +51,22 @@ cmp.setup {
 
 local capabilities = protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities.textDocument.completion.completionItem.documentationFormat = {
+    'markdown', 'plaintext'
+}
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities.textDocument.completion.completionItem.preselectSupport = true
+capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
+capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
+capabilities.textDocument.completion.completionItem.deprecatedSupport = true
+capabilities.textDocument.completion.completionItem.commitCharactersSupport =
+    true
+capabilities.textDocument.completion.completionItem.tagSupport = {
+    valueSet = {1}
+}
+capabilities.textDocument.completion.completionItem.resolveSupport = {
+    properties = {'documentation', 'detail', 'additionalTextEdits'}
+}
 
 --- Document highlights
 local function document_highlight()
@@ -73,7 +92,8 @@ local on_attach_def = function(client)
         vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
     end
 end
-local on_attach_null_ls = function(client, bufnr) on_attach_def(client, bufnr) end
+local on_attach_null_ls =
+    function(client, bufnr) on_attach_def(client, bufnr) end
 
 local on_attach = function(client, bufnr)
     on_attach_def(client, bufnr)
@@ -133,13 +153,13 @@ local on_attach_ts = function(client)
 end
 
 local on_attach_no_hl = function(client, bufnr)
-    on_attach(client, bufnr)
+    on_attach_def(client, bufnr)
     client.resolved_capabilities.document_formatting = false
 end
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
     vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics,
-                 {underline = true, virtual_text = false})
+                 {underline = true, virtual_text = true})
 
 local servers = {'pyright', 'rust_analyzer', 'bashls'}
 for _, lsp in ipairs(servers) do

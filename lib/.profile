@@ -47,6 +47,7 @@ export SONAR_SCANNER_HOME="/opt/sonar-scanner"
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export EDITOR=/usr/bin/nvim
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 
 # Path configuration
 export PATH="$PATH:$SONAR_SCANNER_HOME/bin"

@@ -1,23 +1,24 @@
 # vim: filetype=neomuttrc
-# muttrc file for account siemens
+# muttrc file for account andreas_at_kruhlmann_dev
 
-set realname = "Andreas Stigsbøl Krühlmann"
-set from = "andreas.kruehlmann@siemens.com"
-set sendmail = "msmtp -a siemens"
-alias me Andreas Stigsbøl Krühlmann <andreas.kruehlmann@siemens.com>
-set folder = "/home/ges/mail/siemens"
-set header_cache = /mail/siemens/headers
-set message_cachedir = /mail/siemens/bodies
+set realname = "Andreas Kruhlmann"
+set from = "andreas@kruhlmann.dev"
+set sendmail = "msmtp -a andreas_at_kruhlmann_dev"
+
+set folder = "/home/ges/mail/andreas_at_kruhlmann_dev"
+set header_cache = /mail/andreas_at_kruhlmann_dev/headers
+set message_cachedir = /mail/andreas_at_kruhlmann_dev/bodies
 set mbox_type = Maildir
-set signature="/home/ges/.config/mutt/sig/siemens"
+set signature="/home/ges/.config/mutt/sig/andreas_at_kruhlmann_dev"
 
 bind index,pager gg noop
 bind index,pager g noop
 bind index,pager M noop
 bind index,pager C noop
 bind index gg first-entry
-macro index o "<shell-escape>mailsync -V siemens<enter>" "run mbsync to sync siemens"
+macro index o "<shell-escape>mailsync -V andreas_at_kruhlmann_dev<enter>" "run mbsync to sync andreas_at_kruhlmann_dev"
 unmailboxes *
+alias me Andreas Krühlmann <andreas@kruhlmann.dev>
 
 set spoolfile = "+INBOX"
 set record = "+Sent"

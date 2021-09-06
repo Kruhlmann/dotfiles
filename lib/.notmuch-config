@@ -1,14 +1,19 @@
 [database]
 path=/home/ges/.local/share/mail
+
 [user]
 name=Andreas Kruhlmann
-primary_email=gasolinebased@gmail.com
+primary_email=andreas@kruhlmann.dev
+
 [new]
 tags=unread;inbox;
 ignore=
+
 [search]
 exclude_tags=deleted;spam;
+
 [maildir]
 synchronize_flags=true
+
 [crypto]
 gpg_path=gpg

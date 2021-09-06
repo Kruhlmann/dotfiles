@@ -252,13 +252,12 @@ myEventHook = mempty
 myLogHook = return ()
 
 myStartupHook = do
-    spawnOnce "bing-wallpaper"
     spawnOnce "nm-applet"
     spawnOnce "mpd"
     spawnOnce "picom --experimental-backends"
-    spawnOnce "bing-wallpaper"
     spawnOnce "launch_polybar"
     spawnOnce "tmux has-session -t protonmail_bridge || tmux new -d -s protonmail_bridge 'protonmail-bridge --cli'"
+    spawnOnce "tmux has-session -t offlineimap || tmux new -d -s protonmail_bridge 'offlineimap'"
 
 main = do xmonad
     $ ewmh

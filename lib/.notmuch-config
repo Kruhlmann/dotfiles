@@ -1,5 +1,5 @@
 [database]
-path=/home/ges/.local/share/mail
+path=/home/ges/mail
 
 [user]
 name=Andreas Kruhlmann

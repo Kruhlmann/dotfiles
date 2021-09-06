@@ -1,6 +1,6 @@
 # vim: filetype=neomuttrc
 
-set smime_is_default = no
+set smime_is_default = yes
 set crypt_replysign = yes
 set crypt_replyencrypt = yes
 set crypt_replysignencrypted = yes

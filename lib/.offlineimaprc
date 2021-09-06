@@ -15,6 +15,7 @@ postsynchook = notmuch new
 type = Maildir
 localfolders = ~/mail/andreas_at_kruhlmann_dev
 sync_deletes = yes
+nametrans = lambda folder: 'Folders/' + folder
 
 
 [Repository andreas_at_kruhlmann_dev_remote]
@@ -26,5 +27,5 @@ remotepasseval = get_pwd()
 keepalive = 60
 holdconnectionopen = yes
 expunge = yes
-folderfilter = lambda foldername: foldername in ['INBOX', 'Archive', 'Sent']
 ssl = no
+nametrans = lambda folder: re.sub('^Folders\/', '', folder)

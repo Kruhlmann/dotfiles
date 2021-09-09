@@ -6,4 +6,4 @@ macro index \Cf "<enter-command>unset wait_key<enter><shell-escape>read -p 'Ente
 macro index A "<limit>all\n" "show all messages (undo limit)"
 
 macro browser h '<change-dir><kill-line>..<enter>' "Go to parent folder"
-macro index,pager U "<enter-command>set pipe_decode = yes<enter><pipe-message>urlview<enter><enter-command>set pipe_decode = no<enter>""view URLs"
+macro pager \cb 'urlview' 'Follow links with urlview'

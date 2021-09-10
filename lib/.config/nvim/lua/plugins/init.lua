@@ -20,6 +20,11 @@ return require("packer").startup(function(use)
         requires = {"kyazdani42/nvim-web-devicons"},
         config = [[require("plugins.config.lualine")]]
     }
+    use {"tpope/vim-commentary"}
+    use {
+        "JoosepAlviste/nvim-ts-context-commentstring",
+        requires = {"tpope/vim-commentary"}
+    }
     use {"hkupty/iron.nvim", config = [[require("plugins.config.iron")]]}
     use {
         "lewis6991/gitsigns.nvim",

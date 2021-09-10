@@ -15,8 +15,8 @@ map('i', '<Up>', '<Nop>', {noremap = true})
 map('i', '<Down>', '<Nop>', {noremap = true})
 map('i', '<Left>', '<Nop>', {noremap = true})
 map('i', '<Right>', '<Nop>', {noremap = true})
-map('n', 'n', 'nzzzv', {noremap = true})
-map('n', 'N', 'Nzzzv', {noremap = true})
+map('n', 'n', 'nzzzv', {noremap = false})
+map('n', 'N', 'Nzzzv', {noremap = false})
 map('n', '*', '*<C-O>', {noremap = true})
 map('n', ';', ':', {noremap = true})
 map('n', 'k', "v:count == 0 ? 'gk' : 'k'",
@@ -27,6 +27,8 @@ map('n', 'Y', 'y$', {noremap = true})
 
 map('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
 
+map("v", "<leader>/", "gc", {noremap = false})
+map("n", "<leader>/", "gcc", {noremap = false})
 map("n", "<leader>f", "<cmd>NvimTreeToggle<CR>", {noremap = true})
 map("n", "<leader>p",
     [[<cmd>lua require("telescope.builtin").find_files()<cr>]], opts)

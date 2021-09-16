@@ -54,7 +54,6 @@ return require("packer").startup(function(use)
         "Kruhlmann/gruvbox-with-ANGRY-comments",
         config = [[require("plugins.config.gruvbox")]]
     }
-    use {"Raimondi/delimitMate"}
     use {"junegunn/vim-easy-align"}
     use {"mhartington/formatter.nvim"}
     use {"saadparwaiz1/cmp_luasnip"}

@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+PROCESSQ_API_HOST="https://processq.siemens.dk/api"
+PROCESSQ_LOGIN_URL="$PROCESSQ_API_HOST/auth/login"
+PROCESSQ_USER_GID_URL="$PROCESSQ_API_HOST/users/me"
+PROCESSQ_USER_REQUIREMENTS_URL="$PROCESSQ_API_HOST/requirement_user_status/"
+
+GAIN_USER=$(cat ~/.cache/gain/user)
+GAIN_PASSWORD=$(cat ~/.cache/gain/password)
+COOKIE_FILE="~/.cache/processq_cookie"
+
+curl -sk -c "$COOKIE_FILE" --data-urlencode "username=$GAIN_USER" --data-urlencode "password=$GAIN_PASSWORD" -X POST "$PROCESSQ_LOGIN_URL" > /dev/null
+USER_GID=$(curl -sk -b "$COOKIE_FILE" "$PROCESSQ_USER_GID_URL" | jq -r .gid)
+REQUIREMENT_RESPONSE=$(curl -sk -b "$COOKIE_FILE" -X GET "$PROCESSQ_USER_REQUIREMENTS_URL?gid=$USER_GID" | jq)
+
+REQUIRED_COUNT=$(echo "$REQUIREMENT_RESPONSE" | grep '"required": true' | wc -l)
+COMPLETED_COUNT=$(echo "$REQUIREMENT_RESPONSE" | grep '"completed": true' | wc -l)
+
+echo "$COMPLETED_COUNT/$REQUIRED_COUNT"

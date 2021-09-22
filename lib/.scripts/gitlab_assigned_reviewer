@@ -23,7 +23,11 @@ OUTPUT="$(cat "${CACHE_FILE}" | \
     jq --arg USR $GITLAB_USERNAME -r 'map(.reviewers) | .[] | .[] | select(.username==$USR) | .id' | \
     wc -l)"
 
-echo "$OUTPUT"
+if [ "$OUTPUT" = "0" ]; then 
+    echo "%{F#555555}$OUTPUT%{F-}"
+else 
+    echo "$OUTPUT"
+fi
 
 if [ ! -f "${CACHED_RESULT}" ] ; then
     LAST_RESULT="0"

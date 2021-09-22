@@ -145,7 +145,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
     vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics,
                  {underline = true, virtual_text = true})
 
-local servers = {'pyright', 'rust_analyzer', 'bashls'}
+local servers = {'pyright', 'rust_analyzer', 'bashls', 'gopls'}
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup({on_attach = on_attach, capabilities = capabilities})
 end
@@ -162,11 +162,17 @@ lspconfig["null-ls"].setup {
     capabilities = capabilities
 }
 
-lspconfig.tsserver.setup {on_attach = on_attach_ts, capabilities = capabilities}
-
 lspconfig.svelte.setup {
     on_attach = on_attach_no_hl,
     capabilities = capabilities
+}
+
+lspconfig.tsserver.setup {on_attach = on_attach_ts, capabilities = capabilities}
+
+lspconfig.solargraph.setup {
+    on_attach = on_attach_no_hl,
+    capabilities = capabilities,
+    settings = {solargraph = {autoformat = true, formatting = true}}
 }
 
 local luadev = require("lua-dev").setup {

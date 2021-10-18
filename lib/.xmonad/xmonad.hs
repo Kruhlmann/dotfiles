@@ -112,7 +112,7 @@ hotPromptTheme = myPromptTheme
     , position              = Top
     }
 
-myTerminal      = "termite"
+myTerminal      = "alacritty"
 myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = True
 myBorderWidth   = 1
@@ -152,16 +152,16 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $ [
     ((modm,               xK_r     ), refresh),
     ((modm .|. shiftMask, xK_q     ), confirmPrompt hotPromptTheme "Quit XMonad" $ io (exitWith ExitSuccess)),
     -- Spawn
-    ((modm,               xK_Return ), spawn $ "termite"),
-    ((modm,               xK_d      ), spawn spawnRofi),
+    ((modm,               xK_Return ), spawn $ "alacritty"),
+    ((modm,               xK_d      ), spawn spakknRofi),
     ((modm,               xK_s      ), spawn "rofi -show ssh"),
     ((modm .|. shiftMask, xK_s      ), spawn spawnGnomeScreenshot ),
     ((modm .|. shiftMask, xK_l      ), spawn "xscreensaver-command --lock"),
     ((modm .|. shiftMask, xK_l      ), spawn "betterlockscreen -l"),
-    ((modm              , xK_u      ), spawn "termite --name floatterm -e fzmp"),
-    ((modm              , xK_g      ), spawn "termite --name floatterm -e lazygit"),
-    ((modm              , xK_e      ), spawn "termite --name floatterm -e ranger"),
-    ((modm              , xK_n      ), spawn "termite --name floatterm -e ncmpcpp"),
+    ((modm              , xK_u      ), spawn "alacritty --name floatterm -e fzmp"),
+    ((modm              , xK_g      ), spawn "alacritty --name floatterm -e lazygit"),
+    ((modm              , xK_e      ), spawn "alacritty --name floatterm -e ranger"),
+    ((modm              , xK_n      ), spawn "alacritty --name floatterm -e ncmpcpp"),
     ((modm              , xK_m      ), spawn "neomutt_mailbox"),
     ((modm              , xK_v      ), spawn "cbp"),
     ((modm              , xK_p      ), spawn "mpc toggle"),

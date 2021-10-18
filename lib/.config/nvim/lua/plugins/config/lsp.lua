@@ -91,8 +91,11 @@ local on_attach_def = function(client)
         vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
     end
 end
-local on_attach_null_ls =
-    function(client, bufnr) on_attach_def(client, bufnr) end
+local on_attach_null_ls = function(client, bufnr) 
+  if client.resolved_capabilities.document_formatting then
+    vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+  end
+end
 
 local on_attach = function(client, bufnr)
     on_attach_def(client, bufnr)
@@ -187,4 +190,4 @@ local luadev = require("lua-dev").setup {
         capabilities = capabilities
     }
 }
-lspconfig.sumneko_lua.setup(luadev)
+-- lspconfig.sumneko_lua.setup(luadev)

@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+export EDITOR="nvim"
+export TERMINAL="termite"
+export BROWSER="firefox-developer-edition"
+export READER="zathura"
+export FILE="ranger"
+export SHELL="/bin/zsh"
+export TERM="xterm-color"
+export MOD_KEY="mod4"

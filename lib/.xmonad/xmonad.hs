@@ -153,7 +153,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $ [
     ((modm .|. shiftMask, xK_q     ), confirmPrompt hotPromptTheme "Quit XMonad" $ io (exitWith ExitSuccess)),
     -- Spawn
     ((modm,               xK_Return ), spawn $ "alacritty"),
-    ((modm,               xK_d      ), spawn spakknRofi),
+    ((modm,               xK_d      ), spawn spawnRofi),
     ((modm,               xK_s      ), spawn "rofi -show ssh"),
     ((modm .|. shiftMask, xK_s      ), spawn spawnGnomeScreenshot ),
     ((modm .|. shiftMask, xK_l      ), spawn "xscreensaver-command --lock"),

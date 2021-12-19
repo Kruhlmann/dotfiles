@@ -1,0 +1,15 @@
+VER 3 0000000001000002 " " "135920"
+#showtooltip Holy Light
+/stopcasting
+/cast [@mouseover, help, nodead] Holy Light
+END
+VER 3 0000000001000003 " " "135907"
+#showtooltip Flash of Light
+/stopcasting
+/cast [@mouseover, help, nodead] Flash of Light
+END
+VER 3 0000000001000001 " " "135953"
+#showtooltip Cleanse
+/stopcasting
+/cast [@mouseover, help, nodead] Cleanse
+END

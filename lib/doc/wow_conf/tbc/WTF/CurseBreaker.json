@@ -1,0 +1,530 @@
+{
+    "Addons": [
+        {
+            "Checksums": {
+                "ElvUI": "1396209bea3ecbb13d31b5134700517f",
+                "ElvUI_OptionsUI": "98a95d763c96a6705ca74fd9c30e231c"
+            },
+            "Directories": [
+                "ElvUI_OptionsUI",
+                "ElvUI"
+            ],
+            "Name": "ElvUI",
+            "URL": "ElvUI",
+            "Version": "2.29"
+        },
+        {
+            "Checksums": {
+                "Leatrix_Maps": "1e2a87bccd0ec14d7af840d28521305c"
+            },
+            "Directories": [
+                "Leatrix_Maps"
+            ],
+            "Name": "Leatrix Maps (World of Warcraft Classic)",
+            "URL": "https://www.curseforge.com/wow/addons/leatrix-maps-classic",
+            "Version": "1.13.102"
+        },
+        {
+            "Checksums": {
+                "AdvancedInterfaceOptions": "94c57c2197a8aca471f98e1e81802323"
+            },
+            "Directories": [
+                "AdvancedInterfaceOptions"
+            ],
+            "Name": "AdvancedInterfaceOptions",
+            "URL": "https://www.curseforge.com/wow/addons/advancedinterfaceoptions",
+            "Version": "1.7.0-bcc"
+        },
+        {
+            "Checksums": {
+                "AtlasLootClassic": "27876d86ee11ee8a1ec9b88c29eb1849",
+                "AtlasLootClassic_Collections": "56fe9be2a7653ae81c4d7a5a997c6f0b",
+                "AtlasLootClassic_Crafting": "efce5a9b7645b366039e2d32ee6c016e",
+                "AtlasLootClassic_Data": "06a9b3a5b195629ce29df43871b8a98c",
+                "AtlasLootClassic_DungeonsAndRaids": "20318abf0da34cba53db1096b192a65a",
+                "AtlasLootClassic_Factions": "d65241fef42da1a72f9363d722ebd36d",
+                "AtlasLootClassic_Options": "60dcd9646c3cdc823ef14283a7e2d776",
+                "AtlasLootClassic_PvP": "a6681c1bf7463255b72dff483ac3ca22"
+            },
+            "Directories": [
+                "AtlasLootClassic_Options",
+                "AtlasLootClassic_Data",
+                "AtlasLootClassic_Crafting",
+                "AtlasLootClassic_Factions",
+                "AtlasLootClassic",
+                "AtlasLootClassic_DungeonsAndRaids",
+                "AtlasLootClassic_PvP",
+                "AtlasLootClassic_Collections"
+            ],
+            "Name": "AtlasLootClassic",
+            "URL": "https://www.curseforge.com/wow/addons/atlaslootclassic",
+            "Version": "v2.4.0-bcc"
+        },
+        {
+            "Checksums": {
+                "Auctionator": "eaf7b23a2c36dfa2e7bcaa0cf823f712"
+            },
+            "Directories": [
+                "Auctionator"
+            ],
+            "Name": "Auctionator ClassicFix",
+            "URL": "https://www.curseforge.com/wow/addons/auctionator-classicfix",
+            "Version": "Auctionator-Classic+BCC(GepyFix).zip"
+        },
+        {
+            "Checksums": {
+                "DBM-AQ20": "cdd3ab681a3dada024915607f175c92b",
+                "DBM-AQ40": "a5c7be9ae6563456709f8467a4b9f15f",
+                "DBM-Azeroth": "759bf8856eacb6e3ee816d1f2593b24b",
+                "DBM-BWL": "65098a9d778ce1dc29dd00210c015678",
+                "DBM-BlackTemple": "9f10bc5f79c37594334cab75cb98c800",
+                "DBM-Core": "6ab736e75d3b4912068aa5a99049dbda",
+                "DBM-GUI": "5cc04e6e42925d1c80a7441e050cee00",
+                "DBM-Hyjal": "eab14d5fb5082cac8618cb8cda5538ef",
+                "DBM-Karazhan": "8db77768f2f033c11864cdf4bc313fa0",
+                "DBM-MC": "5fb373eb6f5821f6c7ec1eb7b859a288",
+                "DBM-Naxx": "4c808c0d92f6a5d79a57aa521dbafd14",
+                "DBM-Onyxia": "0241a490438f3bbcd3e917443ffa881a",
+                "DBM-Outlands": "23dcca25a5cd504fa86ce47d1cd9bad2",
+                "DBM-Party-BC": "3c3e2ada1364abe05070bd6d0a2a9eda",
+                "DBM-Party-Classic": "ac9298d66afaa1618569470e072b99e8",
+                "DBM-Serpentshrine": "0e054c49316487960670d4a0ccc25665",
+                "DBM-StatusBarTimers": "b958585d9edec4389b09ede61d1d060d",
+                "DBM-Sunwell": "b1d4f9c477892e5a3a808bb3110a562a",
+                "DBM-TheEye": "cd18f647897f0ac43063044279f9e616",
+                "DBM-WorldEvents": "3a1aeedf30a6101331b4e55819c84c40",
+                "DBM-ZG": "37bde4c5895fcca258e974441d972249",
+                "DBM-ZulAman": "42a235888f33aab57b8de8cd435a5b59"
+            },
+            "Directories": [
+                "DBM-AQ20",
+                "DBM-Outlands",
+                "DBM-BlackTemple",
+                "DBM-Sunwell",
+                "DBM-ZulAman",
+                "DBM-Karazhan",
+                "DBM-Hyjal",
+                "DBM-WorldEvents",
+                "DBM-Serpentshrine",
+                "DBM-Party-BC",
+                "DBM-AQ40",
+                "DBM-Party-Classic",
+                "DBM-Onyxia",
+                "DBM-MC",
+                "DBM-Core",
+                "DBM-Azeroth",
+                "DBM-ZG",
+                "DBM-Naxx",
+                "DBM-TheEye",
+                "DBM-BWL",
+                "DBM-GUI",
+                "DBM-StatusBarTimers"
+            ],
+            "Name": "Deadly Boss Mods (DBM)",
+            "URL": "https://www.curseforge.com/wow/addons/deadly-boss-mods",
+            "Version": "DBM-2.5.20-bcc"
+        },
+        {
+            "Checksums": {
+                "ElkBuffBars": "4d306499cf2f496cd5e8b58292bc7773"
+            },
+            "Directories": [
+                "ElkBuffBars"
+            ],
+            "Name": "Elkano's BuffBars",
+            "URL": "https://www.curseforge.com/wow/addons/elkbuffbars",
+            "Version": "2.6.2 - r199"
+        },
+        {
+            "Checksums": {
+                "ItemRack": "d5cf13add261fc6f45bd89d65ee5669e",
+                "ItemRackOptions": "eab203629768d8e15295ac409b44f2eb"
+            },
+            "Directories": [
+                "ItemRack",
+                "ItemRackOptions"
+            ],
+            "Name": "ItemRack Classic",
+            "URL": "https://www.curseforge.com/wow/addons/itemrack-classic",
+            "Version": "ItemRack-bcc-3.69"
+        },
+        {
+            "Checksums": {
+                "Questie": "bce58a0c873c4ac24a33160c46f5d921"
+            },
+            "Directories": [
+                "Questie"
+            ],
+            "Name": "Questie",
+            "URL": "https://www.curseforge.com/wow/addons/questie",
+            "Version": "v6.8.1"
+        },
+        {
+            "Checksums": {
+                "RCLootCouncil_Classic": "451e0784c2c5375606897969feae1f68"
+            },
+            "Directories": [
+                "RCLootCouncil_Classic"
+            ],
+            "Name": "RCLootCouncil Classic",
+            "URL": "https://www.curseforge.com/wow/addons/rclootcouncil-classic",
+            "Version": "0.13.2-bcc"
+        },
+        {
+            "Checksums": {
+                "WeakAuras": "ea10e9f1053a419f69720cd7be3b3229",
+                "WeakAurasArchive": "b2ffe745ca7a2f77ef7430d7b79c6b57",
+                "WeakAurasModelPaths": "27bd4e23c50d7ea13285d23e905a2ad6",
+                "WeakAurasOptions": "26b3d9cd43c360482d97495af5de13d8",
+                "WeakAurasTemplates": "f42f127bb27400af293bfaab077a3535"
+            },
+            "Directories": [
+                "WeakAurasOptions",
+                "WeakAurasTemplates",
+                "WeakAuras",
+                "WeakAurasModelPaths",
+                "WeakAurasArchive"
+            ],
+            "Name": "WeakAuras",
+            "URL": "https://www.curseforge.com/wow/addons/weakauras-2",
+            "Version": "3.7.3-bcc"
+        },
+        {
+            "Checksums": {
+                "WIM": "2e3de80df02411f8ba47c0c8b9adbeed"
+            },
+            "Directories": [
+                "WIM"
+            ],
+            "Name": "WIM (WoW Instant Messenger) v3",
+            "URL": "https://www.curseforge.com/wow/addons/wim-3",
+            "Version": "3.9.3-bcc"
+        },
+        {
+            "Checksums": {
+                "Details": "e4c1070d37b86b7690c732555b8a87bc",
+                "Details_Streamer": "25d73e034bc3cdff565fe93cc8b2f9b8",
+                "Details_TinyThreat": "0a802d412aa442ae21d16a5c8570dfbf"
+            },
+            "Directories": [
+                "Details_Streamer",
+                "Details",
+                "Details_TinyThreat"
+            ],
+            "Name": "Details! Damage Meter",
+            "URL": "https://www.curseforge.com/wow/addons/details",
+            "Version": "DetailsTBC.2.5.2.0030.145"
+        },
+        {
+            "Checksums": {
+                "Leatrix_Plus": "27d60fad5eb19924967c131a93711c26"
+            },
+            "Directories": [
+                "Leatrix_Plus"
+            ],
+            "Name": "Leatrix Plus (Burning Crusade Classic)",
+            "URL": "https://www.curseforge.com/wow/addons/leatrix-plus-bcc",
+            "Version": "2.5.68-bcc"
+        },
+        {
+            "Checksums": {
+                "Attune": "cc906bd20394437ab32a226b204a6ef5"
+            },
+            "Directories": [
+                "Attune"
+            ],
+            "Name": "Attune",
+            "URL": "https://www.curseforge.com/wow/addons/attune",
+            "Version": "Attune-BCC-246.zip"
+        },
+        {
+            "Checksums": {
+                "SafeQueue": "ca863331066c34a96f9fa0807afe8aca"
+            },
+            "Directories": [
+                "SafeQueue"
+            ],
+            "Name": "SafeQueue",
+            "URL": "https://www.curseforge.com/wow/addons/safequeue",
+            "Version": "v7.2-bcc"
+        },
+        {
+            "Checksums": {
+                "OmniCC": "b2af47711cc85d441ca44993c9d4cdcd",
+                "OmniCC_Config": "5fe93560da26fd4a89d6894d6ab47f58"
+            },
+            "Directories": [
+                "OmniCC_Config",
+                "OmniCC"
+            ],
+            "Name": "OmniCC",
+            "URL": "https://www.curseforge.com/wow/addons/omni-cc",
+            "Version": "9.1.0-bcc"
+        },
+        {
+            "Checksums": {
+                "sArena": "b6fe4e057310ce7ddd9f37a02fd62b90"
+            },
+            "Directories": [
+                "sArena"
+            ],
+            "Name": "sArena (Retail & TBC)",
+            "URL": "https://www.curseforge.com/wow/addons/sarena",
+            "Version": "sArena TBC 1.8"
+        },
+        {
+            "Checksums": {
+                "Gladdy": "b2c9cc31f9b965d4ba4e026c7607419d"
+            },
+            "Directories": [
+                "Gladdy"
+            ],
+            "Name": "Gladdy (TBC)",
+            "URL": "https://www.curseforge.com/wow/addons/gladdy-tbc",
+            "Version": "Gladdy (TBC) v1.22-Release"
+        },
+        {
+            "Checksums": {
+                "BindPad": "c293219885dbc47416cbbeb1c788562a"
+            },
+            "Directories": [
+                "BindPad"
+            ],
+            "Name": "BindPad-Classic-bcc",
+            "URL": "https://github.com/hepkat/BindPad-Classic-bcc",
+            "Version": "c0.2"
+        },
+        {
+            "Checksums": {
+                "LFGBulletinBoard": "8b9f83974d1e928fb58b96025817fb34"
+            },
+            "Directories": [
+                "LFGBulletinBoard"
+            ],
+            "Name": "LFG Group Bulletin Board TBC",
+            "URL": "https://www.curseforge.com/wow/addons/lfg-group-finder-bulletin-board-tbc",
+            "Version": "LFGBulletinBoard_v_2_62.zip"
+        },
+        {
+            "Checksums": {
+                "GladiatorlosSA2": "3c60dc5c7cc6c4b1531ee0295c1ad269"
+            },
+            "Directories": [
+                "GladiatorlosSA2"
+            ],
+            "Name": "GladiatorlosSA2",
+            "URL": "https://www.curseforge.com/wow/addons/gladiatorlossa2",
+            "Version": "GSA2_TBC1.1"
+        },
+        {
+            "Checksums": {
+                "Pawn": "c6c7c0c01a6316999951c9c5108ccd99"
+            },
+            "Directories": [
+                "Pawn"
+            ],
+            "Name": "Pawn",
+            "URL": "https://www.curseforge.com/wow/addons/pawn",
+            "Version": "2.5.30 (Burning Crusade)"
+        },
+        {
+            "Checksums": {
+                "BattleGroundEnemies": "1be0f812fe0a74089541db4bb7e46d59"
+            },
+            "Directories": [
+                "BattleGroundEnemies"
+            ],
+            "Name": "BattleGroundEnemies",
+            "URL": "https://www.curseforge.com/wow/addons/battlegroundenemies",
+            "Version": "9.0.5.6-bcc"
+        },
+        {
+            "Checksums": {
+                "SpeedyAutoLoot": "23de765e2b7380beb9542d5dd93c7dc6"
+            },
+            "Directories": [
+                "SpeedyAutoLoot"
+            ],
+            "Name": "Speedy AutoLoot",
+            "URL": "https://www.curseforge.com/wow/addons/speedyautoloot",
+            "Version": "2.1.5-bcc"
+        },
+        {
+            "Checksums": {
+                "ExtendedCharacterStats": "ffe7f3d7201fc5bd85734ddb855e64c5"
+            },
+            "Directories": [
+                "ExtendedCharacterStats"
+            ],
+            "Name": "Extended Character Stats",
+            "URL": "https://www.curseforge.com/wow/addons/extended-character-stats",
+            "Version": "v2.9.0 - BCC"
+        },
+        {
+            "Checksums": {
+                "ATT": "ae90e850bdc45d7626a1c968e0453e17"
+            },
+            "Directories": [
+                "ATT"
+            ],
+            "Name": "Ability Team Tracker",
+            "URL": "https://www.curseforge.com/wow/addons/att",
+            "Version": "v16 TBC"
+        },
+        {
+            "Checksums": {
+                "Guidelime": "c5c029b05e2fedac67068a1934a9911b"
+            },
+            "Directories": [
+                "Guidelime"
+            ],
+            "Name": "Guidelime",
+            "URL": "https://www.curseforge.com/wow/addons/guidelime",
+            "Version": "v2.026(TBC)"
+        },
+        {
+            "Checksums": {
+                "Capping": "cc60411f449859ab1648dee01d85203b",
+                "Capping_Options": "8dcee34d1b60c1fed5b4c622835eb2d7"
+            },
+            "Directories": [
+                "Capping",
+                "Capping_Options"
+            ],
+            "Name": "Capping Battleground Timers",
+            "URL": "https://www.curseforge.com/wow/addons/capping-bg-timers",
+            "Version": "v1-bcc"
+        },
+        {
+            "Checksums": {
+                "WhatsTraining": "173b6b95fd1a9b70c1313f62fe5e800a"
+            },
+            "Directories": [
+                "WhatsTraining"
+            ],
+            "Name": "What's Training?",
+            "URL": "https://www.curseforge.com/wow/addons/whats-training",
+            "Version": "3.0.0-bcc"
+        },
+        {
+            "Checksums": {
+                "MBB": "0ab6731277646b781c6ac939b7c60926"
+            },
+            "Directories": [
+                "MBB"
+            ],
+            "Name": "MBB - Classic",
+            "URL": "https://www.curseforge.com/wow/addons/mbb-classic",
+            "Version": "v1.2.0"
+        },
+        {
+            "Checksums": {
+                "Talented": "48b2f69938a1e6f70a3c7125a25adde4",
+                "Talented_Data": "160a288daa4dd95c69b0558f2ee1dc0b",
+                "Talented_Data_Export": "c5d1fcc3d1b302a44a526b7764f28986"
+            },
+            "Directories": [
+                "Talented",
+                "Talented_Data",
+                "Talented_Data_Export"
+            ],
+            "Name": "Talented Classic",
+            "URL": "https://www.curseforge.com/wow/addons/talented-classic",
+            "Version": "v211114b"
+        },
+        {
+            "Checksums": {
+                "LittleBuster": "1cf6ca79721b9b5e0e37e0f88c4b9905"
+            },
+            "Directories": [
+                "LittleBuster"
+            ],
+            "Name": "Little Buster",
+            "URL": "https://www.curseforge.com/wow/addons/little-buster",
+            "Version": "LittleBuster1.13.0.zip"
+        },
+        {
+            "Checksums": {
+                "WIM_ElvUI_Skin": "000b6e83ba8e16d5ab0b3013ae6625bf"
+            },
+            "Directories": [
+                "WIM_ElvUI_Skin"
+            ],
+            "Name": "WIM Skin: ElvUI",
+            "URL": "https://www.curseforge.com/wow/addons/wim-skin-elvui",
+            "Version": "20501.01-BBC"
+        },
+        {
+            "Checksums": {
+                "Hemlock": "a723ee4585e03d90504c46045928fdc1"
+            },
+            "Directories": [
+                "Hemlock"
+            ],
+            "Name": "Hemlock (Poison Helper)",
+            "URL": "https://www.curseforge.com/wow/addons/hemlock",
+            "Version": "1.2.3-bcc"
+        },
+        {
+            "Checksums": {
+                "unitscan": "1c7fdec44a57a928872afb162516a0a4"
+            },
+            "Directories": [
+                "unitscan"
+            ],
+            "Name": "unitscan rares",
+            "URL": "https://www.curseforge.com/wow/addons/unitscan-rares",
+            "Version": "unitscan rares"
+        },
+        {
+            "Checksums": {
+                "DismountAtFlightMaster": "a3eafde53518f478345c649612667ab6"
+            },
+            "Directories": [
+                "DismountAtFlightMaster"
+            ],
+            "Name": "Dismount at Flight Master",
+            "URL": "https://www.curseforge.com/wow/addons/dismount-at-flight-master",
+            "Version": "DismountAtFlightMaster.zip"
+        },
+        {
+            "Checksums": {
+                "Ogri'Lazy Classic": "94d134213ab4f7dd87f2013b72a51eaa"
+            },
+            "Directories": [
+                "Ogri'Lazy Classic"
+            ],
+            "Name": "Ogri'lazy Classic",
+            "URL": "https://www.curseforge.com/wow/addons/ogrilazy-classic",
+            "Version": "Ogri'Lazy Classic 1.1.zip"
+        },
+        {
+            "Checksums": {
+                "GuideLime_TUGs": "e9ce3e8d0370b8c0525ce54c9e3ea455"
+            },
+            "Directories": [
+                "GuideLime_TUGs"
+            ],
+            "Name": "GuideLime_TUGs",
+            "URL": "https://www.curseforge.com/wow/addons/guidelime_tugs",
+            "Version": "GuideLime_TUGs.zip"
+        }
+    ],
+    "AutoUpdate": true,
+    "Backup": {
+        "Enabled": true,
+        "Number": 7
+    },
+    "CFCacheCloudFlare": {},
+    "CFCacheTimestamp": 1637663610,
+    "CompactMode": false,
+    "IgnoreClientVersion": {},
+    "IgnoreDependencies": {},
+    "ShowAuthors": true,
+    "Version": "3.19.0",
+    "WAAPIKey": "SjTiebIKXP1DuxxnpHTPmhkKQLIOH03L2S2lBfETyXb5UfjNhr9ENVT2K9Mqkqam",
+    "WAAccountName": "409968239#1",
+    "WACompanionVersion": 1119,
+    "WAStash": [],
+    "WAUsername": ""
+}

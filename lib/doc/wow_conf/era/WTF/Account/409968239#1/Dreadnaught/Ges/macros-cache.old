@@ -1,0 +1,64 @@
+VER 3 0000000001000001 " " "132152"
+/petattack
+END
+VER 3 0000000001000003 " " "INV_MISC_QUESTIONMARK"
+#showtooltip Auto Shot
+/cleartarget [dead]
+/targetenemy [noharm]
+/cast !Auto Shot
+END
+VER 3 0000000001000004 " " "INV_MISC_QUESTIONMARK"
+/cleartarget [dead]
+/targetenemy [noharm]
+/cast Arcane Shot
+END
+VER 3 0000000001000007 " " "INV_MISC_QUESTIONMARK"
+/cast Raptor Strike
+/cast Counterattack
+/cast Mongoose Bite
+/petattack
+END
+VER 3 0000000001000008 " " "INV_MISC_QUESTIONMARK"
+/cast [combat] Feign Death
+/cast Freezing Trap
+END
+VER 3 0000000001000002 " " "132328"
+/petfollow
+END
+VER 3 0000000001000009 " " "136106"
+/petpassive
+END
+VER 3 000000000100000A " " "132127"
+/cast Bestial Wrath
+/petattack
+END
+VER 3 000000000100000B " " "132111"
+/cast Intimidation
+/petattack
+END
+VER 3 000000000100000C " " "INV_MISC_QUESTIONMARK"
+/cast Deterrence
+/cast Aspect of the Monkey
+END
+VER 3 000000000100000D " " "INV_MISC_QUESTIONMARK"
+/cast [@cursor] Flare
+END
+VER 3 000000000100000F " " "INV_MISC_QUESTIONMARK"
+/cast [combat] Feign Death
+/cast Explosive Trap
+END
+VER 3 000000000100000E " " "INV_MISC_QUESTIONMARK"
+/cast [combat] Feign Death
+/cast Frost Trap
+END
+VER 3 0000000001000010 " " "INV_MISC_QUESTIONMARK"
+/cast [combat] Feign Death
+/cast Immolation Trap
+END
+VER 3 0000000001000011 " " "INV_MISC_QUESTIONMARK"
+/cast Feed Pet
+/use Roasted Quail
+END
+VER 3 0000000001000005 "  " "INV_MISC_QUESTIONMARK"
+/cast Serpent Sting
+END

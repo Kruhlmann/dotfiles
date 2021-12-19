@@ -1,0 +1,2 @@
+
+Talented_DataDB = nil

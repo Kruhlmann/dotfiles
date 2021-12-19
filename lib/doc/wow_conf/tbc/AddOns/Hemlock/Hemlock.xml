@@ -1,0 +1,45 @@
+<Ui>
+	<Script file="localization.lua" />
+	<Script file="options.lua" />
+	<Script file="Hemlock.lua" />
+	<Script file="Libs\LibStub\LibStub.lua"/>
+	<Include file="Libs\AceAddon-3.0\AceAddon-3.0.xml"/>
+	<Include file="Libs\AceConsole-3.0\AceConsole-3.0.xml"/>
+	<Include file="Libs\LibDropdown-1.0\LibDropdown-1.0\lib.xml"/>
+	
+	<Frame name="HemlockFrame" parent="UIParent" hidden="true" inherits="BackdropTemplate" framestrata="HIGH">
+		<Size>
+			<AbsDimension x="36" y="40" />
+		</Size>
+		<Anchors>
+			<Anchor point="TOP" relativePoint="TOP" relativeTo="MerchantItem1ItemButton">
+				<Offset>
+					<AbsDimension x="0" y="5" />
+				</Offset>
+			</Anchor>
+			<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="MerchantFrameCloseButton">
+				<Offset>
+					<AbsDimension x="-3" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+	</Frame>
+	
+	<Button name="HemlockPoisonTemplate" virtual="true">
+	<Size>
+		<AbsDimension x="32" y="32" />
+	</Size>
+	<ButtonText name="$parentText" justifyH="RIGHT" inherits="NumberFontNormal" text="?">
+		<Anchors>
+			<Anchor point="BOTTOMRIGHT">
+				<Offset>
+					<AbsDimension x="-1" y="1"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+	</ButtonText>
+	<HighlightTexture file="Interface\Buttons\ButtonHilight-Square" alphaMode="ADD"/>
+	<!-- <PushedTexture file="Interface\ICONS\Ability_Druid_FerociousBite"/> -->
+</Button>
+	
+</Ui>

@@ -1,0 +1,21 @@
+==============================================================================
+c:\Users\nnpil\GitHub\RCLootCouncil_Classic\.specs\AddonLoader.spec.lua
+==============================================================================
+ 1 require "busted.runner"()
+
+ 2 insulate("AddonLoader", function()
+ 2     it("should load RCLootCouncil_Classic", function()
+ 1         loadfile("RCLootCouncil/.specs/AddonLoader.lua")().LoadToc("RCLootCouncil_Classic.toc")
+*0         assert.truthy(_G.RCLootCouncil)
+       end)
+   end)
+
+==============================================================================
+Summary
+==============================================================================
+
+File                                                                    Hits Missed Coverage
+--------------------------------------------------------------------------------------------
+c:\Users\nnpil\GitHub\RCLootCouncil_Classic\.specs\AddonLoader.spec.lua 4    1      80.00%
+--------------------------------------------------------------------------------------------
+Total                                                                   4    1      80.00%

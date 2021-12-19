@@ -1,0 +1,2 @@
+# This file is intentionally empty to overwrite the deprecated TOC file left on installations.
+# Check expansion specific TOC files for the correct data.

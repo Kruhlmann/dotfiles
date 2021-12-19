@@ -1,0 +1,29 @@
+VER 3 0000000001000002 " " "132282"
+#showtooltip Heroic Strike
+/startattack
+/cast Heroic Strike
+/stopcasting
+END
+VER 3 0000000001000003 " " "132223"
+#showtooltip
+/cast [@mouseover,harm,nodead][] Overpower
+END
+VER 3 0000000001000004 " " "132155"
+#showtooltip
+/cast [@mouseover,harm,nodead][] Rend
+END
+VER 3 0000000001000005 " " "132343"
+#showtooltip Disarm
+/cast [nostance:2] Defensive Stance
+/cast Disarm
+END
+VER 3 0000000001000006 " " "136080"
+#showtooltip Taunt
+/cast [nostance:2] Defensive Stance
+/cast Taunt
+END
+VER 3 0000000001000001 " " "132337"
+#showtooltip Charge
+/cast [nostance:1] Battle Stance
+/cast Charge
+END

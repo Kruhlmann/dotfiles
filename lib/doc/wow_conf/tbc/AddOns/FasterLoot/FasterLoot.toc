@@ -1,0 +1,6 @@
+## Interface: 80200
+## Title: FasterLoot
+## Notes: Makes the loot frame instant
+## Version: 8.2
+## Author: Xarano
+FasterLoot.lua

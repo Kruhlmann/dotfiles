@@ -1,0 +1,89 @@
+VER 3 0000000001000003 " " "132183"
+#showtooltip Feral Charge
+/cancelform [noform:1]
+/cast [noform:1] !Dire Bear Form
+/cast [form:1] Feral Charge
+END
+VER 3 0000000001000004 " " "132089"
+#showtooltip Prowl
+/cancelform [noform:3]
+/cast [noform:3] !Cat Form
+/cast [form:3] Prowl
+END
+VER 3 000000000100000A " " "132120"
+#showtooltip Dash
+/cancelform [noform:3]
+/cast [noform:3] !Cat Form
+/cast [form:3] Dash
+END
+VER 3 0000000001000006 " " "136033"
+#showtooltip
+/stand
+/cast [form:1/3] Faerie Fire (Feral)
+/cancelform [noform:1/3]
+/cast Faerie Fire
+END
+VER 3 0000000001000007 " " "132270"
+#showtooltip Growl
+/cancelform [noform:1]
+/cast [noform:1] !Dire Bear Form
+/cast [form:1] Growl
+END
+VER 3 0000000001000016 " " "135740"
+/cancelform
+END
+VER 3 0000000001000017 " " "INV_MISC_QUESTIONMARK"
+/cancelform [noform:2/4]
+/cast [swimming] !Aquatic Form; [noswimming] !Travel Form
+END
+VER 3 000000000100001B " " "INV_MISC_QUESTIONMARK"
+#showtooltip Innervate
+/cast [stance:0] Innervate
+END
+VER 3 000000000100001D " " "132225"
+#showtooltip cat form
+/cast !cat form
+END
+VER 3 0000000001000001 " " "132139"
+#showtooltip dire bear form
+/cast !dire bear form
+END
+VER 3 000000000100001E " " "132114"
+#showtooltip Bash
+/cancelform [nostance:1]
+/cast [nostance] !Dire Bear Form
+/cast Bash
+END
+VER 3 000000000100001F " " "136076"
+#showtooltip Nature's Swiftness 
+/cancelform
+/cast Nature's Swiftness
+END
+VER 3 0000000001000020 " " "132091"
+#showtooltip Frenzied Regeneration(Rank 4)
+/cancelform [noform:1]
+/cast [noform:1] !Dire Bear Form
+/cast [form:1] Frenzied Regeneration(Rank 4)
+END
+VER 3 0000000001000021 " " "136045"
+#showtooltip Insect Swarm(Rank 6)
+/cancelform
+/cast Insect Swarm(Rank 6)
+END
+VER 3 0000000001000022 " " "136022"
+#showtooltip
+/cast [target=arena1] cyclone
+END
+VER 3 0000000001000023 " " "136064"
+#showtooltip Entangling Roots(Rank 1)
+/cancelform
+/cast Entangling Roots(Rank 1)
+END
+VER 3 0000000001000024 " " "136022"
+#showtooltip
+/cast [target=arena2] cyclone
+END
+VER 3 0000000001000025 " " "136022"
+#showtooltip
+/cast [target=arena3] cyclone
+END

@@ -1,0 +1,5 @@
+
+SpeedyAutoLootDB = {
+	["global"] = {
+	},
+}

@@ -1,0 +1,125 @@
+bind W CLICK BindPadMacro:kidney
+bind UP CAMERAZOOMIN
+bind S CLICK BindPadMacro:shiv
+bind DOWN CAMERAZOOMOUT
+bind A CLICK BindPadMacro:kick
+bind LEFT NONE
+bind D STRAFELEFT
+bind RIGHT NONE
+bind Q CLICK BindPadMacro:hemo
+bind E CLICK BindPadMacro:gouge
+bind X CLICK BindPadMacro:t1
+bind Z CLICK BindPadMacro:sap
+bind NUMLOCK NONE
+bind BUTTON4 NONE
+bind INSERT SCREENSHOT
+bind DELETE CLICK BindPadMacro:food
+bind R CLICK BindPadMacro:evis
+bind SHIFT-R NONE
+bind 1 CLICK BindPadMacro:prep
+bind 2 CLICK BindPadMacro:stealth
+bind 3 CLICK BindPadMacro:ranged
+bind 4 CLICK BindPadKey:SPELL Evasion
+bind 5 CLICK BindPadMacro:sprint
+bind 6 CLICK BindPadMacro:crippling
+bind 7 CLICK BindPadMacro:wound
+bind 8 CLICK BindPadMacro:deadly
+bind 9 CLICK BindPadMacro:instant
+bind 0 CLICK BindPadMacro:mind
+bind - NONE
+bind = NONE
+bind CTRL-F1 NONE
+bind CTRL-F2 NONE
+bind CTRL-F3 NONE
+bind CTRL-1 ELVUIBAR2BUTTON6
+bind CTRL-2 ELVUIBAR2BUTTON7
+bind CTRL-3 ELVUIBAR2BUTTON8
+bind CTRL-4 ELVUIBAR2BUTTON9
+bind CTRL-5 ELVUIBAR2BUTTON10
+bind CTRL-6 RAIDTARGET3
+bind CTRL-7 RAIDTARGET2
+bind CTRL-8 RAIDTARGET1
+bind SHIFT-1 NONE
+bind SHIFT-2 NONE
+bind SHIFT-3 NONE
+bind SHIFT-4 NONE
+bind SHIFT-5 NONE
+bind SHIFT-MOUSEWHEELUP NONE
+bind SHIFT-MOUSEWHEELDOWN NONE
+bind F1 NONE
+bind F2 NONE
+bind F3 NONE
+bind G CLICK BindPadMacro:target
+bind F STRAFERIGHT
+bind V CLICK BindPadMacro:slice
+bind SHIFT-V NONE
+bind CTRL-V CLICK BindPadMacro:rupture
+bind T CLICK BindPadMacro:vanish
+bind SHIFT-T NONE
+bind C CLICK BindPadMacro:wotf
+bind B CLICK BindPadMacro:distract
+bind SHIFT-B NONE
+bind F8 TOGGLEAUTORUN
+bind H MULTIACTIONBAR1BUTTON6
+bind I NONE
+bind PRINTSCREEN NONE
+bind CTRL-S CLICK BindPadMacro:envenom
+bind ALT-Z NONE
+bind MOUSEWHEELUP NONE
+bind MOUSEWHEELDOWN NONE
+bind END CLICK BindPadMacro:poisons
+bind HOME CLICK BindPadMacro:lock
+bind CTRL-R CLICK BindPadMacro:unstealth
+bind CTRL-Q CLICK BindPadMacro:gs
+bind CTRL-W CLICK BindPadMacro:mount
+bind CTRL-E CLICK BindPadMacro:ea
+bind CTRL-T CLICK BindPadMacro:mind_2
+bind CTRL-A CLICK BindPadMacro:cloak
+bind CTRL-B CLICK BindPadMacro:pick
+bind SHIFT-C NONE
+bind Y NONE
+bind ` ACTIONBUTTON12
+bind SHIFT-Q CLICK BindPadMacro:fly
+bind SHIFT-E CLICK BindPadMacro:hs
+bind SHIFT-F MULTIACTIONBAR2BUTTON4
+bind SHIFT-H NONE
+bind SHIFT-G MULTIACTIONBAR2BUTTON10
+bind CTRL-F NONE
+bind SHIFT-Z MULTIACTIONBAR2BUTTON9
+bind SHIFT-X MULTIACTIONBAR1BUTTON8
+bind SHIFT-Y MULTIACTIONBAR2BUTTON8
+bind CTRL-` MULTIACTIONBAR3BUTTON12
+bind SHIFT-` NONE
+bind ALT-X MULTIACTIONBAR1BUTTON9
+bind CTRL-X CLICK BindPadMacro:t2
+bind CTRL-H NONE
+bind \ INTERACTTARGET
+bind ALT-C NONE
+bind ' NONE
+bind ] TOGGLECHARACTER0
+bind ALT-F NONE
+bind ALT-1 NONE
+bind ALT-2 NONE
+bind ALT-Q NONE
+bind ALT-W NONE
+bind ALT-E NONE
+bind ALT-SHIFT-1 CLICK ItemRackGesFiremawFlask set:LeftButton
+bind ALT-SHIFT-4 CLICK ItemRackGesFiremawMaraudon:LeftButton
+bind ALT-SHIFT-2 CLICK ItemRackGesFiremawDW:LeftButton
+bind ALT-SHIFT-3 CLICK ItemRackGesFiremawCloak:LeftButton
+bind ALT-3 NONE
+bind ALT-V NONE
+bind ALT-SHIFT-Q NONE
+bind CTRL-Z CLICK BindPadKey:SPELL Sap
+bind CTRL-C CLICK BindPadMacro:cannibalize
+bind [ OPENALLBAGS
+bind ALT-CTRL-SHIFT-Q CLICK BindPadMacro:step1
+bind ALT-CTRL-SHIFT-W CLICK BindPadMacro:step2
+bind ALT-CTRL-SHIFT-E CLICK BindPadMacro:step3
+bind ALT-CTRL-SHIFT-R CLICK BindPadMacro:blind1
+bind ALT-CTRL-SHIFT-T CLICK BindPadMacro:blind2
+bind ALT-CTRL-SHIFT-G CLICK BindPadMacro:blind3
+bind ALT-CTRL-SHIFT-Z CLICK BindPadMacro:throw1
+bind ALT-CTRL-SHIFT-X CLICK BindPadMacro:throw2
+bind ALT-CTRL-SHIFT-C CLICK BindPadMacro:throw3
+bind ALT-T CLICK BindPadMacro:cripl

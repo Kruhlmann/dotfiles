@@ -1,0 +1,82 @@
+VER 3 0000000001000004 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cancelform
+/cast [target=mouseover,help,nodead][help][target=player]Remove Curse
+END
+VER 3 0000000001000005 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cancelform
+/cast [target=mouseover,help,nodead][help][target=player]Abolish Poison
+END
+VER 3 0000000001000006 " " "132109"
+/itemrack equip Threat
+END
+VER 3 0000000001000011 " " "132152"
+/itemrack equip Cat
+END
+VER 3 0000000001000008 " " "132118"
+/itemrack equip Cat
+END
+VER 3 0000000001000009 " " "INV_MISC_QUESTIONMARK"
+#showtooltip Bash
+/cast !Dire Bear Form
+/cast Bash
+END
+VER 3 000000000100000A " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cancelform
+/cast Faerie Fire
+END
+VER 3 000000000100000B " " "INV_MISC_QUESTIONMARK"
+#showtooltip Dash
+/cast !Cat Form
+/cast !Dash
+END
+VER 3 000000000100000C " " "132108"
+/stopmacro [nohelp][noexists][dead]
+/use Tainted Core
+/y <--- Tainted core to %t
+/run if UnitName("target") then SendChatMessage("You have the core",  "WHISPER, nil, UnitName("target")) end
+END
+VER 3 000000000100000D " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cancelform
+/cast War Stomp
+END
+VER 3 000000000100000E " " "INV_MISC_QUESTIONMARK"
+#showtooltip Prowl
+/cast Cat Form
+/cast Prowl
+END
+VER 3 000000000100000F " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cancelform
+/cast [target=mouseover,help,nodead][help][target=player]Innervate
+END
+VER 3 0000000001000010 " " "INV_MISC_QUESTIONMARK"
+#showtooltip 
+/cast [swimming] !Aquatic Form; [nocombat, flyable] !Flight Form; [outdoors] !Travel Form
+END
+VER 3 0000000001000012 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast !Cat Form
+END
+VER 3 0000000001000014 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/use Ironshield Potion
+/cast !Dire Bear Form
+END
+VER 3 0000000001000015 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/use Super Mana Potion
+/cast !Cat Form
+END
+VER 3 0000000001000016 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/use Free Action Potion
+/cast !Dire Bear Form
+END
+VER 3 0000000001000007 " Human" "132353"
+/dismount
+/cancelform
+END

@@ -1,0 +1,15 @@
+Version: 1
+Frame: ClassicThreatMeterBarFrame
+FrameLevel: 1
+Anchor: RIGHT
+X: -1
+Y: -63
+W: 467
+H: 151
+Frame: ColorPickerFrame
+FrameLevel: 1
+Anchor: CENTER
+X: 0
+Y: 0
+W: 365
+H: 240

@@ -1,0 +1,9 @@
+
+LAT_MARKS_SETTINGS = {
+	["Tanks"] = {
+	},
+	["sync"] = true,
+	["locked"] = true,
+	["scale"] = 0.879999995231628,
+	["vertical"] = false,
+}

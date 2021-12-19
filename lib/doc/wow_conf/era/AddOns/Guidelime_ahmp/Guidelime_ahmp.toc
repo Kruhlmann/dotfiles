@@ -1,0 +1,39 @@
+## Title: Guidelime_ahmp
+## Author: ahmp, Borick of Arthas(EU)
+## Version: v1.3
+## Interface: 11302
+## Dependencies: Guidelime
+## Notes: ahmp's 1-60 guide
+
+Teldrassil Trio Launch 1-12.lua
+Darkshore_Ashenvale 12-20.lua
+Ashenvale_Stonetalon 20-23.lua
+Redridge_Duskwood 23-26.lua
+Wetlands 26-27.lua
+Ashenvale 27-29.lua
+Wetlands 2 29-30.lua
+Duskwood 30-32.lua
+Thousand Needles 32-33.lua
+Duskwood_STV 33-34.lua
+Hillsbrad_Arathi 34-35.lua
+Desolace 35-37.lua
+STV_Swamp 37-39.lua
+Dustwallow Marsh 39-39.lua
+Arathi_Alterac 39-40.lua
+Badlands 40-41.lua
+STV Mid_Late 1 41-42.lua
+Tanaris_Feralas 42-45.lua
+Searing Gorge 45-45.lua
+STV_Swamp Late 45-46.lua
+Tanaris 46-47.lua
+Arathi_Hinterlands 47-48.lua
+Searing Gorge 48-49.lua
+Blasted Lands 49-50.lua
+Azshara_Felwood_Feralas 50-52.lua
+WPL_WS Brief 52-52.lua
+Un'Goro Crater 52-54.lua
+Felwood_Winterspring_Burning Steppes 54-56.lua
+Burning Steppes_Winterspring 56-57.lua
+WPL_EPL 57-58.lua
+WPL_EPL 2 58-59.lua
+Silithus_Winterspring 59-60.lua

@@ -1,0 +1,681 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ 
+      C:\Users\mcali\Desktop\Repositories\BlizzardInterfaceCode\Interface\FrameXML\UI.xsd">
+  <Script file="config/config.lua" /> 
+
+  <!-- Templates, resources, etc -->
+  <Font name="GameFontNormalWhite" inherits="GameFontNormal" virtual="true">
+    <Color r="1.0" g="1.0" b="1.0" />
+  </Font>
+
+  <Frame name="LB_MarginFrame" virtual="true">
+    <Anchors>
+      <Anchor point="TOPLEFT" x="10" y="0"></Anchor>
+    </Anchors>
+  </Frame>
+
+  <Frame name="LB_ConfigHeaderTextFrame" virtual="true" inherits="LB_MarginFrame">
+    <Size x="300" y="20" />
+    <Layers>
+      <Layer level="BACKGROUND">
+        <FontString name="$parentHeaderString" parentKey="Text" inherits="GameFontNormalLarge">
+          <Anchors>
+            <Anchor point="LEFT" />
+          </Anchors>
+        </FontString>
+      </Layer>
+    </Layers>
+  </Frame>
+
+  <Frame name="LB_ConfigSubheaderTextFrame" virtual="true">
+    <Size x="300" y="13" />
+    <Anchors>
+      <Anchor point="TOPLEFT" />
+    </Anchors>
+    <Layers>
+      <Layer level="BACKGROUND">
+        <FontString name="$parentHeaderString" parentKey="Text" inherits="GameFontNormal">
+          <Anchors>
+            <Anchor point="LEFT" />
+          </Anchors>
+        </FontString>
+      </Layer>
+    </Layers>
+  </Frame>
+
+  <CheckButton name="LB_ConfigCheckButtonBase" virtual="true" inherits="InterfaceOptionsCheckButtonTemplate">
+    <Scripts>
+      <OnClick>LB_Config_CheckButtonChanged(self, self.statKey, self:GetChecked());</OnClick>
+    </Scripts>
+  </CheckButton>
+
+  <!-- end templates -->
+
+  <!-- Frames -->
+  <Frame name="LB_ConfigRootFrame">
+    <Scripts>
+      <OnLoad function="LB_ConfigRootFrame_OnLoad" />
+      <OnEvent function="LB_ConfigRootFrame_OnEvent" />
+    </Scripts>
+    <Frames>
+
+      <ScrollFrame name="LB_ConfigScrollRoot" inherits="UIPanelScrollFrameTemplate">
+        <Size x="590" y="553" />
+        <Anchors>
+          <Anchor point="TOPLEFT" x="0" y="-9" />
+        </Anchors>
+
+        <!-- Scrollbar graphics -->
+        <Layers>
+          <Layer level="ARTWORK">
+            <Texture name="$parentTop" file="Interface\PaperDollInfoFrame\UI-Character-ScrollBar">
+              <Size x="31" y="102" />
+              <Anchors>
+                <Anchor point="TOPLEFT" relativePoint="TOPRIGHT" x="-2" y="5" />
+              </Anchors>
+              <TexCoords left="0" right="0.484375" top="0" bottom="0.4" />
+            </Texture>
+            <Texture name="$parentBottom" file="Interface\PaperDollInfoFrame\UI-Character-ScrollBar">
+              <Size x="31" y="106" />
+              <Anchors>
+                <Anchor point="BOTTOMLEFT" relativePoint="BOTTOMRIGHT" x="-2" y="-2" />
+              </Anchors>
+              <TexCoords left="0.515625" right="1.0" top="0" bottom="0.4140625" />
+            </Texture>
+            <Texture name="$parentMiddle" file="Interface\PaperDollInfoFrame\UI-Character-ScrollBar">
+              <Size x="31" y="1" />
+              <Anchors>
+                <Anchor point="TOP" relativeTo="$parentTop" relativePoint="BOTTOM" />
+                <Anchor point="BOTTOM" relativeTo="$parentBottom" relativePoint="TOP" />
+              </Anchors>
+              <TexCoords left="0" right="0.484375" top=".75" bottom="1.0" />
+            </Texture>
+          </Layer>
+        </Layers>
+
+        <!-- The frame hosted by the ScrollFrame -->
+        <ScrollChild>
+          <Frame name="LB_ConfigScrollChild">
+            <Size x="585" y="626" />
+            <Frames>
+
+              <!-- Addon title, etc -->
+              <Frame name="LB_ConfigHeader" inherits="LB_ConfigHeaderTextFrame">
+                <Anchors>
+                  <Anchor point="TOP" y="0" />
+                </Anchors>
+                <Scripts>
+                  <OnLoad>
+                    self.Text:SetText("Little Buster");
+                  </OnLoad>
+                </Scripts>
+              </Frame>
+
+              <!-- Defenses -->
+              <Frame name="LB_ConfigDefensesContainer">
+                <Size x="575" y="120" />
+                <Anchors>
+                  <Anchor x="0" y="-10" point="TOPLEFT" relativeTo="LB_ConfigHeader" relativePoint="BOTTOMLEFT" />
+                </Anchors>
+                <Frames>
+
+                  <!-- Header -->
+                  <Frame name="LB_ConfigDefensesHeader" inherits="LB_ConfigSubheaderTextFrame">
+                    <Scripts>
+                      <OnLoad>
+                        self.Text:SetText(LB_CONF_STR.DefensesHeader);
+                      </OnLoad>
+                    </Scripts>
+                  </Frame>
+
+                  <!-- Defense -->
+                  <CheckButton name="LB_DefenseRatingCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor x="5" y="-5" point="TOPLEFT" relativeTo="LB_ConfigDefensesHeader" relativePoint="BOTTOMLEFT" />
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.DefenseRatingCheckbox);
+                        self.statKey = "ITEM_MOD_DEFENSE_SKILL_RATING";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Dodge -->
+                  <CheckButton name="LB_DodgeRatingCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor x="0" y="0" point="TOPLEFT" relativeTo="LB_DefenseRatingCheckbox" relativePoint="BOTTOMLEFT" />
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.DodgeRatingCheckbox);
+                        self.statKey = "ITEM_MOD_DODGE_RATING";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Parry -->
+                  <CheckButton name="LB_ParryRatingCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor x="0" y="0" point="TOPLEFT" relativeTo="LB_DodgeRatingCheckbox" relativePoint="BOTTOMLEFT" />
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.ParryRatingCheckbox);
+                        self.statKey = "ITEM_MOD_PARRY_RATING";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Block -->
+                  <CheckButton name="LB_BlockRatingCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor x="0" y="0" point="TOPLEFT" relativeTo="LB_ParryRatingCheckbox" relativePoint="BOTTOMLEFT" />
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.BlockRatingCheckbox);
+                        self.statKey = "ITEM_MOD_BLOCK_RATING";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                </Frames>
+              </Frame>
+
+              <!-- Spell stuff -->
+              <Frame name="LB_ConfigSpellsContainer">
+                <Size x="575" y="95" />
+                <Anchors>
+                  <Anchor x="0" y="-10" point="TOPLEFT" relativeTo="LB_ConfigDefensesContainer" relativePoint="BOTTOMLEFT" />
+                </Anchors>
+                <Frames>
+
+                  <!-- Header -->
+                  <Frame name="LB_ConfigSpellsHeader" inherits="LB_ConfigSubheaderTextFrame">
+                    <Scripts>
+                      <OnLoad>
+                        self.Text:SetText(LB_CONF_STR.SpellsHeader);
+                      </OnLoad>
+                    </Scripts>
+                  </Frame>
+
+                  <!-- Spell Hit -->
+                  <CheckButton name="LB_SpellHitRatingCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor x="5" y="-5" point="TOPLEFT" relativeTo="LB_ConfigSpellsHeader" relativePoint="BOTTOMLEFT" />
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.SpellHitRatingCheckbox);
+                        self.statKey = "ITEM_MOD_HIT_SPELL_RATING";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Spell Crit -->
+                  <CheckButton name="LB_SpellCritRatingCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor x="0" y="0" point="TOPLEFT" relativeTo="LB_SpellHitRatingCheckbox" relativePoint="BOTTOMLEFT" />
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.SpellCritRatingCheckbox);
+                        self.statKey = "ITEM_MOD_CRIT_SPELL_RATING";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Spell Haste -->
+                  <CheckButton name="LB_SpellHasteRatingCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor x="0" y="0" point="TOPLEFT" relativeTo="LB_SpellCritRatingCheckbox" relativePoint="BOTTOMLEFT" />
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.SpellHasteRatingCheckbox);
+                        self.statKey = "ITEM_MOD_HASTE_SPELL_RATING";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+                </Frames>
+              </Frame>
+
+              <Frame name="LB_ConfigPhysicalsContainer">
+                <Size x="575" y="120" />
+                <Anchors>
+                  <Anchor x="0" y="-10" point="TOPLEFT" relativeTo="LB_ConfigSpellsContainer" relativePoint="BOTTOMLEFT" />
+                </Anchors>
+                <Frames>
+
+                  <!-- Header -->
+                  <Frame name="LB_ConfigPhysicalsHeader" inherits="LB_ConfigSubheaderTextFrame">
+                    <Scripts>
+                      <OnLoad>
+                        self.Text:SetText(LB_CONF_STR.PhysicalsHeader);
+                      </OnLoad>
+                    </Scripts>
+                  </Frame>
+
+                  <!-- Hit -->
+                  <CheckButton name="LB_PhysicalHitRatingCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor x="5" y="-5" point="TOPLEFT" relativeTo="LB_ConfigPhysicalsHeader" relativePoint="BOTTOMLEFT" />
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.PhysicalHitRatingCheckbox);
+                        self.statKey = "ITEM_MOD_HIT_RATING";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Crit -->
+                  <CheckButton name="LB_PhysicalCritRatingCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor x="0" y="0" point="TOPLEFT" relativeTo="LB_PhysicalHitRatingCheckbox" relativePoint="BOTTOMLEFT" />
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.PhysicalCritRatingCheckbx);
+                        self.statKey = "ITEM_MOD_CRIT_RATING";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Haste -->
+                  <CheckButton name="LB_PhysicalHasteRatingCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor x="0" y="0" point="TOPLEFT" relativeTo="LB_PhysicalCritRatingCheckbox" relativePoint="BOTTOMLEFT" />
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.PhysicalHasteRatingCheckbox);
+                        self.statKey = "ITEM_MOD_HASTE_RATING";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Expertise -->
+                  <CheckButton name="LB_PhysicalExpertiseRatingCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor x="0" y="0" point="TOPLEFT" relativeTo="LB_PhysicalHasteRatingCheckbox" relativePoint="BOTTOMLEFT" />
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.PhysicalExpertiseRatingCheckbox);
+                        self.statKey = "ITEM_MOD_EXPERTISE_RATING";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                </Frames>
+              </Frame>
+
+              <!-- Attribute stuff -->
+              <Frame name="LB_ConfigAttributesContainer">
+                <Size x="575" y="296" />
+                <Anchors>
+                  <Anchor x="0" y="-10" point="TOPLEFT" relativeTo="LB_ConfigPhysicalsContainer" relativePoint="BOTTOMLEFT" />
+                </Anchors>
+                <Frames>
+
+                  <!-- Header -->
+                  <Frame name="LB_ConfigAttributesHeader" inherits="LB_ConfigSubheaderTextFrame">
+                    <Scripts>
+                      <OnLoad>
+                        self.Text:SetText(LB_CONF_STR.AttributesHeader);
+                      </OnLoad>
+                    </Scripts>
+                  </Frame>
+
+                  <!-- Agility -->
+                  <CheckButton name="LB_AgilityCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor x="5" y="-5" point="TOPLEFT" relativeTo="LB_ConfigAttributesHeader" relativePoint="BOTTOMLEFT" />
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.AgilityCheckbox);
+                        self.statKey = "ITEM_MOD_AGILITY";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+                  
+                  <!-- Agility - Dodge -->
+                  <CheckButton name = "LB_AgilityDodgeCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor x="15" point="TOPLEFT" relativeTo="LB_AgilityCheckbox" relativePoint="BOTTOMLEFT"/>
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.AgiDodgeCheck);
+                        self.statKey="Agility-Dodge";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Agility - Crit -->
+                  <CheckButton name = "LB_AgilityCritCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor point="TOPLEFT" relativeTo="LB_AgilityDodgeCheckbox" relativePoint="BOTTOMLEFT"/>
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.AgiCritCheck);
+                        self.statKey="Agility-Crit";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Agility - AP -->
+                  <CheckButton name = "LB_AgilityAPCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor point="TOPLEFT" relativeTo="LB_AgilityCritCheckbox" relativePoint="BOTTOMLEFT"/>
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.AgiAPCheck);
+                        self.statKey="Agility-AP";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Agility - RAP -->
+                  <CheckButton name = "LB_AgilityRAPCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor point="TOPLEFT" relativeTo="LB_AgilityAPCheckbox" relativePoint="BOTTOMLEFT"/>
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.AgiRAPCheck);
+                        self.statKey="Agility-RAP";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Agility - Armor -->
+                  <CheckButton name = "LB_AgilityArmorCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor point="TOPLEFT" relativeTo="LB_AgilityRAPCheckbox" relativePoint="BOTTOMLEFT"/>
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.AgiArmorCheck);
+                        self.statKey="Agility-Armor";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Agility - Healing -->
+                  <CheckButton name = "LB_AgilityHealingCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor point="TOPLEFT" relativeTo="LB_AgilityArmorCheckbox" relativePoint="BOTTOMLEFT"/>
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.AgilityHealingCheckbox);
+                        self.statKey="Agility-Healing";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Intellect -->
+                  <CheckButton name="LB_IntellectCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor x="-15" y="0" point="TOPLEFT" relativeTo="LB_AgilityHealingCheckbox" relativePoint="BOTTOMLEFT" />
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.IntellectCheckbox);
+                        self.statKey = "ITEM_MOD_INTELLECT";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Intellect - Mana -->
+                  <CheckButton name = "LB_IntellectManaCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor x="15" point="TOPLEFT" relativeTo="LB_IntellectCheckbox" relativePoint="BOTTOMLEFT"/>
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.IntellectManaCheckbox);
+                        self.statKey="Intellect-Mana";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Intellect - Spell Crit -->
+                  <CheckButton name = "LB_IntellectSpellCritCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor point="TOPLEFT" relativeTo="LB_IntellectManaCheckbox" relativePoint="BOTTOMLEFT"/>
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.IntellectSpellCritCheckbox);
+                        self.statKey="Intellect-SpellCrit";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Intellect - Spell Crit -->
+                  <CheckButton name = "LB_IntellectSpellDamageCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor point="TOPLEFT" relativeTo="LB_IntellectSpellCritCheckbox" relativePoint="BOTTOMLEFT"/>
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.IntellectSpellDamageCheckbox);
+                        self.statKey="Intellect-SpellDamage";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Intellect - Healing -->
+                  <CheckButton name = "LB_IntellectHealingCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor point="TOPLEFT" relativeTo="LB_IntellectSpellDamageCheckbox" relativePoint="BOTTOMLEFT"/>
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.IntellectHealingCheckbox);
+                        self.statKey="Intellect-Healing";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Intellect - Mana Regen -->
+                  <CheckButton name = "LB_IntellectManaRegenCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor point="TOPLEFT" relativeTo="LB_IntellectHealingCheckbox" relativePoint="BOTTOMLEFT"/>
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.IntellectManaRegenCheckbox);
+                        self.statKey="Intellect-ManaRegen";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Intellect - Ranged AP-->
+                  <CheckButton name = "LB_IntellectRangedAPCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor point="TOPLEFT" relativeTo="LB_IntellectManaRegenCheckbox" relativePoint="BOTTOMLEFT"/>
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.IntellectRangedAPCheckbox);
+                        self.statKey="Intellect-RangedAP";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Intellect - Armor-->
+                  <CheckButton name = "LB_IntellectArmorCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor point="TOPLEFT" relativeTo="LB_IntellectRangedAPCheckbox" relativePoint="BOTTOMLEFT"/>
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.IntellectArmorCheckbox);
+                        self.statKey="Intellect-Armor";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Spirit -->
+                  <CheckButton name="LB_SpiritCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor x="-15" y="0" point="TOPLEFT" relativeTo="LB_IntellectArmorCheckbox" relativePoint="BOTTOMLEFT" />
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.SpiritCheckbox);
+                        self.statKey = "ITEM_MOD_SPIRIT";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Spirit - Regen while not casting-->
+                  <CheckButton name = "LB_SpiritManaRegenNotCastingCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor x="15" point="TOPLEFT" relativeTo="LB_SpiritCheckbox" relativePoint="BOTTOMLEFT"/>
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.SpiritManaRegenNotCastingCheckbox);
+                        self.statKey="Spirit-ManaRegenNotCasting";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Spirit - Regen while casting-->
+                  <CheckButton name = "LB_SpiritManaRegenCastingCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor point="TOPLEFT" relativeTo="LB_SpiritManaRegenNotCastingCheckbox" relativePoint="BOTTOMLEFT"/>
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.SpiritManaRegenCastingCheckbox);
+                        self.statKey="Spirit-ManaRegenCasting";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Spirit - HP Regen-->
+                  <CheckButton name = "LB_SpiritHealthRegenCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor point="TOPLEFT" relativeTo="LB_SpiritManaRegenCastingCheckbox" relativePoint="BOTTOMLEFT"/>
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.SpiritHealthRegenCheckbox);
+                        self.statKey="Spirit-HealthRegen";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Spirit - Spell Damage-->
+                  <CheckButton name = "LB_SpiritSpellDamageCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor point="TOPLEFT" relativeTo="LB_SpiritHealthRegenCheckbox" relativePoint="BOTTOMLEFT"/>
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.SpiritSpellDamageCheckbox);
+                        self.statKey="Spirit-SpellDamage";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Stamina -->
+                  <CheckButton name="LB_StaminaCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor x="-15" y="0" point="TOPLEFT" relativeTo="LB_SpiritSpellDamageCheckbox" relativePoint="BOTTOMLEFT" />
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.StaminaCheckbox);
+                        self.statKey = "ITEM_MOD_STAMINA";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Stamina - Health-->
+                  <CheckButton name = "LB_StaminaHealthCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor x="15" point="TOPLEFT" relativeTo="LB_StaminaCheckbox" relativePoint="BOTTOMLEFT"/>
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.StaminaHealthCheckbox);
+                        self.statKey="Stamina-Health";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Stamina - Spell damage-->
+                  <CheckButton name = "LB_StaminaSpellDamageCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor x="0" point="TOPLEFT" relativeTo="LB_StaminaHealthCheckbox" relativePoint="BOTTOMLEFT"/>
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.StaminaSpellDamageCheckbox);
+                        self.statKey="Stamina-SpellDamage";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Strength -->
+                  <CheckButton name="LB_StrengthCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor x="-15" y="0" point="TOPLEFT" relativeTo="LB_StaminaSpellDamageCheckbox" relativePoint="BOTTOMLEFT" />
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.StrengthCheckbox);
+                        self.statKey = "ITEM_MOD_STRENGTH";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Strength - Attack Power-->
+                  <CheckButton name = "LB_StrengthAttackPowerCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor x="15" point="TOPLEFT" relativeTo="LB_StrengthCheckbox" relativePoint="BOTTOMLEFT"/>
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.StrengthAttackPowerCheckbox);
+                        self.statKey="Strength-AttackPower";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+
+                  <!-- Strength - Block Value-->
+                  <CheckButton name = "LB_StrengthBlockValueCheckbox" inherits="LB_ConfigCheckButtonBase">
+                    <Anchors>
+                      <Anchor x="0" point="TOPLEFT" relativeTo="LB_StrengthAttackPowerCheckbox" relativePoint="BOTTOMLEFT"/>
+                    </Anchors>
+                    <Scripts>
+                      <OnLoad>
+                        _G[self:GetName().."Text"]:SetText(LB_CONF_STR.StrengthBlockValueCheckbox);
+                        self.statKey="Strength-BlockValue";
+                      </OnLoad>
+                    </Scripts>
+                  </CheckButton>
+                  
+
+                </Frames>
+              </Frame>
+
+            </Frames>
+          </Frame>
+        </ScrollChild>
+
+      </ScrollFrame>
+    </Frames>
+  </Frame>
+
+</Ui>

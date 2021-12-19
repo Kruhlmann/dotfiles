@@ -1,0 +1,2 @@
+
+EncounterDetailsDB = nil

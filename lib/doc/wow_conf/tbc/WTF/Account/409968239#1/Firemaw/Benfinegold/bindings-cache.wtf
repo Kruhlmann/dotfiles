@@ -1,0 +1,117 @@
+bind W CLICK BindPadMacro:nova
+bind UP CAMERAZOOMIN
+bind S CLICK BindPadMacro:cs
+bind DOWN CAMERAZOOMOUT
+bind A CLICK BindPadMacro:max blizz
+bind LEFT NONE
+bind D STRAFELEFT
+bind RIGHT NONE
+bind Q CLICK BindPadMacro:frostbolt
+bind E CLICK BindPadMacro:ice lance
+bind X NONE
+bind Z CLICK BindPadMacro:evo
+bind NUMLOCK NONE
+bind BUTTON4 NONE
+bind INSERT SCREENSHOT
+bind R CLICK BindPadMacro:blink
+bind SHIFT-R NONE
+bind 1 CLICK BindPadMacro:veins
+bind 2 CLICK BindPadMacro:ishield
+bind 3 CLICK BindPadMacro:snap
+bind 4 CLICK BindPadMacro:ele
+bind 5 CLICK BindPadMacro:mshield
+bind 6 NONE
+bind 7 NONE
+bind 8 NONE
+bind 9 NONE
+bind 0 NONE
+bind - NONE
+bind = NONE
+bind CTRL-F1 NONE
+bind CTRL-F2 NONE
+bind CTRL-F3 NONE
+bind CTRL-1 CLICK BindPadMacro:decurse
+bind CTRL-2 NONE
+bind CTRL-3 NONE
+bind CTRL-4 NONE
+bind CTRL-5 NONE
+bind CTRL-6 RAIDTARGET3
+bind CTRL-7 RAIDTARGET2
+bind CTRL-8 RAIDTARGET1
+bind SHIFT-1 NONE
+bind SHIFT-2 NONE
+bind SHIFT-3 NONE
+bind SHIFT-4 NONE
+bind SHIFT-5 NONE
+bind SHIFT-MOUSEWHEELUP NONE
+bind SHIFT-MOUSEWHEELDOWN NONE
+bind F1 NONE
+bind F2 NONE
+bind F3 NONE
+bind G CLICK BindPadMacro:block
+bind F STRAFERIGHT
+bind V CLICK BindPadMacro:fireblast
+bind SHIFT-V NONE
+bind CTRL-V MULTIACTIONBAR3BUTTON10
+bind T CLICK BindPadMacro:expl
+bind SHIFT-T NONE
+bind C CLICK BindPadMacro:coc
+bind B CLICK BindPadMacro:slow
+bind SHIFT-B NONE
+bind F8 TOGGLEAUTORUN
+bind H MULTIACTIONBAR1BUTTON6
+bind PRINTSCREEN NONE
+bind CTRL-S CLICK BindPadMacro:flamestrike
+bind ALT-Z NONE
+bind MOUSEWHEELUP NONE
+bind MOUSEWHEELDOWN NONE
+bind END NONE
+bind HOME NONE
+bind CTRL-R CLICK BindPadMacro:aoe taunt
+bind CTRL-Q CLICK BindPadMacro:fear
+bind CTRL-W CLICK BindPadKey:ITEM Whistle of the Emerald Raptor
+bind CTRL-E CLICK BindPadMacro:ele nova
+bind CTRL-T CLICK BindPadMacro:mocking
+bind CTRL-A CLICK BindPadMacro:r1 blizz
+bind CTRL-B CLICK BindPadMacro:max poly
+bind SHIFT-C NONE
+bind Y NONE
+bind ` CLICK BindPadMacro:gems
+bind SHIFT-Q NONE
+bind SHIFT-E MULTIACTIONBAR1BUTTON7
+bind SHIFT-F MULTIACTIONBAR2BUTTON4
+bind SHIFT-H NONE
+bind SHIFT-G MULTIACTIONBAR2BUTTON10
+bind CTRL-F NONE
+bind SHIFT-Z MULTIACTIONBAR2BUTTON9
+bind SHIFT-X MULTIACTIONBAR1BUTTON8
+bind SHIFT-Y MULTIACTIONBAR2BUTTON8
+bind CTRL-` MULTIACTIONBAR3BUTTON12
+bind SHIFT-` NONE
+bind ALT-X MULTIACTIONBAR1BUTTON9
+bind CTRL-X MULTIACTIONBAR3BUTTON8
+bind CTRL-H NONE
+bind \ INTERACTTARGET
+bind ALT-C NONE
+bind ' NONE
+bind ] TOGGLECHARACTER0
+bind ALT-F NONE
+bind ALT-1 NONE
+bind ALT-2 NONE
+bind ALT-Q NONE
+bind ALT-W NONE
+bind ALT-E NONE
+bind ALT-SHIFT-1 CLICK ItemRackGesFiremawFlask set:LeftButton
+bind ALT-SHIFT-4 CLICK ItemRackGesFiremawMaraudon:LeftButton
+bind ALT-SHIFT-2 CLICK ItemRackGesFiremawDW:LeftButton
+bind ALT-SHIFT-3 CLICK ItemRackGesFiremawCloak:LeftButton
+bind ALT-3 NONE
+bind ALT-V NONE
+bind ALT-SHIFT-Q NONE
+bind CTRL-Z CLICK BindPadMacro:slam
+bind CTRL-C CLICK BindPadMacro:over
+bind [ OPENALLBAGS
+bind CTRL-G CLICK BindPadMacro:rend
+bind ALT-CTRL-SHIFT-1 CLICK BindPadMacro:ice armor
+bind ALT-CTRL-SHIFT-2 CLICK BindPadMacro:mage armor
+bind SHIFT-DELETE CLICK BindPadMacro:water

@@ -1,0 +1,120 @@
+bind W CLICK BindPadMacro:rejuv
+bind S CLICK BindPadMacro:charge 1
+bind DOWN NONE
+bind A CLICK BindPadMacro:ns
+bind LEFT CLICK BindPadKey:SPELL Fishing
+bind D STRAFELEFT
+bind RIGHT CLICK BindPadMacro:disenchant
+bind Q CLICK BindPadMacro:lifebloom
+bind E CLICK BindPadMacro:regrowth
+bind X CLICK BindPadMacro:pvp trink
+bind Z CLICK BindPadMacro:hurricane
+bind NUMLOCK NONE
+bind BUTTON4 NONE
+bind DELETE CLICK BindPadMacro:pve drink
+bind NUMPADDIVIDE TOGGLEAUTORUN
+bind R CLICK BindPadMacro:swiftmend
+bind SHIFT-R CLICK BindPadMacro:Challenging Roar
+bind 1 CLICK BindPadMacro:abolish
+bind 2 CLICK BindPadMacro: prowl
+bind 3 CLICK BindPadMacro:bash
+bind 4 CLICK BindPadMacro:ff
+bind 5 CLICK BindPadMacro: dash
+bind 6 NONE
+bind 7 NONE
+bind 8 NONE
+bind 9 NONE
+bind 0 NONE
+bind - NONE
+bind = NONE
+bind CTRL-1 CLICK BindPadMacro:decurse
+bind CTRL-2 CLICK BindPadMacro:r1 moonfire
+bind CTRL-3 CLICK BindPadMacro:demo
+bind CTRL-4 CLICK BindPadMacro:bandage
+bind CTRL-5 CLICK BindPadMacro:starfire
+bind SHIFT-1 CLICK BindPadMacro:skull
+bind SHIFT-2 CLICK BindPadMacro:cross
+bind SHIFT-3 CLICK BindPadMacro:moon
+bind SHIFT-4 CLICK BindPadMacro:square
+bind SHIFT-5 CLICK BindPadMacro:diamond
+bind F1 TARGETPARTYMEMBER2
+bind F3 TARGETSELF
+bind F4 NONE
+bind G CLICK BindPadMacro:charge
+bind F STRAFERIGHT
+bind V CLICK BindPadMacro:grasp
+bind SHIFT-V NONE
+bind CTRL-V CLICK BindPadMacro:swarm
+bind T CLICK BindPadMacro:htouch
+bind SHIFT-T CLICK BindPadMacro:long root
+bind C CLICK BindPadMacro:stomp
+bind B CLICK BindPadMacro: 
+bind SHIFT-B CLICK BindPadMacro:bres
+bind F8 STARTAUTORUN
+bind CTRL-S CLICK BindPadMacro:charge 2
+bind ALT-Z RAIDTARGET3
+bind END CLICK BindPadMacro:Thorns
+bind HOME CLICK BindPadMacro:Mark of the Wild
+bind CTRL-R CLICK BindPadMacro:cancelform
+bind CTRL-Q CLICK BindPadMacro:barkskin
+bind CTRL-W CLICK BindPadMacro:mount
+bind CTRL-E CLICK BindPadMacro:cat
+bind CTRL-T CLICK BindPadMacro: travel
+bind CTRL-A CLICK BindPadMacro:innervate
+bind CTRL-B CLICK BindPadMacro:hiber
+bind SHIFT-C MULTIACTIONBAR2BUTTON9
+bind ` CLICK BindPadMacro:omen
+bind CTRL-Z CLICK BindPadMacro:wrath
+bind CTRL-X CLICK BindPadMacro:trinket
+bind CTRL-C CLICK BindPadMacro:r12 moonfire
+bind CTRL-` NONE
+bind ] TOGGLECHARACTER0
+bind ALT-Q RAIDTARGET8
+bind ALT-W RAIDTARGET7
+bind ALT-E RAIDTARGET6
+bind ALT-R RAIDTARGET5
+bind ALT-T RAIDTARGET4
+bind ALT-A NONE
+bind ALT-S CLICK BindPadMacro:doomskul
+bind ALT-D NONE
+bind ALT-G NONE
+bind ALT-X RAIDTARGET2
+bind ALT-C RAIDTARGET1
+bind ALT-V RAIDTARGETNONE
+bind SHIFT-Q CLICK BindPadMacro:bird
+bind SHIFT-W CLICK BindPadMacro:frenzy
+bind SHIFT-E CLICK BindPadMacro:hs
+bind SHIFT-A CLICK BindPadMacro:tranq
+bind SHIFT-Z NONE
+bind SHIFT-X MULTIACTIONBAR2BUTTON8
+bind SHIFT-` MULTIACTIONBAR2BUTTON12
+bind [ OPENALLBAGS
+bind ALT-CTRL-SHIFT-Q CLICK BindPadMacro:clone 1
+bind ALT-CTRL-SHIFT-W CLICK BindPadMacro: clone 2
+bind ALT-CTRL-SHIFT-E CLICK BindPadMacro:clone 3
+bind ALT-CTRL-SHIFT-R CLICK BindPadMacro:root 1
+bind ALT-CTRL-SHIFT-T CLICK BindPadMacro: root 2
+bind ALT-CTRL-SHIFT-A CLICK BindPadMacro:Nature's Swiftness
+bind ALT-CTRL-SHIFT-S NONE
+bind ALT-CTRL-SHIFT-D CLICK BindPadMacro:charge 3
+bind ALT-CTRL-SHIFT-F MULTIACTIONBAR4BUTTON4
+bind ALT-CTRL-SHIFT-G CLICK BindPadMacro:root 3
+bind ALT-CTRL-SHIFT-Z CLICK BindPadMacro:clone
+bind ALT-CTRL-SHIFT-X CLICK BindPadMacro:roots
+bind ALT-1 CLICK BindPadMacro:arena 1
+bind ALT-2 CLICK BindPadMacro:arena 2
+bind ALT-3 CLICK BindPadMacro:arena 3
+bind ALT-4 CLICK BindPadKey:SPELL Demoralizing Roar
+bind SHIFT-DELETE CLICK BindPadMacro:pvp drink
+bind ALT-CTRL-SHIFT-1 CLICK BindPadMacro:focus in
+bind \ INTERACTTARGET
+bind CTRL-G CLICK BindPadMacro:ns hiber
+bind SHIFT-F NONE
+bind SHIFT-G NONE
+bind ALT-CTRL-SHIFT-B NONE
+bind ALT-CTRL-SHIFT-HOME NONE
+bind ALT-CTRL-SHIFT-END NONE
+bind CTRL-SPACE CLICK BindPadMacro:staff
+bind ALT-SPACE CLICK BindPadMacro:mh
+bind ALT-CTRL-SHIFT-SPACE CLICK BindPadMacro:r1cane
+modifiedclick NONE SELFCAST

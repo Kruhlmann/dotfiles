@@ -1,9 +1,9 @@
 #!/usr/bin/env sh
 
-pre_install
+pre_install devel
 
 needs_install() {
-    command -v /usr/bin/polybar >/dev/null || return 1
+    command -v /usr/bin/polybar >/dev/null || return 0
 }
 
 setup() {
@@ -11,5 +11,5 @@ setup() {
 }
 
 postinstall() {
-    ( "$HOME/.scripts/launch_polybar" >/dev/null &2>/dev/null & )
+    alacritty -e "$HOME/.scripts/launch_polybar"
 }

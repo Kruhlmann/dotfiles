@@ -1,0 +1,17 @@
+
+GladiatorlosSADB = {
+	["profileKeys"] = {
+		["Gehs - Firemaw"] = "Default",
+		["Gæs - Firemaw"] = "Default",
+		["Ges - Firemaw"] = "Default",
+		["Machiavellia - Firemaw"] = "Default",
+		["Benfinegold - Firemaw"] = "Default",
+		["Gesbank - Firemaw"] = "Default",
+	},
+	["profiles"] = {
+		["Default"] = {
+			["interruptedfriendly"] = false,
+			["battleground"] = false,
+		},
+	},
+}

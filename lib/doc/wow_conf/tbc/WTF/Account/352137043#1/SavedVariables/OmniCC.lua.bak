@@ -1,0 +1,55 @@
+
+OmniCCDB = {
+	["profileKeys"] = {
+		["Pieton - Bigglesworth"] = "Default",
+	},
+	["global"] = {
+		["dbVersion"] = 6,
+		["addonVersion"] = "9.1.0",
+	},
+	["profiles"] = {
+		["Default"] = {
+			["rules"] = {
+				{
+					["id"] = "auras",
+					["patterns"] = {
+						"Aura", -- [1]
+						"Buff", -- [2]
+						"Debuff", -- [3]
+					},
+					["name"] = "Auras",
+					["enabled"] = false,
+				}, -- [1]
+				{
+					["id"] = "plates",
+					["patterns"] = {
+						"Plate", -- [1]
+					},
+					["name"] = "Unit Nameplates",
+					["enabled"] = false,
+				}, -- [2]
+				{
+					["id"] = "actions",
+					["patterns"] = {
+						"ActionButton", -- [1]
+					},
+					["name"] = "ActionBars",
+					["enabled"] = false,
+				}, -- [3]
+			},
+			["themes"] = {
+				["Default"] = {
+					["textStyles"] = {
+						["soon"] = {
+						},
+						["seconds"] = {
+						},
+						["minutes"] = {
+						},
+					},
+				},
+			},
+		},
+	},
+}
+OmniCC4Config = nil

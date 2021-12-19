@@ -1,0 +1,7 @@
+## Interface: 20501
+## Title: Dismount at Flight Master
+## Notes: Dismounts when flight master window displays available flight paths.
+## Author: Icediamond
+## Version: 1
+
+DismountAtFlightMaster.lua

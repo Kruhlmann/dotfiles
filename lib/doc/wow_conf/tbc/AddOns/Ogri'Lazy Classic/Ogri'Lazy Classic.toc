@@ -1,0 +1,12 @@
+## Interface: 20502
+## Title: Ogri'Lazy Classic
+## Notes: Memory span of a goldfish + Apexis Relics = No problem!
+## Notes-frFR: Aide pour les combinaisons de reliques aux monuments apogides.
+## Version: 1.1
+## Author: godkiller1242
+## X-Website: https://www.townlong-yak.com/ogri-lazy
+## SavedVariables: Relic_ShowTooltip, Relic_UnbindCombat, Relic_KeyBindings, Relic_EnableHotkeys
+Relic.locale.lua
+Relic.ui.xml
+Relic.ui.lua
+Relic.config.lua

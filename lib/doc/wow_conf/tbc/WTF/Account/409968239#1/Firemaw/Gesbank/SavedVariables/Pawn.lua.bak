@@ -1,0 +1,18 @@
+
+PawnOptions = {
+	["LastVersion"] = 2.053,
+	["LastPlayerFullName"] = "Gesbank-Firemaw",
+	["AutoSelectScales"] = false,
+	["ItemLevels"] = {
+		[7] = {
+			["ID"] = 1396,
+			["Level"] = 1,
+			["Link"] = "|cff9d9d9d|Hitem:1396::::::::1::::::::|h[Acolyte's Pants]|h|r",
+		},
+	},
+}
+PawnMrRobotScaleProviderOptions = nil
+PawnClassicScaleProviderOptions = {
+	["LastClass"] = "WARLOCK",
+	["LastAdded"] = 2,
+}

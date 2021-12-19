@@ -1,0 +1,89 @@
+2.5.68 - 17th November 2021
+- Added an animation slider setting to 'Enhance dressup' ('Interface').
+- Added a configuration panel for 'Accept resurrection' ('Automation') so you can choose whether combat resurrection should be excluded.
+- Added a 'Guild' setting to the 'Social' page which allows you to choose whether the 'Social' page options should apply to guild members or not (previously, 'Social' page options always applied to guild members).
+- Added 'Yawns' to 'Mute game sounds' ('System').  If checked, yawns from hunter pet cats will be muted.
+
+2.5.67 - 10th November 2021
+- Added a new setting to 'Enhance dressup' ('Interface') which adds item buttons to the dressing room.  Added a 'Show me' button and a button to toggle the new item buttons.  The 'Remove tabard' button is now part of the new item buttons.
+- Added a new option 'Hide action button text' ('Text').  If enabled, macro and keybind text will not be shown on action buttons.
+
+2.5.66 - 4th November 2021
+- Added a new option 'More font sizes' ('Chat').  If enabled, additional font sizes will be available in the chat frame font size menu.
+
+2.5.64 - 29th October 2021
+- Replaced packager to fix CurseForge App issue.
+
+2.5.62 - 28th October 2021
+- The 'Enhance dressup' option ('Interface') now shows a 'Show target model' button in the dressup window.  Requires a player target.  The nude and tabard buttons will apply whichever model is showing.  Transformations such as shapeshift and appearance change will be removed.  The 'Reset' button will set the model back to your character.  Dressup window buttons are now much smaller and have tooltips.
+- The 'Enhance quest log' option now has a setting to toggle showing quest levels.
+- The 'Sell junk automatically' option now has a setting to toggle the vendor summary in chat.
+- The 'Repair automatically' option now has a setting to toggle the repair summary in chat.
+- Fixed a minor issue with 'Recent chat window' ('Chat') which caused the title bar text to overlap the message count for some locales.
+- Fixed a few locale issues with invalid translations.
+
+2.5.61 - 21st October 2021
+- Added 'Chimes' to 'Mute game sounds' ('System').  If enabled, clock hourly chimes will be muted.
+- The 'Enhance tooltip' option ('Interface') now scales Total RP 3 tooltips.
+
+2.5.59 - 13th October 2021
+- Added a new option called 'Show druid power bar' ('Interface').  If enabled, a druid power bar will be shown in the player frame while you are playing as a shapeshifted druid.
+- The 'Dismount me' option ('System') will now work with Shaman Ghost Wolf.  Added a new setting to show an unshift buton on the flight map when playing as a shapeshifted druid or shaman.  The setting to dismount when selecting a flight destination has been removed as that functionality is now built into the game.
+- The 'Release in PvP' option ('Automation') now has a configuration panel that lets you exclude Alterac Valley.  You can also set a delay timer before you are automatically released.  You can hold shift as the timer is ending to cancel automatic release.
+
+2.5.58 - 29th September 2021
+- Quests from Soridormi and Arazmodu (The Scale of the Sands, Caverns of Time) will no longer be selected, accepted or turned-in automatically.
+
+2.5.55 - 16th September 2021
+- Updated for World of Warcraft patch 2.5.2.
+- Added guild bank support for 'Repair automatically ('Automation').
+
+2.5.53 - 19th August 2021
+- Fixed issue caused by malformed translations.
+
+2.5.48 - 5th August 2021
+- Added 'Gyrocopters' to 'Mute game sounds' ('System').  This includes the engineering flying machine mounts.
+
+2.5.47 - 22nd July 2021
+- Improved quest automation for Aldor/Scryer repeatable reputation quests in Shattrath.
+
+2.5.44 - 30th June 2021
+- Updated Classic Profession Filter addon compatibility fixes for 'Enhance professions' ('Interface') to support the latest version.  If you use Classic Profession Filter addon, you need to update it.
+
+2.5.43 - 24th June 2021
+- Fixed a situational issue with 'Faster auto loot' ('System') which caused the loot window to sometimes remain open if you are in a group using free for all loot with multiple group members looting the same corpse at the same time.
+- Updated the tooltip for 'Invite from whispers' ('Social') to highlight that an invite will not sent in response a Battle.net message if the invite recipient is showing offline.
+
+2.5.42 - 16th June 2021
+- Added a new setting to 'Enhance tooltip' ('Interface') which allows you to see guild ranks for players who are not in your guild.  It's disabled by default.
+- Fixed a compatibility issue with 'Enhance professions' and 'Classic profession filter' addon.
+- Removed the 'Class icon portraits' option ('Frames') due to performance issues.  There are standalone addons available for this feature if you need it.
+
+2.5.41 - 9th June 2021
+- Added a note about framerate to the 'Class icon portraits' ('Frames') tooltip.
+
+2.5.39 - 6th June 2021
+- For 'Automate quests' ('Automation'), quests from Archmage Leryda (The Violet Eye) will no longer be selected, accepted or turned-in automatically.
+- Updated translations.
+
+2.5.38 - 2nd June 2021
+- For 'Automate quests' ('Automation'), quests from BCC escort quest givers will not be accepted automatically.  This applies to Ranger Lilatha (Escape from the Catacombs), Anchorite Truuen (Tomb of the Lightbringer), Magwin (A Cry For Help), Fhwoor (Fhwoor Smash!), Kayra Longmane (Escape from Umbrafen), Mag'har Captive (The Totem of Kar'dash, Horde), Kurenai Captive (The Totem of Kar'dash, Alliance), Isla Starmane (Escape from Firewing Point!), Maxx A. Million Mk. V (Mark V is Alive!), Cryo-Engineer Sha'heen (Someone Else's Hard Work Pays Off), Drijya (Sabotage the Warp-Gate!), Bessy (When the Cows Come Home), Image of Commander Ameer (Delivering the Message), Captured Protectorate Vanguard (Escape from the Staging Grounds), Earthmender Wilda (Escape from Coilskar Cistern), Skywing (Skywing), Chief Archaeologist Letoll (Digging Through Bones) and Skyguard Prisoner (Escape from Skettis).  Many thanks to drejjmit for supplying the list.
+- The 'Manage widget' configuration panel will now show a warning if Titan Panel is preventing the widget frame position from saving correctly.. 
+- The 'Dismount automatically' option ('System') is now called 'Dismount me'.  It now has a configuration panel so you can set which dismount rules you want to use including a new setting that dismounts you when you instruct a flight master to open the flight map.
+
+2.5.37 - 26th May 2021
+- The 'Dismount automatically' option ('System') will no longer dismount you if you are out of range of your target.
+
+2.5.33 - 21st May 2021
+- The 'Stand and dismount' option is now called 'Dismount automatically'.  Most of what it did before is now included in the game.  So now, the option will dismount you when you select a flight location or when you attempt to cast a spell regardless of whether you have enough resource to cast or whether the target is in range.
+- Fixed an issue with 'Recent chat window' which caused a Lua error when attempting to show Battle.net messages.
+- The 'Remove raid restrictions' option has been removed since it's not needed for Burning Crusade Classic.
+
+2.5.32 - 17th May 2021
+- Welcome to Burning Crusade Classic.
+- Leatrix Plus for Burning Crusade Classic is based on Leatrix Plus for World of Warcraft Classic with the changes listed below.
+- Added 'Manage focus' ('Frames'), 'Mute game sounds' ('System') and 'Remove raid restrictions' ('System').
+- Added Burning Crusade zones, dungeons, titles, credits, narration tracks and movies to 'Media'.
+- The 'Enhance dressup' option ('Interface') now adds pan (right-button), zoom (mousewheel) and toggle attributes (middle-click) functionality to the character frame, dressup frame and inspect frame.
+- The 'Class colored frames' option ('Frames') now colors the focus frame too.
+- Thanks to Blizzard for the day one beta access allowing me to bring Leatrix addons to the BCC community.

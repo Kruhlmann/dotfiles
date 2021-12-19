@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+gamemode="$1"
+oauth=$(cat "$HOME/.config/lichess_oauth")
+response=$(curl -H "Authorization: Bearer $oauth" -s https://lichess.org/api/account)
+bullet_rating=$(echo "$response" | jq  ".perfs.$gamemode.rating" --raw-output)
+echo "$bullet_rating"

@@ -1,0 +1,225 @@
+VER 3 0000000000000001 " " "INV_MISC_QUESTIONMARK"
+#showtooltip Taunt
+/cast Defensive Stance
+/cast Taunt
+END
+VER 3 0000000000000009 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/startattack
+/cast Swipe
+END
+VER 3 0000000000000008 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/startattack
+/cast Shred
+END
+VER 3 0000000000000007 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/startattack
+/cast Maul
+END
+VER 3 000000000000000A " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/startattack
+/cast Claw
+END
+VER 3 000000000000000B " " "INV_MISC_QUESTIONMARK"
+#showtooltip Manual Crowd Pummeler
+/use 16
+END
+VER 3 000000000000000E " " "INV_MISC_QUESTIONMARK"
+#showtooltip Greater Stoneshield Potion
+/cancelform
+/use Greater Stoneshield Potion
+/cast Dire Bear Form
+END
+VER 3 000000000000000F " " "INV_MISC_QUESTIONMARK"
+#showtooltip Superior Healing Potion
+/cancelform
+/use Superior Healing Potion
+/cast Dire Bear Form
+END
+VER 3 000000000000000D " " "INV_MISC_QUESTIONMARK"
+#showtooltip Limited Invulnerability Potion
+/cancelform
+/use Limited Invulnerability Potion
+/cast Dire Bear Form
+END
+VER 3 000000000000000C " " "INV_MISC_QUESTIONMARK"
+#showtooltip Free Action Potion
+/cancelform
+/use Free Action Potion
+/cast Dire Bear Form
+END
+VER 3 0000000000000010 " " "INV_MISC_QUESTIONMARK"
+#showtooltip Blessed Qiraji War Hammer
+/equip Blessed Qiraji War Hammer
+/equip Tome of Knowledge
+END
+VER 3 0000000000000011 " " "INV_MISC_QUESTIONMARK"
+#showtooltip Major Mana Potion
+/cancelform
+/use Major Mana Potion
+/cast Cat Form
+END
+VER 3 0000000000000012 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/use 13
+/use 14
+END
+VER 3 0000000000000013 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/use Master Healthstone
+/cast !Dire Bear Form
+END
+VER 3 0000000000000015 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/startattack
+/cast Mangle (Bear)
+END
+VER 3 000000000000001B " " "INV_Misc_QuestionMark"
+#showtooltip
+/cast [@mouseover,help,nodead] [help] [@targettarget,help,nodead] [] Cure Poison
+END
+VER 3 000000000000001A " " "INV_Misc_QuestionMark"
+#showtooltip
+/cast [@mouseover,help,nodead] [help] [@targettarget,help,nodead] [] Cure Disease
+END
+VER 3 0000000000000019 " " "INV_Misc_QuestionMark"
+#showtooltip
+/cast [@mouseover,help,nodead] [help] [@targettarget,help,nodead] [] Chain Heal
+END
+VER 3 0000000000000018 " " "INV_Misc_QuestionMark"
+#showtooltip
+/cast [@mouseover,help,nodead] [help] [@targettarget,help,nodead] [] Healing Wave
+END
+VER 3 0000000000000017 " " "INV_Misc_QuestionMark"
+#showtooltip
+/cast [@mouseover,help,nodead] [help] [@targettarget,help,nodead] [] Lesser Healing Wave
+END
+VER 3 0000000000000033 " " "INV_Misc_QuestionMark"
+#showtooltip
+/cast !Dire Bear Form
+END
+VER 3 0000000000000032 " " "INV_Misc_QuestionMark"
+#showtooltip
+/cancelform
+/cast Hibernate
+END
+VER 3 0000000000000031 " " "INV_Misc_QuestionMark"
+#showtooltip
+/cast [@mouseover,help,nodead] [help] [@targettarget,help,nodead] [] Gift of the Naaru
+END
+VER 3 0000000000000034 " " "INV_Misc_QuestionMark"
+#showtooltip
+/cancelform
+/cast Moonfire
+END
+VER 3 0000000000000014 " focus" "INV_MISC_QUESTIONMARK"
+/focus [@mouseover]
+END
+VER 3 0000000000000006 " roll" "INV_MISC_QUESTIONMARK"
+/roll
+END
+VER 3 000000000000001F "abolish" "INV_Misc_QuestionMark"
+#showtooltip
+/cast [@mouseover,help,nodead] [help] [@targettarget,help,nodead] [] Abolish Poison
+END
+VER 3 0000000000000020 "bear" "132276"
+/use !Dire Bear form
+END
+VER 3 0000000000000002 "Camera" "132092"
+/console cameraDistanceMaxZoomFactor 4
+END
+VER 3 0000000000000021 "cat" "135191"
+/equipslot 16 Terestian's Stranglestaff
+/equip Everbloom Idol
+END
+VER 3 0000000000000022 "cat form" "132115"
+/use !cat form
+END
+VER 3 0000000000000023 "curse" "INV_Misc_QuestionMark"
+#showtooltip
+/cast [@mouseover,help,nodead] [help] [@targettarget,help,nodead] [] Remove Curse
+END
+VER 3 0000000000000003 "Dismount" "132309"
+/dismount
+END
+VER 3 0000000000000024 "haste" "INV_Misc_QuestionMark"
+#showtooltip
+/use Haste Potion
+/cast Dire Bear Form(Shapeshift)
+END
+VER 3 0000000000000025 "healthstone" "INV_Misc_QuestionMark"
+#showtooltip
+/use Master Healthstone
+/cast Dire Bear Form(Shapeshift)
+END
+VER 3 0000000000000026 "HT 10" "INV_Misc_QuestionMark"
+#showtooltip
+/cast [@mouseover,help,nodead] [help] [@targettarget,help,nodead] [] Healing Touch
+END
+VER 3 0000000000000027 "ht 5" "INV_Misc_QuestionMark"
+#showtooltip
+/cast [@mouseover,help,nodead] [help] [@targettarget,help,nodead] [] Healing Touch(Rank 5)
+END
+VER 3 0000000000000028 "innervate" "INV_Misc_QuestionMark"
+#showtooltip
+/use Super Mana Potion
+/cast Cat Form
+END
+VER 3 0000000000000029 "ironshield" "INV_Misc_QuestionMark"
+#showtooltip
+/use Greater Stoneshield Potion
+/cast Dire Bear Form(Shapeshift)
+END
+VER 3 0000000000000005 "Jed" "132092"
+/tar Jed
+END
+VER 3 000000000000002A "mangle" "INV_Misc_QuestionMark"
+#showtooltip
+/cast Mangle (Bear)
+/cancelaura Greater Blessing of Salvation
+/startattack
+END
+VER 3 000000000000002B "nightmare seed" "INV_Misc_QuestionMark"
+#showtooltip
+/use Nightmare Seed
+/cast Dire Bear Form(Shapeshift)
+END
+VER 3 000000000000002C "regrowth" "INV_Misc_QuestionMark"
+#showtooltip
+/cast [@mouseover,help,nodead] [help] [@targettarget,help,nodead] [] Regrowth
+END
+VER 3 000000000000002D "regrowth 4" "INV_Misc_QuestionMark"
+#showtooltip
+/cast [@mouseover,help,nodead] [help] [@targettarget,help,nodead] [] Regrowth(Rank 4)
+END
+VER 3 000000000000002E "rejuv" "INV_Misc_QuestionMark"
+#showtooltip
+/cast [@mouseover,help,nodead] [help] [@targettarget,help,nodead] [] Rejuvenation
+END
+VER 3 000000000000002F "rejuv 5" "INV_Misc_QuestionMark"
+#showtooltip
+/cast [@mouseover,help,nodead] [help] [@targettarget,help,nodead] [] Rejuvenation(Rank 5)
+END
+VER 3 0000000000000030 "swiftm" "INV_Misc_QuestionMark"
+#showtooltip
+/cast [@mouseover,help,nodead] [help] [@targettarget,help,nodead] [] swiftmend
+END
+VER 3 000000000000001C "ZygorAction1" "INV_Misc_QuestionMark"
+#showtooltip Talk to Senator Mehr Stonehallow
+/run ZGV:MCM(4)
+/cleartarget
+/target Senator Mehr Stonehallow
+/run ZGV:MRM()
+END
+VER 3 000000000000001D "ZygorAction1" "INV_Misc_QuestionMark"
+#showtooltip Talk to Orendil Broadleaf
+/run ZGV:MCM(4)
+/cleartarget
+/target Orendil Broadleaf
+/run ZGV:MRM()
+END
+VER 3 000000000000001E "ZygorAction2" "134400"
+END

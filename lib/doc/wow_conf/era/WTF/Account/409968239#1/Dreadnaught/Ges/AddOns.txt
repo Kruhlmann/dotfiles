@@ -1,0 +1,4 @@
+WeakAurasCompanion: enabled
+WeakAurasArchive: enabled
+BindPad: disabled
+ItemRackOptions: enabled

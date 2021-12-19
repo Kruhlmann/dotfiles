@@ -18,6 +18,8 @@ setup() {
 }
 
 postinstall() {
+    [ -d "~/.local/share/nvim/site/pack/packer/start/packer.nvim
+" ] || git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
     /usr/bin/nvim --headless +PackerInstall +qall
     /usr/bin/nvim --headless +PackerSync +qall
     mkdir -p ~/.cache/nvim/{undo,backup,swap}

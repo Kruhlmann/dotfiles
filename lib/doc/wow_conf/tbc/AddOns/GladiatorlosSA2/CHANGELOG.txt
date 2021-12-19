@@ -1,0 +1,80 @@
+https://www.curseforge.com/wow/addons/gladiatorlossa2
+https://github.com/Rhykes/GladiatorlosSA2
+===========================================
+GSA uses the following version number scheme: X.Y.Z (ex: 3.7.2)
+X - Increments following significant code rewrites or major spell library updates. This usually happens with a new expansion.
+Y - Increments with any significant code rewrite that includes major bug fixes or features, or any update that adds new sound files.
+Z - Increments with any update that does not follow the above, such as minor bug fixes, new spells using sounds already in the library, etc.
+If you maintain forks or translations of GSA2, any X or Y increment may require your attention.
+
+Note: I do NOT support ANY version of GSA2 outside of the latest Retail Live and BETA/PTR versions of the addon.
+I do not currently support Classic.
+I am currently working on support for Burning Crusade Classic.
+I will never support older versions for Private Servers.
+Please stop asking. I will not help you.
+===========================================
+- version TBC-1.1 (2.5.2)
+
+General
+* Alerts no longer play in sanctuaries.
+
+===========================================
+- version TBC-1.0 (2.5.1)
+
+NOTE: GSA2 for TBC is designed with Spell Ranks in mind. ALL spell ranks are included on most spells, excluding
+lower ranks specific abilities that don't get an alert-worthy secondary effect (like CC) until the later ranks.
+
+If you are observant enough to notice a spell that might be missing a few ranks, please let me know.
+
+General
+* Added and corrected sound alerts for all intended spells.
+* Tweaked option tooltips to more appropriately reflect classes represented in TBC.
+* Removed options unused in the TBC version of GSA2.
+
+===========================================
+- version TBC-B2 (2.5.1)
+
+General
+* Added Mace Stun to Aura Applied.
+
+Hunter
+* Added Arcane Shot ranks 6+ (it purges) to Cast Success.
+
+Mage
+* Moved Summon Water Elemental from Cast Start to Cast Success.
+
+Paladin
+* Completed spell library update.
+
+Priest
+* Completed spell library update.
+
+Rogue
+* Completed spell library update.
+
+Shaman
+* Completed spell library update.
+
+Warlock
+* Completed spell library update.
+
+Warrior
+* Completed spell library update.
+===========================================
+- version TBC-B1 (2.5.1)
+
+!! This is an early work-in-progress version of GSA2 for Burning Crusade Classic. !!
+Expect incomplete spell libraries and missing audio cues.
+I am only interested in lua errors and sounds that play in the options menu but not during actual combat.
+
+General
+* Updated version info.
+
+Druid
+* Completed spell library update.
+
+Hunter
+* Completed spell library update.
+
+Mage
+* Completed spell library update.

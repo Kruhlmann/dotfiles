@@ -1,0 +1,39 @@
+## Interface: 20502
+## Title: LittleBuster
+## Notes: Break those ratings down into actual percentages.
+## Author: PingZing
+## Version: 1.13.0
+## SavedVariablesPerCharacter: LB_Config
+## X-Email: psychozagal@gmail.com
+## X-License: GPL v3
+
+# Utilities
+mathExtensions.lua
+strExtensions.lua
+mappings.lua
+ratingConversion.lua
+
+# Localized strings
+strings/localeCore.lua
+strings/strings.deDE.lua
+strings/strings.enUS.lua
+strings/strings.esMX.lua
+strings/strings.ruRU.lua
+strings/strings.ptBR.lua
+strings/strings.frFR.lua
+strings/strings.zhCN.lua
+strings/strings.zhTW.lua
+
+# Config
+config/config.xml 
+
+# Attributes
+attributes/common.lua
+attributes/agility.lua
+attributes/intellect.lua
+attributes/spirit.lua
+attributes/stamina.lua
+attributes/strength.lua
+
+# Entry point
+littleBuster.lua

@@ -1,0 +1,117 @@
+bind W CLICK BindPadMacro:block
+bind UP CAMERAZOOMIN
+bind S CLICK BindPadMacro:revenge
+bind DOWN CAMERAZOOMOUT
+bind A CLICK BindPadMacro:ww
+bind LEFT NONE
+bind D STRAFELEFT
+bind RIGHT NONE
+bind Q CLICK BindPadMacro:hstrike
+bind E CLICK BindPadMacro:devastate
+bind X CLICK BindPadMacro:trinket 1
+bind Z CLICK BindPadMacro:demo
+bind NUMLOCK NONE
+bind BUTTON4 NONE
+bind INSERT SCREENSHOT
+bind NUMPADDIVIDE TOGGLEAUTORUN
+bind R CLICK BindPadMacro:ss
+bind SHIFT-R NONE
+bind 1 CLICK BindPadMacro:taunt
+bind 2 CLICK BindPadMacro:intercept
+bind 3 CLICK BindPadMacro:wall
+bind 4 CLICK BindPadMacro:cs
+bind 5 CLICK BindPadMacro:intervene
+bind 6 NONE
+bind 7 NONE
+bind 8 NONE
+bind 9 NONE
+bind 0 NONE
+bind - NONE
+bind = NONE
+bind CTRL-F1 NONE
+bind CTRL-F2 NONE
+bind CTRL-F3 NONE
+bind CTRL-1 CLICK BindPadMacro:rush
+bind CTRL-2 CLICK BindPadMacro:reflect
+bind CTRL-3 CLICK BindPadMacro:rend
+bind CTRL-4 CLICK BindPadMacro:bs
+bind CTRL-5 CLICK BindPadKey:ITEM Heavy Netherweave Bandage
+bind CTRL-6 RAIDTARGET3
+bind CTRL-7 RAIDTARGET2
+bind CTRL-8 RAIDTARGET1
+bind SHIFT-1 NONE
+bind SHIFT-2 NONE
+bind SHIFT-3 NONE
+bind SHIFT-4 NONE
+bind SHIFT-5 NONE
+bind SHIFT-MOUSEWHEELUP NONE
+bind SHIFT-MOUSEWHEELDOWN NONE
+bind F1 NONE
+bind F2 NONE
+bind F3 NONE
+bind G CLICK BindPadMacro:zerker
+bind F STRAFERIGHT
+bind V CLICK BindPadMacro:execute
+bind SHIFT-V CLICK BindPadKey:SPELL Shoot
+bind CTRL-V CLICK BindPadMacro:zerking
+bind T CLICK BindPadMacro:conc
+bind SHIFT-T NONE
+bind C CLICK BindPadMacro:interrupt
+bind B CLICK BindPadMacro:slow
+bind SHIFT-B NONE
+bind F8 NONE
+bind H MULTIACTIONBAR1BUTTON6
+bind PRINTSCREEN NONE
+bind CTRL-S CLICK BindPadMacro:charge
+bind ALT-Z NONE
+bind MOUSEWHEELUP NONE
+bind MOUSEWHEELDOWN NONE
+bind END ELVUIBAR2BUTTON12
+bind HOME ELVUIBAR2BUTTON11
+bind CTRL-R CLICK BindPadMacro:aoe taunt
+bind CTRL-Q CLICK BindPadMacro:fear
+bind CTRL-W CLICK BindPadMacro:mount
+bind CTRL-E CLICK BindPadMacro:cleave
+bind CTRL-T CLICK BindPadMacro:ls
+bind CTRL-A CLICK BindPadMacro:tclap
+bind CTRL-B CLICK BindPadMacro:disarm
+bind SHIFT-C NONE
+bind Y NONE
+bind ` ACTIONBUTTON12
+bind SHIFT-Q NONE
+bind SHIFT-E CLICK BindPadMacro:hs
+bind SHIFT-F MULTIACTIONBAR2BUTTON4
+bind SHIFT-H NONE
+bind SHIFT-G MULTIACTIONBAR2BUTTON10
+bind CTRL-F NONE
+bind SHIFT-Z MULTIACTIONBAR2BUTTON9
+bind SHIFT-X MULTIACTIONBAR1BUTTON8
+bind SHIFT-Y MULTIACTIONBAR2BUTTON8
+bind CTRL-` MULTIACTIONBAR3BUTTON12
+bind SHIFT-` NONE
+bind ALT-X MULTIACTIONBAR1BUTTON9
+bind CTRL-X CLICK BindPadMacro:trinket 2
+bind CTRL-H CLICK BindPadKey:ITEM Unstable Warp Rift Generator
+bind \ INTERACTTARGET
+bind ALT-C NONE
+bind ' NONE
+bind ] TOGGLECHARACTER0
+bind ALT-F NONE
+bind ALT-1 NONE
+bind ALT-2 NONE
+bind ALT-Q RAIDTARGET8
+bind ALT-W RAIDTARGET7
+bind ALT-E RAIDTARGET6
+bind ALT-SHIFT-1 CLICK ItemRackGesFiremawFlask set:LeftButton
+bind ALT-SHIFT-4 CLICK ItemRackGesFiremawMaraudon:LeftButton
+bind ALT-SHIFT-2 CLICK ItemRackGesFiremawDW:LeftButton
+bind ALT-SHIFT-3 CLICK ItemRackGesFiremawCloak:LeftButton
+bind ALT-3 NONE
+bind ALT-V NONE
+bind ALT-SHIFT-Q NONE
+bind CTRL-Z CLICK BindPadMacro:dw
+bind CTRL-C CLICK BindPadMacro:over
+bind [ OPENALLBAGS
+bind CTRL-G CLICK BindPadMacro:rage
+bind ALT-R RAIDTARGET5
+bind ALT-T RAIDTARGET4

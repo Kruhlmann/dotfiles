@@ -1,0 +1,3 @@
+WeakAurasCompanion: enabled
+WeakAurasArchive: enabled
+BindPad: disabled

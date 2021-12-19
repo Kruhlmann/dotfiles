@@ -1,0 +1,17 @@
+## Interface: 20400
+## Title: LatMarks
+## Author: Latmask
+## Version: 1.0
+## Notes: Simple BananaBar like addon for classic.
+## DefaultState: Enabled
+## LoadOnDemand: 0
+## SavedVariablesPerCharacter: LAT_MARKS_SETTINGS
+libs\LibStub\LibStub.lua
+libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
+libs\LibRangeCheck-2.0\LibRangeCheck-2.0.lua
+libs\LatHurtRange.lua
+CoreUtils.lua
+LatMarksUI.lua
+LatMarksOptionsUI.lua
+LatMarks.lua
+LatMarks.xml

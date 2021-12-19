@@ -1,0 +1,28 @@
+
+GatherMate2DB = {
+	["profileKeys"] = {
+		["Gesbank - Dreadnaught"] = "Default",
+		["Ges - Dreadnaught"] = "Default",
+	},
+	["global"] = {
+		["data_version"] = 5,
+	},
+	["profiles"] = {
+		["Default"] = {
+		},
+	},
+}
+GatherMate2HerbDB = {
+}
+GatherMate2MineDB = {
+	[1428] = {
+		[7147391900] = 206,
+		[5759379100] = 214,
+		[8320394200] = 206,
+	},
+}
+GatherMate2FishDB = {
+}
+GatherMate2GasDB = nil
+GatherMate2TreasureDB = {
+}

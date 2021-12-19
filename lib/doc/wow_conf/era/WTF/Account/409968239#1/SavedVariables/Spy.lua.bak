@@ -1,0 +1,98 @@
+
+SpyDB = {
+	["kosData"] = {
+		["Dreadnaught"] = {
+			["Alliance"] = {
+				["Ges"] = {
+					["Slime"] = {
+						["guild"] = "Theramore Boating Club",
+						["zone"] = "Alterac Valley",
+						["loses"] = 10,
+						["class"] = "HUNTER",
+						["added"] = 1638574849,
+						["isEnemy"] = true,
+						["kos"] = 1,
+						["race"] = "Orc",
+						["name"] = "Slime",
+						["subZone"] = "",
+						["time"] = 1638575057,
+						["level"] = 60,
+						["isGuess"] = false,
+						["wins"] = 2,
+					},
+				},
+				["Gesbank"] = {
+					["Slime"] = {
+						["guild"] = "Theramore Boating Club",
+						["zone"] = "Alterac Valley",
+						["loses"] = 10,
+						["class"] = "HUNTER",
+						["added"] = 1638574849,
+						["isEnemy"] = true,
+						["race"] = "Orc",
+						["time"] = 1638575057,
+						["subZone"] = "",
+						["level"] = 60,
+						["wins"] = 2,
+						["name"] = "Slime",
+					},
+				},
+			},
+		},
+	},
+	["removeKOSData"] = {
+		["Dreadnaught"] = {
+			["Alliance"] = {
+			},
+		},
+	},
+	["profileKeys"] = {
+		["Gesbank - Dreadnaught"] = "Gesbank - Dreadnaught",
+		["Ges - Dreadnaught"] = "Ges - Dreadnaught",
+	},
+	["profiles"] = {
+		["Gesbank - Dreadnaught"] = {
+			["AppendUnitNameCheck"] = true,
+			["MainWindowVis"] = false,
+			["Colors"] = {
+				["Bar"] = {
+					["Bar Text"] = {
+						["a"] = 1,
+					},
+				},
+			},
+			["AppendUnitKoSCheck"] = true,
+		},
+		["Ges - Dreadnaught"] = {
+			["MainWindow"] = {
+				["Position"] = {
+					["y"] = 448.7548828125,
+					["x"] = 1020.863037109375,
+					["w"] = 159.9998626708984,
+					["h"] = 35.00003433227539,
+				},
+			},
+			["Colors"] = {
+				["Alert"] = {
+					["Stealth Text"] = {
+						["a"] = 1,
+					},
+					["KOS Text"] = {
+						["a"] = 1,
+					},
+					["Name Text"] = {
+						["a"] = 1,
+					},
+				},
+				["Bar"] = {
+					["Bar Text"] = {
+						["a"] = 1,
+					},
+				},
+			},
+			["AppendUnitNameCheck"] = true,
+			["MainWindowVis"] = false,
+			["AppendUnitKoSCheck"] = true,
+		},
+	},
+}

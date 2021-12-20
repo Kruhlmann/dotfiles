@@ -91,10 +91,10 @@ local on_attach_def = function(client)
         vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
     end
 end
-local on_attach_null_ls = function(client, bufnr) 
-  if client.resolved_capabilities.document_formatting then
-    vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
-  end
+local on_attach_null_ls = function(client, bufnr)
+    if client.resolved_capabilities.document_formatting then
+        vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+    end
 end
 
 local on_attach = function(client, bufnr)
@@ -153,12 +153,6 @@ for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup({on_attach = on_attach, capabilities = capabilities})
 end
 
-lspconfig.jdtls.setup {
-    root_dir = lspconfig.util.root_pattern(".git"),
-    on_attach = on_attach,
-    cmd = {"jdtls"},
-    capabilities = capabilities
-}
 
 lspconfig["null-ls"].setup {
     on_attach = on_attach_null_ls,
@@ -190,4 +184,4 @@ local luadev = require("lua-dev").setup {
         capabilities = capabilities
     }
 }
--- lspconfig.sumneko_lua.setup(luadev)
+lspconfig.sumneko_lua.setup(luadev)

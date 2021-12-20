@@ -4,11 +4,14 @@ cmd("packadd packer.nvim")
 
 return require("packer").startup(function(use)
     use {"wbthomason/packer.nvim", opt = true}
+    use {'mfussenegger/nvim-jdtls'}
+    use {'RishabhRD/popfix'}
     use {
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
         config = [[require("plugins.config.treesitter")]]
     }
+    use {"RishabhRD/nvim-lsputils"}
     use {"ludovicchabant/vim-gutentags"}
     use {
         "nvim-telescope/telescope.nvim",

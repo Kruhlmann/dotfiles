@@ -8,4 +8,5 @@ VENV="$(pwd | sha256sum | tr -d '[:space:]-')"
 
 echo "Activating virtual environment $VENVDIR/$VENV"
 . "$VENVDIR/$VENV/bin/activate"
-pip install pre_commit neovim rope black
+pip install --upgrade pip
+pip install pre_commit neovim rope black pytest isort

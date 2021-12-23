@@ -12,5 +12,5 @@ setup() {
 
 postinstall() {
     sudo systemctl enable --now bluetoothd >/dev/null
-    echo "User tor\nLog notice syslog\nDataDirectory /var/lib/tor" | sudo tee /etc/tor/torrc
+    echo -e "User tor\nLog notice syslog\nDataDirectory /var/lib/tor" | sudo tee /etc/tor/torrc
 }

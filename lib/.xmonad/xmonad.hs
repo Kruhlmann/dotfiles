@@ -130,7 +130,7 @@ curLayout = gets windowset >>= return . description . W.layout . W.workspace . W
 
 -- spawn vars
 spawnRofi = "rofi -modi drun -show drun -display-drun 'Run'"
-spawnGnomeScreenshot = "gnome-screenshot --area --border-effect=shadow --file=/tmp/screenshot && xclip -i -selection clipboard -target image/png < /tmp/screenshot"
+spawnMaim = "maim -u -s | xclip -selection clipboard -t image/png"
 
 -- sizes
 size_gap = 10
@@ -155,8 +155,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $ [
     ((modm,               xK_Return ), spawn $ "alacritty"),
     ((modm,               xK_d      ), spawn spawnRofi),
     ((modm,               xK_s      ), spawn "rofi -show ssh"),
-    ((modm .|. shiftMask, xK_s      ), spawn spawnGnomeScreenshot ),
-    ((modm .|. shiftMask, xK_l      ), spawn "xscreensaver-command --lock"),
+    ((modm .|. shiftMask, xK_s      ), spawn spawnMaim ),
     ((modm .|. shiftMask, xK_l      ), spawn "betterlockscreen -l"),
     ((modm              , xK_u      ), spawn "alacritty --name floatterm -e fzmp"),
     ((modm              , xK_g      ), spawn "alacritty --name floatterm -e lazygit"),

@@ -2,7 +2,7 @@ bind W CLICK BindPadMacro:rejuv
 bind S CLICK BindPadMacro:charge 1
 bind DOWN NONE
 bind A CLICK BindPadMacro:ns
-bind LEFT CLICK BindPadKey:SPELL Fishing
+bind LEFT CLICK BindPadMacro:moonglade
 bind D STRAFELEFT
 bind RIGHT CLICK BindPadMacro:disenchant
 bind Q CLICK BindPadMacro:lifebloom
@@ -40,7 +40,7 @@ bind SHIFT-5 CLICK BindPadMacro:diamond
 bind F1 TARGETPARTYMEMBER2
 bind F3 TARGETSELF
 bind F4 NONE
-bind G CLICK BindPadMacro:charge
+bind G CLICK BindPadMacro:belt
 bind F STRAFERIGHT
 bind V CLICK BindPadMacro:grasp
 bind SHIFT-V NONE

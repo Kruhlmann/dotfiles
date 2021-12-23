@@ -50,7 +50,7 @@ bind SHIFT-T CLICK BindPadMacro:long root
 bind C CLICK BindPadMacro:stomp
 bind B CLICK BindPadMacro: 
 bind SHIFT-B CLICK BindPadMacro:bres
-bind F8 STARTAUTORUN
+bind F8 NONE
 bind CTRL-S CLICK BindPadMacro:charge 2
 bind ALT-Z RAIDTARGET3
 bind END CLICK BindPadMacro:Thorns

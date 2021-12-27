@@ -7,7 +7,7 @@ needs_install() {
 }
 
 setup() {
-    depends_on bitwarden-cli
+    depends_on bitwarden-cli-bin jq
 }
 
 postinstall() {

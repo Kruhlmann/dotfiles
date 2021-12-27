@@ -3,7 +3,7 @@
 pre_install bitwarden
 
 uid="$(whoami)"
-sudo_file="/etc/sudoers.d/99-$id-nopasswd"
+sudo_file="/etc/sudoers.d/99-$uid-nopasswd"
 
 needs_install() {
     return 0

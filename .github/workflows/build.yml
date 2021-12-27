@@ -9,6 +9,5 @@ jobs:
     runs-on: archlinux
     steps:
     - uses: actions/checkout@v2
+    - uses: kruhlmann/dotfiles@v1
     - name: Install dotfiles
-      run: |
-          ./install

@@ -5,6 +5,6 @@ set -e
 cd ~/doc/src/github.com/kruhlmann/dotfiles
 git add lib
 git commit --quiet -am "Updated dotfiles" || true
-git pull --quiet
+git pull --quiet --rebase
 git push --quiet
 ./install --verbose

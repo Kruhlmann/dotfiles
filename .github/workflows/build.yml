@@ -11,5 +11,4 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install dotfiles
       run: |
-          sudo apt install neovim zsh
-          bash ./setup
+          ./install

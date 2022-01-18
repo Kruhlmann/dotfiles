@@ -1,4 +1,3 @@
-local au = require('au')
 local fn = vim.fn
 local cmd = vim.cmd
 
@@ -10,10 +9,3 @@ end
 require('mappings')
 require('options')
 require('plugins')
-
-au.BufEnter = {
-    '*.java',
-    function()
-        require'jdtls_config'.setup()
-    end,
-}

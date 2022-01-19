@@ -20,6 +20,7 @@ application/pdf=epdfview.desktop
 application/x-bittorrent=deluge.desktop
 x-scheme-handler/about=org.qutebrowser.qutebrowser.desktop
 x-scheme-handler/unknown=org.qutebrowser.qutebrowser.desktop
+video/mp4=mpv-usercreated-0.desktop;
 
 [Added Associations]
 x-scheme-handler/http=org.qutebrowser.qutebrowser.desktop;
@@ -42,4 +43,4 @@ application/pdf=epdfview.desktop;
 application/x-bittorrent=deluge.desktop;
 inode/directory=exo-file-manager.desktop;
 x-scheme-handler/trash=exo-file-manager.desktop;
-
+video/mp4=mpv-usercreated-0.desktop;

@@ -1,3 +1,6 @@
 [submodule "lib/doc/src/github.com/kruhlmann/dwm"]
 	path = lib/doc/src/github.com/kruhlmann/dwm
 	url = git@github.com:Kruhlmann/dwm
+[submodule "lib/doc/wow_conf"]
+	path = lib/doc/wow_conf
+	url = git@github.com:Kruhlmann/wow_conf.git

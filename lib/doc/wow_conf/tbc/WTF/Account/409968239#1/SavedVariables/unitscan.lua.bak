@@ -1,3 +1,0 @@
-
-unitscan_targets = {
-}

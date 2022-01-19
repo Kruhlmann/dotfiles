@@ -1,2 +1,0 @@
-
-HemlockDB = nil

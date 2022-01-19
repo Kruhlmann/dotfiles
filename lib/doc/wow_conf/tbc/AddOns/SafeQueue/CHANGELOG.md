@@ -1,3 +1,0 @@
-- Try to enter battle using multiple methods
-- Use LibFrameFade to eliminate potential taints
-- Enter Battle button will reload the UI if all enter methods are tainted

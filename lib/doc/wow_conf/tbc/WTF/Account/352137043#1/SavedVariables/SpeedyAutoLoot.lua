@@ -1,5 +1,0 @@
-
-SpeedyAutoLootDB = {
-	["global"] = {
-	},
-}

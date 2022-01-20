@@ -54,6 +54,12 @@ return require("packer").startup(function(use)
         ft = "markdown"
     }
     use {
+        "tzachar/cmp-tabnine",
+        run = "./install.sh",
+        requires = 'hrsh7th/nvim-cmp',
+        config = [[require("plugins.config.tabnine")]]
+    }
+    use {
         "Kruhlmann/gruvbox-with-ANGRY-comments",
         config = [[require("plugins.config.gruvbox")]]
     }
@@ -86,10 +92,12 @@ return require("packer").startup(function(use)
     use {"lervag/vimtex", config = [[require("plugins.config.vimtex")]]}
     use {"folke/lua-dev.nvim"}
     use {'ms-jpq/coq.artifacts', branch = 'artifacts'}
+    use {'ms-jpq/coq_nvim', branch = 'coq'}
+    use {'ms-jpq/coq.thirdparty', branch = '3p'}
     use {"junegunn/gv.vim", requires = {"tpope/vim-fugitive"}}
-    use {"hrsh7th/nvim-cmp"}
+    use {"hrsh7th/nvim-cmp", requires = {"onsails/lspkind-nvim"}, config = [[require("plugins.config.nvim_cmp")]]}
     use {"hrsh7th/cmp-nvim-lsp"}
-    use {"glepnir/lspsaga.nvim"}
+    use {"tami5/lspsaga.nvim"}
     use {"jose-elias-alvarez/null-ls.nvim"}
     use {"jose-elias-alvarez/nvim-lsp-ts-utils"}
 end)

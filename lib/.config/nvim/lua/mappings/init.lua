@@ -61,10 +61,10 @@ map('v', '<leader>la',
 map('n', '<leader>le',
     '<cmd>lua require("lspsaga.diagnostic").show_line_diagnostics()<CR>', opts)
 
-map("n", "<leader>ltf", ":TSLspOrganize<CR>", opts)
-map("n", "<leader>ltq", ":TSLspFixCurrent<CR>", opts)
-map("n", "<leader>ltr", ":TSLspRenameFile<CR>", opts)
-map("n", "<leader>lti", ":TSLspImportAll<CR>", opts)
+-- map("n", "<leader>ltf", ":TSLspOrganize<CR>", opts)
+-- map("n", "<leader>ltq", ":TSLspFixCurrent<CR>", opts)
+-- map("n", "<leader>ltr", ":TSLspRenameFile<CR>", opts)
+-- map("n", "<leader>lti", ":TSLspImportAll<CR>", opts)
 
 map("n", "<leader>tf",
     [[<cmd>lua require("telescope.builtin").current_buffer_fuzzy_find()<cr>]],

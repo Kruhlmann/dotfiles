@@ -13,29 +13,24 @@ return require("packer").startup(function(use)
     }
     use {"RishabhRD/nvim-lsputils"}
     use {"ludovicchabant/vim-gutentags"}
-    use {
-        "nvim-telescope/telescope.nvim",
+    use {"nvim-telescope/telescope.nvim",
         requires = {"nvim-lua/popup.nvim", "nvim-lua/plenary.nvim"},
         config = [[require("plugins.config.telescope")]]
     }
-    use {
-        "hoob3rt/lualine.nvim",
+    use {"hoob3rt/lualine.nvim",
         requires = {"kyazdani42/nvim-web-devicons"},
         config = [[require("plugins.config.lualine")]]
     }
     use {"tpope/vim-commentary"}
-    use {
-        "JoosepAlviste/nvim-ts-context-commentstring",
+    use {"JoosepAlviste/nvim-ts-context-commentstring",
         requires = {"tpope/vim-commentary"}
     }
     use {"hkupty/iron.nvim", config = [[require("plugins.config.iron")]]}
-    use {
-        "lewis6991/gitsigns.nvim",
+    use {"lewis6991/gitsigns.nvim",
         config = [[require("plugins.config.gitsigns")]]
     }
     use {"neovim/nvim-lspconfig", config = [[require("plugins.config.lsp")]]}
-    use {
-        "folke/lsp-trouble.nvim",
+    use {"folke/lsp-trouble.nvim",
         requires = {
             "kyazdani42/nvim-web-devicons",
             config = [[require("plugins.config.devicons")]]
@@ -43,8 +38,7 @@ return require("packer").startup(function(use)
         config = [[require("plugins.config.lsptrouble")]]
     }
     use {"folke/which-key.nvim"}
-    use {
-        "AckslD/nvim-whichkey-setup.lua",
+    use {"AckslD/nvim-whichkey-setup.lua",
         config = [[require("plugins.config.which_key")]]
     }
     use {

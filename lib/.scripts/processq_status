@@ -7,9 +7,9 @@ PROCESSQ_USER_REQUIREMENTS_URL="$PROCESSQ_API_HOST/requirement_user_status/"
 
 GAIN_USER=$(cat ~/.cache/gain/user)
 GAIN_PASSWORD=$(cat ~/.cache/gain/password)
-COOKIE_FILE="~/.cache/processq_cookie"
+COOKIE_FILE="$HOME/.cache/processq_cookie"
 
-curl -sk -c "$COOKIE_FILE" --data-urlencode "username=$GAIN_USER" --data-urlencode "password=$GAIN_PASSWORD" -X POST "$PROCESSQ_LOGIN_URL" > /dev/null
+curl -sk --cookie-jar "$COOKIE_FILE" --data-urlencode "username=$GAIN_USER" --data-urlencode "password=$GAIN_PASSWORD" -X POST "$PROCESSQ_LOGIN_URL" > /dev/null
 USER_GID=$(curl -sk -b "$COOKIE_FILE" "$PROCESSQ_USER_GID_URL" | jq -r .gid)
 REQUIREMENT_RESPONSE=$(curl -sk -b "$COOKIE_FILE" -X GET "$PROCESSQ_USER_REQUIREMENTS_URL?gid=$USER_GID" | jq)
 

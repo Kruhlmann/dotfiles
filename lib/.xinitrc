@@ -37,17 +37,13 @@ fi
 xbindkeys
 xset r rate 300 25
 
-#picom --experimental-backends &
-#mpd &
-#nm-applet &
-#bing-wallpaper &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-#redshift &
-#dwmbar &
 
 find ~/.ssh/ -type f -exec grep -l "PRIVATE" {} \; | xargs ssh-add &> /dev/null
 
 #sh "$HOME/.screenlayout/$(hostname)"
 sh "$HOME/.config/hostnamerc.d/$(hostname)"
+
+feh --bg-scale "$HOME/img/wallpaper"
 
 exec xmonad

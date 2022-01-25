@@ -1,5 +1,0 @@
-name: 'dotfiles'
-description: 'install dotfiles'
-runs:
-  using: 'docker'
-  image: 'Dockerfile'

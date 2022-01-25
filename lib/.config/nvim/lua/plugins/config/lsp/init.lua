@@ -3,8 +3,6 @@ vim.g.coq_settings = {
 }
 
 local protocol = require('vim.lsp.protocol')
-local lspconfig = require('lspconfig')
-local coq = require('coq')
 local saga = require("lspsaga")
 
 local buf_map = function(bufnr, mode, lhs, rhs, opts)
@@ -44,7 +42,8 @@ end
 saga.init_lsp_saga()
 local capabilities = protocol.make_client_capabilities()
 
-require "tsserver".setup(on_attach, capabilities, buf_map)
-require "pyright".setup(on_attach, capabilities, buf_map)
-require "null-ls".setup(on_attach, capabilities, buf_map)
-require "sumneko_lua".setup(on_attach, capabilities, buf_map)
+package.path = package.path .. ";/home/ges/doc/src/github.com/kruhlmann/dotfiles/lib/.config/nvim/lua/plugins/config/lsp/?.lua"
+require "tsserver"(on_attach, capabilities, buf_map)
+require "pyright"(on_attach, capabilities, buf_map)
+-- require "null_ls"(on_attach, capabilities, buf_map)
+-- require "sumneko_lua"(on_attach, capabilities, buf_map)

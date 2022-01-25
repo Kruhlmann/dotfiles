@@ -1,4 +1,5 @@
 local lspconfig = require('lspconfig')
+local coq = require('coq')
 
 local setup = function(on_attach, capabilities)
     lspconfig.tsserver.setup(coq.lsp_ensure_capabilities())

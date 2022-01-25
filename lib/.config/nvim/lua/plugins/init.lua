@@ -89,7 +89,6 @@ return require("packer").startup(function(use)
     use {'ms-jpq/coq_nvim', branch = 'coq'}
     use {'ms-jpq/coq.thirdparty', branch = '3p'}
     use {"junegunn/gv.vim", requires = {"tpope/vim-fugitive"}}
-    use {"hrsh7th/nvim-cmp", requires = {"onsails/lspkind-nvim"}, config = [[require("plugins.config.nvim_cmp")]]}
     use {"hrsh7th/cmp-nvim-lsp"}
     use {"tami5/lspsaga.nvim"}
     use {"jose-elias-alvarez/null-ls.nvim"}

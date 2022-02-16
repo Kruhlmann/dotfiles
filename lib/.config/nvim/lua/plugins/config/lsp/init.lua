@@ -1,5 +1,6 @@
 vim.g.coq_settings = {
-    ["keymap.pre_select"] = true
+    ["keymap.pre_select"] = true,
+    ["auto_start"] = true,
 }
 
 local protocol = require('vim.lsp.protocol')
@@ -45,5 +46,6 @@ local capabilities = protocol.make_client_capabilities()
 package.path = package.path .. ";/home/ges/doc/src/github.com/kruhlmann/dotfiles/lib/.config/nvim/lua/plugins/config/lsp/?.lua"
 require "tsserver"(on_attach, capabilities, buf_map)
 require "pyright"(on_attach, capabilities, buf_map)
--- require "null_ls"(on_attach, capabilities, buf_map)
+require "null_ls"(on_attach, capabilities, buf_map)
+require "solargraph"(on_attach, capabilities, buf_map)
 -- require "sumneko_lua"(on_attach, capabilities, buf_map)

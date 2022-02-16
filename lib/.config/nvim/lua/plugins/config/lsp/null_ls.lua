@@ -1,7 +1,7 @@
-local lspconfig = require('lspconfig')
+local lspconfig = require("lspconfig")
 local null_ls = require("null-ls")
 
-local setup = function(on_attach, capabilities)
+local setup = function(on_attach, capabilities, buf_map)
     null_ls.setup({
         sources = {
             null_ls.builtins.formatting.black, null_ls.builtins.formatting.isort,
@@ -19,7 +19,8 @@ local setup = function(on_attach, capabilities)
             null_ls.builtins.formatting.uncrustify,
             null_ls.builtins.diagnostics.luacheck,
             null_ls.builtins.diagnostics.write_good,
-            null_ls.builtins.diagnostics.misspell, null_ls.builtins.diagnostics.vint
+            null_ls.builtins.diagnostics.misspell, null_ls.builtins.diagnostics.vint,
+            null_ls.builtins.completion.spell
         },
         on_attach = on_attach,
     })

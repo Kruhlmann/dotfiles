@@ -1,0 +1,29 @@
+[ $(id -u) -eq 0 ] || exec sudo $0
+umask 0022
+
+HOST=${1:-mo-gitlab.siemens.dk}
+DNS=172.31.0.253
+GW=${DNS}
+
+printf 'Waiting for ZScaler:'
+while ! nslookup ${HOST} ${DNS} >/dev/null 2>&1; do
+  printf '.'
+  sleep 3s
+done
+
+echo 'OK'
+
+cat > /run/dnsmasq/siemens.conf << EOF
+server=/siemens.net/${DNS}
+server=/siemens.com/${DNS}
+server=/siemens.io/${DNS}
+server=/siemens.de/${DNS}
+server=/siemens.dk/${DNS}
+server=/mobnet.dk/${DNS}
+server=/airlink.siemens.dk/10.165.16.10
+server=/kpi.siemens.dk/10.165.3.254
+EOF
+
+systemctl restart dnsmasq
+ip route add 100.64.0.0/10 via ${GW}
+ip route add 149.212.0.0/16 via ${GW}

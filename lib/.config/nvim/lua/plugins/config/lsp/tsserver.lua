@@ -34,7 +34,7 @@ local setup = function(on_attach, capabilities)
                 Enum = {},
             },
             update_imports_on_move = true,
-            require_confirmation_on_move = true,
+            require_confirmation_on_move = false,
             watch_dir = nil,
         })
         ts_utils.setup_client(client)

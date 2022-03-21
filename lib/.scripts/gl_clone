@@ -3,6 +3,6 @@
 project_json=$(curl -s --header 'PRIVATE-TOKEN: 5vvXL_qGyux23pK3jaNP' "https://mo-gitlab.siemens.dk/api/v4/projects/$1")
 path=$(echo "$project_json" | jq --raw-output '.path_with_namespace')
 clone_url=$(echo "$project_json" | jq --raw-output '.ssh_url_to_repo')
-destination="$HOME/doc/src/$path"
+destination="$HOME/doc/src/mo-gitlab.siemens.dk/$path"
 
 git clone "$clone_url" "$destination"

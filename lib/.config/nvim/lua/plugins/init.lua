@@ -5,6 +5,7 @@ cmd("packadd packer.nvim")
 return require("packer").startup(function(use)
     use {"wbthomason/packer.nvim", opt = true}
     use {'mfussenegger/nvim-jdtls'}
+    use {'tomlion/vim-solidity'}
     use {'RishabhRD/popfix'}
     use {
         "nvim-treesitter/nvim-treesitter",

@@ -29,13 +29,6 @@ cmd([[
     autocmd FileType tex lua WriteServerName()
 ]], false)
 
-cmd([[
-  augroup FormatAutogroup
-    autocmd!
-    autocmd BufWritePost *.java FormatWrite
-  augroup end
-]], true)
-
 o.inccommand = "nosplit"
 o.shell = "zsh"
 o.number = true
@@ -92,4 +85,4 @@ local bufferline = {
 }
 
 g.bufferline = bufferline
-
+vim.api.nvim_exec([[ autocmd BufNewFile,BufRead *.sol set filetype=solidity ]], false)

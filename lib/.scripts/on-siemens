@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+if nslookup mo-gitlab.siemens.dk 172.31.0.253 > /dev/null; then
+    echo "%{F#458588}SIEMENS%{F-}"
+else
+    echo "%{F#555555}SIEMENS%{F-}"
+fi

@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 [ $(id -u) -eq 0 ] || exec sudo $0
 umask 0022
 

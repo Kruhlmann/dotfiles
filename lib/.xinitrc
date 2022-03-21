@@ -38,6 +38,7 @@ xbindkeys
 xset r rate 300 25
 
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+mpd --no-daemon --verbose --stdout ~/.config/mpd/mpd.conf &
 
 find ~/.ssh/ -type f -exec grep -l "PRIVATE" {} \; | xargs ssh-add &> /dev/null
 
@@ -46,4 +47,5 @@ sh "$HOME/.config/hostnamerc.d/$(hostname)"
 
 feh --bg-scale "$HOME/img/wallpaper"
 
-exec xmonad
+# exec xmonad
+exec startxfce4

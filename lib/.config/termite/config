@@ -5,7 +5,7 @@
 #cell_height_scale = 1.0
 #cell_width_scale = 1.0
 clickable_url = false
-font = FiraCode Nerd Font 12px
+font = TerminessTTF Nerd Font Mono 12px
 scrollback_lines = 10000
 [colors]
 background = #282828

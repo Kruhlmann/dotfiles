@@ -1,20 +1,29 @@
 #!/usr/bin/env sh
 
-if ! [ -x "$(command -v youtube-dl)" ]; then
-    echo "Error: Unable to locate youtube-dl. Run the following commands to install it:"
-    echo "sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl"
-    echo "sudo chmod a+rx /usr/local/bin/youtube-dl"
-    exit 1
-fi
+#if ! [ -x "$(command -v youtube-dl)" ]; then
+#    echo "Error: Unable to locate youtube-dl. Run the following commands to install it:"
+#    echo "sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl"
+#    echo "sudo chmod a+rx /usr/local/bin/youtube-dl"
+#    exit 1
+#fi
 
-grep ^# -v /home/$USER/.config/sync_music.conf | while read -r playlist; do
-    _playlistname=$(youtube-dl -i --flat-playlist --skip-download -J "$playlist" | jq -r ".title")
-    playlistname="${_playlistname// /_}"
-    youtube-dl --quiet --yes-playlist --restrict-filenames --download-archive "/home/$USER/.cache/yt-cache" --audio-format mp3 -ciwx -o "/home/$USER/mus/$playlistname/%(title)s.%(ext)s" "$playlist"
-    mpdplaylist="/home/$USER/.config/mpd/res/playlists/$playlistname.m3u"
-    ls "/home/$USER/mus/$playlistname/*.mp3" > "$mpdplaylist"
-    cat $mpdplaylist;
+#grep ^# -v /home/$USER/.config/sync_music.conf | while read -r playlist; do
+#    _playlistname=$(youtube-dl -i --flat-playlist --skip-download -J "$playlist" | jq -r ".title")
+#    playlistname="${_playlistname// /_}"
+#    youtube-dl --quiet --yes-playlist --restrict-filenames --download-archive "/home/$USER/.cache/yt-cache" --audio-format mp3 -ciwx -o "/home/$USER/mus/$playlistname/%(title)s.%(ext)s" "$playlist"
+#    mpdplaylist="/home/$USER/.config/mpd/res/playlists/$playlistname.m3u"
+#    ls "/home/$USER/mus/$playlistname/*.mp3" > "$mpdplaylist"
+#    cat $mpdplaylist;
+#done
+
+##notify-send "Music synced" -i ~/img/lib/mpd_logo.png
+
+set -e
+set -x
+
+grep ^# -v /home/$USER/.config/sync_music.conf | while read -r playlist_url; do
+    raw_playlist_name=$(yt-dlp -i --flat-playlist --skip-download -J "$playlist_url" 2>/dev/null | jq -r ".title")
+    printf "%s\n" "$raw_playlist_name"
+    playlist_name=$(printf "%q", "$raw_playlist_name")
+    yt-dlp --quiet --yes-playlist --restrict-filenames --download-archive "$HOME/.cache/yt-cache" --audio-format mp3 -ciwx -o "$HOME/mus/$playlist_name/%(title)s.%(ext)s" "$playlist_url" || true
 done
-
-#notify-send "Music synced" -i ~/img/lib/mpd_logo.png
-

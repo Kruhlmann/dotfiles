@@ -1,0 +1,48 @@
+#!/usr/bin/env sh
+
+set -e
+set -x
+
+is_device_connected() {
+	device_address="$1"
+	if bluetoothctl info "$device_address" | grep "Connected: yes" >/dev/null; then
+		return 0
+	fi
+	return 1
+}
+
+print_rofi_device_list() {
+	known_device_addresses="$1"
+	for known_device_address in $known_device_addresses; do
+		device_metadata=$(jq --raw-output --arg address "$known_device_address" '.[] | select(.address==$address)' <"$bluetooth_device_list")
+		icon=$(echo "$device_metadata" | jq --raw-output '.icon')
+		name=$(echo "$device_metadata" | jq --raw-output '.name' | sed s'/ /_/')
+		action_name="Connect"
+		if is_device_connected "$known_device_address"; then
+			action_name="Disconnect"
+		fi
+
+		printf "%s %s %s %s\n" "$icon" "$action_name" "$name" "$known_device_address"
+	done
+}
+
+disconnect_device() {
+	device_address="$1"
+	bluetoothctl disconnect "$1"
+}
+
+connect_device() {
+	device_address="$1"
+	bluetoothctl connect "$1"
+}
+
+bluetooth_device_list="$HOME/.config/bluetooth-devices.json"
+known_device_addresses=$(bluetoothctl devices | awk '{ print $2 }')
+selected_device_tuple=$(print_rofi_device_list "$known_device_addresses" | rofi -dmenu -i -lines 0 -p "Select device" -separator-style "none")
+selected_device_address="$(printf "%s" "$selected_device_tuple" | awk '{ print $4 }')"
+
+if is_device_connected "$selected_device_address"; then
+	disconnect_device "$selected_device_address"
+else
+	connect_device "$selected_device_address"
+fi

@@ -115,10 +115,10 @@ hotPromptTheme = myPromptTheme
 myTerminal      = "alacritty"
 myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = True
-myBorderWidth   = 1
+myBorderWidth   = 3
 myModMask       = mod4Mask
 myWorkspaces :: [String]
-myWorkspaces    = ["Firefox","Programming","Instant Messaging","SSH","Bitwarden","Virtual Machines","WINE Games","Steam Games","Settings"]
+myWorkspaces    = ["Firefox","Programming","Instant Messaging","Email","Bitwarden","Virtual Machines","WINE Games","Steam Games","Settings"]
 myFont      = "-*-dejavu-*-*-*-*-16-*-*-*-*-*-*"
 myBigFont   = "-*-dejavu-*-*-*-*-24-*-*-*-*-*-*"
 myNormalBorderColor  = "#dddddd"
@@ -156,11 +156,12 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $ [
     ((modm,               xK_d      ), spawn spawnRofi),
     ((modm,               xK_s      ), spawn "rofi -show ssh"),
     ((modm .|. shiftMask, xK_s      ), spawn spawnMaim ),
-    ((modm .|. shiftMask, xK_l      ), spawn "betterlockscreen -l"),
+    ((modm .|. shiftMask, xK_l      ), spawn "portable-lock"),
     ((modm              , xK_u      ), spawn "alacritty --name floatterm -e fzmp"),
     ((modm              , xK_g      ), spawn "alacritty --name floatterm -e lazygit"),
     ((modm              , xK_e      ), spawn "alacritty --name floatterm -e ranger"),
     ((modm              , xK_n      ), spawn "alacritty --name floatterm -e ncmpcpp"),
+    ((modm              , xK_b      ), spawn "manage_bluetooth_devices"),
     ((modm              , xK_m      ), spawn "neomutt_mailbox"),
     ((modm              , xK_v      ), spawn "cbp"),
     ((modm              , xK_p      ), spawn "mpc toggle"),
@@ -234,6 +235,8 @@ myManageHook = composeAll [
     -- Positions.
     className =? "discord" --> doShift "Instant Messaging",
     className =? "teams-for-linux" --> doShift "Instant Messaging",
+    className =? "microsoft-edge-dev" --> doShift "Instant Messaging",
+    className =? "microsoft-edge" --> doShift "Instant Messaging",
     className =? "ckb-next" --> doShift "Settings",
     -- Float.
     resource  =? "floatterm" --> doRectFloat (W.RationalRect 0.2 0.2 0.6 0.6),
@@ -252,11 +255,9 @@ myLogHook = return ()
 
 myStartupHook = do
     spawnOnce "nm-applet"
-    spawnOnce "mpd"
-    spawnOnce "picom --experimental-backends"
+    spawnOnce "mpd ~/.config/mpd/mpd.conf"
     spawnOnce "launch_polybar"
-    spawnOnce "tmux has-session -t protonmail_bridge || tmux new -d -s protonmail_bridge 'protonmail-bridge --cli'"
-    spawnOnce "tmux has-session -t offlineimap || tmux new -d -s protonmail_bridge 'offlineimap'"
+    spawnOnce "setxkbmap -rules evdev -model evdev -layout us -variant altgr-intl"
 
 main = do xmonad
     $ ewmh

@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+pgrep xfce4-session >/dev/null && xfce4-screensaver-command --lock && exit 0
+command -v betterlockscreen && betterlockscreen -l && exit 0
+command -v i3lock && i3lock && exit 0

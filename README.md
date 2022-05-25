@@ -13,6 +13,7 @@ It is included in the path as `update_dotfiles` please check the path it's using
 To import these dotfiles run the following commands:
 
 ```sh
+mkdir -p /home/ges/doc/src/github.com/kruhlmann
 git clone https://github.com/Kruhlmann/dotfiles
 cd dotfiles
 ./install

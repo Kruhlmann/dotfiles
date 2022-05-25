@@ -21,7 +21,8 @@ setup_gpg_allow_ssh() {
 }
 
 generate_gpg_key() {
-  read -p 'New GPG Password: ' password
+  printf 'New GPG Password: '
+  read -r PASSWORD
   cat >/tmp/gpg-temp-batch <<EOF
     Key-Type: default
     Subkey-Type: default
@@ -29,7 +30,7 @@ generate_gpg_key() {
     Name-Comment: gpg
     Name-Email: andreas@kruhlmann.dev
     Expire-Date: 0
-    Passphrase: $password
+    Passphrase: $PASSWORD
     %commit
 EOF
   gpg --batch --gen-key /tmp/gpg-temp-batch

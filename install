@@ -1,13 +1,18 @@
 #!/bin/sh
 
+set -x
+
 install_scripts_completed=""
 
 export BW_PASSWD=""
 
 depends_on() {
+  # shellcheck disable=SC2046
   if [ $(command -v yay) ]; then
+    # shellcheck disable=SC2068
     yay -S --noconfirm --needed $@
   else
+    # shellcheck disable=SC2068
     sudo pacman -S --noconfirm --needed $@
   fi
 }
@@ -15,6 +20,7 @@ depends_on() {
 run_install_script() {
   if [ -f "./install.d/$1.sh" ]; then
     if ! echo "$install_scripts_completed" | grep -q "$1"; then
+      # shellcheck disable=SC1090
       . "./install.d/$1.sh"
       needs_install && setup
       postinstall
@@ -31,10 +37,6 @@ pre_install() {
   done
 }
 
-if echo $* | grep "\-\-verbose"; then
-  set -x
-fi
-
 sudo pacman -Sy >/dev/null
 
 SCRIPTPATH="$(
@@ -42,7 +44,7 @@ SCRIPTPATH="$(
   pwd -P
 )"
 find lib ! -path lib -type f | while read -r FILE; do
-  FILE=${FILE:4}
+  FILE="$(basename "$FILE")"
   DIR=$(dirname "$HOME/$FILE")
   BACKUPFILE="$SCRIPTPATH/back/$FILE"
   BACKUPDIR=$(dirname "$SCRIPTPATH/back/$FILE")

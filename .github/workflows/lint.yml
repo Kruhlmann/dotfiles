@@ -1,4 +1,4 @@
-name: Build & Verify
+name: Lint
 on:
   push:
     branches: [ master ]

@@ -11,9 +11,9 @@ setup() {
   depends_on git base-devel
   rm -rf /tmp/yay
   git clone https://aur.archlinux.org/yay.git /tmp/yay
-  cd /tmp/yay
+  cd /tmp/yay || return 1
   makepkg -si --noconfirm
-  cd -
+  cd - || return 1
 }
 
 postinstall() {

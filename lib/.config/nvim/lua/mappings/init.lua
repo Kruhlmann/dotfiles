@@ -34,6 +34,8 @@ map("n", "<leader>p",
     [[<cmd>lua require("telescope.builtin").find_files()<cr>]], opts)
 map("n", "<leader><space>",
     [[<cmd>lua require("telescope.builtin").buffers()<cr>]], opts)
+map("n", "<leader>g", [[<cmd>lua require("telescope.builtin").live_grep()<cr>]],
+    opts)
 
 map('n', '<leader>ld', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
 map('n', '<leader>lD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)

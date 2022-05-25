@@ -12,40 +12,39 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 # merge in defaults and keymaps
 
 if [ -f "$sysresources" ]; then
-    xrdb -merge "$sysresources"
+	xrdb -merge "$sysresources"
 fi
 
 if [ -f "$sysmodmap" ]; then
-    xmodmap "$sysmodmap"
+	xmodmap "$sysmodmap"
 fi
 
 if [ -f "$userresources" ]; then
-    xrdb -merge "$userresources"
+	xrdb -merge "$userresources"
 fi
 
 if [ -f "$usermodmap" ]; then
-    xmodmap "$usermodmap"
+	xmodmap "$usermodmap"
 fi
 
-if [ -d /etc/X11/xinit/xinitrc.d ] ; then
-    for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
-        [ -x "$f" ] && . "$f"
-    done
-    unset f
+if [ -d /etc/X11/xinit/xinitrc.d ]; then
+	for f in /etc/X11/xinit/xinitrc.d/?*.sh; do
+		[ -x "$f" ] && . "$f"
+	done
+	unset f
 fi
 
 xbindkeys
-xset r rate 300 25
+xset r rate 416 25
 
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 mpd --no-daemon --verbose --stdout ~/.config/mpd/mpd.conf &
 
-find ~/.ssh/ -type f -exec grep -l "PRIVATE" {} \; | xargs ssh-add &> /dev/null
+find ~/.ssh/ -type f -exec grep -l "PRIVATE" {} \; | xargs ssh-add >/dev/null
 
-#sh "$HOME/.screenlayout/$(hostname)"
 sh "$HOME/.config/hostnamerc.d/$(hostname)"
 
 feh --bg-scale "$HOME/img/wallpaper"
 
-# exec xmonad
-exec startxfce4
+exec xmonad
+# exec startxfce4

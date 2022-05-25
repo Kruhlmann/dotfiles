@@ -1,5 +1,0 @@
-[Unit]
-Description=Synchronize Siemens email
-
-[Service]
-ExecStart=/home/ges/.scripts/syncmail

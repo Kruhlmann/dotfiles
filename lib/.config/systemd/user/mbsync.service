@@ -1,8 +1,0 @@
-[Unit]
-Description=Mailbox synchronization service
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/mbsync -Va -c %h/.config/isync/mbsyncrc
-ExecStartPost=/usr/bin/notmuch new
-ExecStartPost=%h/.scripts/notify_mail

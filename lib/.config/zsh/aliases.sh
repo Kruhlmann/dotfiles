@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 alias c='commit'
 alias cd..='cd ..'
 alias chgrp='chgrp --preserve-root'

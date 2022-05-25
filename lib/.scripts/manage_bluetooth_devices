@@ -29,11 +29,13 @@ print_rofi_device_list() {
 disconnect_device() {
 	device_address="$1"
 	bluetoothctl disconnect "$1"
+	notify-send "Disconnected $1"
 }
 
 connect_device() {
 	device_address="$1"
 	bluetoothctl connect "$1"
+	notify-send "Connected $1"
 }
 
 bluetooth_device_list="$HOME/.config/bluetooth-devices.json"

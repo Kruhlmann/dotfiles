@@ -33,7 +33,7 @@ cursor-scroll = ns-resize
 [bar/bottom]
 inherit = bar/master
 
-modules-left = workspaces siemens
+modules-left = battery filesystem lichess-bullet lichess-blitz processq gh-notifs merge_requests reviews sprint
 modules-center = mpd
 modules-right = pulseaudio
 
@@ -45,7 +45,7 @@ inherit = bar/master
 
 modules-left = nextapt
 modules-center = date
-modules-right = lichess-bullet lichess-blitz processq merge_requests reviews weather ip call mailbox filesystem battery powermenu
+modules-right = powermenu
 
 padding-left = 1
 bottom = false

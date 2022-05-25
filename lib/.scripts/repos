@@ -1,5 +1,14 @@
 #/usr/bin/env sh
 
-search_path=~/doc/src
+list_repos() {
+    find "$SEARCH_PATH" -type d -name ".venv" -prune -o -name "node_modules" -prune -o -name ".git" ! -path "*/.git/*" -printf "%h\n" 2>/dev/null | sed "s#$SEARCH_PATH##"
+}
 
-cd $(find "$search_path" -type d -name "node_modules" -prune -o -type d -name ".git" | sed 's/\/\.git//g' | grep -v node_modules | fzf)
+BASE_DIR="${1:-$HOME/doc/src}"
+SUB_DIR="$2"
+
+SEARCH_PATH="$BASE_DIR/$SUB_DIR"
+SELECTION=$(list_repos | fzf)
+if ! test -z "$SELECTION"; then
+        cd "$SEARCH_PATH/$SELECTION"
+fi

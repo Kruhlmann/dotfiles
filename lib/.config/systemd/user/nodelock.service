@@ -1,9 +1,0 @@
-[Unit]
-Description=Nodelock
-
-[Service]
-ExecStart=%h/.scripts/nasa-wallpaper
-EnvironmentFile=~/.config/nasa-api-environment
-
-[Install]
-WantedBy=default.target

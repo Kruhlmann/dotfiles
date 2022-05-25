@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+OUTPUT=$(gh api https://api.github.com/notifications | jq length)
+if [ "$OUTPUT" = "0" ]; then
+	echo "%{F#555555}$OUTPUT%{F-}"
+else
+	echo "$OUTPUT"
+fi

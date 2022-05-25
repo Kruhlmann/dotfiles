@@ -1,16 +1,11 @@
-vim.g.coq_settings = {
-    ["keymap.pre_select"] = true,
-    ["auto_start"] = true,
-}
+vim.g.coq_settings = {["keymap.pre_select"] = true, ["auto_start"] = true}
 
 local protocol = require('vim.lsp.protocol')
 local saga = require("lspsaga")
 local coq = require "coq"
 
 local buf_map = function(bufnr, mode, lhs, rhs, opts)
-    vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts or {
-        silent = true,
-    })
+    vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts or {silent = true})
 end
 
 local on_attach = function(client, bufnr)
@@ -44,19 +39,20 @@ end
 saga.init_lsp_saga()
 local capabilities = protocol.make_client_capabilities()
 
-package.path = package.path .. ";/home/ges/doc/src/github.com/kruhlmann/dotfiles/lib/.config/nvim/lua/plugins/config/lsp/?.lua"
+package.path = package.path ..
+                   ";/home/ges/doc/src/github.com/kruhlmann/dotfiles/lib/.config/nvim/lua/plugins/config/lsp/?.lua"
 require "null_ls"(on_attach, capabilities, buf_map)
-require'lspconfig'.tsserver.setup{}
+require'lspconfig'.tsserver.setup {}
 require'lspconfig'.tsserver.setup(coq.lsp_ensure_capabilities())
-require'lspconfig'.pyright.setup{}
+require'lspconfig'.pyright.setup {}
 require'lspconfig'.pyright.setup(coq.lsp_ensure_capabilities())
-require'lspconfig'.solargraph.setup{}
+require'lspconfig'.solargraph.setup {}
 require'lspconfig'.solargraph.setup(coq.lsp_ensure_capabilities())
-require'lspconfig'.solidity_ls.setup{}
+require'lspconfig'.solidity_ls.setup {}
 require'lspconfig'.solidity_ls.setup(coq.lsp_ensure_capabilities())
-require'lspconfig'.cmake.setup{}
+require'lspconfig'.cmake.setup {}
 require'lspconfig'.cmake.setup(coq.lsp_ensure_capabilities())
-require'lspconfig'.bashls.setup{}
+require'lspconfig'.bashls.setup {}
 require'lspconfig'.bashls.setup(coq.lsp_ensure_capabilities())
-require'lspconfig'.dockerls.setup{}
+require'lspconfig'.dockerls.setup {}
 require'lspconfig'.dockerls.setup(coq.lsp_ensure_capabilities())

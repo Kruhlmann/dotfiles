@@ -1,7 +1,7 @@
 [global]
     frame_width = 1
     frame_color = "#788388"
-    font = Source Code Pro 12
+    font = TerminessTTF Nerd Font Mono 14
     markup = yes
 
     # The format of the message.  Possible variables are:
@@ -54,7 +54,7 @@
     dmenu = /usr/bin/dmenu -p dunst:
 
     # Browser for opening urls in context menu.
-    browser = qutebrowser
+    browser = librewolf
 
     # Align icons left/right/off
     icon_position = left

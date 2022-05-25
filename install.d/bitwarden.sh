@@ -14,4 +14,5 @@ postinstall() {
   bw login
   bw_session_cmd="$(bw unlock | grep export)"
   eval ${bw_session_cmd#??}
+  export BW_SESSION
 }

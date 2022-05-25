@@ -2,57 +2,62 @@
 
 install_scripts_completed=""
 
+export BW_PASSWD=""
+
 depends_on() {
-    if [ $(command -v yay) ]; then
-        yay -S --noconfirm --needed $@
-    else
-        sudo pacman -S --noconfirm --needed $@
-    fi
+  if [ $(command -v yay) ]; then
+    yay -S --noconfirm --needed $@
+  else
+    sudo pacman -S --noconfirm --needed $@
+  fi
 }
 
 run_install_script() {
-    if [ -f "./install.d/$1.sh" ]; then
-        if ! echo "$install_scripts_completed" | grep -q "$1"; then
-            . "./install.d/$1.sh"
-            needs_install && setup
-            postinstall
-            install_scripts_completed="$install_scripts_completed $1"
-        fi
-    else
-        exit 1
+  if [ -f "./install.d/$1.sh" ]; then
+    if ! echo "$install_scripts_completed" | grep -q "$1"; then
+      . "./install.d/$1.sh"
+      needs_install && setup
+      postinstall
+      install_scripts_completed="$install_scripts_completed $1"
     fi
+  else
+    exit 1
+  fi
 }
 
 pre_install() {
-    for file in "$@"; do
-        run_install_script "$file"
-    done
+  for file in "$@"; do
+    run_install_script "$file"
+  done
 }
 
 if echo $* | grep "\-\-verbose"; then
-    set -x
+  set -x
 fi
 
 sudo pacman -Sy >/dev/null
 
-SCRIPTPATH="$( cd "$(dirname "$0")" || exit 1 ; pwd -P )"
+SCRIPTPATH="$(
+  cd "$(dirname "$0")" || exit 1
+  pwd -P
+)"
 find lib ! -path lib -type f | while read -r FILE; do
-    FILE=${FILE:4}
-    DIR=$(dirname "$HOME/$FILE")
-    BACKUPFILE="$SCRIPTPATH/back/$FILE"
-    BACKUPDIR=$(dirname "$SCRIPTPATH/back/$FILE")
+  FILE=${FILE:4}
+  DIR=$(dirname "$HOME/$FILE")
+  BACKUPFILE="$SCRIPTPATH/back/$FILE"
+  BACKUPDIR=$(dirname "$SCRIPTPATH/back/$FILE")
 
-    [ -d "$DIR" ] || mkdir -p "$DIR"
-    [ -d "$BACKUPDIR" ] || mkdir -p "$BACKUPDIR"
+  [ -d "$DIR" ] || mkdir -p "$DIR"
+  [ -d "$BACKUPDIR" ] || mkdir -p "$BACKUPDIR"
 
-    if [ -f "$HOME/$FILE" ]; then
-        cp "$HOME/$FILE" "$BACKUPFILE"
-        rm "$HOME/$FILE"
-    fi
+  if [ -f "$HOME/$FILE" ]; then
+    cp "$HOME/$FILE" "$BACKUPFILE"
+    rm "$HOME/$FILE"
+  fi
 
-    ln -s -f "$SCRIPTPATH/lib/$FILE" "$HOME/$FILE" >/dev/null 2>&1
+  ln -s -f "$SCRIPTPATH/lib/$FILE" "$HOME/$FILE" >/dev/null 2>&1
 done
 
 for file in ./install.d/*.sh; do
-    run_install_script "$(basename $file .sh)"
+  run_install_script "$(basename "$file" .sh)"
 done

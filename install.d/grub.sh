@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-pre_install gpg
+pre_install
 
 needs_install() {
   command -v /usr/bin/neomutt >/dev/null || return 0
@@ -12,10 +12,13 @@ needs_install() {
 }
 
 setup() {
-  depends_on neomutt pass protonmail-bridge-nogui msmtp curl mpop abook cronie notmuch lynx urlview offlineimap
-  mkdir -p "$HOME/mail"
-  pass init andreas@kruhlmann.dev
-  [ -f "$HOME/.msmtp-andreas_at_kruhlmann_dev" ] || echo 'echo -e "password\n" | gpg --encrypt -o ~/.msmtp-andreas_at_kruhlmann_dev.gpg -r andreas@kruhlmann.dev'
+  test -f /etc/default/grub || return
+  depends_on grub
+  sed -i \
+    -e 's/^GRUB_TIMEOUT_STYLE=.*$/GRUB_TIMEOUT_STYLE=hidden/' \
+    -e 's/^GRUB_TIMEOUT=.*$/GRUB_TIMEOUT=0/' \
+    /etc/default/grub
+  grub-mkconfig -o /boot/grub/grub.cfg
 }
 
 postinstall() {

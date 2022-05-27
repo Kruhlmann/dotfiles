@@ -7,7 +7,7 @@ needs_install() {
 }
 
 setup() {
-  depends_on xmonad xmonad-contrib xorg xclip rofi libnotify
+  depends_on xmonad xmonad-contrib xorg xclip rofi libnotify picom-jonaburg-fix
 }
 
 postinstall() {

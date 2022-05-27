@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-pre_install aur python node vim
+pre_install aur python node nvim
 
 needs_install() {
   command -v /usr/bin/lazygit >/dev/null || return 0

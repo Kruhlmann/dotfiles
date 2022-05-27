@@ -3,7 +3,6 @@
 pre_install
 
 needs_install() {
-  return 1
   command -v /usr/bin/yay >/dev/null || return 0
 }
 

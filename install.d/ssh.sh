@@ -10,7 +10,7 @@ needs_install() {
 }
 
 setup() {
-  depends_on openssh
+  depends_on openssh polkit-gnome
   bw get item "$(bw list items --search "SSH:work" | jq '.[0].id' --raw-output)" | jq '.notes' --raw-output >"$HOME/.ssh/work"
   bw get item "$(bw list items --search "SSH:work" | jq '.[0].id' --raw-output)" | jq '.fields[0].value' --raw-output >"$HOME/.ssh/work.pub"
   bw get item "$(bw list items --search "SSH:personal" | jq '.[0].id' --raw-output)" | jq '.notes' --raw-output >"$HOME/.ssh/personal"

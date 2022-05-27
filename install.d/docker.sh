@@ -14,9 +14,10 @@ setup() {
 postinstall() {
   docker_user=$(bw get item "$(bw list items --search "registry.nymann.dev" | jq '.[0].id' --raw-output)" | jq '.login.username' --raw-output)
   docker_pass=$(bw get item "$(bw list items --search "registry.nymann.dev" | jq '.[0].id' --raw-output)" | jq '.login.password' --raw-output)
+  mkdir -p "$HOME/.docker"
+  sudo mkdir -p /root/.docker
   sudo usermod -aG docker "$(whoami)"
   sudo systemctl enable --now docker
-  sudo docker login registry.nymann.dev -u "$docker_user" "$docker_pass"
-  mkdir -p "$HOME/.docker"
+  sudo -E docker login registry.nymann.dev -u "$docker_user" -p "$docker_pass"
   sudo mv /root/.docker/config.json "$HOME/.docker/config.json"
 }

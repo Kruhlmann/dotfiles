@@ -18,5 +18,5 @@ setup() {
 }
 
 postinstall() {
-  sudo dmesg | grep -i blue && sudo systemctl enable --now bluetoothd >/dev/null
+  sudo dmesg | grep -i blue && sudo systemctl enable --now bluetooth >/dev/null
 }

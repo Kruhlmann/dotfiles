@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+insecure_prompt() {
+  printf '%s' "$1" >/dev/stderr
+  read -r SECURESTRING
+  printf '%s' "$SECURESTRING"
+}
+
+secure_prompt() {
+  printf '%s' "$1" >/dev/stderr
+  stty -echo
+  read -r SECURESTRING
+  stty echo
+  printf '\n' >/dev/stderr
+  printf '%s' "$SECURESTRING"
+}

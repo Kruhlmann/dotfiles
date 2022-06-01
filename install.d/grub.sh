@@ -1,14 +1,9 @@
 #!/usr/bin/env sh
 
-pre_install
+pre_install aur
 
 needs_install() {
-  command -v /usr/bin/neomutt >/dev/null || return 0
-  command -v /usr/bin/pass >/dev/null || return 0
-  command -v /usr/bin/isync >/dev/null || return 0
-  command -v /usr/bin/protonmail-bridge >/dev/null || return 0
-  command -v /usr/bin/msmtp >/dev/null || return 0
-  return 1
+  return
 }
 
 setup() {

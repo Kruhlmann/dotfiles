@@ -3,6 +3,7 @@ local cmd = vim.cmd
 local g = vim.g
 local opts = {noremap = true, silent = true}
 
+
 g.mapleader = " "
 g.maplocalleader = " "
 map("n", "<Space>", "<Nop>", opts)
@@ -87,6 +88,8 @@ map("n", "<leader>tb",
     [[<cmd>lua require("telescope.builtin").git_branches()<cr>]], opts)
 map("n", "<leader>ts",
     [[<cmd>lua require("telescope.builtin").git_status()<cr>]], opts)
+map("v", "<leader>rr", 
+    [[<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>]], opts)
 
 map('n', '<leader>,', '<cmd>vsplit<CR>', opts)
 map('n', '<leader>.', '<cmd>split<CR>', opts)

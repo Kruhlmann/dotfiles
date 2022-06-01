@@ -1,47 +1,28 @@
-vim.g.coq_settings = {["keymap.pre_select"] = true, ["auto_start"] = true}
+local vim = vim
+vim.g.coq_settings = {["keymap.pre_select"] = true, ["auto_start"] = "shut-up"}
 
 local protocol = require('vim.lsp.protocol')
 local saga = require("lspsaga")
 local coq = require "coq"
+local null_ls = require 'null-ls'
+local luadev = require("lua-dev").setup({})
+local capabilities = protocol.make_client_capabilities()
 
-local buf_map = function(bufnr, mode, lhs, rhs, opts)
-    vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts or {silent = true})
-end
-
-local on_attach = function(client, bufnr)
+local on_attach_null_ls = function(client)
     protocol.CompletionItemKind = {
         '', 'ƒ', 'ƒ', '', '識', '𝑋', '', '', '', '',
         '猪', '', '了', '', '﬌', '', '', '', '', '',
         '', '', '', '', ''
     }
-    if client.resolved_capabilities.document_formatting then
-        vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
-    end
-
-    vim.cmd("command! LspDef lua vim.lsp.buf.definition()")
-    vim.cmd("command! LspFormatting lua vim.lsp.buf.formatting()")
-    vim.cmd("command! LspCodeAction lua vim.lsp.buf.code_action()")
-    vim.cmd("command! LspHover lua vim.lsp.buf.hover()")
-    vim.cmd("command! LspRename lua vim.lsp.buf.rename()")
-    vim.cmd("command! LspRefs lua vim.lsp.buf.references()")
-    vim.cmd("command! LspTypeDef lua vim.lsp.buf.type_definition()")
-    vim.cmd("command! LspImplementation lua vim.lsp.buf.implementation()")
-    vim.cmd("command! LspDiagPrev lua vim.diagnostic.goto_prev()")
-    vim.cmd("command! LspDiagNext lua vim.diagnostic.goto_next()")
-    vim.cmd("command! LspDiagLine lua vim.diagnostic.open_float()")
-    vim.cmd("command! LspSignatureHelp lua vim.lsp.buf.signature_help()")
-
-    if client.resolved_capabilities.document_formatting then
+    if client.server_capabilities.document_formatting then
         vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
     end
 end
 
 saga.init_lsp_saga()
-local capabilities = protocol.make_client_capabilities()
 
 package.path = package.path ..
                    ";/home/ges/doc/src/github.com/kruhlmann/dotfiles/lib/.config/nvim/lua/plugins/config/lsp/?.lua"
-require "null_ls"(on_attach, capabilities, buf_map)
 require'lspconfig'.tsserver.setup {}
 require'lspconfig'.tsserver.setup(coq.lsp_ensure_capabilities())
 require'lspconfig'.pyright.setup {}
@@ -56,3 +37,38 @@ require'lspconfig'.bashls.setup {}
 require'lspconfig'.bashls.setup(coq.lsp_ensure_capabilities())
 require'lspconfig'.dockerls.setup {}
 require'lspconfig'.dockerls.setup(coq.lsp_ensure_capabilities())
+require'lspconfig'.sumneko_lua.setup(luadev)
+require'lspconfig'.sumneko_lua.setup(coq.lsp_ensure_capabilities())
+
+null_ls.setup({
+    sources = {
+        null_ls.builtins.formatting.black, null_ls.builtins.formatting.isort,
+        null_ls.builtins.formatting.eslint_d,
+        null_ls.builtins.formatting.asmfmt,
+        null_ls.builtins.formatting.prettier_d_slim,
+        null_ls.builtins.formatting.clang_format,
+        null_ls.builtins.formatting.cmake_format,
+        null_ls.builtins.formatting.goimports,
+        null_ls.builtins.formatting.golines,
+        null_ls.builtins.formatting.gofumpt,
+        null_ls.builtins.formatting.json_tool,
+        null_ls.builtins.formatting.lua_format,
+        null_ls.builtins.formatting.nginx_beautifier,
+        null_ls.builtins.formatting.rufo, null_ls.builtins.formatting.shfmt,
+        null_ls.builtins.diagnostics.stylua,
+        null_ls.builtins.formatting.uncrustify,
+        null_ls.builtins.diagnostics.alex,
+        null_ls.builtins.diagnostics.shellcheck,
+        null_ls.builtins.diagnostics.luacheck,
+        null_ls.builtins.diagnostics.actionlint,
+        null_ls.builtins.diagnostics.write_good,
+        null_ls.builtins.diagnostics.misspell,
+        null_ls.builtins.diagnostics.vint, null_ls.builtins.hover.dictionary,
+        null_ls.builtins.code_actions.gitsigns,
+        null_ls.builtins.code_actions.proselint,
+        null_ls.builtins.code_actions.refactoring,
+        null_ls.builtins.completion.spell
+    },
+    on_attach = on_attach_null_ls,
+    capabilities = capabilities
+})

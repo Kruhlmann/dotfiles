@@ -1,4 +1,3 @@
--- Telescope
 require("telescope").setup {
   defaults = {
     file_ignore_patterns = {"node_modules", "__sapper__"},
@@ -12,3 +11,4 @@ require("telescope").setup {
     file_sorter =  require("telescope.sorters").get_fzy_sorter,
   }
 }
+require("telescope").load_extension("refactoring")

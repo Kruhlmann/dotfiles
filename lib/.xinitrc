@@ -40,6 +40,7 @@ xset r rate 416 25
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 mpd --no-daemon --verbose --stdout ~/.config/mpd/mpd.conf &
 picom --experimental-backends &
+blueman-manager &
 
 find ~/.ssh/ -type f -exec grep -l "PRIVATE" {} \; | xargs ssh-add >/dev/null
 

@@ -30,7 +30,13 @@ return require("packer").startup(function(use)
         "JoosepAlviste/nvim-ts-context-commentstring",
         requires = {"tpope/vim-commentary"}
     }
-    use {"hkupty/iron.nvim", config = [[require("plugins.config.iron")]]}
+    use {
+        "ThePrimeagen/refactoring.nvim",
+        requires = {
+            {"nvim-lua/plenary.nvim"},
+            {"nvim-treesitter/nvim-treesitter"}
+        }
+    }
     use {
         "lewis6991/gitsigns.nvim",
         config = [[require("plugins.config.gitsigns")]]

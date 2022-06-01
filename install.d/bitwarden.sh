@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-pre_install
+pre_install aur
 
 needs_install() {
   command -v /usr/bin/bw >/dev/null || return 0

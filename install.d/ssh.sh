@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-pre_install bitwarden
+pre_install aur bitwarden
 
 needs_install() {
   test -f "$HOME/.ssh/work" || return 0

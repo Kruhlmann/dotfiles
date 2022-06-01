@@ -2,7 +2,7 @@
 
 HOOK=/etc/pacman.d/hooks/nvidia.hook
 
-pre_install
+pre_install aur
 
 needs_install() {
   test -f "$HOOK" || return 0

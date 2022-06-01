@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-pre_install devel
+pre_install aur devel
 
 needs_install() {
   command -v /usr/bin/polybar >/dev/null || return 0

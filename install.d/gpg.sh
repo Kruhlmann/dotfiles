@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+pre_install aur
+
 needs_install() {
   gpg -K --with-keygrip | grep andreas@kruhlmann.dev && return 0
   return 1

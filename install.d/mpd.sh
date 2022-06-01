@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-pre_install audio
+pre_install audio aur
 
 needs_install() {
   command -v /usr/bin/mpd >/dev/null || return 0

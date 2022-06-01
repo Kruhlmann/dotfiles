@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-pre_install bitwarden
+pre_install aur bitwarden
 
 uid="$(whoami)"
 sudo_file="/etc/sudoers.d/99-$uid-nopasswd"

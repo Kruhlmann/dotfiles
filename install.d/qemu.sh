@@ -6,7 +6,7 @@ DEFAULT_NETWORK_GATEWAY=172.23.2.1
 DEFAULT_NETWORK_RANGE_START=172.23.2.100
 DEFAULT_NETWORK_RANGE_END=172.23.2.254
 
-pre_install ssh
+pre_install aur ssh
 
 needs_install() {
   command -v /usr/bin/virsh >/dev/null || return 0

@@ -2,7 +2,7 @@
 
 install_d_dir="$(dirname "$0")"
 
-pre_install
+pre_install aur
 
 needs_install() {
   return

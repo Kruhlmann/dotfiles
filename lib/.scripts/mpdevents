@@ -1,0 +1,20 @@
+#!/usr/bin/env sh
+
+timeout=${1:-"1500"}
+icon=${2:-"$HOME/img/lib/mpd_logo.png"}
+
+capitalize() {
+    awk -vFS="" -vOFS="" '{$1=toupper($1);print $0}'
+}
+
+while true; do
+    mpc idleloop player 2>/dev/null | while read -r; do
+    dunstify \
+        "$(mpc status %state% | capitalize)" \
+        "$(mpc current | xargs basename -s .mp3 | sed 's/_/ /g' | cut -c 1-25)" \
+        -a mpd \
+        -t "$timeout" \
+        -i "$icon" \
+        -h "int:value:$(mpc status %percenttime% | tr -d '%' | tr -d '[:blank:]')"
+    done
+done

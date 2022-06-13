@@ -1,1 +1,0 @@
-/mnt/hdd/home/doc/src/github.com/kruhlmann/dotfiles/lib/.config/nvim/lua/plugins/config/lsp/sumneko_lua.lua

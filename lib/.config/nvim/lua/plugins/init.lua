@@ -37,11 +37,9 @@ return require("packer").startup(function(use)
             {"nvim-treesitter/nvim-treesitter"}
         }
     }
-    use {
-        "lewis6991/gitsigns.nvim",
-        config = [[require("plugins.config.gitsigns")]]
-    }
     use {"neovim/nvim-lspconfig", config = [[require("plugins.config.lsp")]]}
+    use {'lewis6991/impatient.nvim', config= [[require("plugins.config.impatient")]]}
+    use {'norcalli/nvim-colorizer.lua', config= [[require("plugins.config.colorizer")]]}
     use {
         "folke/lsp-trouble.nvim",
         requires = {
@@ -67,10 +65,7 @@ return require("packer").startup(function(use)
         requires = 'hrsh7th/nvim-cmp',
         config = [[require("plugins.config.tabnine")]]
     }
-    use {
-        "ellisonleao/gruvbox.nvim",
-        config = [[require("plugins.config.gruvbox")]]
-    }
+    use "ellisonleao/gruvbox.nvim"
     use {"junegunn/vim-easy-align"}
     use {"mhartington/formatter.nvim"}
     use {"saadparwaiz1/cmp_luasnip"}

@@ -1,5 +1,45 @@
 #!/usr/bin/env sh
 
-pgrep xfce4-session >/dev/null && xfce4-screensaver-command --lock && exit 0
-command -v betterlockscreen && betterlockscreen -l && exit 0
-command -v i3lock && i3lock && exit 0
+set -x -e
+
+trap_notifications() {
+    pkill -u "$USER" -USR1 dunst
+}
+
+untrap_notifications() {
+    pkill -u "$USER" -USR2 dunst
+}
+
+lock() {
+    lock_image="$1"
+    trap_notifications
+    i3lock -n -i "$lock_image" \
+        --inside-color="00000000" \
+        --ring-color="00000033" \
+        --separator-color="00000000" \
+        --insidever-color="00000000" \
+        --insidewrong-color="ff000033" \
+        --keyhl-color="ffffff77" \
+        --bshl-color="ffffff77" \
+        --ringver-color="00000000" \
+        --ringwrong-color="00000000" \
+        --greeter-color="00000000" \
+        --line-color="00000000" \
+        --verif-text="" \
+        --wrong-text="" \
+        --noinput-text="" \
+        --pass-media-keys \
+        --pass-screen-keys \
+        --pass-volume-keys \
+        --pass-power-keys
+    untrap_notifications
+}
+
+create_lock_image() {
+    image=$(mktemp --suffix=.png)
+    command -- import -silent -window root "$image"
+    convert "$image" -filter Gaussian -resize 20% -define "filter:sigma=4.5" -resize 500.5% "$HOME/img/lib/lock.png" -gravity center -composite "$image"
+    echo "$image"
+}
+
+lock "$(create_lock_image)"

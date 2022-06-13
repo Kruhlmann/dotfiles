@@ -6,7 +6,7 @@ include-file = ~/.config/polybar/modules.conf
 monitor = ${env:MONITOR:}
 width = 100%
 height = 30
-radius = 0
+radius = 10
 fixed-center = false
 
 background = ${colors.background}
@@ -15,11 +15,14 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 0
+border-left-size = 20
+border-right-size = 20
+border-top-size = 10
+border-bottom-size = 0
 border-color = #00000000
 
-padding-left = 0
-padding-right = 0
+padding-left = 2
+padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 
@@ -33,36 +36,34 @@ cursor-scroll = ns-resize
 [bar/bottom]
 inherit = bar/master
 
-modules-left = battery filesystem lichess-bullet lichess-blitz processq gh-notifs merge_requests reviews sprint
+modules-left = date battery filesystem lichess-bullet lichess-blitz processq gh-notifs merge_requests reviews sprint
 modules-center = mpd
 modules-right = pulseaudio
 
-padding-right = 2
+border-top-size = 0
+border-bottom-size = 10
 bottom = true
 
 [bar/top]
 inherit = bar/master
 
-modules-left = nextapt
-modules-center = date
-modules-right = powermenu
+modules-left = workspaces
+modules-center = 
+modules-right = 
 
 padding-left = 1
 bottom = false
-
-tray-position = right
-tray-padding = 0
 
 [bar/top-tray]
 inherits = bar/top
 
 tray-position = right
-tray-detached = false
+tray-detached = true
 tray-maxsize = 16
 tray-background = ${colors.background}
-tray-offset-x = 0
 tray-offset-y = 0
-tray-padding = 6
+tray-offset-x = -10
+tray-padding = 10
 tray-scale = 1.0
 
 [settings]

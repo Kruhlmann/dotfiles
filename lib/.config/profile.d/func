@@ -14,3 +14,8 @@ secure_prompt() {
   printf '\n' >/dev/stderr
   printf '%s' "$SECURESTRING"
 }
+
+file_age() {
+    age_in_seconds="$(($(date +%s)-$(stat -L --format %Y "$1")))"
+    echo "$age_in_seconds"
+}

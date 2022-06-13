@@ -10,7 +10,7 @@ needs_install() {
 }
 
 setup() {
-  depends_on nodejs-lts-erbium npm yarn nvm
+  depends_on nodejs-lts-erbium npm yarn nvm pnpm
 }
 
 postinstall() {

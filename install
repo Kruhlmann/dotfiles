@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 install_scripts_completed=""
 
@@ -74,7 +74,7 @@ clone_homedir() {
     pwd -P
   )"
   find lib ! -path lib -type f | while read -r FILE; do
-    FILE="$(basename "$FILE")"
+    FILE=${FILE:4}
     DIR=$(dirname "$HOME/$FILE")
     BACKUPFILE="$SCRIPTPATH/back/$FILE"
     BACKUPDIR=$(dirname "$SCRIPTPATH/back/$FILE")

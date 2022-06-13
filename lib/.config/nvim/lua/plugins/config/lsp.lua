@@ -1,5 +1,14 @@
 local vim = vim
-vim.g.coq_settings = {["keymap.pre_select"] = true, ["auto_start"] = "shut-up"}
+
+vim.g.coq_settings = {
+    ["auto_start"] = 'shut-up',
+    ["keymap.pre_select"] = true,
+    ["clients.buffers.enabled"] = false,
+    ["clients.snippets.enabled"] = false,
+    ["clients.tmux.enabled"] = false,
+    ["clients.tree_sitter.enabled"] = true,
+    ["limits.completion_manual_timeout"] = 0.150
+}
 
 local protocol = require('vim.lsp.protocol')
 local saga = require("lspsaga")
@@ -39,6 +48,8 @@ require'lspconfig'.dockerls.setup {}
 require'lspconfig'.dockerls.setup(coq.lsp_ensure_capabilities())
 require'lspconfig'.sumneko_lua.setup(luadev)
 require'lspconfig'.sumneko_lua.setup(coq.lsp_ensure_capabilities())
+require'lspconfig'.ccls.setup {}
+require'lspconfig'.ccls.setup(coq.lsp_ensure_capabilities())
 
 null_ls.setup({
     sources = {
@@ -55,12 +66,11 @@ null_ls.setup({
         null_ls.builtins.formatting.lua_format,
         null_ls.builtins.formatting.nginx_beautifier,
         null_ls.builtins.formatting.rufo, null_ls.builtins.formatting.shfmt,
-        null_ls.builtins.diagnostics.stylua,
+        null_ls.builtins.formatting.stylua,
         null_ls.builtins.formatting.uncrustify,
         null_ls.builtins.diagnostics.alex,
         null_ls.builtins.diagnostics.shellcheck,
         null_ls.builtins.diagnostics.luacheck,
-        null_ls.builtins.diagnostics.actionlint,
         null_ls.builtins.diagnostics.write_good,
         null_ls.builtins.diagnostics.misspell,
         null_ls.builtins.diagnostics.vint, null_ls.builtins.hover.dictionary,

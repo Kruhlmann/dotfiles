@@ -46,7 +46,6 @@ import XMonad.Layout.Simplest
 import XMonad.Layout.Grid
 import XMonad.Layout.IM
 import XMonad.Layout.Named
-import XMonad.Layout.NoBorders
 import XMonad.Layout.PerWorkspace
 import XMonad.Layout.Reflect
 import XMonad.Layout.SimpleFloat
@@ -122,7 +121,7 @@ myWorkspaces    = ["Firefox","Programming","Instant Messaging","Email","Bitwarde
 myFont      = "-*-dejavu-*-*-*-*-16-*-*-*-*-*-*"
 myBigFont   = "-*-dejavu-*-*-*-*-24-*-*-*-*-*-*"
 myNormalBorderColor  = "#dddddd"
-myFocusedBorderColor = "#ff0000"
+myFocusedBorderColor = "#009999"
 
 -- layout string
 curLayout :: X String
@@ -256,9 +255,21 @@ myLogHook = return ()
 
 myStartupHook = do
     spawnOnce "nm-applet"
-    spawnOnce "mpd ~/.config/mpd/mpd.conf"
     spawnOnce "launch_polybar"
     spawnOnce "setxkbmap -rules evdev -model evdev -layout us -variant altgr-intl"
+    spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+    spawnOnce "mpd --no-daemon --verbose --stdout \"$HOME/.config/mpd/mpd.conf\""
+    spawnOnce "picom --experimental-backends --fade-exclude 'class_g = \"xsecurelock\"'"
+    spawnOnce "blueman-manager"
+    spawnOnce "find ~/.ssh/ -type f -exec grep -l \"PRIVATE\" {} \\; | xargs ssh-add >/dev/null"
+    spawnOnce "feh --bg-scale \"$HOME/img/wallpaper\""
+    spawnOnce "sh \"$HOME/.config/hostnamerc.d/$(hostname)\""
+    spawnOnce "sh \"$HOME/.scripts/mpdevents\""
+    spawnOnce "dunst"
+    spawnOnce "xbindkeys"
+    spawnOnce "xset r rate 416 25"
+    spawnOnce "xset dpms 0 0 300"
+    spawnOnce "xss-lock -- \"$HOME/.scripts/portable-lock\""
 
 main = do xmonad
     $ ewmh
@@ -269,7 +280,7 @@ main = do xmonad
 defaults = defaultConfig {
         terminal           = myTerminal,
         focusFollowsMouse  = myFocusFollowsMouse,
-        borderWidth        = 0,
+        borderWidth        = 3,
         modMask            = myModMask,
         workspaces         = myWorkspaces,
         normalBorderColor  = myNormalBorderColor,

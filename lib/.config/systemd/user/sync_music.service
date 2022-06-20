@@ -1,5 +1,0 @@
-[Unit]
-Description=Synchronize music with YouTube playlists 
-
-[Service]
-ExecStart=%h/.scripts/sync_music

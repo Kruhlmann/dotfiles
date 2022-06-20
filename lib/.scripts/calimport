@@ -1,6 +1,0 @@
-#!/usr/bin/env sh
-
-#calparse $1 /tmp/calcurse_import
-#calcurse -i /tmp/calcurse_import
-calcurse -i $1
-notify-send "Appointment imported"

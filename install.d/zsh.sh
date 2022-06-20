@@ -13,6 +13,7 @@ install_zsh_plugin() {
 
 needs_install() {
   command -v zsh >/dev/null || return 0
+  return 1
 }
 
 setup() {

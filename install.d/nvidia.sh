@@ -6,6 +6,7 @@ pre_install aur
 
 needs_install() {
   test -f "$HOOK" || return 0
+  return 1
 }
 
 setup() {

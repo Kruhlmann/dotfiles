@@ -5,10 +5,11 @@ pre_install aur python node
 needs_install() {
   command -v /usr/bin/nvim >/dev/null || return 0
   command -v /usr/bin/misspell >/dev/null || return 0
+  return 1
 }
 
 setup() {
-  depends_on neovim-nightly-bin base-devel python node universal-ctags ruby git pyright typescript typescript-language-server bash-language-server tmux lua-format misspell shellharden prettier_d_slim eslint_d prettier eslint luacheck asmfmt write-good uncrustify noto-fonts-emoji gopls lua shellcheck luacheck rubocop  alex stylua actionlint
+  depends_on neovim-nightly-bin base-devel python node universal-ctags ruby git pyright typescript typescript-language-server bash-language-server tmux lua-format misspell shellharden prettier_d_slim eslint_d prettier eslint luacheck asmfmt write-good uncrustify noto-fonts-emoji gopls lua shellcheck luacheck rubocop alex stylua actionlint
   pip install neovim >/dev/null
   yarn global add neovim >/dev/null
   gem install neovim >/dev/null

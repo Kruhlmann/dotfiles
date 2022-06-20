@@ -4,6 +4,7 @@ pre_install aur
 
 needs_install() {
   command -v /usr/bin/xmonad >/dev/null || return 0
+  return 1
 }
 
 setup() {

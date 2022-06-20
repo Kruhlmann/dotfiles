@@ -1,0 +1,55 @@
+#!/usr/bin/env python3
+
+import os
+import sys
+from queue import Queue
+from threading import Thread
+from time import sleep
+
+filename = sys.argv[1]
+done = False
+prefix_icons = [char for char in "⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏"]
+prefix_icon = " "
+
+
+def reader(message_queue: Queue[str]) -> None:
+    global done
+    for line in sys.stdin:
+        line = line.rstrip()
+        columns = os.get_terminal_size().columns
+        maxsize = columns - len(filename) - 30
+        padding = " " * (maxsize - len(line[:maxsize]))
+        message_queue.put(f"{line[:maxsize]}{padding}")
+    done = True
+
+
+def prefixer(message_queue: Queue[str]) -> None:
+    global prefix_icon
+
+    prefix_index = 0
+    current_message = ""
+    while not done:
+        try:
+            current_message = message_queue.get(timeout=0)
+        except:
+            sys.stdout.write(
+                f"\033[0;36m[{prefix_icon}] {filename}\033[0;0m {current_message}\r"
+            )
+            sys.stdout.flush()
+        sys.stdout.write(
+            f"\033[0;36m[{prefix_icon}] {filename}\033[0;0m {current_message}\r"
+        )
+        sys.stdout.flush()
+        prefix_index += 1
+        prefix_icon = prefix_icons[prefix_index % len(prefix_icons)]
+        sleep(0.05)
+
+
+if __name__ == "__main__":
+    message_queue = Queue()
+    read_thread = Thread(target=reader, args=(message_queue,))
+    write_thread = Thread(target=prefixer, args=(message_queue,))
+    read_thread.start()
+    write_thread.start()
+    read_thread.join()
+    write_thread.join()

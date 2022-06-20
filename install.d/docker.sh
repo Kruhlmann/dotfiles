@@ -1,10 +1,11 @@
 #!/usr/bin/env sh
 
-pre_install aur bitwarden
+pre_install aur
 
 needs_install() {
   command -v /usr/bin/docker >/dev/null || return 0
   command -v /usr/bin/docker-compose >/dev/null || return 0
+  return 1
 }
 
 setup() {
@@ -12,8 +13,8 @@ setup() {
 }
 
 postinstall() {
-  docker_user=$(bw get item "$(bw list items --search "registry.nymann.dev" | jq '.[0].id' --raw-output)" | jq '.login.username' --raw-output)
-  docker_pass=$(bw get item "$(bw list items --search "registry.nymann.dev" | jq '.[0].id' --raw-output)" | jq '.login.password' --raw-output)
+  docker_user=$(bw_item "registry.nymann.dev" | jq '.login.username' --raw-output)
+  docker_pass=$(bw_item "registry.nymann.dev" | jq '.login.password' --raw-output)
   mkdir -p "$HOME/.docker"
   sudo mkdir -p /root/.docker
   sudo usermod -aG docker "$(whoami)"

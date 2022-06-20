@@ -10,6 +10,8 @@ pre_install aur ssh
 
 needs_install() {
   command -v /usr/bin/virsh >/dev/null || return 0
+  test -f /etc/libvirt/qemu/networks/default.xml || return 0
+  return 1
 }
 
 setup() {

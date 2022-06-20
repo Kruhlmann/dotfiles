@@ -9,6 +9,7 @@ needs_install() {
   command -v /usr/bin/ninja >/dev/null || return 0
   command -v /usr/bin/alacritty >/dev/null || return 0
   command -v /usr/bin/gcc >/dev/null || return 0
+  return 1
 }
 
 setup() {

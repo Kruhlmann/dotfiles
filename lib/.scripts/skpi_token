@@ -1,0 +1,25 @@
+#!/usr/bin/env sh
+
+set -e
+
+bw_password() {
+    cat "$HOME/.cache/bw/pass"
+}
+
+BW_SESSION="$(bw <"$HOME/.cache/bw/pass" unlock --raw 2>/dev/null)"
+export BW_SESSION
+twofa_bw_item_id="$(bw list items --search '2FA Mobnet (dev)' | jq '.[0].id' --raw-output)"
+twofa_bw_item="$(bw get item "$twofa_bw_item_id")"
+twofa_user="$(echo "$twofa_bw_item" | jq --raw-output '.login.username')"
+twofa_pass="$(echo "$twofa_bw_item" | jq --raw-output '.login.password')"
+twofa_totp="$(echo "$twofa_bw_item" | jq --raw-output '.login.totp')"
+twofa_otp="$(echo "$twofa_totp" | mintotp)"
+response=$(curl 'https://skpi.dev.mobnet.dk/2fa-api/users/token' \
+    -Lks \
+    -X POST \
+    -H 'Accept: application/json' \
+    -H 'Origin: https://skpi.dev.mobnet.dk' \
+    --data-raw "{\"email\":\"$twofa_user\",\"password\":\"$twofa_pass\",\"token\":\"$twofa_otp\"}")
+token="$(echo "$response" | jq --raw-output '.access_token')"
+echo "http://localhost:3000/mt/login?token=$token" | xclip -selection clipboard
+notify-send "Copied SKPI login url to clipboard"

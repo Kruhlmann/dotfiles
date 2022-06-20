@@ -10,6 +10,7 @@ needs_install() {
   command -v /usr/bin/mpc >/dev/null || return 0
   command -v /usr/bin/mpd >/dev/null || return 0
   command -v /usr/bin/ncmpcpp >/dev/null || return 0
+  return 1
 }
 
 setup() {

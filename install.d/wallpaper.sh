@@ -3,7 +3,8 @@
 pre_install aur
 
 needs_install() {
-  command -v /usr/bin/feh >/dev/null || return 1
+  command -v /usr/bin/feh >/dev/null || return 0
+  return 1
 }
 
 setup() {

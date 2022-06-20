@@ -4,7 +4,8 @@ pre_install devel aur
 
 needs_install() {
   test -d /usr/share/themes/Everblush-gtk/ || return 0
-  command -v /usr/bin/papirus-folders >/dev/null || return 0
+  command -v /usr/bin/papirus-folders-gui >/dev/null || return 0
+  return 1
 }
 
 install_everblush() {
@@ -24,7 +25,7 @@ install_quintom() {
 }
 
 setup() {
-  depends_on papirus-folders-git papirus-icon-theme-git
+  depends_on papirus-folders-gui papirus-icon-theme-git
   install_everblush
   install_quintom
 }

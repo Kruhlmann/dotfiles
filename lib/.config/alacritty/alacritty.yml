@@ -7,8 +7,8 @@ env:
 
 window:
   padding:
-    x: 0
-    y: 0
+    x: 15
+    y: 15
   decorations: none
   opacity: 1.0
   startup_mode: Windowed
@@ -51,7 +51,7 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   #primary:
-  #  background: '#1d1f21'
+  background: '#282828'
   #  foreground: '#c5c8c6'
 
     # Bright and dim foreground colors
@@ -214,7 +214,7 @@ bell:
 
   # Duration of the visual bell flash in milliseconds. A `duration` of `0` will
   # disable the visual bell animation.
-  duration: 100
+  duration: 50
 
   # Visual bell animation color.
   color: '#ffffff'

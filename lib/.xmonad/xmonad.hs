@@ -179,7 +179,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $ [
     ((modm,               xK_h     ), sendMessage Shrink),
     ((modm,               xK_l     ), sendMessage Expand),
     ((modm .|. shiftMask, xK_space ), withFocused $ windows . W.sink),
-    ((modm,               xK_Tab   ), sendMessage NextLayout >> (curLayout >>= \d->spawn $"notify-send "++d)),
+    ((modm,               xK_Tab   ), sendMessage NextLayout),
     ((modm,               xK_f     ), sendMessage ToggleLayout),
     ((modm .|. shiftMask, xK_o     ), setLayout $ XMonad.layoutHook conf),
     ((modm,               xK_Down),  nextWS),
@@ -238,10 +238,12 @@ myManageHook = composeAll [
     className =? "microsoft-edge-dev" --> doShift "Instant Messaging",
     className =? "microsoft-edge" --> doShift "Instant Messaging",
     className =? "ckb-next" --> doShift "Settings",
+    className =? "blueman-manager" --> doShift "Settings",
     -- Float.
     resource  =? "floatterm" --> doRectFloat (W.RationalRect 0.2 0.2 0.6 0.6),
     resource  =? "pavucontrol" --> doRectFloat (W.RationalRect 0.2 0.2 0.6 0.6),
     resource  =? "gnome-panel" --> doCenterFloat,
+    className     =? "xmessage" --> doCenterFloat,
     title     =? "Firefox Preferences" --> doFloat,
     title     =? "Session Manager - Mozilla Firefox" --> doFloat,
     title     =? "Firefox Add-on Updates" --> doFloat,
@@ -270,6 +272,7 @@ myStartupHook = do
     spawnOnce "xset r rate 416 25"
     spawnOnce "xset dpms 0 0 300"
     spawnOnce "xss-lock -- \"$HOME/.scripts/portable-lock\""
+    spawnOnce "ls ~/.xmonad/xmonad.hs | entr sh -c 'xmonad --recompile; xmonad --restart'"
 
 main = do xmonad
     $ ewmh
@@ -280,7 +283,7 @@ main = do xmonad
 defaults = defaultConfig {
         terminal           = myTerminal,
         focusFollowsMouse  = myFocusFollowsMouse,
-        borderWidth        = 3,
+        borderWidth        = 2,
         modMask            = myModMask,
         workspaces         = myWorkspaces,
         normalBorderColor  = myNormalBorderColor,

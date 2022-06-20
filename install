@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
-install_scripts_completed=""
+set -e
 
-LOGDIR="$(mktemp -d)"
-export LOGDIR
+install_scripts_completed=""
 
 depends_on() {
   # shellcheck disable=SC2046
@@ -16,30 +15,26 @@ depends_on() {
   fi
 }
 
-show_output() {
-  while read -r line; do
-    echo "$line" >"$LOGDIR/$1.log"
-    line_truncated="$(printf '%s' "$line" | sed 's/\(.\{32\}\).*/\1.../')"
-    printf '\e[0;36m[ ] %s\e[0;0m %s                                \r' "$1" "$line_truncated"
-  done
-}
-
 run_install_script() {
   if [ -f "./install.d/$1.sh" ]; then
+    start="$(date +%s)"
     if ! echo "$install_scripts_completed" | grep -q "$1"; then
       error=""
       # shellcheck disable=SC1090
       . "./install.d/$1.sh"
 
-      needs_install && setup 2>&1 | show_output "$1" || error="(setup failed)"
-      postinstall 2>&1 | show_output "$1" || error="(postinstall failed)"
+      if needs_install; then
+        setup 2>&1 | ./show_output "$1" || error="(setup failed)"
+        postinstall 2>&1 | ./show_output "$1" || error="(postinstall failed)"
+      fi
 
       install_scripts_completed="$install_scripts_completed $1"
 
+      end="$(date +%s)"
       if [ -z "$error" ]; then
-        printf '\033[2K\e[0;36m[✓] %s\e[0;0m\n' "$1"
+        printf '\033[2K\e[0;36m[✓] %s (%d s)\e[0;0m\n' "$1" "$((end - start))"
       else
-        printf '\033[2K\e[0;31m[x] %s\e[0;0m %s\n' "$1" "$error"
+        printf '\033[2K\e[0;31m[x] %s (%d s)\e[0;0m %s\n' "$1" "$((end - start))" "$error"
       fi
     fi
   else
@@ -68,7 +63,18 @@ secure_prompt() {
   printf '%s' "$SECURESTRING"
 }
 
+bw_unlock() {
+  BW_SESSION=$(bw <"$HOME/.cache/bw/pass" unlock --raw 2>/dev/null)
+  export BW_SESSION
+}
+
+bw_item() {
+  test -z "$BW_SESSION" && bw_unlock
+  bw get item "$(bw list items --search "$1" 2>/dev/null | jq '.[0].id' --raw-output)"
+}
+
 clone_homedir() {
+  start="$(date +%s)"
   SCRIPTPATH="$(
     cd "$(dirname "$0")" || exit 1
     pwd -P
@@ -85,27 +91,31 @@ clone_homedir() {
     if [ -f "$HOME/$FILE" ]; then
       cp "$HOME/$FILE" "$BACKUPFILE"
       rm "$HOME/$FILE"
+      echo "$HOME/$FILE"
     fi
 
     ln -s -f "$SCRIPTPATH/lib/$FILE" "$HOME/$FILE" >/dev/null 2>&1
-  done
+  done | ./show_output "homedir"
+  end="$(date +%s)"
+  printf '\033[2K\e[0;36m[✓] homedir (%d s)\e[0;0m\n' "$((end - start))"
 }
 
 setup_vars() {
   BW_USERNAME="$(cat "$HOME/.cache/bw/user" 2>/dev/null)"
   BW_PASSWD="$(cat "$HOME/.cache/bw/pass" 2>/dev/null)"
   BW_CLIENTSECRET="$(cat "$HOME/.cache/bw/secret" 2>/dev/null)"
+
   [ -z "$BW_USERNAME" ] && BW_USERNAME=$(insecure_prompt "Enter bitwarden username: ")
   [ -z "$BW_PASSWD" ] && BW_PASSWD=$(secure_prompt "Enter bitwarden password: ")
   [ -z "$BW_CLIENTSECRET" ] && BW_CLIENTSECRET=$(secure_prompt "Enter bitwarden client_secret: ")
-  [ -z "$GPG_PASSWORD" ] && GPG_PASSWORD=$(secure_prompt "Enter gpg password: ")
+  gpg -K --with-keygrip | grep andreas@kruhlmann.dev >/dev/null || GPG_PASSWORD=$(secure_prompt "Enter gpg password: ")
   export BW_USERNAME BW_PASSWD BW_CLIENTSECRET GPG_PASSWORD
 }
 
-echo "Logs stored in $LOGDIR"
-sudo pacman -Sy >/dev/null
-clone_homedir
+sudo pacman -Sy >/dev/null 2>/dev/null
+depends_on jq bitwarden-cli >/dev/null 2>/dev/null
 setup_vars
+clone_homedir
 
 for file in ./install.d/*.sh; do
   run_install_script "$(basename "$file" .sh)"

@@ -3,7 +3,7 @@
 pre_install aur
 
 needs_install() {
-  gpg -K --with-keygrip | grep andreas@kruhlmann.dev && return 0
+  gpg -K --with-keygrip | grep andreas@kruhlmann.dev >/dev/null || return 0
   return 1
 }
 
@@ -36,6 +36,7 @@ EOF
 }
 
 setup() {
+  set -x
   depends_on gnupg pam-gnupg libgcrypt openssh openssl
   mkdir -p "$HOME/.gnupg/"
   gpg -K --with-keygrip | grep andreas@kruhlmann.dev ||
@@ -47,6 +48,7 @@ setup() {
     setup_gpg_allow_ssh
   test -f "$HOME/.pam-gnupg" ||
     gpg -K --with-keygrip | grep andreas@kruhlmann.dev -A 2 | grep Keygrip | awk '{ print $3 }' >"$HOME/.pam-gnupg"
+  set +x
 }
 
 postinstall() {

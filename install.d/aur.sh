@@ -4,6 +4,7 @@ pre_install
 
 needs_install() {
   command -v /usr/bin/yay >/dev/null || return 0
+  return 1
 }
 
 setup() {
@@ -16,5 +17,5 @@ setup() {
 }
 
 postinstall() {
-  return
+  depends_on check-broken-packages-pacman-hook-git pacdiff-pacman-hook-git sync-pacman-hook-git xmonad-recompile-pacman-hook-git
 }

@@ -4,6 +4,8 @@ pre_install aur python node
 
 needs_install() {
   command -v /usr/bin/lutris >/dev/null || return 0
+  test -f "$HOME/.config/lutris/battle_net.yml" || return 0
+  return 1
 }
 
 setup() {

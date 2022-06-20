@@ -4,6 +4,7 @@ pre_install aur devel
 
 needs_install() {
   command -v /usr/bin/polybar >/dev/null || return 0
+  return 1
 }
 
 setup() {

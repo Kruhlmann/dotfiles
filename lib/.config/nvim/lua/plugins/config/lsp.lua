@@ -18,7 +18,8 @@ local luadev = require("lua-dev").setup({})
 local capabilities = protocol.make_client_capabilities()
 
 local on_attach_null_ls = function()
-    vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format({ timeout_ms = 2000 })")
+    vim.cmd(
+        "autocmd BufWritePre <buffer> lua vim.lsp.buf.format({ timeout_ms = 2000 })")
 end
 
 saga.init_lsp_saga()
@@ -45,6 +46,8 @@ require'lspconfig'.solargraph.setup {}
 require'lspconfig'.solargraph.setup(coq.lsp_ensure_capabilities())
 require'lspconfig'.ccls.setup {}
 require'lspconfig'.ccls.setup(coq.lsp_ensure_capabilities())
+require'lspconfig'.svelte.setup {}
+require'lspconfig'.svelte.setup(coq.lsp_ensure_capabilities())
 
 null_ls.setup({
     debug = true,
@@ -63,14 +66,13 @@ null_ls.setup({
         null_ls.builtins.formatting.nginx_beautifier,
         null_ls.builtins.formatting.rufo, null_ls.builtins.formatting.shfmt,
         null_ls.builtins.formatting.uncrustify,
-        null_ls.builtins.formatting.rubocop,
-        null_ls.builtins.diagnostics.alex,
+        null_ls.builtins.formatting.rubocop, null_ls.builtins.diagnostics.alex,
         null_ls.builtins.diagnostics.shellcheck,
         null_ls.builtins.diagnostics.luacheck,
         null_ls.builtins.diagnostics.write_good,
         null_ls.builtins.diagnostics.misspell,
-        null_ls.builtins.diagnostics.rubocop,
-        null_ls.builtins.diagnostics.vint, null_ls.builtins.hover.dictionary,
+        null_ls.builtins.diagnostics.rubocop, null_ls.builtins.diagnostics.vint,
+        null_ls.builtins.hover.dictionary,
         null_ls.builtins.code_actions.proselint,
         null_ls.builtins.code_actions.refactoring,
         null_ls.builtins.completion.spell

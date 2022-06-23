@@ -3,9 +3,9 @@
 CACHE_FILE="$HOME/.cache/merge_requests"
 touch "$CACHE_FILE"
 TOKEN="$(cat ~/.cache/gitlab-access-token)"
-URL="https://mo-gitlab.siemens.dk/api/v4/merge_requests?scope=assigned_to_me&private_token=$TOKEN&state=opened"
+URL="https://$(jq <"$HOME/.cache/siemens-config.json" '.gitlab_host')/api/v4/merge_requests?scope=assigned_to_me&private_token=$TOKEN&state=opened"
 MERGE_REQUEST_COUNT="$(curl -s "$URL" | jq -r '.[].id' | wc -l)"
 LAST_MERGE_REQUEST_COUNT=$(cat "$CACHE_FILE")
 [ "$MERGE_REQUEST_COUNT" = "$LAST_MERGE_REQUEST_COUNT" ] || notify-send "You have $MERGE_REQUEST_COUNT merge requests assigned"
-echo "$MERGE_REQUEST_COUNT" > "$CACHE_FILE"
+echo "$MERGE_REQUEST_COUNT" >"$CACHE_FILE"
 echo "$MERGE_REQUEST_COUNT"

@@ -1,0 +1,25 @@
+#!/usr/bin/env sh
+
+TOKEN="$(cat "$HOME/.cache/gitlab-access-token")"
+CACHE_FILE="$HOME/.cache/gl_sprint_progress"
+CACHED_RESULT="$HOME/.cache/gl_sprint_progress_last_result"
+BASE_DOMAIN="https://$(jq --raw-output '.gitlab_host' <"$HOME/.cache/siemens-config.json")"
+CACHE_REFRESH_SECONDS=180
+
+download_file() {
+    curl -s "${BASE_DOMAIN}/api/v4/groups/129/issues?private_token=$TOKEN&labels=In+Sprint" 2>/dev/null | jq >"$CACHE_FILE" 2>/dev/null
+}
+
+if [ ! -f "${CACHE_FILE}" ]; then
+    download_file
+elif [ "$(stat -c %Y "${CACHE_FILE}")" -lt $(($(date +"%s") - CACHE_REFRESH_SECONDS)) ]; then
+    download_file
+fi
+
+OPEN=$(jq <~/.cache/gl_sprint_progress '[.[] | select(.state=="opened").time_stats.time_estimate] | add' 2>/dev/null)
+CLOSED=$(jq <~/.cache/gl_sprint_progress '[.[] | select(.state=="closed").time_stats.time_estimate] | add' 2>/dev/null)
+TOTAL=$((OPEN + CLOSED))
+
+echo "$((CLOSED * 100 / TOTAL))% $((CLOSED / 3600))/$((TOTAL / 3600))"
+
+echo "${TOTAL}%" >"${CACHED_RESULT}"

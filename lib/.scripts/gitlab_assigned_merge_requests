@@ -3,31 +3,29 @@
 TOKEN="$(cat "$HOME/.cache/gitlab-access-token")"
 CACHE_FILE="$HOME/.cache/gitlab_merge_requests_raw"
 CACHED_RESULT="$HOME/.cache/gitlab_merge_requests_assigned_last_result"
-BASE_DOMAIN="https://mo-gitlab.siemens.dk"
+BASE_DOMAIN="https://$(jq <"$HOME/.cache/siemens-config.json" '.gitlab_host')"
 CACHE_REFRESH_SECONDS=180
 GITLAB_USERNAME="ASK"
 
-download_file()
-{
-    curl -s "${BASE_DOMAIN}/api/v4/merge_requests?private_token=${TOKEN}&state=opened" | \
-        jq > "$CACHE_FILE"
+download_file() {
+	curl -s "${BASE_DOMAIN}/api/v4/merge_requests?private_token=${TOKEN}&state=opened" |
+		jq >"$CACHE_FILE"
 }
 
-if [ ! -f "${CACHE_FILE}" ] ; then
-    download_file
-elif [ $(stat -c %Y "${CACHE_FILE}") -lt $(($(date +"%s")-${CACHE_REFRESH_SECONDS})) ] ; then
-    download_file
+if [ ! -f "${CACHE_FILE}" ]; then
+	download_file
+elif [ $(stat -c %Y "${CACHE_FILE}") -lt $(($(date +"%s") - ${CACHE_REFRESH_SECONDS})) ]; then
+	download_file
 fi
 
-OUTPUT="$(cat "${CACHE_FILE}" | \
-    jq --arg USR $GITLAB_USERNAME -r 'map(.assignees) | .[] | .[] | select(.username==$USR) | .id' | \
-    wc -l)"
+OUTPUT="$(cat "${CACHE_FILE}" |
+	jq --arg USR $GITLAB_USERNAME -r 'map(.assignees) | .[] | .[] | select(.username==$USR) | .id' |
+	wc -l)"
 
-
-if [ "$OUTPUT" = "0" ]; then 
-    echo "%{F#555555}$OUTPUT%{F-}"
-else 
-    echo "$OUTPUT"
+if [ "$OUTPUT" = "0" ]; then
+	echo "%{F#555555}$OUTPUT%{F-}"
+else
+	echo "$OUTPUT"
 fi
 
-echo "${OUTPUT}" > "${CACHED_RESULT}"
+echo "${OUTPUT}" >"${CACHED_RESULT}"

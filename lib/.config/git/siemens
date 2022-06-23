@@ -1,5 +1,0 @@
-[user]
-    email = andreas.kruehlmann@siemens.com
-    signingKey = 92CC003DA102E4D9B2D5C18D0809F0A74657997E
-[commit]
-    gpgSign = true

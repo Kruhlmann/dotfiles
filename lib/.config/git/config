@@ -36,14 +36,8 @@
 [alias]
 	conflicts = diff --name-only --diff-filter=U
 
-[includeIf "gitdir:~/doc/src/code.siemens.com/"]
-    path = ~/.config/git/siemens
-
-[includeIf "gitdir:~/doc/src/mo-gitlab.siemens.dk/"]
-    path = ~/.config/git/siemens
-
-[includeIf "gitdir:/mnt/hdd/home/doc/src/mo-gitlab.siemens.dk/"]
-    path = ~/.config/git/siemens
+[include]
+    path = ~/.config/git/siemens.includes
 
 [includeIf "gitdir:~/.calcurse"]
     path = ~/.config/git/personal

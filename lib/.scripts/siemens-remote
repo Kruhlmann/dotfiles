@@ -1,31 +1,41 @@
 #!/usr/bin/env sh
 
+set -x
+
 [ $(id -u) -eq 0 ] || exec sudo $0
 umask 0022
 
-HOST=${1:-mo-gitlab.siemens.dk}
+HOST=$(jq --raw-output '.gitlab_host' <"/home/ges/.cache/siemens-config.json")
 DNS=172.31.0.253
 GW=${DNS}
 
+mobnet_host="$(jq --raw-output '.mobnet_host' <"/home/ges/.cache/siemens-config.json")"
+airlink_host="$(jq --raw-output '.airlink_host' <"/home/ges/.cache/siemens-config.json")"
+airlink_ip="$(jq --raw-output '.airlink_ip' <"/home/ges/.cache/siemens-config.json")"
+kpi_host="$(jq --raw-output '.kpi_host' <"/home/ges/.cache/siemens-config.json")"
+kpi_ip="$(jq --raw-output '.kpi_ip' <"/home/ges/.cache/siemens-config.json")"
+gain_100="$(jq --raw-output '.gain_100' <"/home/ges/.cache/siemens-config.json")"
+gain_149="$(jq --raw-output '.gain_149' <"/home/ges/.cache/siemens-config.json")"
+
 printf 'Waiting for ZScaler:'
-while ! nslookup ${HOST} ${DNS} >/dev/null 2>&1; do
-  printf '.'
-  sleep 3s
+while ! nslookup "${HOST}" "${DNS}" >/dev/null 2>&1; do
+    printf '.'
+    sleep 3s
 done
 
 echo 'OK'
 
-cat > /run/dnsmasq/siemens.conf << EOF
+cat >/run/dnsmasq/siemens.conf <<EOF
 server=/siemens.net/${DNS}
 server=/siemens.com/${DNS}
 server=/siemens.io/${DNS}
 server=/siemens.de/${DNS}
 server=/siemens.dk/${DNS}
-server=/mobnet.dk/${DNS}
-server=/airlink.siemens.dk/10.165.16.10
-server=/kpi.siemens.dk/10.165.3.254
+server=/$mobnet_host/${DNS}
+server=/$airlink_host/$airlink_ip
+server=/$kpi_host/$kpi_ip
 EOF
 
 systemctl restart dnsmasq
-ip route add 100.64.0.0/10 via ${GW}
-ip route add 149.212.0.0/16 via ${GW}
+ip route add "$gain_100" via ${GW}
+ip route add "$gain_149" via ${GW}

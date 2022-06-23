@@ -4,7 +4,7 @@
 
 It is included in the path as `update_dotfiles` please check the path it's using beforehand.
 
-![demo](demo.png)
+![demo](doc/demo.png)
 
 ## Setup
 

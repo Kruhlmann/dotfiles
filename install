@@ -24,8 +24,8 @@ run_install_script() {
       . "./install.d/$1.sh"
 
       if needs_install; then
-        setup 2>&1 | ./show_output "$1" || error="(setup failed)"
-        postinstall 2>&1 | ./show_output "$1" || error="(postinstall failed)"
+        setup 2>&1 | ./lib/.scripts/show_output "$1" || error="(setup failed)"
+        postinstall 2>&1 | ./lib/.scripts/show_output "$1" || error="(postinstall failed)"
       fi
 
       install_scripts_completed="$install_scripts_completed $1"

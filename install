@@ -95,7 +95,7 @@ clone_homedir() {
     fi
 
     ln -s -f "$SCRIPTPATH/lib/$FILE" "$HOME/$FILE" >/dev/null 2>&1
-  done | ./show_output "homedir"
+  done | ./lib/.scripts/show_output "homedir"
   end="$(date +%s)"
   printf '\033[2K\e[0;36m[✓] homedir (%d s)\e[0;0m\n' "$((end - start))"
 }
@@ -113,7 +113,8 @@ setup_vars() {
 }
 
 sudo pacman -Sy >/dev/null 2>/dev/null
-depends_on jq bitwarden-cli >/dev/null 2>/dev/null
+depends_on jq bitwarden-cli sudo >/dev/null 2>/dev/null
+sudo sudo 2>/dev/null
 setup_vars
 clone_homedir
 

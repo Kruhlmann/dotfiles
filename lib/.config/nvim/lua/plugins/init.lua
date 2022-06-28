@@ -8,6 +8,10 @@ return require("packer").startup(function(use)
     use {'tomlion/vim-solidity'}
     use {'RishabhRD/popfix'}
     use {
+        'glacambre/firenvim',
+        run = function() vim.fn['firenvim#install'](0) end
+    }
+    use {
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
         config = [[require("plugins.config.treesitter")]]
@@ -33,13 +37,18 @@ return require("packer").startup(function(use)
     use {
         "ThePrimeagen/refactoring.nvim",
         requires = {
-            {"nvim-lua/plenary.nvim"},
-            {"nvim-treesitter/nvim-treesitter"}
+            {"nvim-lua/plenary.nvim"}, {"nvim-treesitter/nvim-treesitter"}
         }
     }
     use {"neovim/nvim-lspconfig", config = [[require("plugins.config.lsp")]]}
-    use {'lewis6991/impatient.nvim', config= [[require("plugins.config.impatient")]]}
-    use {'norcalli/nvim-colorizer.lua', config= [[require("plugins.config.colorizer")]]}
+    use {
+        'lewis6991/impatient.nvim',
+        config = [[require("plugins.config.impatient")]]
+    }
+    use {
+        'norcalli/nvim-colorizer.lua',
+        config = [[require("plugins.config.colorizer")]]
+    }
     use {
         "folke/lsp-trouble.nvim",
         requires = {

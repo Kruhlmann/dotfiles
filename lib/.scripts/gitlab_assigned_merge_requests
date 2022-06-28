@@ -3,7 +3,7 @@
 TOKEN="$(cat "$HOME/.cache/gitlab-access-token")"
 CACHE_FILE="$HOME/.cache/gitlab_merge_requests_raw"
 CACHED_RESULT="$HOME/.cache/gitlab_merge_requests_assigned_last_result"
-BASE_DOMAIN="https://$(jq <"$HOME/.cache/siemens-config.json" '.gitlab_host')"
+BASE_DOMAIN="https://$(jq --raw-output '.gitlab_host' <"$HOME/.cache/siemens-config.json")"
 CACHE_REFRESH_SECONDS=180
 GITLAB_USERNAME="ASK"
 

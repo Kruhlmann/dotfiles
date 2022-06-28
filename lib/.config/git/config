@@ -30,8 +30,8 @@
     tool = vimdiff
 
 [pull]
-    rebase = true
-    ff = only
+    rebase = false
+    ff = true
 
 [alias]
 	conflicts = diff --name-only --diff-filter=U

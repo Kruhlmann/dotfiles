@@ -67,7 +67,8 @@ null_ls.setup({
         null_ls.builtins.formatting.nginx_beautifier,
         null_ls.builtins.formatting.rufo, null_ls.builtins.formatting.shfmt,
         null_ls.builtins.formatting.uncrustify,
-        null_ls.builtins.formatting.rubocop, null_ls.builtins.diagnostics.alex,
+        null_ls.builtins.diagnostics.alex,
+        null_ls.builtins.diagnostics.eslint_d,
         null_ls.builtins.diagnostics.shellcheck,
         null_ls.builtins.diagnostics.checkmake,
         null_ls.builtins.diagnostics.luacheck,
@@ -77,8 +78,8 @@ null_ls.setup({
         null_ls.builtins.hover.dictionary,
         null_ls.builtins.code_actions.proselint,
         null_ls.builtins.code_actions.refactoring,
-        null_ls.builtins.completion.spell,
-        null_ls.builtins.code_actions.shellcheck
+        null_ls.builtins.code_actions.eslint_d,
+        null_ls.builtins.completion.spell
     },
     on_attach = on_attach_null_ls,
     capabilities = capabilities

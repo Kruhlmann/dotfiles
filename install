@@ -94,13 +94,14 @@ clone_homedir() {
       echo "$HOME/$FILE"
     fi
 
+    printf '\e[0;36m[ ] Setting up\e[0;0m %s                                \r' "$HOME/$FILE"
     ln -s -f "$SCRIPTPATH/lib/$FILE" "$HOME/$FILE" >/dev/null 2>&1
-  done | ./lib/.scripts/show_output "homedir"
-  end="$(date +%s)"
-  printf '\033[2K\e[0;36m[✓] homedir (%d s)\e[0;0m\n' "$((end - start))"
+  done
+  printf '\033[2K\e[0;36m[✓] Setting up file links\e[0;0m\n'
 }
 
 setup_vars() {
+  mkdir -p ~/.cache/bw
   BW_USERNAME="$(cat "$HOME/.cache/bw/user" 2>/dev/null)"
   BW_PASSWD="$(cat "$HOME/.cache/bw/pass" 2>/dev/null)"
   BW_CLIENTSECRET="$(cat "$HOME/.cache/bw/secret" 2>/dev/null)"
@@ -112,9 +113,8 @@ setup_vars() {
   export BW_USERNAME BW_PASSWD BW_CLIENTSECRET GPG_PASSWORD
 }
 
-sudo pacman -Sy >/dev/null 2>/dev/null
-depends_on jq bitwarden-cli sudo >/dev/null 2>/dev/null
-sudo sudo 2>/dev/null
+echo "Logs stored in $LOGDIR"
+sudo pacman -Sy >/dev/null
 setup_vars
 clone_homedir
 

@@ -11,7 +11,17 @@
     },
     {
         "icon": "\uf87c",
-        "name": "MX Master",
+        "name": "MX Master (ASK)",
         "address": "E9:DE:56:06:E6:12"
+    },
+    {
+        "icon": "\uf87c",
+        "name": "MX Master (KNJ)",
+        "address": "FA:FC:E5:FF:A3:76"
+    },
+    {
+        "icon": "\uf87c",
+        "name": "MX Master (Unknown)",
+        "address": "D6:CF:CE:9E:2C:24"
     }
 ]

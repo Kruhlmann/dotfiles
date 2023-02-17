@@ -1,10 +1,9 @@
 #!/usr/bin/env sh
 
-pre_install aur python node
+pre_install aur python node nim
 
 needs_install() {
   command -v /usr/bin/nvim >/dev/null || return 0
-  command -v /usr/bin/misspell >/dev/null || return 0
   return 1
 }
 
@@ -13,6 +12,7 @@ setup() {
   pip install neovim >/dev/null
   yarn global add neovim >/dev/null
   gem install neovim >/dev/null
+  nimble install -y nimlsp
   cd /tmp/ || return 1
   curl -L https://git.io/misspell | sh
   sudo mv ./bin/misspell /usr/bin/misspell

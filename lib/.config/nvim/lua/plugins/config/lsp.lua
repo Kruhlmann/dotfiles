@@ -44,10 +44,16 @@ require'lspconfig'.sumneko_lua.setup(luadev)
 require'lspconfig'.sumneko_lua.setup(coq.lsp_ensure_capabilities())
 require'lspconfig'.solargraph.setup {}
 require'lspconfig'.solargraph.setup(coq.lsp_ensure_capabilities())
+require'lspconfig'.nimls.setup {}
+require'lspconfig'.nimls.setup(coq.lsp_ensure_capabilities())
 require'lspconfig'.ccls.setup {}
 require'lspconfig'.ccls.setup(coq.lsp_ensure_capabilities())
 require'lspconfig'.svelte.setup {}
 require'lspconfig'.svelte.setup(coq.lsp_ensure_capabilities())
+require'lspconfig'.hls.setup {}
+require'lspconfig'.hls.setup(coq.lsp_ensure_capabilities())
+require'lspconfig'.rust_analyzer.setup {}
+require'lspconfig'.rust_analyzer.setup(coq.lsp_ensure_capabilities())
 
 null_ls.setup({
     debug = true,
@@ -62,23 +68,30 @@ null_ls.setup({
         null_ls.builtins.formatting.golines,
         null_ls.builtins.formatting.gofumpt,
         null_ls.builtins.formatting.markdownlint,
+        null_ls.builtins.formatting.shellharden,
         null_ls.builtins.formatting.json_tool,
         null_ls.builtins.formatting.lua_format,
         null_ls.builtins.formatting.nginx_beautifier,
         null_ls.builtins.formatting.rufo, null_ls.builtins.formatting.shfmt,
         null_ls.builtins.formatting.uncrustify,
         null_ls.builtins.formatting.rubocop, null_ls.builtins.diagnostics.alex,
+        null_ls.builtins.diagnostics.eslint_d, null_ls.builtins.diagnostics.tsc,
         null_ls.builtins.diagnostics.shellcheck,
         null_ls.builtins.diagnostics.checkmake,
         null_ls.builtins.diagnostics.luacheck,
         null_ls.builtins.diagnostics.write_good,
         null_ls.builtins.diagnostics.misspell,
+        null_ls.builtins.diagnostics.jsonlint,
         null_ls.builtins.diagnostics.rubocop, null_ls.builtins.diagnostics.vint,
+        null_ls.builtins.diagnostics.stylelint,
+        null_ls.builtins.diagnostics.luacheck,
+        null_ls.builtins.diagnostics.proselint,
         null_ls.builtins.hover.dictionary,
         null_ls.builtins.code_actions.proselint,
         null_ls.builtins.code_actions.refactoring,
-        null_ls.builtins.completion.spell,
-        null_ls.builtins.code_actions.shellcheck
+        null_ls.builtins.code_actions.eslint_d,
+        null_ls.builtins.code_actions.shellcheck,
+        null_ls.builtins.completion.spell, null_ls.builtins.hover.dictionary
     },
     on_attach = on_attach_null_ls,
     capabilities = capabilities

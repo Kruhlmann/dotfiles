@@ -2,12 +2,12 @@
 
 set -x
 
-[ $(id -u) -eq 0 ] || exec sudo $0
+[ "$(id -u)" -eq 0 ] || exec sudo "$0"
 umask 0022
 
 HOST=$(jq --raw-output '.gitlab_host' <"/home/ges/.cache/siemens-config.json")
 DNS=172.31.0.253
-GW=${DNS}
+GW=$DNS
 
 mobnet_host="$(jq --raw-output '.mobnet_host' <"/home/ges/.cache/siemens-config.json")"
 airlink_host="$(jq --raw-output '.airlink_host' <"/home/ges/.cache/siemens-config.json")"
@@ -16,11 +16,13 @@ kpi_host="$(jq --raw-output '.kpi_host' <"/home/ges/.cache/siemens-config.json")
 kpi_ip="$(jq --raw-output '.kpi_ip' <"/home/ges/.cache/siemens-config.json")"
 gain_100="$(jq --raw-output '.gain_100' <"/home/ges/.cache/siemens-config.json")"
 gain_149="$(jq --raw-output '.gain_149' <"/home/ges/.cache/siemens-config.json")"
+aws="$(jq --raw-output '.aws' <"/home/ges/.cache/siemens-config.json")"
+
 
 printf 'Waiting for ZScaler:'
-while ! nslookup "${HOST}" "${DNS}" >/dev/null 2>&1; do
-    printf '.'
-    sleep 3s
+while ! nslookup "$HOST" "$DNS" >/dev/null 2>&1; do
+	printf '.'
+	sleep 3s
 done
 
 echo 'OK'
@@ -37,5 +39,8 @@ server=/$kpi_host/$kpi_ip
 EOF
 
 systemctl restart dnsmasq
-ip route add "$gain_100" via ${GW}
-ip route add "$gain_149" via ${GW}
+ip route add "$gain_100" via "$GW"
+ip route add "$gain_149" via "$GW"
+ip route add "$aws" via "$GW"
+ip route add "52.64.0.0/12" via "$GW"
+ip route add "52.0.0.0/10" via "$GW"

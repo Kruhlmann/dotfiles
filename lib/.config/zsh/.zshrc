@@ -34,6 +34,7 @@ source ~/.config/zsh/binds.sh
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 source $ZSH/oh-my-zsh.sh
+source ~/.profile
 
 # GPG
 # export GPG_TTY=$(tty)
@@ -43,4 +44,3 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source /usr/share/nvm/init-nvm.sh

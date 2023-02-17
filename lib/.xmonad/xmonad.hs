@@ -280,7 +280,7 @@ main = do xmonad
     $ withUrgencyHook LibNotifyUrgencyHook
     $ defaults
 
-defaults = defaultConfig {
+defaults = def {
         terminal           = myTerminal,
         focusFollowsMouse  = myFocusFollowsMouse,
         borderWidth        = 2,

@@ -6,7 +6,9 @@ return require("packer").startup(function(use)
     use {"wbthomason/packer.nvim", opt = true}
     use {'mfussenegger/nvim-jdtls'}
     use {'tomlion/vim-solidity'}
+    use {'andweeb/presence.nvim'}
     use {'RishabhRD/popfix'}
+    use {'alaviss/nim.nvim'}
     use {
         'glacambre/firenvim',
         run = function() vim.fn['firenvim#install'](0) end
@@ -17,6 +19,7 @@ return require("packer").startup(function(use)
         config = [[require("plugins.config.treesitter")]]
     }
     use {"RishabhRD/nvim-lsputils"}
+    use {"uga-rosa/ccc.nvim"}
     use {"ludovicchabant/vim-gutentags"}
     use {
         "nvim-telescope/telescope.nvim",

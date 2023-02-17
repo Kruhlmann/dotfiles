@@ -8,7 +8,9 @@ capitalize() {
 }
 
 while true; do
+    sleep 0.1
     mpc idleloop player 2>/dev/null | while read -r; do
+    sleep 0.1
     dunstify \
         "$(mpc status %state% | capitalize)" \
         "$(mpc current | xargs basename -s .mp3 | sed 's/_/ /g' | cut -c 1-25)" \

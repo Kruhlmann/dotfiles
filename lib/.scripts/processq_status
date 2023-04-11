@@ -10,7 +10,11 @@ GAIN_PASSWORD=$(cat ~/.cache/gain/password)
 COOKIE_FILE="$HOME/.cache/processq_cookie"
 
 curl -sk --cookie-jar "$COOKIE_FILE" --data-urlencode "username=$GAIN_USER" --data-urlencode "password=$GAIN_PASSWORD" -X POST "$PROCESSQ_LOGIN_URL" >/dev/null
-USER_GID=$(curl -sk -b "$COOKIE_FILE" "$PROCESSQ_USER_GID_URL" | jq -r .gid)
+USER_GID=$(curl -sk -b "$COOKIE_FILE" "$PROCESSQ_USER_GID_URL" | jq -r .gid 2>/dev/null)
+if [ -z "$USER_GID" ]; then
+	echo "0/0"
+	exit 1
+fi
 REQUIREMENT_RESPONSE=$(curl -sk -b "$COOKIE_FILE" -X GET "$PROCESSQ_USER_REQUIREMENTS_URL?gid=$USER_GID" | jq)
 
 REQUIRED_COUNT=$(echo "$REQUIREMENT_RESPONSE" | grep -c '"required": true')

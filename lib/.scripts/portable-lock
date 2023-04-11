@@ -42,6 +42,7 @@ create_lock_image() {
 	echo "$image"
 }
 
+notify-send "Locking..."
 image=$(create_lock_image)
 lock "$image"
 rm "$image"

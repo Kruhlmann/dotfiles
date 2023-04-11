@@ -18,7 +18,9 @@ class LinuxKeycodeTranslator:
             "<": "KEY_LEFTSHIFT KEY_COMMA",
             ">": "KEY_LEFTSHIFT KEY_DOT",
             "'": "KEY_APOSTROPHE",
+            "-": "KEY_MINUS",
             "`": "KEY_GRAVE",
+            "\\": "KEY_BACKSLASH",
             "/": "KEY_SLASH",
             "?": "KEY_LEFTSHIFT KEY_SLASH",
             "!": "KEY_LEFTSHIFT KEY_1",
@@ -35,6 +37,7 @@ class LinuxKeycodeTranslator:
             "{": "KEY_LEFTSHIFT KEY_LEFTBRACE",
             "]": "KEY_RIGHTBRACE",
             "}": "KEY_LEFTSHIFT KEY_RIGHTBRACE",
+            "\"": "KEY_LEFTSHIFT KEY_APOSTROPHE",
         }
 
     def translate(self, character: str) -> str:
@@ -82,6 +85,7 @@ class UnlockVm:
 
     def _send_key(self, keycode: str):
         command = f"virsh send-key {self._virsh_domain} {keycode}"
+        print(command)
         subprocess.run(command.split(" "), stdout=subprocess.DEVNULL)
 
 

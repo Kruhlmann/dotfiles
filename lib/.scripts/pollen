@@ -1,3 +1,15 @@
 #!/usr/bin/env sh
 
-curl -sL 'https://www.astma-allergi.dk/umbraco/Api/PollenApi/GetPollenFeed' | node -e 'const fs=require("fs");const b=fs.readFileSync(0);console.log(b.toString().replace(/\\/g, "").slice(1,-1))' | jq '."48".data."28".level'
+correct_broken_json() {
+	node -e 'const fs=require("fs");const b=fs.readFileSync(0);console.log(b.toString().replace(/\\/g, "").slice(1,-1))'
+}
+
+fetch_api_data() {
+	curl -sL 'https://www.astma-allergi.dk/umbraco/Api/PollenApi/GetPollenFeed'
+}
+
+select_grass_pollen() {
+	jq '."48".data."28".level' 2>/dev/null || printf 'No data'
+}
+
+fetch_api_data | correct_broken_json | select_grass_pollen

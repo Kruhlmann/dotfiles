@@ -44,3 +44,8 @@ source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source /usr/share/nvm/init-nvm.sh
+
+# pnpm
+export PNPM_HOME="/home/ges/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end

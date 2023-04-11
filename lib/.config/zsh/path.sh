@@ -19,3 +19,4 @@ if which ruby >/dev/null && which gem >/dev/null; then
 fi
 # 2.7.0 non-RVM gems
 PATH="/root/.gem/ruby/2.7.0/bin:$PATH"
+PATH="$(go env GOPATH)/bin:$PATH"

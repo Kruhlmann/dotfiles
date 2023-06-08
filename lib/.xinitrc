@@ -18,5 +18,3 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
 fi
 
 exec xmonad
-# exec gnome-shell
-# exec ~/doc/src/github.com/kruhlmann/tsvm/bin/tsvm

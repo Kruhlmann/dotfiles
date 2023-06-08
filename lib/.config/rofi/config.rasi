@@ -155,5 +155,4 @@ configuration {
   fg:         #ebdbb2;
   bg:         #282828;
   bgalt:      #3c3836;
-  }
-
+}

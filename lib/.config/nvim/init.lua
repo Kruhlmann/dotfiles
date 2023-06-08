@@ -3,6 +3,7 @@
 -- Packer bootstrapping
 --
 --
+
 local vim = vim
 local map = vim.api.nvim_set_keymap
 local opts = {noremap = true, silent = true}
@@ -331,7 +332,6 @@ vim.g.coq_settings = {
 local protocol = require("vim.lsp.protocol")
 local saga = require("lspsaga")
 local coq = require("coq")
-local null_ls = require("null-ls")
 
 saga.init_lsp_saga()
 

@@ -1,14 +1,6 @@
 #/usr/bin/env sh
 
-list_repos() {
-    find "$SEARCH_PATH" -type d -name ".venv" -prune -o -name "node_modules" -prune -o -name ".git" ! -path "*/.git/*" -printf "%h\n" 2>/dev/null | sed "s#$SEARCH_PATH##"
-}
-
-BASE_DIR="${1:-$HOME/doc/src}"
-SUB_DIR="$2"
-
-SEARCH_PATH="$BASE_DIR/$SUB_DIR"
-SELECTION=$(list_repos | fzf)
+SELECTION=$(cat ~/.cache/repocache | fzf)
 if ! test -z "$SELECTION"; then
-        cd "$SEARCH_PATH/$SELECTION"
+  cd "/home/ges/doc/src$SELECTION"
 fi

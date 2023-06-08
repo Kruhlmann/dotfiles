@@ -114,7 +114,7 @@ hotPromptTheme = myPromptTheme
 myTerminal      = "alacritty"
 myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = True
-myBorderWidth   = 3
+myBorderWidth   = 0
 myModMask       = mod4Mask
 myWorkspaces :: [String]
 myWorkspaces    = ["Firefox","Programming","Instant Messaging","Email","Bitwarden","Virtual Machines","WINE Games","Steam Games","Settings"]
@@ -132,10 +132,10 @@ spawnRofi = "rofi -modi drun -show drun -display-drun 'Run'"
 spawnMaim = "maim -u -s | xclip -selection clipboard -t image/png"
 
 -- sizes
-size_gap = 10
-size_topbar = 10
-size_border = 0
-size_prompt = 20
+size_gap = 0
+size_topbar = 0
+size_border = 1
+size_prompt = 0
 
 data LibNotifyUrgencyHook = LibNotifyUrgencyHook deriving (Read, Show)
 instance UrgencyHook LibNotifyUrgencyHook where
@@ -163,11 +163,12 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $ [
     ((modm              , xK_b      ), spawn "manage_bluetooth_devices"),
     ((modm              , xK_m      ), spawn "neomutt_mailbox"),
     ((modm              , xK_v      ), spawn "sudo virt-viewer win10"),
-    ((modm .|. shiftMask, xK_v      ), spawn "sudo unlock-vm --unlock ~/.cache/gain/password"),
+    ((modm .|. shiftMask, xK_v      ), spawn "vkc \"$(cat ~/.cache/gain/password)\" da | while read -r key; do printf 'sudo virsh send-key win10 %s\\n' \"$key\"; done | bash - >/dev/null                                                                                          ─╯ sudo virsh send-key win10 KEY_ENTER"),
     ((modm              , xK_p      ), spawn "mpc toggle"),
     ((modm              , xK_period ), spawn "mpc next"),
     ((modm              , xK_comma  ), spawn "mpc prev"),
     ((modm              , xK_p      ), spawn "mpc toggle"),
+    ((modm              , xK_c      ), spawn "notify-send \"Now\" \"$(date \"+%A, %B %d %R\")\" --expire-time=1000"),
     -- Navigation
     ((modm,               xK_j     ), windows W.focusDown),
     ((modm,               xK_k     ), windows W.focusUp),
@@ -211,7 +212,8 @@ myLayout = tiled ||| Mirror tiled ||| Full
 myLayoutHook = toggleLayouts Full tall ||| threeCol ||| tabs
     where
         myGaps = gaps [(U, 0),(D, 0),(L, size_gap),(R, size_gap)]
-        mySpacing = spacing size_gap
+        -- mySpacing = spacing size_gap
+        mySpacing = spacing 0
 
         threeCol = named "ThreeColumn"
             $ avoidStruts
@@ -239,6 +241,7 @@ myManageHook = composeAll [
     className =? "microsoft-edge" --> doShift "Instant Messaging",
     className =? "ckb-next" --> doShift "Settings",
     className =? "blueman-manager" --> doShift "Settings",
+    className =? "Blueman-manager" --> doShift "Settings",
     -- Float.
     resource  =? "floatterm" --> doRectFloat (W.RationalRect 0.2 0.2 0.6 0.6),
     resource  =? "pavucontrol" --> doRectFloat (W.RationalRect 0.2 0.2 0.6 0.6),
@@ -258,11 +261,8 @@ myLogHook = return ()
 
 myStartupHook = do
     spawnOnce "nm-applet"
-    spawnOnce "launch_polybar"
     spawnOnce "setxkbmap -rules evdev -model evdev -layout us -variant altgr-intl"
     spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-    spawnOnce "mpd --no-daemon --verbose --stdout \"$HOME/.config/mpd/mpd.conf\""
-    spawnOnce "picom --experimental-backends --fade-exclude 'class_g = \"xsecurelock\"'"
     spawnOnce "blueman-manager"
     spawnOnce "find ~/.ssh/ -type f -exec grep -l \"PRIVATE\" {} \\; | xargs ssh-add >/dev/null"
     spawnOnce "feh --bg-scale \"$HOME/img/wallpaper\""
@@ -274,6 +274,7 @@ myStartupHook = do
     spawnOnce "xset dpms 0 0 300"
     spawnOnce "xss-lock -- \"$HOME/.scripts/portable-lock\""
     spawnOnce "ls ~/.xmonad/xmonad.hs | entr sh -c 'xmonad --recompile; xmonad --restart'"
+    spawnOnce "autorandr --change"
 
 main = do xmonad
     $ ewmh
@@ -284,10 +285,10 @@ main = do xmonad
 defaults = def {
         terminal           = myTerminal,
         focusFollowsMouse  = myFocusFollowsMouse,
-        borderWidth        = 2,
+        borderWidth        = 1,
         modMask            = myModMask,
         workspaces         = myWorkspaces,
-        normalBorderColor  = myNormalBorderColor,
+        -- normalBorderColor  = myNormalBorderColor,
         focusedBorderColor = myFocusedBorderColor,
         keys               = myKeys,
         mouseBindings      = myMouseBindings,

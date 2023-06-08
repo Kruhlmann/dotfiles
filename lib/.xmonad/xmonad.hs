@@ -168,6 +168,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $ [
     ((modm              , xK_period ), spawn "mpc next"),
     ((modm              , xK_comma  ), spawn "mpc prev"),
     ((modm              , xK_p      ), spawn "mpc toggle"),
+    ((modm              , xK_c      ), spawn "notify-send \"Now\" \"$(date \"+%A, %B %d %R\")\" --expire-time=1000"),
     -- Navigation
     ((modm,               xK_j     ), windows W.focusDown),
     ((modm,               xK_k     ), windows W.focusUp),

@@ -250,6 +250,7 @@ myManageHook = composeAll [
     title     =? "Session Manager - Mozilla Firefox" --> doFloat,
     title     =? "Firefox Add-on Updates" --> doFloat,
     title     =? "Clear Private Data" --> doFloat,
+    className =? "awakened-poe-trade" --> doFloat,
     -- Fullscreen.
     isFullscreen --> doFullFloat
     ]

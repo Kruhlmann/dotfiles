@@ -36,7 +36,7 @@ cursor-scroll = ns-resize
 [bar/bottom]
 inherit = bar/master
 
-modules-left = date battery filesystem lichess-bullet lichess-blitz processq pcscd_state dnsmasq_siemens_state
+modules-left = date battery filesystem processq pcscd_state dnsmasq_siemens_state
 modules-center = mpd
 modules-right = pulseaudio
 

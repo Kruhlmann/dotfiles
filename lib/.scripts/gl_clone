@@ -1,11 +1,13 @@
 #!/usr/bin/env sh
 
 TOKEN="$(cat "$HOME/.cache/gitlab-access-token")"
-GL_HOST="$(jq --raw-output '.gitlab_host' <"$HOME/.cache/siemens-config.json")"
+TOKEN="$(cat "$HOME/.cache/code-siemens-access-token")"
+GL_HOST="$(jq --raw-output '.code_siemens_host' <"$HOME/.cache/siemens-config.json")"
 
-project_json=$(curl -s --header "PRIVATE-TOKEN: $TOKEN" "https://$GL_HOST/api/v4/projects/$1")
+curl_command="curl -s --header 'PRIVATE-TOKEN: $TOKEN' https://$GL_HOST/api/v4/projects/$1"
+project_json=$(ssh -t stp "$curl_command")
 path=$(echo "$project_json" | jq --raw-output '.path_with_namespace')
 clone_url=$(echo "$project_json" | jq --raw-output '.ssh_url_to_repo')
 destination="$HOME/doc/src/$GL_HOST/$path"
 
-git clone "$clone_url" "$destination"
+git clone "$clone_url" "$destination" 2>/dev/stdout

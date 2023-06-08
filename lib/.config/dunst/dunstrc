@@ -122,9 +122,9 @@
 # NOTE: It might be helpful to run dunst -print in a terminal in order
 # to find fitting options for rules.
 
-#[espeak]
-#    summary = "*"
-#    script = dunst_espeak.sh
+[espeak]
+    summary = "*"
+    script = /usr/local/bin/dunstpost
 
 #[script-test]
 #    summary = "*script*"

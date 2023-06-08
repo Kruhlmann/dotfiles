@@ -49,3 +49,6 @@ source /usr/share/nvm/init-nvm.sh
 export PNPM_HOME="/home/ges/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+# opam configuration
+[[ ! -r /home/ges/.opam/opam-init/init.zsh ]] || source /home/ges/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null

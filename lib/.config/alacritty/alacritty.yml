@@ -17,7 +17,7 @@ window:
     class:
         instance: Alacritty
         general: Alacritty
-    decorations_theme_variant: dark
+    decorations_theme_variant: Dark
 
 #scrolling:
 # Maximum number of lines in the scrollback buffer.
@@ -28,9 +28,11 @@ window:
 #multiplier: 3
 
 font:
-    size: 10.0
+    size: 12.0
     normal:
-        family: FiraCode Nerd Font Mono
+        # family: FiraCode Nerd Font Mono
+        family: Fixedsys Excelsior
+        # family: FSEX302
         style: Regular
     bold:
         style: Bold
